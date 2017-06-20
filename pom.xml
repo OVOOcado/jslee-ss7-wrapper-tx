@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ~ SS7 Wrapper ~ Copyright (C) 2016-2017 "OVOO Sp. z o.o." ~ ~ This file 
+	is part of the SS7 Wrapper. ~ -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+        <groupId>pl.t-mobile.sce</groupId>
+        <artifactId>superpom</artifactId>
+        <version>2.0.4</version>
+    </parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>pl.ovoo.ss7.wrapper</groupId>
+    <artifactId>ss7-wrapper-tx</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
+	
+	<properties>
+        <pl.proids.ocp.commons.jslee-dependencies.version>2.0.1.6</pl.proids.ocp.commons.jslee-dependencies.version>
+	</properties>
+	
+	<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>pl.proids.ocp.commons</groupId>
+			<artifactId>jslee-dependencies</artifactId>
+			<version>${pl.proids.ocp.commons.jslee-dependencies.version}</version>
+			<type>pom</type>
+            <scope>import</scope>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>pl.ovoo.ss7.wrapper</groupId>
+			<artifactId>ss7-wrapper-api</artifactId>
+			<version>1.0.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.slee</groupId>
+			<artifactId>jainslee-api</artifactId>
+            <version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.sccp</groupId>
+			<artifactId>sccp-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.tcap</groupId>
+			<artifactId>tcap-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.inap</groupId>
+			<artifactId>inap-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.isup</groupId>
+			<artifactId>isup-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.cap</groupId>
+			<artifactId>cap-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.resources</groupId>
+			<artifactId>restcomm-slee-ra-cap-events</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.resources</groupId>
+			<artifactId>restcomm-slee-ra-cap-ratype</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.resources</groupId>
+			<artifactId>restcomm-slee-ra-map-events</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.map</groupId>
+			<artifactId>map-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.resources</groupId>
+			<artifactId>restcomm-slee-ra-map-ratype</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.resources</groupId>
+			<artifactId>restcomm-slee-ra-map-ra</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.sccp</groupId>
+			<artifactId>sccp-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.isup</groupId>
+			<artifactId>isup-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.map</groupId>
+			<artifactId>map-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.asn</groupId>
+			<artifactId>asn</artifactId>
+		</dependency>
+
+
+		<!-- unit tests -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+            <version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.cap</groupId>
+			<artifactId>cap-impl</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.ss7.inap</groupId>
+			<artifactId>inap-impl</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.protocols.sctp</groupId>
+			<artifactId>sctp-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+
+	</dependencies>
+
+
+</project>
