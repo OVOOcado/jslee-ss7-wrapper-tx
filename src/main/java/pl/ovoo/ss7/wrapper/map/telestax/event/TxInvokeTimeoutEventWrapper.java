@@ -9,7 +9,7 @@ import javax.slee.ActivityContextInterface;
 
 import org.mobicents.slee.resource.map.events.InvokeTimeout;
 
-import pl.ovoo.ss7.wrapper.cap.event.InvokeTimeoutEventWrapper;
+import pl.ovoo.ss7.wrapper.map.event.InvokeTimeoutEventWrapper;
 
 /**
  * TxInvokeTimeoutEventWrapper
@@ -25,6 +25,7 @@ public class TxInvokeTimeoutEventWrapper extends TxMapEventWrapper implements In
         this.invokeTimeout = invokeTimeout;
     }
 
+    @Override
     public long getInvokeId() {
         return invokeTimeout.getWrappedEvent().getInvokeId();
     }
