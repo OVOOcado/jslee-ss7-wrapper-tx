@@ -48,14 +48,6 @@ public class TxSendRoutingInfoForSMRequestArgWrapper implements SendRoutingInfoF
         this.msisdn = msisdn;
     }
 
-    @Override
-    public AddressStringWrapper getScAddress() {
-        if (this.addressStringWrapper == null && this.scAddress != null) {
-            this.addressStringWrapper = new TxAddressStringWrapperImpl(scAddress);
-        }
-        return this.addressStringWrapper;
-    }
-
     public void setScAddress(AddressStringWrapper scAddress) {
         if (scAddress == null) {
             this.scAddress = null;
@@ -64,6 +56,12 @@ public class TxSendRoutingInfoForSMRequestArgWrapper implements SendRoutingInfoF
         TxAddressStringWrapperImpl txScAdddress = (TxAddressStringWrapperImpl) scAddress;
         this.scAddress = txScAdddress.getTxAddress();
         this.addressStringWrapper = txScAdddress;
+    }
+    public AddressStringWrapper getScAddress() {
+        if (this.addressStringWrapper == null && this.scAddress != null) {
+            this.addressStringWrapper = new TxAddressStringWrapperImpl(scAddress);
+        }
+        return this.addressStringWrapper;
     }
 
     public AddressString getTxScAddress() {
@@ -78,5 +76,6 @@ public class TxSendRoutingInfoForSMRequestArgWrapper implements SendRoutingInfoF
     public String toString() {
         return "TxSendRoutingInfoForSMRequestArgWrapper [msisdn=" + msisdn + "]";
     }
+
 
 }
