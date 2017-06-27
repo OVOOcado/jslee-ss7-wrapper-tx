@@ -342,7 +342,7 @@ public class TxMapArgsFactory implements MapArgsFactory {
     
     @Override
     public MAPRequestedInfoWrapper createMAPRequestedInfoWrapper(boolean prop_reqPresent, boolean locationInformationPresent, boolean currentLocationPresent, boolean subscriberStatePresent){
-    	RequestedInfo requestedInfo = mapParameterFactory.createRequestedInfo(locationInformationPresent, subscriberStatePresent, null, currentLocationPresent, null, false, false, prop_reqPresent);
+    	RequestedInfo requestedInfo = mapParameterFactory.createRequestedInfo(locationInformationPresent, subscriberStatePresent, null, currentLocationPresent, null, false, false, false, prop_reqPresent);
     	return new TxMAPRequestedInfoWrapper(requestedInfo);
     }
     
