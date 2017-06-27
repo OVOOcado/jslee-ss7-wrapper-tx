@@ -59,39 +59,13 @@ import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxSccpAddressWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
 import pl.ovoo.ss7.wrapper.map.MobilityMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper;
-import pl.ovoo.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.map.args.CFInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.CFStatusWrapper;
-import pl.ovoo.ss7.wrapper.map.args.ForwardedToNumberWrapper;
-import pl.ovoo.ss7.wrapper.map.args.ForwardingReason;
-import pl.ovoo.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPCallForwardingDataWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPErrorWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPExt_BasicServiceCodeWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPForwardingFeatureWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPForwardingInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPLocationInformationWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPRequestedInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPRequestedSubscriptionInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPSS_ForBS_CodeWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPSS_InformationWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MapArgsFactory;
-import pl.ovoo.ss7.wrapper.map.args.SSCode;
-import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SubscriberCFInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.*;
 import pl.ovoo.ss7.wrapper.map.telestax.TxCallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.TxMobilityMapDialogWrapper;
 
@@ -168,6 +142,27 @@ public class TxMapArgsFactory implements MapArgsFactory {
         final ISDNAddressString isdnAddressString = mapParameterFactory.createISDNAddressString(addressNature, numberingPlanTx, address);
         return new TxISDNAddressStringWrapperImpl(isdnAddressString);
     }
+
+    @Override
+    public AddressStringWrapper createAddressString(final ISDNAddressStringWrapper.Nature nature,
+													 final ISDNAddressStringWrapper.NumberingPlan numberingPlan,
+													 final String address){
+		final AddressNature addressNature;
+		if (nature == null) {
+			addressNature = null;
+		} else {
+			addressNature = AddressNature.getInstance(nature.getValue());
+		}
+
+		final NumberingPlan numberingPlanTx;
+		if (numberingPlan == null) {
+			numberingPlanTx = null;
+		} else {
+			numberingPlanTx = NumberingPlan.getInstance(numberingPlan.getValue());
+		}
+		final AddressString addressString = mapParameterFactory.createAddressString(addressNature, numberingPlanTx, address);
+		return new TxAddressStringWrapperImpl(addressString);
+	}
 
     @Override
     public ForwardedToNumberWrapper createForwardedToNumber(final ForwardedToNumberWrapper.Nature nature,
@@ -724,4 +719,12 @@ public class TxMapArgsFactory implements MapArgsFactory {
         return txSri;
         
     }
+
+    @Override
+	public SendRoutingInfoForSMRequestArgWrapper createSendRoutingInfoRequestForSMArgWrapper(ISDNAddressStringWrapper msisdn, AddressStringWrapper scAddress){
+    	TxSendRoutingInfoForSMRequestArgWrapper txSriSm = new TxSendRoutingInfoForSMRequestArgWrapper();
+    	txSriSm.setMsisdn(msisdn);
+    	txSriSm.setScAddress(scAddress);
+    	return txSriSm;
+	}
 }
