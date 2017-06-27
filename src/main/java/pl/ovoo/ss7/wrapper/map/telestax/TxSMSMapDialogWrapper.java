@@ -1,16 +1,13 @@
 package pl.ovoo.ss7.wrapper.map.telestax;
 
 import org.mobicents.protocols.ss7.map.api.MAPException;
-import org.mobicents.protocols.ss7.map.api.service.callhandling.MAPDialogCallHandling;
 import org.mobicents.protocols.ss7.map.api.service.sms.MAPDialogSms;
 import org.mobicents.slee.resource.map.service.sms.wrappers.MAPDialogSmsWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.SMSMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxMAPLocationInformationWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMResponseWrapper;
 
