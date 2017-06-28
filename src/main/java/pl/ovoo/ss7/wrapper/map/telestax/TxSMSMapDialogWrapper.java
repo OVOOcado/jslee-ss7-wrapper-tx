@@ -1,7 +1,11 @@
 package pl.ovoo.ss7.wrapper.map.telestax;
 
 import org.mobicents.protocols.ss7.map.api.MAPException;
+import org.mobicents.protocols.ss7.map.api.service.lsm.AdditionalNumber;
+import org.mobicents.protocols.ss7.map.api.service.sms.LocationInfoWithLMSI;
 import org.mobicents.protocols.ss7.map.api.service.sms.MAPDialogSms;
+import org.mobicents.protocols.ss7.map.service.lsm.AdditionalNumberImpl;
+import org.mobicents.protocols.ss7.map.service.sms.LocationInfoWithLMSIImpl;
 import org.mobicents.slee.resource.map.service.sms.wrappers.MAPDialogSmsWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
@@ -42,9 +46,13 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
                 txImsi = (TxIMSIAddressWrapper) txArg.getIMSI();
             }
 
-            //TODO check how to pass LocationInfoWithLMSI
+            LocationInfoWithLMSI lInfo = null;
+            if(txArg.getMscAddress()!=null){
+                AdditionalNumber an = new AdditionalNumberImpl(txArg.getTxMscAddress(),null);
+                lInfo = new LocationInfoWithLMSIImpl(null,null,null,false,an);
+            }
 
-            ((MAPDialogSmsWrapper) dialog).addSendRoutingInfoForSMResponse(invoke,txImsi.getTxImsi(),null,null,false);
+            ((MAPDialogSmsWrapper) dialog).addSendRoutingInfoForSMResponse(invoke,txImsi.getTxImsi(),lInfo,null,false);
         }catch(MAPException e){
             throw new Ss7WrapperException(e);
         }

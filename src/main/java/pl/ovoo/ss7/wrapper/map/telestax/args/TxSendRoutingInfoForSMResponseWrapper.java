@@ -15,9 +15,11 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
 
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
     private transient ISDNAddressStringWrapper mscAddressWrapper = null;
+    private transient ISDNAddressStringWrapper sgsnAddressWrapper = null;
 
     private IMSI imsi;
     private ISDNAddressString mscAddress;
+    private ISDNAddressString sgsnAddress;
 
     public TxSendRoutingInfoForSMResponseWrapper() {
         super();
@@ -78,6 +80,34 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
         this.mscAddress = mscAddress;
         this.mscAddressWrapper = null;
     }
+//
+//    @Override
+//    public ISDNAddressStringWrapper getSgsnAddress() {
+//        if (this.sgsnAddressWrapper == null && this.sgsnAddress != null) {
+//            this.sgsnAddressWrapper = new TxISDNAddressStringWrapperImpl(sgsnAddress);
+//        }
+//        return this.sgsnAddressWrapper;
+//    }
+//
+//    public void setSgsnAddress(ISDNAddressStringWrapper sgsnAddress) {
+//        if (sgsnAddress == null) {
+//            this.sgsnAddress = null;
+//            this.sgsnAddressWrapper = null;
+//        } else {
+//            TxISDNAddressStringWrapperImpl txSgsnAddress = (TxISDNAddressStringWrapperImpl) mscAddress;
+//            this.mscAddress = txMscAddress.getTxAddress();
+//            this.mscAddressWrapper = txMscAddress;
+//        }
+//    }
+//
+//    public ISDNAddressString getTxSgsnAddress() {
+//        return mscAddress;
+//    }
+//
+//    public void setTxSgsnAddress(ISDNAddressString mscAddress) {
+//        this.mscAddress = mscAddress;
+//        this.mscAddressWrapper = null;
+//    }
 
     @Override
     public String toString() {
