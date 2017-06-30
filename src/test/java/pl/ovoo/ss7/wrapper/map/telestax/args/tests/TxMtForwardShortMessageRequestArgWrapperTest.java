@@ -8,16 +8,15 @@ import org.junit.Before;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.map.api.MAPException;
-import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
-import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
-import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
-import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
+import org.mobicents.protocols.ss7.map.api.primitives.*;
 
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxMtForwardShortMessageRequestArgWrapper;
 
 public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTest {
@@ -30,9 +29,9 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         IMSI imsi = mapParameterFactory.createIMSI("260435678876987");
         TxIMSIAddressWrapper txIMSIAddressWrapper = new TxIMSIAddressWrapper(imsi);
         txMtForwardShortMessageRequestArgWrapper.setImsi(txIMSIAddressWrapper);
-        AddressString addressString = mapParameterFactory.createAddressString(AddressNature.international_number,
+        ISDNAddressString addressString = mapParameterFactory.createISDNAddressString(AddressNature.international_number,
                 NumberingPlan.ISDN, "0048657359345");
-        AddressStringWrapper addressStringWrapper = new TxAddressStringWrapperImpl(addressString);
+        ISDNAddressStringWrapper addressStringWrapper = new TxISDNAddressStringWrapperImpl(addressString);
         txMtForwardShortMessageRequestArgWrapper.setServiceCentreAddressOA(addressStringWrapper);
         txMtForwardShortMessageRequestArgWrapper.setText("test message");
     }

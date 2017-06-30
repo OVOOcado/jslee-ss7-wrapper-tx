@@ -7,10 +7,13 @@ import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
 import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 
+import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 
@@ -19,10 +22,10 @@ import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
  */
 public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortMessageRequestWrapper {
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
-    private transient AddressStringWrapper serviceCentreAddressOAWrapper = null;
+    private transient ISDNAddressStringWrapper serviceCentreAddressOAWrapper = null;
 
     private IMSI imsi;
-    private AddressString serviceCentreAddressOA;
+    private ISDNAddressString serviceCentreAddressOA;
     private String text;
 
     public TxMtForwardShortMessageRequestArgWrapper() {
@@ -51,7 +54,7 @@ public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortM
     @Override
     public AddressStringWrapper getServiceCentreAddressOA() {
         if (this.serviceCentreAddressOAWrapper == null && this.serviceCentreAddressOA != null) {
-            this.serviceCentreAddressOAWrapper = new TxAddressStringWrapperImpl(serviceCentreAddressOA);
+            this.serviceCentreAddressOAWrapper = new TxISDNAddressStringWrapperImpl(serviceCentreAddressOA);
         }
         return this.serviceCentreAddressOAWrapper;
     }
@@ -61,7 +64,7 @@ public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortM
             this.serviceCentreAddressOA = null;
             this.serviceCentreAddressOAWrapper = null;
         } else {
-            TxAddressStringWrapperImpl txServiceCentreAddressOA = (TxAddressStringWrapperImpl)serviceCentreAddressOA;
+            TxISDNAddressStringWrapperImpl txServiceCentreAddressOA = (TxISDNAddressStringWrapperImpl)serviceCentreAddressOA;
             this.serviceCentreAddressOA = txServiceCentreAddressOA.getTxAddress();
             this.serviceCentreAddressOAWrapper = txServiceCentreAddressOA;
             
@@ -86,7 +89,7 @@ public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortM
         this.imsi = imsi;
     }
 
-    public void setTxServiceCentreAddressOA(AddressString serviceCentreAddressOA) {
+    public void setTxServiceCentreAddressOA(ISDNAddressString serviceCentreAddressOA) {
         this.serviceCentreAddressOAWrapper = null;
         this.serviceCentreAddressOA = serviceCentreAddressOA;
     }

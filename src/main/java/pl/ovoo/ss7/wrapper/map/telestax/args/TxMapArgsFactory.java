@@ -727,4 +727,13 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	txSriSm.setScAddress(scAddress);
     	return txSriSm;
 	}
+
+	@Override
+	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text,AddressStringWrapper scOA, IMSIAddressWrapper imsi){
+		TxMtForwardShortMessageRequestArgWrapper txMtArg = new TxMtForwardShortMessageRequestArgWrapper();
+		txMtArg.setText(text);
+		txMtArg.setServiceCentreAddressOA(scOA);
+		txMtArg.setImsi(imsi);
+		return txMtArg;
+	}
 }
