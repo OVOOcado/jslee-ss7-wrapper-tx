@@ -24,6 +24,7 @@ import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMRequestArgWra
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMResponseWrapper;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by karolsimka on 26.06.17.
@@ -79,8 +80,9 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             AddressString aNumber = new AddressStringImpl(AddressNature.international_number, NumberingPlan.ISDN,txArg.getServiceCentreAddressOA().getAddress());
             sm_rp_oa.setServiceCentreAddressOA(aNumber);
 
-            byte[] text = txArg.getText().getBytes();
-            SmsSignalInfo smsSignalInfo = new SmsSignalInfoImpl(text, Charset.defaultCharset());
+            byte[] text = txArg.getText().getBytes(StandardCharsets.UTF_16BE);
+            text.toString();
+            SmsSignalInfo smsSignalInfo = new SmsSignalInfoImpl(text, StandardCharsets.UTF_16BE);
 
             return dialog.addMtForwardShortMessageRequest((int)timeout,sm_rp_da,sm_rp_oa,smsSignalInfo,false,null).intValue();
         }catch(MAPException e){
