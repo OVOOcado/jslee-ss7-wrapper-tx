@@ -3,10 +3,12 @@ package pl.ovoo.ss7.wrapper.map.telestax;
 import org.mobicents.protocols.ss7.map.api.MAPException;
 import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
 import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
+import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.service.lsm.AdditionalNumber;
 import org.mobicents.protocols.ss7.map.api.service.sms.*;
 import org.mobicents.protocols.ss7.map.primitives.AddressStringImpl;
+import org.mobicents.protocols.ss7.map.primitives.IMSIImpl;
 import org.mobicents.protocols.ss7.map.service.lsm.AdditionalNumberImpl;
 import org.mobicents.protocols.ss7.map.service.sms.LocationInfoWithLMSIImpl;
 import org.mobicents.protocols.ss7.map.service.sms.SM_RP_DAImpl;
@@ -74,15 +76,20 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
         try{
             TxMtForwardShortMessageRequestArgWrapper txArg = (TxMtForwardShortMessageRequestArgWrapper) arg;
 
-            SM_RP_DA sm_rp_da = new SM_RP_DAImpl(txArg.getTxIMSI());
+            IMSI imsi = new IMSIImpl(txArg.getSm_Rp_Da().getIMSI().getAddress());
+            SM_RP_DA sm_rp_da = new SM_RP_DAImpl(imsi);
 
             SM_RP_OAImpl sm_rp_oa = new SM_RP_OAImpl();
-            AddressString aNumber = new AddressStringImpl(AddressNature.international_number, NumberingPlan.ISDN,txArg.getServiceCentreAddressOA().getAddress());
+            AddressString aNumber = new AddressStringImpl(AddressNature.international_number, NumberingPlan.ISDN,txArg.getSm_Rp_Oa().getServiceCentreAddressOA().getAddress());
             sm_rp_oa.setServiceCentreAddressOA(aNumber);
 
-            byte[] text = txArg.getText().getBytes(StandardCharsets.UTF_16BE);
-            text.toString();
-            SmsSignalInfo smsSignalInfo = new SmsSignalInfoImpl(text, StandardCharsets.UTF_16BE);
+            byte[] text = txArg.getSm_Rp_Ui().getText();
+            SmsSignalInfo smsSignalInfo = null;
+            if(txArg.getSm_Rp_Ui().getCharset().equals("UTF-8")){
+                smsSignalInfo = new SmsSignalInfoImpl(text,StandardCharsets.UTF_8);
+            }else{
+                smsSignalInfo = new SmsSignalInfoImpl(text,StandardCharsets.UTF_16BE);
+            }
 
             return dialog.addMtForwardShortMessageRequest((int)timeout,sm_rp_da,sm_rp_oa,smsSignalInfo,false,null).intValue();
         }catch(MAPException e){
