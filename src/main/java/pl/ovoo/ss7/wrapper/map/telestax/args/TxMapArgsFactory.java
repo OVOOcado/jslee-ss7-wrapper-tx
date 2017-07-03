@@ -8,6 +8,8 @@
 
 package pl.ovoo.ss7.wrapper.map.telestax.args;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import org.mobicents.protocols.ss7.map.api.MAPApplicationContext;
@@ -51,6 +53,7 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtTeleserviceCode;
 import org.mobicents.protocols.ss7.map.api.service.supplementary.SSForBSCode;
 import org.mobicents.protocols.ss7.map.api.service.supplementary.SupplementaryCodeValue;
+import org.mobicents.protocols.ss7.map.primitives.ISDNAddressStringImpl;
 import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
 import org.mobicents.slee.resource.map.MAPContextInterfaceFactory;
 
@@ -729,11 +732,28 @@ public class TxMapArgsFactory implements MapArgsFactory {
 	}
 
 	@Override
-	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text,AddressStringWrapper scOA, IMSIAddressWrapper imsi){
+	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, String charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi){
 		TxMtForwardShortMessageRequestArgWrapper txMtArg = new TxMtForwardShortMessageRequestArgWrapper();
-		txMtArg.setText(text);
-		txMtArg.setServiceCentreAddressOA(scOA);
-		txMtArg.setImsi(imsi);
+
+		TxSmRpDaWrapper smRpDaWrapper = new TxSmRpDaWrapper();
+		smRpDaWrapper.setIMSI(imsi);
+		txMtArg.setSm_Rp_Da(smRpDaWrapper);
+
+		TxSmRpOaWrapper smRpOaWrapper = new TxSmRpOaWrapper();
+		smRpOaWrapper.setServiceCentreAddressOa(createIsdnAddressString(scOA.getNature(),scOA.getNumberingPlan(),scOA.getAddress()));
+		txMtArg.setSm_Rp_Oa(smRpOaWrapper);
+
+		TxSmRpUiWrapper smRpUiWrapper = new TxSmRpUiWrapper();
+		smRpUiWrapper.setCharset(charset);
+		if(charset.equals("UTF-8")){
+			smRpUiWrapper.setText(text.getBytes(StandardCharsets.UTF_8));
+		}else{
+			smRpUiWrapper.setText(text.getBytes(StandardCharsets.UTF_16BE));
+		}//TODO exception if different charset used
+
+		//smRpUiWrapper.setOriginatingAddress();
+		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
+
 		return txMtArg;
 	}
 }
