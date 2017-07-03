@@ -47,8 +47,10 @@ public class TxLegIDWrapper implements LegIDWrapper {
 
     @Override
     public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TxLegIDWrapper)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof TxLegIDWrapper))
+            return false;
 
         final TxLegIDWrapper that = (TxLegIDWrapper) o;
 
@@ -56,11 +58,13 @@ public class TxLegIDWrapper implements LegIDWrapper {
     }
 
     private boolean isSendingEqual(final TxLegIDWrapper that) {
-        return legID.getSendingSideID() != null ? legID.getSendingSideID().equals(that.legID.getSendingSideID()) : that.legID.getSendingSideID() == null;
+        return legID.getSendingSideID() != null ? legID.getSendingSideID().equals(that.legID.getSendingSideID())
+                : that.legID.getSendingSideID() == null;
     }
 
     private boolean isReceivingEqual(final TxLegIDWrapper that) {
-        return legID.getReceivingSideID() != null ? legID.getReceivingSideID().equals(that.legID.getReceivingSideID()) : that.legID.getReceivingSideID() == null;
+        return legID.getReceivingSideID() != null ? legID.getReceivingSideID().equals(that.legID.getReceivingSideID())
+                : that.legID.getReceivingSideID() == null;
     }
 
     @Override
@@ -68,6 +72,15 @@ public class TxLegIDWrapper implements LegIDWrapper {
         return legID != null ? legID.hashCode() : 0;
     }
 
+    @Override
+    public boolean isReceivingSideIDChosen() {
+        return legID.getReceivingSideID() != null;
+    }
+
+    @Override
+    public boolean isSendingSideIDChosen() {
+        return legID.getSendingSideID() != null;
+    }
 
     @Override
     public String toString() {

@@ -13,6 +13,7 @@ import org.mobicents.protocols.ss7.map.api.primitives.SubscriberIdentity;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationRequest;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
 
+import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
@@ -49,16 +50,16 @@ public class TxAnyTimeInterrogationArgWrapper implements AnyTimeInterrogationArg
     }
 
     @Override
-    public String toString() {
-        return "TxAnyTimeInterrogationArgWrapper [anyTimeInterrogationRequest=" + anyTimeInterrogationRequest + "]";
-    }
-
-    @Override
     public ISDNAddressStringWrapper getGsmScf() {
         if (this.gsmScf == null && anyTimeInterrogationRequest.getGsmSCFAddress() != null) {
             this.gsmScf = new TxISDNAddressStringWrapperImpl(anyTimeInterrogationRequest.getGsmSCFAddress());
         }
         return this.gsmScf;
+    }
+
+    @Override
+    public String toString() {
+        return "TxAnyTimeInterrogationArgWrapper [anyTimeInterrogationRequest=" + anyTimeInterrogationRequest + "]";
     }
 
 }
