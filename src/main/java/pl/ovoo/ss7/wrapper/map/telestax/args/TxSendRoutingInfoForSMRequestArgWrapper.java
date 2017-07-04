@@ -34,10 +34,11 @@ public class TxSendRoutingInfoForSMRequestArgWrapper implements SendRoutingInfoF
         if (msisdn == null) {
             this.msisdn = null;
             this.isdnAddressStringWrapper = null;
+        }else {
+            TxISDNAddressStringWrapperImpl txMsisdn = (TxISDNAddressStringWrapperImpl) msisdn;
+            this.msisdn = txMsisdn.getTxAddress();
+            this.isdnAddressStringWrapper = txMsisdn;
         }
-        TxISDNAddressStringWrapperImpl txMsisdn = (TxISDNAddressStringWrapperImpl) msisdn;
-        this.msisdn = txMsisdn.getTxAddress();
-        this.isdnAddressStringWrapper = txMsisdn;
     }
 
     public ISDNAddressString getTxMsisdn() {
@@ -52,10 +53,11 @@ public class TxSendRoutingInfoForSMRequestArgWrapper implements SendRoutingInfoF
         if (scAddress == null) {
             this.scAddress = null;
             this.addressStringWrapper = null;
+        }else {
+            TxAddressStringWrapperImpl txScAdddress = (TxAddressStringWrapperImpl) scAddress;
+            this.scAddress = txScAdddress.getTxAddress();
+            this.addressStringWrapper = txScAdddress;
         }
-        TxAddressStringWrapperImpl txScAdddress = (TxAddressStringWrapperImpl) scAddress;
-        this.scAddress = txScAdddress.getTxAddress();
-        this.addressStringWrapper = txScAdddress;
     }
     public AddressStringWrapper getScAddress() {
         if (this.addressStringWrapper == null && this.scAddress != null) {

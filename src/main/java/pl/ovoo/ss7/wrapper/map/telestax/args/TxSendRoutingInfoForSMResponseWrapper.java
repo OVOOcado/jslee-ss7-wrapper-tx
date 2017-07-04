@@ -15,11 +15,11 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
 
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
     private transient ISDNAddressStringWrapper mscAddressWrapper = null;
-    private transient ISDNAddressStringWrapper sgsnAddressWrapper = null;
+    //private transient ISDNAddressStringWrapper sgsnAddressWrapper = null;
 
     private IMSI imsi;
     private ISDNAddressString mscAddress;
-    private ISDNAddressString sgsnAddress;
+    //private ISDNAddressString sgsnAddress;
 
     public TxSendRoutingInfoForSMResponseWrapper() {
         super();

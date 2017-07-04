@@ -375,7 +375,7 @@ public class TxMapArgsFactory implements MapArgsFactory {
     @Override
     public CallHandlingMapDialogWrapper createCallHandlingMapDialogWrapper(MapApplicationContextWrapper mapApplicationContextWrapper, SccpAddressWrapper srcAddress, SccpAddressWrapper destAddress) throws Ss7WrapperException {
         try{
-            MAPApplicationContext ac = null;
+            MAPApplicationContext ac;
             if (mapApplicationContextWrapper.equals(MapApplicationContextWrapper.locationInfoRetrievalContext_v3_ac)){
                 ac = MAPApplicationContext.getInstance(MAPApplicationContextName.locationInfoRetrievalContext,
                         MAPApplicationContextVersion.version3);
@@ -400,7 +400,7 @@ public class TxMapArgsFactory implements MapArgsFactory {
     @Override
     public MobilityMapDialogWrapper createMobilityMapDialogWrapper(MapApplicationContextWrapper mapApplicationContextWrapper, SccpAddressWrapper srcAddress, SccpAddressWrapper destAddress) throws Ss7WrapperException {
     	try{
-	    	MAPApplicationContext ac = null;
+	    	MAPApplicationContext ac;
 	    	if (mapApplicationContextWrapper.equals(MapApplicationContextWrapper.anyTimeInfoEnquiryContext_v3_ac)){
 	    		ac = MAPApplicationContext.getInstance(MAPApplicationContextName.anyTimeEnquiryContext,
 	                    MAPApplicationContextVersion.version3);
@@ -452,91 +452,7 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	else{
     		txSSForBSCode = null;
     	}
-    	RequestedSubscriptionInfo requestedSubscriptionInfo = new RequestedSubscriptionInfo() {
-			
-			@Override
-			public boolean getSupportedVlrCamelPhases() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getSupportedSgsnCamelPhases() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public SSForBSCode getRequestedSSInfo() {
-				return txSSForBSCode;
-			}
-			
-			@Override
-			public RequestedCAMELSubscriptionInfo getRequestedCAMELSubscriptionInfo() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-			
-			@Override
-			public boolean getOdb() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getMsisdnBsList() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getHoldInfo() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public MAPExtensionContainer getExtensionContainer() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-			
-			@Override
-			public boolean getEctInfo() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getCwInfo() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getCsgSubscriptionDataRequested() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getClirInfo() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public boolean getClipInfo() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-			
-			@Override
-			public AdditionalRequestedCAMELSubscriptionInfo getAdditionalRequestedCamelSubscriptionInfo() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		};
+
     	return new TxMAPRequestedSubscriptionInfoWrapper(null);
     	
     }
