@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+import org.apache.log4j.Logger;
 import org.mobicents.protocols.asn.AsnInputStream;
 import org.mobicents.protocols.asn.AsnOutputStream;
 import org.mobicents.protocols.ss7.map.api.MAPException;
@@ -34,6 +35,8 @@ public class TxAnyTimeInterrogationResultWrapper implements AnyTimeInterrogation
     private MAPSubscriberInfoWrapper subscriberInfoWrapper;
 
     private SubscriberCFInfoImpl subscriberCfInfoImpl;
+
+    private Logger logger = Logger.getLogger(TxAnyTimeInterrogationResultWrapper.class);
 
     public TxAnyTimeInterrogationResultWrapper(final SubscriberCFInfoWrapper subscriberCFInfoWrapper,
             final MAPSubscriberInfoWrapper subscriberInfoWrapper) {
@@ -81,6 +84,7 @@ public class TxAnyTimeInterrogationResultWrapper implements AnyTimeInterrogation
         try {
             subscriberCfInfoImpl.decodeData(asnIs, 0);
         } catch (MAPParsingComponentException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         asnIs.close();
@@ -99,6 +103,7 @@ public class TxAnyTimeInterrogationResultWrapper implements AnyTimeInterrogation
         try {
             subscriberCfInfoImpl.encodeData(asnOs);
         } catch (MAPException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         byte[] byteArray = asnOs.toByteArray();

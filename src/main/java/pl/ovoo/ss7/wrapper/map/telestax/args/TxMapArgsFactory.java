@@ -445,13 +445,13 @@ public class TxMapArgsFactory implements MapArgsFactory {
     public MAPRequestedSubscriptionInfoWrapper createMAPRequestedSubscriptionInfoWrapper(MAPSS_ForBS_CodeWrapper ssForBSCode){
     	//TODO upgrade to newer version of restcomm map-api
     	//RequestedSubscriptionInfo requestedSubscriptionInfo = mapParameterFactory.createRequestedSubscriptionInfo(ssForBSCode);
-    	final SSForBSCode txSSForBSCode;
-    	if(ssForBSCode != null){
-    		txSSForBSCode = ((TxMAPSS_ForBS_CodeWrapper)ssForBSCode).getTxSSForBSCode();
-    	}
-    	else{
-    		txSSForBSCode = null;
-    	}
+//    	final SSForBSCode txSSForBSCode;
+//    	if(ssForBSCode != null){
+//    		txSSForBSCode = ((TxMAPSS_ForBS_CodeWrapper)ssForBSCode).getTxSSForBSCode();
+//    	}
+//    	else{
+//    		txSSForBSCode = null;
+//    	}
 
     	return new TxMAPRequestedSubscriptionInfoWrapper(null);
     	

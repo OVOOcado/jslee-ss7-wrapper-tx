@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+import org.apache.log4j.Logger;
 import org.mobicents.protocols.ss7.isup.ParameterException;
 import org.mobicents.protocols.ss7.isup.impl.message.parameter.GenericNumberImpl;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericDigits;
@@ -34,6 +35,8 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
     private GenericDigits txAssistingDialogCorrelationID;
 
     private GenericNumberImpl genericNumberImpl;
+
+    private Logger logger = Logger.getLogger(TxEstablishTemporaryConnectionArgWrapper.class);
 
     @Override
     public void setAssistingSSPIPRoutingAddress(final GenericNumberWrapper assistingSSPIPRoutingAddress) {
@@ -108,6 +111,7 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
         try {
             genericNumberImpl.decode(decodedBytes);
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         this.txAssistingSSPIPRoutingAddress = genericNumberImpl;
@@ -123,9 +127,10 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
         try {
             encodedBytes = genericNumberImpl.encode();
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
-        out.writeInt(encodedBytes.length);
+        if(encodedBytes != null) out.writeInt(encodedBytes.length);
         out.write(encodedBytes);
         out.writeObject(txAssistingDialogCorrelationID);
     }

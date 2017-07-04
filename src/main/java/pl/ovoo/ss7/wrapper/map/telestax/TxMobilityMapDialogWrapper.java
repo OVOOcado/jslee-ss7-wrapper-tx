@@ -84,7 +84,7 @@ public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implement
     @Override
     public void sendAnyTimeSubscriptionInterrogation(long atiTimeout, AnyTimeSubscriptionInterrogationArgWrapper arg) throws Ss7WrapperException {
     	//try {
-            TxAnyTimeSubscriptionInterrogationArgWrapper txArg = (TxAnyTimeSubscriptionInterrogationArgWrapper)arg;
+            //TxAnyTimeSubscriptionInterrogationArgWrapper txArg = (TxAnyTimeSubscriptionInterrogationArgWrapper)arg;
             //TODO upgrade to newer version of restcomm map-api
             //dialog.addAnyTimeSubscriptionInterrogationRequest(atiTimeout,
             //		txArg.getTxSubscriberIdentity(),

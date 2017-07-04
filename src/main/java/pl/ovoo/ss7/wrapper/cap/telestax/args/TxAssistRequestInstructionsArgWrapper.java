@@ -18,9 +18,7 @@ import org.mobicents.protocols.ss7.isup.impl.message.parameter.GenericNumberImpl
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
 import pl.ovoo.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
-import sun.font.X11TextRenderer;
 
-import javax.slee.facilities.Tracer;
 
 /**
  * TxAssistRequestInstructionsArgWrapper
@@ -34,6 +32,8 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
     private GenericNumber txCorrelationID;
 
     private GenericNumberImpl genericNumberImpl;
+
+    private Logger logger = Logger.getLogger(TxAssistRequestInstructionsArgWrapper.class);
 
     public TxAssistRequestInstructionsArgWrapper() {
     }
@@ -86,6 +86,7 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         try {
             genericNumberImpl.decode(decodedBytes);
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         this.txCorrelationID = genericNumberImpl;
@@ -99,9 +100,10 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         try {
             encodedBytes = genericNumberImpl.encode();
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
-        out.writeInt(encodedBytes.length);
+        if(encodedBytes != null) out.writeInt(encodedBytes.length);
         out.write(encodedBytes);
     }
 
