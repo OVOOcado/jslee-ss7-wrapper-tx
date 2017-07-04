@@ -36,7 +36,7 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
 
     private GenericNumberImpl genericNumberImpl;
 
-    private Logger logger = Logger.getLogger(TxEstablishTemporaryConnectionArgWrapper.class);
+    private static Logger logger = Logger.getLogger(TxEstablishTemporaryConnectionArgWrapper.class);
 
     @Override
     public void setAssistingSSPIPRoutingAddress(final GenericNumberWrapper assistingSSPIPRoutingAddress) {

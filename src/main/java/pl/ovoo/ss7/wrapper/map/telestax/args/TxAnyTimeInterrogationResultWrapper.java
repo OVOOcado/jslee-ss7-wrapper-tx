@@ -36,7 +36,7 @@ public class TxAnyTimeInterrogationResultWrapper implements AnyTimeInterrogation
 
     private SubscriberCFInfoImpl subscriberCfInfoImpl;
 
-    private Logger logger = Logger.getLogger(TxAnyTimeInterrogationResultWrapper.class);
+    private static Logger logger = Logger.getLogger(TxAnyTimeInterrogationResultWrapper.class);
 
     public TxAnyTimeInterrogationResultWrapper(final SubscriberCFInfoWrapper subscriberCFInfoWrapper,
             final MAPSubscriberInfoWrapper subscriberInfoWrapper) {

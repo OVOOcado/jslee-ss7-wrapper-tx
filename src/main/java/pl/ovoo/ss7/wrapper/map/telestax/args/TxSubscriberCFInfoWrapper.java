@@ -39,7 +39,7 @@ public class TxSubscriberCFInfoWrapper implements SubscriberCFInfoWrapper {
 
     private SubscriberCFInfoImpl subscriberCfInfoImpl;
 
-    private Logger logger = Logger.getLogger(TxSubscriberCFInfoWrapper.class);
+    private static Logger logger = Logger.getLogger(TxSubscriberCFInfoWrapper.class);
 
     public TxSubscriberCFInfoWrapper(final SubscriberCFInfo subscriberCFInfo) {
         this.subscriberCFInfo = subscriberCFInfo;

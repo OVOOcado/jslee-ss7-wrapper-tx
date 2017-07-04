@@ -30,7 +30,7 @@ public class TxGenericNumberWrapper implements GenericNumberWrapper {
 
     private GenericNumberImpl genericNumberImpl;
 
-    private Logger logger = Logger.getLogger(TxGenericNumberWrapper.class);
+    private static Logger logger = Logger.getLogger(TxGenericNumberWrapper.class);
 
     public TxGenericNumberWrapper(final GenericNumber genericNumber) {
         this.genericNumber = genericNumber;

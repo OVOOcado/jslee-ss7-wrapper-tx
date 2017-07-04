@@ -33,7 +33,7 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
 
     private GenericNumberImpl genericNumberImpl;
 
-    private Logger logger = Logger.getLogger(TxAssistRequestInstructionsArgWrapper.class);
+    private static Logger logger = Logger.getLogger(TxAssistRequestInstructionsArgWrapper.class);
 
     public TxAssistRequestInstructionsArgWrapper() {
     }
