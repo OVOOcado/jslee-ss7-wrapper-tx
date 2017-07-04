@@ -10,6 +10,7 @@ import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper;
@@ -46,12 +47,9 @@ public class TxMtForwardShortMessageRequestEventWrapper extends TxMapEventWrappe
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Oa(sm_rp_oa);
 
         TxSmRpUiWrapper sm_rp_ui = new TxSmRpUiWrapper();
-        sm_rp_ui.setText(mtForwardShortMessageRequest.getSM_RP_UI().getData());
-        if(mtForwardShortMessageRequest.getSM_RP_UI().getGsm8Charset().equals(StandardCharsets.UTF_8)) {
-            sm_rp_ui.setCharset("UTF-8");
-        }else{
-            sm_rp_ui.setCharset("UTF-16BE");
-        }
+        sm_rp_ui.setData(mtForwardShortMessageRequest.getSM_RP_UI().getData());
+        sm_rp_ui.setCharset(CharsetWrapper.lookup(mtForwardShortMessageRequest.getSM_RP_UI().getGsm8Charset().name()));
+        
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(sm_rp_ui);
 
         return txMtForwardShortMessageRequestArgWrapper;

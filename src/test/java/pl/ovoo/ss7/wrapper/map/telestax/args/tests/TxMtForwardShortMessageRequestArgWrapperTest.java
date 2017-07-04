@@ -3,6 +3,7 @@ package pl.ovoo.ss7.wrapper.map.telestax.args.tests;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 import org.junit.Before;
@@ -18,6 +19,7 @@ import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxMtForwardShortMessageRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpOaWrapper;
@@ -44,8 +46,8 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Oa(txSmRpOaWrapper);
 
         TxSmRpUiWrapper txSmRpUiWrapper = new TxSmRpUiWrapper();
-        txSmRpUiWrapper.setCharset("UTF-8");
-        txSmRpUiWrapper.setText("text message".getBytes(StandardCharsets.UTF_8));
+        txSmRpUiWrapper.setCharset(CharsetWrapper.UTF_8);
+        txSmRpUiWrapper.setText("text message");
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(txSmRpUiWrapper);
     }
 
@@ -60,8 +62,8 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNature().getValue());
         assertTrue(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan()
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan().getValue());
-        String s1 = new String(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getText(),txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getCharset());
-        String s2 = new String(tx.getSm_Rp_Ui().getText(),tx.getSm_Rp_Ui().getCharset());
+        String s1 = new String(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),Charset.forName(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getCharset().getValue()));
+        String s2 = new String(tx.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),Charset.forName(tx.getSm_Rp_Ui().getCharset().getValue()));
 
 
         assertTrue(s1.equals(s2));

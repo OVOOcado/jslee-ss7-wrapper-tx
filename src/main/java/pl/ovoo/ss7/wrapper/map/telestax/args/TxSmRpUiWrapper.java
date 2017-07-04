@@ -1,5 +1,8 @@
 package pl.ovoo.ss7.wrapper.map.telestax.args;
 
+import java.nio.charset.Charset;
+
+import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
 
 
@@ -8,25 +11,34 @@ import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
  */
 public class TxSmRpUiWrapper implements SmRpUiWrapper{
 
-    private byte[] text;
-    private String charset;
+    private String text;
+    private byte[] data;
+    private CharsetWrapper charset;
     private String originatingAddress;
 
     public TxSmRpUiWrapper() {super();}
 
     @Override
-    public byte[] getText() {
+    public String getText() {
         return this.text;
     }
-    public void setText(byte[] text){
+    public void setText(String text){
         this.text = text;
     }
 
     @Override
-    public String getCharset() {
+    public byte[] getData() {
+        return this.data;
+    }
+    public void setData(byte[] data){
+        this.data = data;
+    }
+
+    @Override
+    public CharsetWrapper getCharset() {
         return this.charset;
     }
-    public void setCharset(String charset){
+    public void setCharset(CharsetWrapper charset){
         this.charset = charset;
     }
 

@@ -9,7 +9,6 @@
 package pl.ovoo.ss7.wrapper.map.telestax.args;
 
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import org.mobicents.protocols.ss7.map.api.MAPApplicationContext;
@@ -53,7 +52,6 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtTeleserviceCode;
 import org.mobicents.protocols.ss7.map.api.service.supplementary.SSForBSCode;
 import org.mobicents.protocols.ss7.map.api.service.supplementary.SupplementaryCodeValue;
-import org.mobicents.protocols.ss7.map.primitives.ISDNAddressStringImpl;
 import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
 import org.mobicents.slee.resource.map.MAPContextInterfaceFactory;
 
@@ -68,7 +66,37 @@ import pl.ovoo.ss7.wrapper.common.telestax.TxSccpAddressWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
 import pl.ovoo.ss7.wrapper.map.MobilityMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.args.*;
+import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
+import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper;
+import pl.ovoo.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper;
+import pl.ovoo.ss7.wrapper.map.args.CFInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.CFStatusWrapper;
+import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
+import pl.ovoo.ss7.wrapper.map.args.ForwardedToNumberWrapper;
+import pl.ovoo.ss7.wrapper.map.args.ForwardingReason;
+import pl.ovoo.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPCallForwardingDataWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPErrorWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPExt_BasicServiceCodeWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPForwardingFeatureWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPForwardingInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPLocationInformationWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPRequestedInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPRequestedSubscriptionInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPSS_ForBS_CodeWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPSS_InformationWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
+import pl.ovoo.ss7.wrapper.map.args.MapArgsFactory;
+import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
+import pl.ovoo.ss7.wrapper.map.args.SSCode;
+import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
+import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
+import pl.ovoo.ss7.wrapper.map.args.SubscriberCFInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.TxCallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.TxMobilityMapDialogWrapper;
 
@@ -732,7 +760,7 @@ public class TxMapArgsFactory implements MapArgsFactory {
 	}
 
 	@Override
-	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, String charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi){
+	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress){
 		TxMtForwardShortMessageRequestArgWrapper txMtArg = new TxMtForwardShortMessageRequestArgWrapper();
 
 		TxSmRpDaWrapper smRpDaWrapper = new TxSmRpDaWrapper();
@@ -744,14 +772,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		txMtArg.setSm_Rp_Oa(smRpOaWrapper);
 
 		TxSmRpUiWrapper smRpUiWrapper = new TxSmRpUiWrapper();
-		smRpUiWrapper.setCharset(charset);
-		if(charset.equals("UTF-8")){
-			smRpUiWrapper.setText(text.getBytes(StandardCharsets.UTF_8));
-		}else{
-			smRpUiWrapper.setText(text.getBytes(StandardCharsets.UTF_16BE));
-		}//TODO exception if different charset used
-
-		//smRpUiWrapper.setOriginatingAddress();
+		smRpUiWrapper.setCharset(CharsetWrapper.lookup(charset.name()));
+		smRpUiWrapper.setText(text);
+		smRpUiWrapper.setOriginatingAddress(origAddress);
 		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
 
 		return txMtArg;
