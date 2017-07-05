@@ -142,12 +142,7 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             }*/
             DataCodingScheme dcs = new DataCodingSchemeImpl(dcsVal);
 
-            UserDataHeader udh = null;
-            if (dcs.getCharacterSet() == CharacterSet.GSM8) {
-                ApplicationPortAddressing16BitAddressImpl apa16 = new ApplicationPortAddressing16BitAddressImpl(16020, 0);
-                udh = new UserDataHeaderImpl();
-                udh.addInformationElement(apa16);
-            }
+            UserDataHeader udh = new UserDataHeaderImpl();
             
             UserData userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName(txArg.getSm_Rp_Ui().getCharset().getValue()));
             ProtocolIdentifier pi = new ProtocolIdentifierImpl(0);
