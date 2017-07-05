@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+import org.apache.log4j.Logger;
 import org.mobicents.protocols.asn.AsnInputStream;
 import org.mobicents.protocols.asn.AsnOutputStream;
 import org.mobicents.protocols.ss7.map.api.MAPException;
@@ -37,6 +38,8 @@ public class TxSubscriberCFInfoWrapper implements SubscriberCFInfoWrapper {
     private CFInfoWrapper cFSubscriberNotReachableTS10;
 
     private SubscriberCFInfoImpl subscriberCfInfoImpl;
+
+    private static Logger logger = Logger.getLogger(TxSubscriberCFInfoWrapper.class);
 
     public TxSubscriberCFInfoWrapper(final SubscriberCFInfo subscriberCFInfo) {
         this.subscriberCFInfo = subscriberCFInfo;
@@ -104,6 +107,7 @@ public class TxSubscriberCFInfoWrapper implements SubscriberCFInfoWrapper {
         try {
             this.subscriberCfInfoImpl.decodeData(asnIs, 0);
         } catch (MAPParsingComponentException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         asnIs.close();
@@ -121,6 +125,7 @@ public class TxSubscriberCFInfoWrapper implements SubscriberCFInfoWrapper {
         try {
             this.subscriberCfInfoImpl.encodeData(asnOs);
         } catch (MAPException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         byte[] byteArray = asnOs.toByteArray();

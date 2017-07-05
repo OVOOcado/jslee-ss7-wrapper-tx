@@ -12,11 +12,13 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+import org.apache.log4j.Logger;
 import org.mobicents.protocols.ss7.isup.ParameterException;
 import org.mobicents.protocols.ss7.isup.impl.message.parameter.GenericNumberImpl;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
 import pl.ovoo.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
+
 
 /**
  * TxAssistRequestInstructionsArgWrapper
@@ -30,6 +32,8 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
     private GenericNumber txCorrelationID;
 
     private GenericNumberImpl genericNumberImpl;
+
+    private static Logger logger = Logger.getLogger(TxAssistRequestInstructionsArgWrapper.class);
 
     public TxAssistRequestInstructionsArgWrapper() {
     }
@@ -82,6 +86,7 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         try {
             genericNumberImpl.decode(decodedBytes);
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         this.txCorrelationID = genericNumberImpl;
@@ -95,9 +100,10 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         try {
             encodedBytes = genericNumberImpl.encode();
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
-        out.writeInt(encodedBytes.length);
+        if(encodedBytes != null) out.writeInt(encodedBytes.length);
         out.write(encodedBytes);
     }
 

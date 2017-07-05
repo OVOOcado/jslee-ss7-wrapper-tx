@@ -87,8 +87,8 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
                 AdditionalNumber an = new AdditionalNumberImpl(txArg.getTxMscAddress(),null);
                 lInfo = new LocationInfoWithLMSIImpl(null,null,null,false,an);
             }
-
-            ((MAPDialogSmsWrapper) dialog).addSendRoutingInfoForSMResponse(invoke,txImsi.getTxImsi(),lInfo,null,false);
+            if(txImsi != null)
+                ((MAPDialogSmsWrapper) dialog).addSendRoutingInfoForSMResponse(invoke,txImsi.getTxImsi(),lInfo,null,false);
         }catch(MAPException e){
             throw new Ss7WrapperException(e);
         }

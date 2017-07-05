@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+import org.apache.log4j.Logger;
 import org.mobicents.protocols.ss7.isup.ParameterException;
 import org.mobicents.protocols.ss7.isup.impl.message.parameter.GenericNumberImpl;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericDigits;
@@ -28,6 +29,8 @@ public class TxGenericNumberWrapper implements GenericNumberWrapper {
     private GenericNumber genericNumber;
 
     private GenericNumberImpl genericNumberImpl;
+
+    private static Logger logger = Logger.getLogger(TxGenericNumberWrapper.class);
 
     public TxGenericNumberWrapper(final GenericNumber genericNumber) {
         this.genericNumber = genericNumber;
@@ -132,6 +135,7 @@ public class TxGenericNumberWrapper implements GenericNumberWrapper {
         try {
             genericNumberImpl.decode(decodedBytes);
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
         this.genericNumber = genericNumberImpl;
@@ -146,9 +150,10 @@ public class TxGenericNumberWrapper implements GenericNumberWrapper {
         try {
             encodedBytes = genericNumberImpl.encode();
         } catch (ParameterException e) {
+            logger.info(e);
             e.printStackTrace();
         }
-        out.writeInt(encodedBytes.length);
+        if(encodedBytes != null) out.writeInt(encodedBytes.length);
         out.write(encodedBytes);
     }
 

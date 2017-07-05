@@ -12,6 +12,7 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2AssistRequestInstructionsArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper;
 import pl.ovoo.ss7.wrapper.cap.telestax.args.TxAssistRequestInstructionsArgWrapper;
+import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 
 /**
  * TxAssistRequestInstructionsArgWrapper
@@ -35,6 +36,13 @@ public class TxCap2AssistRequestInstructionsArgWrapper extends TxAssistRequestIn
             this.txIpsspCapabilities = txCap2IPSSPCapabilitiesWrapper.getTxIpsspCapabilities();
             this.cap2ipsspCapabilitiesWrapper = txCap2IPSSPCapabilitiesWrapper;
         }
+    }
+
+    public Cap2IPSSPCapabilitiesWrapper getIPSSPCapabilitiesWrapper() {
+        if(this.cap2ipsspCapabilitiesWrapper ==null&&this.txIpsspCapabilities !=null) {
+            this.cap2ipsspCapabilitiesWrapper = new TxCap2IPSSPCapabilitiesWrapper(txIpsspCapabilities);
+        }
+        return this.cap2ipsspCapabilitiesWrapper;
     }
 
     public IPSSPCapabilities getTxIpsspCapabilities() {

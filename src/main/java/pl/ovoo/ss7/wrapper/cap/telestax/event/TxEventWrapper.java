@@ -31,7 +31,7 @@ public class TxEventWrapper implements EventWrapper {
 
     private final ActivityContextInterface aci;
     private final CAPDialog dialog;
-    private CAPProvider capProvider;
+    //private CAPProvider capProvider;
     private final CAPMessage capMessage;
 
     public TxEventWrapper(final ActivityContextInterface aci, CAPMessage capMessage) {
@@ -51,10 +51,12 @@ public class TxEventWrapper implements EventWrapper {
 
             switch (dialog.getApplicationContext()) {
                 case CapV1_gsmSSF_to_gsmSCF:
-                    txCap1CallCapDialogWrapper = new TxCap1CallCapDialogWrapper((CAPDialogCircuitSwitchedCall) dialog, capProvider);
+                    //txCap1CallCapDialogWrapper = new TxCap1CallCapDialogWrapper((CAPDialogCircuitSwitchedCall) dialog, capProvider);
+                    txCap1CallCapDialogWrapper = new TxCap1CallCapDialogWrapper((CAPDialogCircuitSwitchedCall) dialog, null);
                     break;
                 default:
-                    txCap1CallCapDialogWrapper = new TxCap2CallCapDialogWrapper((CAPDialogCircuitSwitchedCall) dialog, capProvider);
+                    //txCap1CallCapDialogWrapper = new TxCap2CallCapDialogWrapper((CAPDialogCircuitSwitchedCall) dialog, capProvider);
+                    txCap1CallCapDialogWrapper = new TxCap2CallCapDialogWrapper((CAPDialogCircuitSwitchedCall) dialog, null);
 
             }
             txCap1CallCapDialogWrapper.setActivityContextInterface(aci);
