@@ -1,6 +1,7 @@
 package pl.ovoo.ss7.wrapper.map.telestax;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -44,6 +45,7 @@ import org.mobicents.slee.resource.map.service.sms.wrappers.MAPDialogSmsWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.map.SMSMapDialogWrapper;
+import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
@@ -133,10 +135,10 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             UserDataHeader udh = new UserDataHeaderImpl();
 
             UserData userData;
-            if(txArg.getSm_Rp_Ui().getCharset().getValue() != 8) {
-                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName("UTF-8"));
+            if(txArg.getSm_Rp_Ui().getCharset() == DataCodingWrapper.UCS2) {
+                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, StandardCharsets.UTF_16BE);
             }else{
-                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName("UTF-16BE"));
+                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, StandardCharsets.UTF_8);
             }
             ProtocolIdentifier pi = new ProtocolIdentifierImpl(0);
             SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(txArg.getMoreMessagesToSend(), false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
