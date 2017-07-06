@@ -146,7 +146,7 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             
             UserData userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName(txArg.getSm_Rp_Ui().getCharset().getValue()));
             ProtocolIdentifier pi = new ProtocolIdentifierImpl(0);
-            SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(false, false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
+            SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(txArg.getMoreMessagesToSend(), false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
             SmsSignalInfo si = new SmsSignalInfoImpl(tpdu, null);
 
             return dialog.addMtForwardShortMessageRequest((int)timeout,sm_rp_da,sm_rp_oa,si,false,null).intValue();

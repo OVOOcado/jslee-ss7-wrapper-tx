@@ -676,7 +676,7 @@ public class TxMapArgsFactory implements MapArgsFactory {
 	}
 
 	@Override
-	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress){
+	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress, boolean moreMessagesToSend){
 		TxMtForwardShortMessageRequestArgWrapper txMtArg = new TxMtForwardShortMessageRequestArgWrapper();
 
 		TxSmRpDaWrapper smRpDaWrapper = new TxSmRpDaWrapper();
@@ -692,6 +692,8 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		smRpUiWrapper.setText(text);
 		smRpUiWrapper.setOriginatingAddress(origAddress);
 		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
+		
+		txMtArg.setMoreMessagesToSend(moreMessagesToSend);
 
 		return txMtArg;
 	}

@@ -49,6 +49,8 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         txSmRpUiWrapper.setCharset(CharsetWrapper.UTF_8);
         txSmRpUiWrapper.setText("text message");
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(txSmRpUiWrapper);
+        
+        txMtForwardShortMessageRequestArgWrapper.setMoreMessagesToSend(true);
     }
 
     @Override
@@ -62,6 +64,7 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNature().getValue());
         assertTrue(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan()
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan().getValue());
+        assertTrue(txMtForwardShortMessageRequestArgWrapper.getMoreMessagesToSend());
         String s1 = new String(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),Charset.forName(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getCharset().getValue()));
         String s2 = new String(tx.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),Charset.forName(tx.getSm_Rp_Ui().getCharset().getValue()));
 
