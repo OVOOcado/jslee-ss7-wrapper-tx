@@ -20,6 +20,7 @@ import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
+import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxMtForwardShortMessageRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpOaWrapper;
@@ -46,7 +47,7 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Oa(txSmRpOaWrapper);
 
         TxSmRpUiWrapper txSmRpUiWrapper = new TxSmRpUiWrapper();
-        txSmRpUiWrapper.setCharset(CharsetWrapper.UTF_8);
+        txSmRpUiWrapper.setCharset(DataCodingWrapper.GSM7);
         txSmRpUiWrapper.setText("text message");
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(txSmRpUiWrapper);
         
@@ -65,12 +66,23 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         assertTrue(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan()
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan().getValue());
         assertTrue(txMtForwardShortMessageRequestArgWrapper.getMoreMessagesToSend());
-        String s1 = new String(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),Charset.forName(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getCharset().getValue()));
-        String s2 = new String(tx.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),Charset.forName(tx.getSm_Rp_Ui().getCharset().getValue()));
+        String s1 = new String(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),getCharsetFromGsmCoding(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getCharset().getValue()));
+        String s2 = new String(tx.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),getCharsetFromGsmCoding(tx.getSm_Rp_Ui().getCharset().getValue()));
 
 
         assertTrue(s1.equals(s2));
 
     }
 
+    public static Charset getCharsetFromGsmCoding(int value){
+        switch(value){
+            case 0:
+            case 4:
+                return StandardCharsets.UTF_8;
+            case 8:
+                return StandardCharsets.UTF_16BE;
+            default:
+                return null;
+        }
+    }
 }

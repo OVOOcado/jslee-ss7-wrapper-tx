@@ -3,6 +3,7 @@ package pl.ovoo.ss7.wrapper.map.telestax.args;
 import java.nio.charset.Charset;
 
 import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
+import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
 
 
@@ -13,7 +14,7 @@ public class TxSmRpUiWrapper implements SmRpUiWrapper{
 
     private String text;
     private byte[] data;
-    private CharsetWrapper charset;
+    private DataCodingWrapper charset;
     private String originatingAddress;
 
     public TxSmRpUiWrapper() {super();}
@@ -35,10 +36,10 @@ public class TxSmRpUiWrapper implements SmRpUiWrapper{
     }
 
     @Override
-    public CharsetWrapper getCharset() {
+    public DataCodingWrapper getCharset() {
         return this.charset;
     }
-    public void setCharset(CharsetWrapper charset){
+    public void setCharset(DataCodingWrapper charset){
         this.charset = charset;
     }
 

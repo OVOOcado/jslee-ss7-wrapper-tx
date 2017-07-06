@@ -128,23 +128,16 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             int tz = cld.get(Calendar.ZONE_OFFSET);
             AbsoluteTimeStamp serviceCentreTimeStamp = new AbsoluteTimeStampImpl(year - 2000, mon, day, h, m, s, tz / 1000 / 60 / 15);
 
-            int dcsVal = 0;
-            /*switch (txArg.getSm_Rp_Ui().getCharset()) {
-            case GSM7:
-                dcsVal = 0;
-                break;
-            case GSM8:
-                dcsVal = 4;
-                break;
-            case UCS2:
-                dcsVal = 8;
-                break;
-            }*/
-            DataCodingScheme dcs = new DataCodingSchemeImpl(dcsVal);
+            DataCodingScheme dcs = new DataCodingSchemeImpl(txArg.getSm_Rp_Ui().getCharset().getValue());
 
             UserDataHeader udh = new UserDataHeaderImpl();
-            
-            UserData userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName(txArg.getSm_Rp_Ui().getCharset().getValue()));
+
+            UserData userData;
+            if(txArg.getSm_Rp_Ui().getCharset().getValue() != 8) {
+                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName("UTF-8"));
+            }else{
+                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, Charset.forName("UTF-16BE"));
+            }
             ProtocolIdentifier pi = new ProtocolIdentifierImpl(0);
             SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(txArg.getMoreMessagesToSend(), false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
             SmsSignalInfo si = new SmsSignalInfoImpl(tpdu, null);

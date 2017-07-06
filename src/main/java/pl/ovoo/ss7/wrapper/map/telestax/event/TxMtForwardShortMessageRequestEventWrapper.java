@@ -11,6 +11,7 @@ import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
+import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper;
@@ -48,7 +49,7 @@ public class TxMtForwardShortMessageRequestEventWrapper extends TxMapEventWrappe
 
         TxSmRpUiWrapper sm_rp_ui = new TxSmRpUiWrapper();
         sm_rp_ui.setData(mtForwardShortMessageRequest.getSM_RP_UI().getData());
-        sm_rp_ui.setCharset(CharsetWrapper.lookup(mtForwardShortMessageRequest.getSM_RP_UI().getGsm8Charset().name()));
+        sm_rp_ui.setCharset(DataCodingWrapper.lookup(mtForwardShortMessageRequest.getSM_RP_UI().getGsm8Charset().name()));
         
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(sm_rp_ui);
 
