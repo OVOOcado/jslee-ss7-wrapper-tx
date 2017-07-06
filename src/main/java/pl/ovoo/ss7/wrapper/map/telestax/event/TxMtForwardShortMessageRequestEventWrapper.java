@@ -1,27 +1,18 @@
 package pl.ovoo.ss7.wrapper.map.telestax.event;
 
-import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
-import org.mobicents.protocols.ss7.map.api.service.sms.MtForwardShortMessageRequest;
+import javax.slee.ActivityContextInterface;
 
-import org.mobicents.protocols.ss7.map.api.service.sms.SM_RP_DA;
+import org.mobicents.protocols.ss7.map.api.service.sms.MtForwardShortMessageRequest;
 import org.mobicents.protocols.ss7.map.primitives.ISDNAddressStringImpl;
-import org.mobicents.protocols.ss7.map.service.sms.SM_RP_DAImpl;
-import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
+
 import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
 import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxMtForwardShortMessageRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpOaWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmRpUiWrapper;
-
-import javax.slee.ActivityContextInterface;
-import java.nio.charset.StandardCharsets;
 
 /**
  * Created by karolsimka on 08.06.17.

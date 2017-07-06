@@ -1,8 +1,5 @@
 package pl.ovoo.ss7.wrapper.map.telestax.args;
 
-import java.nio.charset.Charset;
-
-import pl.ovoo.ss7.wrapper.map.args.CharsetWrapper;
 import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
 
