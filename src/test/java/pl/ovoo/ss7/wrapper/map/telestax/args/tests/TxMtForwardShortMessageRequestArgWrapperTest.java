@@ -1,6 +1,7 @@
 package pl.ovoo.ss7.wrapper.map.telestax.args.tests;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -49,9 +50,12 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         TxSmRpUiWrapper txSmRpUiWrapper = new TxSmRpUiWrapper();
         txSmRpUiWrapper.setCharset(DataCodingWrapper.GSM7);
         txSmRpUiWrapper.setText("text message");
+        txSmRpUiWrapper.setIsConcatened(true);
+        txSmRpUiWrapper.setMoreMessagesToSend(true);
+        txSmRpUiWrapper.setMessageRef(1);
+        txSmRpUiWrapper.setSegmCnt(2);
+        txSmRpUiWrapper.setSegmNum(1);
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(txSmRpUiWrapper);
-        
-        txMtForwardShortMessageRequestArgWrapper.setMoreMessagesToSend(true);
     }
 
     @Override
@@ -65,7 +69,11 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNature().getValue());
         assertTrue(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan()
                 .getValue() == tx.getSm_Rp_Oa().getServiceCentreAddressOA().getNumberingPlan().getValue());
-        assertTrue(txMtForwardShortMessageRequestArgWrapper.getMoreMessagesToSend());
+        assertTrue(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getMoreMessagesToSend());
+        assertTrue(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getIsConcatened());
+        assertEquals(1, txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getMessageRef());
+        assertEquals(2, txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getSegmCnt());
+        assertEquals(1, txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getSegmNum());
         String s1 = new String(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),getCharsetFromGsmCoding(txMtForwardShortMessageRequestArgWrapper.getSm_Rp_Ui().getCharset().getValue()));
         String s2 = new String(tx.getSm_Rp_Ui().getText().getBytes(StandardCharsets.UTF_8),getCharsetFromGsmCoding(tx.getSm_Rp_Ui().getCharset().getValue()));
 

@@ -646,7 +646,8 @@ public class TxMapArgsFactory implements MapArgsFactory {
 	}
 
 	@Override
-	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress, boolean moreMessagesToSend){
+	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress, boolean moreMessagesToSend,
+			boolean isConcatened, int msgRef, int segmCnt, int segmNum){
 		TxMtForwardShortMessageRequestArgWrapper txMtArg = new TxMtForwardShortMessageRequestArgWrapper();
 
 		TxSmRpDaWrapper smRpDaWrapper = new TxSmRpDaWrapper();
@@ -661,10 +662,12 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		smRpUiWrapper.setCharset(DataCodingWrapper.lookup(charset.name()));
 		smRpUiWrapper.setText(text);
 		smRpUiWrapper.setOriginatingAddress(origAddress);
+		smRpUiWrapper.setMoreMessagesToSend(moreMessagesToSend);
+		smRpUiWrapper.setIsConcatened(isConcatened);
+		smRpUiWrapper.setMessageRef(msgRef);
+		smRpUiWrapper.setSegmCnt(segmCnt);
+		smRpUiWrapper.setSegmNum(segmNum);
 		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
-		
-		txMtArg.setMoreMessagesToSend(moreMessagesToSend);
-
 		return txMtArg;
 	}
 }

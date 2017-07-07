@@ -14,7 +14,6 @@ public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortM
     private SmRpDaWrapper smRpDaWrapper;
     private SmRpOaWrapper smRpOaWrapper;
     private SmRpUiWrapper smRpUiWrapper;
-    private boolean moreMessagesToSend;
 
     public TxMtForwardShortMessageRequestArgWrapper() {
         super();
@@ -42,14 +41,6 @@ public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortM
     }
     public void setSm_Rp_Oa(SmRpOaWrapper sm_rp_oa){
         this.smRpOaWrapper = sm_rp_oa;
-    }
-
-    @Override
-    public boolean getMoreMessagesToSend(){
-    	return this.moreMessagesToSend;
-    }
-    public void setMoreMessagesToSend(boolean moreMessagesToSend){
-        this.moreMessagesToSend = moreMessagesToSend;
     }
 
     @Override

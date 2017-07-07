@@ -35,6 +35,7 @@ import org.mobicents.protocols.ss7.map.service.sms.SmsSignalInfoImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.AbsoluteTimeStampImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.AddressFieldImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.ApplicationPortAddressing16BitAddressImpl;
+import org.mobicents.protocols.ss7.map.smstpdu.ConcatenatedShortMessagesIdentifierImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.DataCodingSchemeImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.ProtocolIdentifierImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.SmsDeliverTpduImpl;
@@ -49,6 +50,7 @@ import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
+import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxMtForwardShortMessageRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMResponseWrapper;
@@ -106,20 +108,12 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
 
             SM_RP_OAImpl sm_rp_oa = new SM_RP_OAImpl();
             AddressString aNumber = new AddressStringImpl(AddressNature.international_number, NumberingPlan.ISDN,txArg.getSm_Rp_Oa().getServiceCentreAddressOA().getAddress());
-            sm_rp_oa.setServiceCentreAddressOA(aNumber);
-
-            /*byte[] text = txArg.getSm_Rp_Ui().getText();
-            SmsSignalInfo smsSignalInfo = null;
-            if(txArg.getSm_Rp_Ui().getCharset().equals("UTF-8")){
-                smsSignalInfo = new SmsSignalInfoImpl(text,StandardCharsets.UTF_8);
-            }else{
-                smsSignalInfo = new SmsSignalInfoImpl(text,StandardCharsets.UTF_16BE);
-            }*/
+            sm_rp_oa.setServiceCentreAddressOA(aNumber);           
             
-            
+            SmRpUiWrapper smRpUi = txArg.getSm_Rp_Ui();
             
             AddressField originatingAddress = new AddressFieldImpl(
-            		TypeOfNumber.InternationalNumber, NumberingPlanIdentification.ISDNTelephoneNumberingPlan, txArg.getSm_Rp_Ui().getOriginatingAddress());
+            		TypeOfNumber.InternationalNumber, NumberingPlanIdentification.ISDNTelephoneNumberingPlan, smRpUi.getOriginatingAddress());
             Calendar cld = new GregorianCalendar();
             int year = cld.get(Calendar.YEAR);
             int mon = cld.get(Calendar.MONTH);
@@ -130,18 +124,23 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             int tz = cld.get(Calendar.ZONE_OFFSET);
             AbsoluteTimeStamp serviceCentreTimeStamp = new AbsoluteTimeStampImpl(year - 2000, mon, day, h, m, s, tz / 1000 / 60 / 15);
 
-            DataCodingScheme dcs = new DataCodingSchemeImpl(txArg.getSm_Rp_Ui().getCharset().getValue());
-
+            DataCodingScheme dcs = new DataCodingSchemeImpl(smRpUi.getCharset().getValue());
+            
+            boolean is16bit = smRpUi.getCharset() == DataCodingWrapper.UCS2 ? true : false;
             UserDataHeader udh = new UserDataHeaderImpl();
-
+            if(smRpUi.getIsConcatened()){
+            	udh.addInformationElement(new ConcatenatedShortMessagesIdentifierImpl(is16bit, smRpUi.getMessageRef(),
+            			smRpUi.getSegmCnt(), smRpUi.getSegmNum()));
+            }
+            
             UserData userData;
-            if(txArg.getSm_Rp_Ui().getCharset() == DataCodingWrapper.UCS2) {
-                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, StandardCharsets.UTF_16BE);
+            if(smRpUi.getCharset() == DataCodingWrapper.UCS2) {
+                userData = new UserDataImpl(smRpUi.getText(), dcs, udh, StandardCharsets.UTF_16BE);
             }else{
-                userData = new UserDataImpl(txArg.getSm_Rp_Ui().getText(), dcs, udh, StandardCharsets.UTF_8);
+                userData = new UserDataImpl(smRpUi.getText(), dcs, udh, StandardCharsets.UTF_8);
             }
             ProtocolIdentifier pi = new ProtocolIdentifierImpl(0);
-            SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(txArg.getMoreMessagesToSend(), false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
+            SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(smRpUi.getMoreMessagesToSend(), false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
             SmsSignalInfo si = new SmsSignalInfoImpl(tpdu, null);
 
             return dialog.addMtForwardShortMessageRequest((int)timeout,sm_rp_da,sm_rp_oa,si,false,null).intValue();
