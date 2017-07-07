@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -44,11 +44,11 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwOptionsForwardingReason;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtSSStatus;
 
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPCallForwardingDataWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPCallForwardingDataWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPExt_ForwFeatureWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPExt_ForwFeatureWrapper;
 
 public class TxMAPCallForwardingDataWrapperTest extends WrapperBaseTest {
 

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.CAPProvider;
@@ -52,25 +52,25 @@ import pl.ovoo.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.ReleaseCallArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallInformationReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCancelArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxEstablishTemporaryConnectionArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxEventReportBCSMArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxFurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxPlayAnnouncementArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxRequestReportBCSMEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2AssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCancelArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxConnectArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEstablishTemporaryConnectionArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEventReportBCSMArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxFurnishChargingInformationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxPlayAnnouncementArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRequestReportBCSMEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AssistRequestInstructionsArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2FurnishChargingInformationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
 
 /**
  * TxSmsCapDialogWrapperImpl

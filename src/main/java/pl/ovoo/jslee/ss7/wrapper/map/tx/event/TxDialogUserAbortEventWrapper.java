@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.slee.resource.map.events.DialogUserAbort;
 import pl.ovoo.ss7.wrapper.map.event.DialogUserAbortEventWrapper;

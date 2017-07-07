@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -29,10 +29,10 @@ import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.isup.message.parameter.CauseIndicators;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCauseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.CauseWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCauseWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxReleaseCallArgWrapperTest extends WrapperBaseTest {

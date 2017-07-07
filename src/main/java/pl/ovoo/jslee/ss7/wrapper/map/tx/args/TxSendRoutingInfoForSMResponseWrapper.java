@@ -18,14 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
 
 /**

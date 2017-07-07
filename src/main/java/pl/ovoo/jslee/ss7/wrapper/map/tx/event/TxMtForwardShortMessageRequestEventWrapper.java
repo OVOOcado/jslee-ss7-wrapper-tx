@@ -18,21 +18,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import javax.slee.ActivityContextInterface;
 
 import org.mobicents.protocols.ss7.map.api.service.sms.MtForwardShortMessageRequest;
 import org.mobicents.protocols.ss7.map.primitives.ISDNAddressStringImpl;
 
-import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpDaWrapper;
 import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSmRpDaWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSmRpOaWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSmRpUiWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpOaWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpUiWrapper;
 
 /**
  * Created by karolsimka on 08.06.17.

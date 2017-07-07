@@ -18,14 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.RequestReportBCSMEventRequest;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.RequestReportBCSMEventRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxRequestReportBCSMEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap1.TxCap1RequestReportBCSMEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRequestReportBCSMEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1RequestReportBCSMEventArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 

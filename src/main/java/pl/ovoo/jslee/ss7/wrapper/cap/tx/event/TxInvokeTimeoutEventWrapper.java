@@ -23,7 +23,7 @@
  *  
  * @author adam.skimina@ovoo.pl
  */
-package pl.ovoo.ss7.wrapper.cap.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import javax.slee.ActivityContextInterface;
 

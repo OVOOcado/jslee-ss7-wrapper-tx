@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.InsertSubscriberDataResponse;
 import pl.ovoo.ss7.wrapper.map.args.InsertSubscriberDataResponseWrapper;
 import pl.ovoo.ss7.wrapper.map.event.InsertSubscriberDataResultEventWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxInsertSubscriberDataResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataResponseWrapper;
 
 import javax.slee.ActivityContextInterface;
 

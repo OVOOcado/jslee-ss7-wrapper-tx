@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -68,15 +68,15 @@ import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxAddressStringWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
 import pl.ovoo.ss7.wrapper.map.MobilityMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.*;
-import pl.ovoo.ss7.wrapper.map.tx.TxCallHandlingMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.TxMobilityMapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.TxCallHandlingMapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.TxMobilityMapDialogWrapper;
 
 /**
  * TxArgsFactory

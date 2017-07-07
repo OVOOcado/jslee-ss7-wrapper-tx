@@ -18,10 +18,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.cap3;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3;
 
 import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
 
 /**
  * TxCap3InitialDPArgWrapper

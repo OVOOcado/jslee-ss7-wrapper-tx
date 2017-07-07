@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx;
+package pl.ovoo.jslee.ss7.wrapper.map.tx;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
@@ -60,17 +60,17 @@ import org.mobicents.protocols.ss7.map.smstpdu.UserDataHeaderImpl;
 import org.mobicents.protocols.ss7.map.smstpdu.UserDataImpl;
 import org.mobicents.slee.resource.map.service.sms.wrappers.MAPDialogSmsWrapper;
 
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.map.SMSMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
 
 /**
  * Created by karolsimka on 26.06.17.

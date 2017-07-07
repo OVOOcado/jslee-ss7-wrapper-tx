@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -49,7 +49,7 @@ import org.mobicents.protocols.ss7.map.api.service.supplementary.SupplementaryCo
 
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPSS_InformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSS_InformationWrapper;
 
 public class TxMAPSS_InformationWrapperTest extends WrapperBaseTest {
 

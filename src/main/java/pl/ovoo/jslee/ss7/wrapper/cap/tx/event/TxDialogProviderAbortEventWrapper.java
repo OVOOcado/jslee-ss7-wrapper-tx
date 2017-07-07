@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.slee.resource.cap.events.DialogProviderAbort;
 import pl.ovoo.ss7.wrapper.cap.args.PAbortCauseType;

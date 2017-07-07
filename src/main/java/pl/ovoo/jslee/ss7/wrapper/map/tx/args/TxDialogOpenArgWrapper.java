@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.MAPDialog;
 import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
 import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.DialogOpenArgWrapper;
 
 /**

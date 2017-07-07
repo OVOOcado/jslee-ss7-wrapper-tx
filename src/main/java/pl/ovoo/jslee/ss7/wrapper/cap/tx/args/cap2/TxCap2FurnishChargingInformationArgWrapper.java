@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.cap2;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.FCIBCCCAMELsequence1;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxFurnishChargingInformationArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2FCIBCCCAMELsequence1Wrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxFurnishChargingInformationArgWrapper;
 
 /**
  * TxCap2FurnishChargingInformationArgWrapper

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.CalledPartyBCDNumber;
 import org.mobicents.protocols.ss7.cap.api.primitives.TimeAndTimezone;
@@ -36,11 +36,11 @@ import pl.ovoo.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
 import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.MAPLocationInformationWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
 public class TxInitialDPSMSArgWrapper implements InitialDPSMSArgWrapper {
 

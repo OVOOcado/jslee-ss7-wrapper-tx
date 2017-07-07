@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.*;
 
@@ -31,7 +31,7 @@ import org.mobicents.protocols.ss7.cap.api.isup.BearerCap;
 import org.mobicents.protocols.ss7.isup.message.parameter.UserServiceInformation;
 import org.mobicents.protocols.ss7.isup.message.parameter.UserServiceInformationBase;
 
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxBearerCapWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBearerCapWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxBearerCapWrapperTest extends WrapperBaseTest {

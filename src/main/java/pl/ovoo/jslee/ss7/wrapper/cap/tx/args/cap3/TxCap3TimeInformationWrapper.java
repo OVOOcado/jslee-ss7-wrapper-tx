@@ -18,11 +18,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.cap3;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.TimeInformation;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2TimeInformationWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3TimeInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2TimeInformationWrapper;
 
 /**
  * TxCap3TimeInformationWrapper

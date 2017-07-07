@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -33,11 +33,11 @@ import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
-import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 
 public class TxSendRoutingInfoForSMResponseWrapperTest extends WrapperBaseTest {
     TxSendRoutingInfoForSMResponseWrapper txSendRoutingInfoForSMResponseWrapper;

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ReleaseCallRequest;
@@ -26,7 +26,7 @@ import org.mobicents.protocols.ss7.isup.message.parameter.CauseIndicators;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.ReleaseCallArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.ReleaseCallRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 

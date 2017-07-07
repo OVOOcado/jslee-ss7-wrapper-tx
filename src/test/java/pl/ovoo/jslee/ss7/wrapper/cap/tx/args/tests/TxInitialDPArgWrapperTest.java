@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -51,14 +51,14 @@ import pl.ovoo.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.RedirectionInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxBearerCapabilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCalledPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxHighLayerCompatibilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxRedirectingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxRedirectionInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBearerCapabilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxHighLayerCompatibilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRedirectingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRedirectionInformationWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxInitialDPArgWrapperTest extends WrapperBaseTest {

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx;
+package pl.ovoo.jslee.ss7.wrapper.map.tx;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +28,10 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.MAPDialogMobility;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtSSInfo;
 import org.mobicents.slee.resource.map.service.mobility.wrappers.MAPDialogMobilityWrapper;
 
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataArg_v1Wrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSubscriberCFInfoWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.map.MobilityMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
@@ -36,10 +40,6 @@ import pl.ovoo.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper;
 import pl.ovoo.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
 import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SubscriberCFInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxInsertSubscriberDataArg_v1Wrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSubscriberCFInfoWrapper;
 
 /**
  * TxMapDialogWrapperImpl

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.common.tx;
+package pl.ovoo.jslee.ss7.wrapper.common.tx;
 
 
 import org.mobicents.protocols.ss7.indicator.RoutingIndicator;

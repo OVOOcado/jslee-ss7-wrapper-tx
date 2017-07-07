@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.*;
 
@@ -30,9 +30,9 @@ import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.isup.CallingPartyNumberCap;
 import org.mobicents.protocols.ss7.isup.message.parameter.CallingPartyNumber;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallingPartyNumberWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallingPartyNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCallingPartyNumberWrapperTest extends WrapperBaseTest {

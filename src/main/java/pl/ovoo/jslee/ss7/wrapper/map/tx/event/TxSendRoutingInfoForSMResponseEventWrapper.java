@@ -18,14 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.sms.SendRoutingInfoForSMResponse;
-import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
 import pl.ovoo.ss7.wrapper.map.event.SendRoutingInfoForSMResponseEventWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
 
 import javax.slee.ActivityContextInterface;
 

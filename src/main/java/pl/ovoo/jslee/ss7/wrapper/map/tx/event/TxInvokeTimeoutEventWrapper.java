@@ -23,7 +23,7 @@
  *  
  * @author adam.skimina@ovoo.pl
  */
-package pl.ovoo.ss7.wrapper.map.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import javax.slee.ActivityContextInterface;
 

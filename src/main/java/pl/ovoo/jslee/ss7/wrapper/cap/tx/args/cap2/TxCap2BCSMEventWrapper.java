@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.cap2;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.BCSMEvent;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2BCSMEventWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2DPSpecificCriteriaWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxBCSMEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBCSMEventWrapper;
 
 /**
  * OcCap2BCSTxCap2BCSMEventWrapperMEventWrapper

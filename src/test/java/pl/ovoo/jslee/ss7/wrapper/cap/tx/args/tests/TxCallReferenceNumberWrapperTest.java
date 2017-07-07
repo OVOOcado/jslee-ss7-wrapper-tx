@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -29,7 +29,7 @@ import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.CallReferenceNumber;
 
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallReferenceNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallReferenceNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCallReferenceNumberWrapperTest extends WrapperBaseTest {

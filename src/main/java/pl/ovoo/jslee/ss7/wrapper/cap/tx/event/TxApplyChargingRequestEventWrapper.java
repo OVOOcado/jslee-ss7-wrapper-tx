@@ -18,15 +18,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.event;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ApplyChargingRequest;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3ApplyChargingArgWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.ApplyChargingArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.ApplyChargingRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.TxApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.tx.args.cap3.TxCap3ApplyChargingArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 

@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.tx.args.tests;
+package pl.ovoo.jslee.ss7.wrapper.map.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -74,13 +74,13 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.CSGId;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.LSAIdentity;
 
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationResultWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SubscriberCFInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationResultWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.tx.args.TxSubscriberCFInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSubscriberCFInfoWrapper;
 
 public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
 

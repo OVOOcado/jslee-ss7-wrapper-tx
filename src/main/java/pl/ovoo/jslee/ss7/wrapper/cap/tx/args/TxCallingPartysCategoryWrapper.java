@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.tx.args;
+package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.inap.api.isup.CallingPartysCategoryInap;
