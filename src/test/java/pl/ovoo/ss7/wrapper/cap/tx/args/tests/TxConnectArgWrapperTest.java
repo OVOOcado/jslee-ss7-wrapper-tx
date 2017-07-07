@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -38,10 +38,10 @@ import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxCalledPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxOriginalCalledNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxRedirectingPartyNumberWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxCalledPartyNumberWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxConnectArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxRedirectingPartyNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxConnectArgWrapperTest extends WrapperBaseTest {

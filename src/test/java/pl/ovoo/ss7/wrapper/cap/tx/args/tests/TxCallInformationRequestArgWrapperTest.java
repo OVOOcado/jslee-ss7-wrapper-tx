@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -28,7 +28,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationType;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxCallInformationRequestArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCallInformationRequestArgWrapperTest extends WrapperBaseTest {

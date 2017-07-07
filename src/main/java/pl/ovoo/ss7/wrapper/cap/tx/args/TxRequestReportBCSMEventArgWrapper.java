@@ -18,15 +18,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args;
+package pl.ovoo.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.BCSMEvent;
-import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.SMSEvent;
 
 import pl.ovoo.ss7.wrapper.cap.args.BCSMEventWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SMSEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.cap2.TxCap2BCSMEventWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2BCSMEventWrapper;
 
 import java.util.ArrayList;
 

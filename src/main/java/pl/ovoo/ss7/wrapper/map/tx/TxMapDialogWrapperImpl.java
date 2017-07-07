@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax;
+package pl.ovoo.ss7.wrapper.map.tx;
 
 import javax.slee.ActivityContextInterface;
 
@@ -36,8 +36,8 @@ import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
 import pl.ovoo.ss7.wrapper.map.MapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MAPErrorWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxMAPErrorWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxMAPUserAbortChoiceWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPErrorWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPUserAbortChoiceWrapper;
 
 /**
  * TxMapDialogWrapperImpl

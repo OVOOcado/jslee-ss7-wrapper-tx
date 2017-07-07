@@ -18,14 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.event;
+package pl.ovoo.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.MAPMessage;
 import org.mobicents.slee.resource.map.events.MAPEvent;
 import pl.ovoo.ss7.wrapper.map.args.DialogOpenArgWrapper;
 import pl.ovoo.ss7.wrapper.map.event.DialogOpenRequestEventWrapper;
 import pl.ovoo.ss7.wrapper.map.event.MapEventWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxDialogOpenArgWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxDialogOpenArgWrapper;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.slee.ActivityContextInterface;

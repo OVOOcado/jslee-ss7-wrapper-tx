@@ -18,13 +18,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.event;
+package pl.ovoo.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.sms.ReportSMDeliveryStatusRequest;
 import pl.ovoo.ss7.wrapper.common.args.SmDeliveryOutcome;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.event.SmsDeliverTpduEventWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxSmsDeliverTpduWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxSmsDeliverTpduWrapper;
 
 import javax.slee.ActivityContextInterface;
 

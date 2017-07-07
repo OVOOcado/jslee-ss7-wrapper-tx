@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.*;
 
@@ -28,7 +28,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
 
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxAChBillingChargingCharacteristicsWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxAChBillingChargingCharacteristicsWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxAChBillingChargingCharacteristicsWrapperTest extends WrapperBaseTest {

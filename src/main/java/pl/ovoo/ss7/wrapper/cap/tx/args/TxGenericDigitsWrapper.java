@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args;
+package pl.ovoo.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericDigits;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;

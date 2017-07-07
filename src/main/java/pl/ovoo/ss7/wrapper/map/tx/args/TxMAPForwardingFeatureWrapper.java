@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.args;
+package pl.ovoo.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwFeature;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtSSStatus;
 import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.MAPForwardingFeatureWrapper;
 import pl.ovoo.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
 

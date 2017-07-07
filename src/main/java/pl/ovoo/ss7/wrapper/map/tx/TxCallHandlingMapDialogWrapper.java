@@ -18,20 +18,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax;
+package pl.ovoo.ss7.wrapper.map.tx;
 
 import org.mobicents.protocols.ss7.map.api.MAPException;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.InterrogationType;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.MAPDialogCallHandling;
 import org.mobicents.slee.resource.map.service.callhandling.wrappers.MAPDialogCallHandlingWrapper;
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
+import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoResponseWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoRequestArgWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
 
 /**
  * TxCallHandlingMapDialogWrapper

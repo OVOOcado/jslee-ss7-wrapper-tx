@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.map.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -41,9 +41,9 @@ import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.ss7.wrapper.map.args.CFStatusWrapper;
 import pl.ovoo.ss7.wrapper.map.args.ForwardedToNumberWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxCFInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxCFStatusWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxForwardedToNumberWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxCFInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxCFStatusWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxForwardedToNumberWrapper;
 
 public class TxCFInfoWrapperTest extends WrapperBaseTest {
 

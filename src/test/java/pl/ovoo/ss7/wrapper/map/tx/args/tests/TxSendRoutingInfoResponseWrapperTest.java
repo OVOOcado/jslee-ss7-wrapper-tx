@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.map.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -36,9 +36,9 @@ import org.mobicents.protocols.ss7.map.api.service.callhandling.RoutingInfo;
 
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
-import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxRoutingInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoResponseWrapper;
+import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
 
 public class TxSendRoutingInfoResponseWrapperTest extends WrapperBaseTest {
 

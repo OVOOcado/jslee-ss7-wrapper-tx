@@ -18,19 +18,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.event;
+package pl.ovoo.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.CAPDialog;
 import org.mobicents.protocols.ss7.cap.api.CAPMessage;
-import org.mobicents.protocols.ss7.cap.api.CAPProvider;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.CAPDialogCircuitSwitchedCall;
 import org.mobicents.protocols.ss7.cap.api.service.sms.CAPDialogSms;
 import pl.ovoo.ss7.wrapper.cap.CapDialogWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.EventWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.TxCap1CallCapDialogWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.TxCap2CallCapDialogWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.TxCapDialogWrapperImpl;
-import pl.ovoo.ss7.wrapper.cap.telestax.TxSmsCapDialogWrapperImpl;
+import pl.ovoo.ss7.wrapper.cap.tx.TxCap1CallCapDialogWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.TxCap2CallCapDialogWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.TxCapDialogWrapperImpl;
+import pl.ovoo.ss7.wrapper.cap.tx.TxSmsCapDialogWrapperImpl;
 
 import javax.slee.ActivityContextInterface;
 

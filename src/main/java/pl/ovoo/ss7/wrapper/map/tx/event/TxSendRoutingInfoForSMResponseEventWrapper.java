@@ -18,17 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.event;
+package pl.ovoo.ss7.wrapper.map.tx.event;
 
-import org.mobicents.protocols.ss7.map.api.service.callhandling.SendRoutingInformationResponse;
 import org.mobicents.protocols.ss7.map.api.service.sms.SendRoutingInfoForSMResponse;
-import org.mobicents.protocols.ss7.map.primitives.ISDNAddressStringImpl;
-import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
 import pl.ovoo.ss7.wrapper.map.event.SendRoutingInfoForSMResponseEventWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoForSMResponseWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxSendRoutingInfoRequestArgWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
 
 import javax.slee.ActivityContextInterface;
 

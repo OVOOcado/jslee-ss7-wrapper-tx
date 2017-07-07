@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.event;
+package pl.ovoo.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.CAPMessage;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.AssistRequestInstructionsRequest;
@@ -27,7 +27,7 @@ import org.mobicents.protocols.ss7.cap.api.service.sms.InitialDPSMSRequest;
 import pl.ovoo.ss7.wrapper.cap.args.DialogOpenArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.DialogOpenRequestEventWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.EventWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxDialogOpenArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxDialogOpenArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 

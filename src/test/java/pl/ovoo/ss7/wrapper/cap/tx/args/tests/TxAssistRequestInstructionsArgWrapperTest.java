@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -30,8 +30,8 @@ import org.junit.Test;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
 
 import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxAssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxGenericNumberWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxGenericNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxAssistRequestInstructionsArgWrapperTest extends WrapperBaseTest {

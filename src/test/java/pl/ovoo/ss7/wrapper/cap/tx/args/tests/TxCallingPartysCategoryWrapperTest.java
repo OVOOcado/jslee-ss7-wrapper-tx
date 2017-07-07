@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.*;
 
@@ -29,7 +29,7 @@ import org.mobicents.protocols.ss7.inap.api.isup.CallingPartysCategoryInap;
 import org.mobicents.protocols.ss7.isup.message.parameter.CallingPartyCategory;
 
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxCallingPartysCategoryWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallingPartysCategoryWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCallingPartysCategoryWrapperTest extends WrapperBaseTest {

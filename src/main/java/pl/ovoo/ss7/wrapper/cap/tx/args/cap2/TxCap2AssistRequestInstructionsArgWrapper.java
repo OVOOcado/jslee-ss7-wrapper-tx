@@ -18,13 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.cap2;
+package pl.ovoo.ss7.wrapper.cap.tx.args.cap2;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.IPSSPCapabilities;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2AssistRequestInstructionsArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxAssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
 
 /**
  * TxAssistRequestInstructionsArgWrapper

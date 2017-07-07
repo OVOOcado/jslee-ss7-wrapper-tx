@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.args;
+package pl.ovoo.ss7.wrapper.map.tx.args;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -36,17 +36,13 @@ import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.CellGlobalIdOrServiceAreaIdOrLAI;
 import org.mobicents.protocols.ss7.map.api.primitives.FTNAddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
-import org.mobicents.protocols.ss7.map.api.primitives.MAPExtensionContainer;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.primitives.SubscriberIdentity;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.MAPDialogCallHandling;
 import org.mobicents.protocols.ss7.map.api.service.mobility.MAPDialogMobility;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AdditionalRequestedCAMELSubscriptionInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationRequest;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationInformation;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedCAMELSubscriptionInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedSubscriptionInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCFInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusActivationIndicator;
@@ -72,15 +68,15 @@ import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.telestax.TxSccpAddressWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
 import pl.ovoo.ss7.wrapper.map.MobilityMapDialogWrapper;
 import pl.ovoo.ss7.wrapper.map.args.*;
-import pl.ovoo.ss7.wrapper.map.telestax.TxCallHandlingMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.TxMobilityMapDialogWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.TxCallHandlingMapDialogWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.TxMobilityMapDialogWrapper;
 
 /**
  * TxArgsFactory

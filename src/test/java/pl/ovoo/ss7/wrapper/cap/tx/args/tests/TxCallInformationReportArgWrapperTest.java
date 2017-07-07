@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -31,8 +31,8 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import org.mobicents.protocols.ss7.cap.primitives.DateAndTimeImpl;
 
 import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxCallInformationReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxRequestedInformationWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallInformationReportArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxRequestedInformationWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCallInformationReportArgWrapperTest extends WrapperBaseTest {

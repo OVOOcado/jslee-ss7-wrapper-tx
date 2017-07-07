@@ -18,10 +18,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.cap3;
+package pl.ovoo.ss7.wrapper.cap.tx.args.cap3;
 
 import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3InitialDPSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxInitialDPSMSArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
 
 /**
  * TxCap3InitialDPSMSArgWrapper

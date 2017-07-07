@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.common.telestax;
+package pl.ovoo.ss7.wrapper.common.tx;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.SMSAddressString;
 import pl.ovoo.ss7.wrapper.common.args.SMSAddressStringWrapper;

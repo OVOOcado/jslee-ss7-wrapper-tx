@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args;
+package pl.ovoo.ss7.wrapper.cap.tx.args;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -27,7 +27,6 @@ import java.io.ObjectOutput;
 import org.apache.log4j.Logger;
 import org.mobicents.protocols.ss7.isup.ParameterException;
 import org.mobicents.protocols.ss7.isup.impl.message.parameter.GenericNumberImpl;
-import org.mobicents.protocols.ss7.isup.message.parameter.GenericDigits;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
 import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
 

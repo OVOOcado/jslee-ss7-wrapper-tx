@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.event;
+package pl.ovoo.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.EventReportSMSRequest;
 import pl.ovoo.ss7.wrapper.cap.args.EventReportSMSArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.EventReportSMSRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxEventReportSMSArgWrapperImpl;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxEventReportSMSArgWrapperImpl;
 
 import javax.slee.ActivityContextInterface;
 

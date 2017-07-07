@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax;
+package pl.ovoo.ss7.wrapper.cap.tx;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.service.sms.CAPDialogSms;
@@ -32,12 +32,12 @@ import pl.ovoo.ss7.wrapper.cap.args.InitialDPSMSArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.ReleaseSMSArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.SMSEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxConnectSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxEventReportSMSArgWrapperImpl;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxInitialDPSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxRPCauseWrapperImpl;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxReleaseSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxSMSEventWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxConnectSMSArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxEventReportSMSArgWrapperImpl;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxRPCauseWrapperImpl;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxReleaseSMSArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxSMSEventWrapper;
 
 import java.util.ArrayList;
 

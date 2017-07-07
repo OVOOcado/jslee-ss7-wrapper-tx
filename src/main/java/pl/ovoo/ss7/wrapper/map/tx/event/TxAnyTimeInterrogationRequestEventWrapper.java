@@ -18,12 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.event;
+package pl.ovoo.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationRequest;
 import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
 import pl.ovoo.ss7.wrapper.map.event.AnyTimeInterrogationRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxAnyTimeInterrogationArgWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 

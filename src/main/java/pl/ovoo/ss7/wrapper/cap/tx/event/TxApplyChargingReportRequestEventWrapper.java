@@ -18,13 +18,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.event;
+package pl.ovoo.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ApplyChargingReportRequest;
 import pl.ovoo.ss7.wrapper.cap.args.ApplyChargingReportArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.event.ApplyChargingReportRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxApplyChargingReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.cap2.TxCap2ApplyChargingReportArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxApplyChargingReportArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingReportArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 

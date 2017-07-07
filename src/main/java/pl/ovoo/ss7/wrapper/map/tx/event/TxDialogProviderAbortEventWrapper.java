@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.map.telestax.event;
+package pl.ovoo.ss7.wrapper.map.tx.event;
 
 import org.mobicents.slee.resource.map.events.DialogProviderAbort;
 import pl.ovoo.ss7.wrapper.cap.args.PAbortCauseType;

@@ -18,26 +18,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 
 import org.junit.Before;
-import org.mobicents.protocols.ss7.cap.CAPDialogImpl;
-import org.mobicents.protocols.ss7.cap.CAPProviderImpl;
-import org.mobicents.protocols.ss7.cap.api.CAPApplicationContext;
-import org.mobicents.protocols.ss7.cap.api.CAPDialog;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
-import org.mobicents.protocols.ss7.cap.api.CAPProvider;
-import org.mobicents.protocols.ss7.cap.api.dialog.CAPDialogState;
-import org.mobicents.protocols.ss7.tcap.api.TCAPProvider;
 
 import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.CapDialogWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ArgsFactory;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxDialogOpenArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxDialogOpenArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxDialogOpenArgWrapperTest extends WrapperBaseTest {

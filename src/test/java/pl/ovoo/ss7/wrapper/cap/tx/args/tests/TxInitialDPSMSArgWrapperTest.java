@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.tests;
+package pl.ovoo.ss7.wrapper.cap.tx.args.tests;
 
 import static org.junit.Assert.assertTrue;
 
@@ -57,19 +57,19 @@ import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxCallReferenceNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxCalledPartyBCDNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxInitialDPSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxTimeAndTimezoneWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxCallReferenceNumberWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxCalledPartyBCDNumberWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxTimeAndTimezoneWrapper;
 import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.telestax.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.common.telestax.TxSMSAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
+import pl.ovoo.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
+import pl.ovoo.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
 import pl.ovoo.ss7.wrapper.map.args.MAPLocationInformationWrapper;
-import pl.ovoo.ss7.wrapper.map.telestax.args.TxMAPLocationInformationWrapper;
+import pl.ovoo.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
 public class TxInitialDPSMSArgWrapperTest extends WrapperBaseTest {
 

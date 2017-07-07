@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax;
+package pl.ovoo.ss7.wrapper.cap.tx;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.CAPProvider;
@@ -27,8 +27,8 @@ import pl.ovoo.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.ss7.wrapper.cap.Cap2CallCapDialogWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.ApplyChargingReportArgWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.ResetTimerArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxResetTimerArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.cap2.TxCap2ApplyChargingReportArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxResetTimerArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingReportArgWrapper;
 
 /**
  * TxCap2CallCapDialogWrapper

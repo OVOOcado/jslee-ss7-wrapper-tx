@@ -18,11 +18,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.cap2;
+package pl.ovoo.ss7.wrapper.cap.tx.args.cap2;
 
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2AChBillingChargingCharacteristicsWrapper;
 import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxApplyChargingArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxApplyChargingArgWrapper;
 
 /**
  * OcApplyChargingArgWrapper

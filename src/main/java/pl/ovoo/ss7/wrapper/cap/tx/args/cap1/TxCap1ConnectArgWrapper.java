@@ -18,10 +18,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.telestax.args.cap1;
+package pl.ovoo.ss7.wrapper.cap.tx.args.cap1;
 
 import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1ConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.telestax.args.TxConnectArgWrapper;
+import pl.ovoo.ss7.wrapper.cap.tx.args.TxConnectArgWrapper;
 
 /**
  * TxCap1ConnectArgWrapper
