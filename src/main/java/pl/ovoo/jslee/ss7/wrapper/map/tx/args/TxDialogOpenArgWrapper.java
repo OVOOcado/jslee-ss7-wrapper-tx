@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.MAPDialog;
 import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
-import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.DialogOpenArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.DialogOpenArgWrapper;
 
 /**
  * TxDialogOpenArgWrapper

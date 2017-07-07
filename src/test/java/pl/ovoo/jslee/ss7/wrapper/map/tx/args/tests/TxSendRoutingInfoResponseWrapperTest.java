@@ -34,8 +34,8 @@ import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.RoutingInfo;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;

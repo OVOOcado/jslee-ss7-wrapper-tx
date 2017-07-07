@@ -33,11 +33,11 @@ import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.primitives.SubscriberIdentity;
 
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeSubscriptionInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberIdentityWrapper;
 
 public class TxAnyTimeSubscriptionInterrogationArgWrapperTest extends WrapperBaseTest {

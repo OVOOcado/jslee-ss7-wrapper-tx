@@ -30,10 +30,10 @@ import org.junit.Test;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformation;
 import org.mobicents.protocols.ss7.cap.primitives.DateAndTimeImpl;
 
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationReportArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRequestedInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCallInformationReportArgWrapperTest extends WrapperBaseTest {
 

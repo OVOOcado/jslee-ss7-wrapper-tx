@@ -29,9 +29,9 @@ import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtTeleserviceCode;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.TeleserviceCodeValue;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxExtTeleserviceCodeWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxExtTeleserviceCodeWrapperTest extends WrapperBaseTest {
 

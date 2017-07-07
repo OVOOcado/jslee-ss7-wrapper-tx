@@ -32,8 +32,8 @@ import org.mobicents.protocols.ss7.map.api.dialog.MAPUserAbortChoice;
 import org.mobicents.protocols.ss7.map.api.dialog.ProcedureCancellationReason;
 import org.mobicents.protocols.ss7.map.api.dialog.ResourceUnavailableReason;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPUserAbortChoiceWrapper;
 
 public class TxMAPUserAbortChoiceWrapperTest extends WrapperBaseTest {

@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.TimeDurationChargingResult;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3TimeDurationChargingResultWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3TimeDurationChargingResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2TimeDurationChargingResultWrapper;
 
 /**

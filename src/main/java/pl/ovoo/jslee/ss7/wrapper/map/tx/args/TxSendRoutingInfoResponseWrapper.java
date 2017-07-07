@@ -28,11 +28,11 @@ import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.RoutingInfo;
 
-import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.args.RoutingInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
 
 /**
  * Created by karolsimka on 06.06.17.

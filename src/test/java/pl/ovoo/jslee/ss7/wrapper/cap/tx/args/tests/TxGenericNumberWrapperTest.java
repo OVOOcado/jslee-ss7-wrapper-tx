@@ -28,10 +28,10 @@ import org.junit.Before;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxGenericNumberWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
 
 public class TxGenericNumberWrapperTest extends WrapperBaseTest {
 

@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ApplyChargingReportRequest;
-import pl.ovoo.ss7.wrapper.cap.args.ApplyChargingReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.ApplyChargingReportRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.ApplyChargingReportRequestEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxApplyChargingReportArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingReportArgWrapper;
 

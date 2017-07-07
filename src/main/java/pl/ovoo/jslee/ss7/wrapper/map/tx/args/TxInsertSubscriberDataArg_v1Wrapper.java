@@ -25,10 +25,10 @@ import java.util.Arrays;
 import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtSSInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.InsertSubscriberDataRequest;
-import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPSS_InformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_InformationWrapper;
 
 /**
  * TxInsertSubscriberDataArg_v1Wrapper

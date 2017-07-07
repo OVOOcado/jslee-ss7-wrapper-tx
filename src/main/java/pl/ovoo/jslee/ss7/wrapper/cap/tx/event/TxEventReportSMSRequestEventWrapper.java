@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.EventReportSMSRequest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEventReportSMSArgWrapperImpl;
-import pl.ovoo.ss7.wrapper.cap.args.EventReportSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.EventReportSMSRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.EventReportSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

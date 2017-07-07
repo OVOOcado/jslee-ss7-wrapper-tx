@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.slee.resource.map.events.DialogReject;
-import pl.ovoo.ss7.wrapper.map.event.DialogOpenRefuseEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.DialogOpenRefuseEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

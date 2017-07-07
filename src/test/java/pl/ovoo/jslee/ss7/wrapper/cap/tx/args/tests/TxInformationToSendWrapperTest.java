@@ -30,9 +30,9 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import org.mobicents.protocols.ss7.cap.service.circuitSwitchedCall.primitive.ToneImpl;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInformationToSendWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxInformationToSendWrapperTest extends WrapperBaseTest {
 

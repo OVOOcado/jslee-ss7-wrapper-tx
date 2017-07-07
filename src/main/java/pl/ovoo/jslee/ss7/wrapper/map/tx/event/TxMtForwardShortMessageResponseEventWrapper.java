@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.sms.MtForwardShortMessageResponse;
-import pl.ovoo.ss7.wrapper.map.args.MtForwardSMResponseWrapper;
-import pl.ovoo.ss7.wrapper.map.event.MtForwardSMResponseEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardSMResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.MtForwardSMResponseEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageResponseWrapper;
 
 import javax.slee.ActivityContextInterface;

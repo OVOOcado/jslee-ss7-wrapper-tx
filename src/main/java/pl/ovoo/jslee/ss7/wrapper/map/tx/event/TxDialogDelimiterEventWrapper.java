@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.slee.resource.map.events.DialogDelimiter;
-import pl.ovoo.ss7.wrapper.map.event.DialogDelimiterEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.DialogDelimiterEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

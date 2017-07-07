@@ -39,9 +39,9 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.DomainType;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
 public class TxAnyTimeInterrogationArgWrapperTest extends WrapperBaseTest {
 

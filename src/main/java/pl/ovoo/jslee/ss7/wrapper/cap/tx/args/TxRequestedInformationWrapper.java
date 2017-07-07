@@ -21,9 +21,9 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformation;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationType;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper;
 
 /**
  * OcRequestedInformationWrapper

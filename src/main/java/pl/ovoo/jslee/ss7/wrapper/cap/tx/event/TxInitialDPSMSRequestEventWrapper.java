@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.InitialDPSMSRequest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.InitialDPSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.InitialDPSMSRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.InitialDPSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

@@ -26,9 +26,9 @@ import java.io.IOException;
 import org.junit.Before;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCancelArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
 public class TxCancelArgWrapperTest extends WrapperBaseTest {
 

@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.SendingSideID;
-import pl.ovoo.ss7.wrapper.cap.args.SendingSideIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSendingSideIDWrapper;
 

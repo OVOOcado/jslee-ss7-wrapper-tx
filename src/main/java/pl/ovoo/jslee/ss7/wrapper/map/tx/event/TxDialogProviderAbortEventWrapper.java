@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.slee.resource.map.events.DialogProviderAbort;
-import pl.ovoo.ss7.wrapper.cap.args.PAbortCauseType;
-import pl.ovoo.ss7.wrapper.map.event.DialogProviderAbortEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.PAbortCauseType;
+import pl.ovoo.jslee.ss7.wrapper.map.event.DialogProviderAbortEventWrapper;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.slee.ActivityContextInterface;

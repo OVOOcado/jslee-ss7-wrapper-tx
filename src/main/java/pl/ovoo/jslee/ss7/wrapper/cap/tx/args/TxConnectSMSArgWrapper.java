@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.CalledPartyBCDNumber;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 
 /**

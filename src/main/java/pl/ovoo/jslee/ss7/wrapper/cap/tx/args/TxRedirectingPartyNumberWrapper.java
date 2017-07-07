@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.isup.RedirectingPartyIDCap;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
 
 /**
  * OcCallingPartyNumberWrapper

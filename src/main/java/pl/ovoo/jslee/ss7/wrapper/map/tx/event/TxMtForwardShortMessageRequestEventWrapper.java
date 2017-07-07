@@ -27,9 +27,9 @@ import org.mobicents.protocols.ss7.map.primitives.ISDNAddressStringImpl;
 
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpDaWrapper;
-import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
-import pl.ovoo.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.DataCodingWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpOaWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpUiWrapper;

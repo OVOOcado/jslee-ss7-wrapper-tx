@@ -24,7 +24,7 @@ import javax.slee.ActivityContextInterface;
 
 import org.mobicents.slee.resource.map.events.DialogAccept;
 
-import pl.ovoo.ss7.wrapper.map.event.DialogOpenAcceptEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.DialogOpenAcceptEventWrapper;
 
 /**
  * TxDialogOpenAcceptEventWrapper

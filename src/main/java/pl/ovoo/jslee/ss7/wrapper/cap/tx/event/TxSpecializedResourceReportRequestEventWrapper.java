@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.SpecializedResourceReportRequest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSpecializedResourceReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.SpecializedResourceReportRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.SpecializedResourceReportRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

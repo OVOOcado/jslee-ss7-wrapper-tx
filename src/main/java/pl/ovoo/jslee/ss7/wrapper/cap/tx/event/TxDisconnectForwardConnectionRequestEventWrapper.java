@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.DisconnectForwardConnectionRequest;
-import pl.ovoo.ss7.wrapper.cap.event.DisconnectForwardConnectionRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.DisconnectForwardConnectionRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

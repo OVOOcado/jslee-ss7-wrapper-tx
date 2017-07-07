@@ -28,8 +28,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxAChBillingChargingCharacteristicsWrapperTest extends WrapperBaseTest {
 

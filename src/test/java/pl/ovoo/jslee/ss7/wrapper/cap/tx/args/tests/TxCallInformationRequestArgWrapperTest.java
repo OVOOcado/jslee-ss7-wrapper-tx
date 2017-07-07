@@ -27,9 +27,9 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationType;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType;
 
 public class TxCallInformationRequestArgWrapperTest extends WrapperBaseTest {
 

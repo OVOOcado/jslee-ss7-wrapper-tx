@@ -22,11 +22,11 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
 
 /**
  * Created by karolsimka on 07.06.17.

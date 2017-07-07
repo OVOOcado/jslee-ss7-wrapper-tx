@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.ReceivingSideID;
-import pl.ovoo.ss7.wrapper.cap.args.LegType;
-import pl.ovoo.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LegType;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
 
 /**
  * TxReceivingSideIDWrapper

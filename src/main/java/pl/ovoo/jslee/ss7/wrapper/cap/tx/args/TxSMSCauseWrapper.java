@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.MOSMSCause;
-import pl.ovoo.ss7.wrapper.cap.args.SMSCauseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSCauseWrapper;
 
 /**
  * TxCauseWrapper

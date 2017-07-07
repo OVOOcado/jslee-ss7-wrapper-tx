@@ -24,9 +24,9 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.FurnishCh
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxFurnishChargingInformationArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2FurnishChargingInformationArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.FurnishChargingInformationRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.FurnishChargingInformationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.FurnishChargingInformationRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

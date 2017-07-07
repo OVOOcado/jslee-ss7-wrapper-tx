@@ -24,11 +24,11 @@ import org.mobicents.protocols.ss7.cap.api.isup.CalledPartyNumberCap;
 import org.mobicents.protocols.ss7.cap.api.isup.OriginalCalledNumberCap;
 import org.mobicents.protocols.ss7.cap.api.isup.RedirectingPartyIDCap;
 import org.mobicents.protocols.ss7.inap.api.isup.RedirectionInformationInap;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectionInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
 
 import java.util.ArrayList;
 

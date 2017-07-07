@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1;
 
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1ConnectArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1ConnectArgWrapper;
 
 /**
  * TxCap1ConnectArgWrapper

@@ -20,8 +20,8 @@
 
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
-import pl.ovoo.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SMSEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper;
 
 /**
  * OcRequestReportSMSEventArgWrapperImpl

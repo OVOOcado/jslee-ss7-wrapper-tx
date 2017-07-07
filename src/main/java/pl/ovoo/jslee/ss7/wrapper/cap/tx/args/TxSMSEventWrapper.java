@@ -21,9 +21,9 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.SMSEvent;
-import pl.ovoo.ss7.wrapper.cap.args.EventTypeSMS;
-import pl.ovoo.ss7.wrapper.cap.args.MonitorMode;
-import pl.ovoo.ss7.wrapper.cap.args.SMSEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeSMS;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.MonitorMode;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper;
 
 /**
  * OcSMSEventWrapperImpl

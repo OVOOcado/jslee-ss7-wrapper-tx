@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.InformationToSend;
-import pl.ovoo.ss7.wrapper.cap.args.InformationToSendWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
 
 /**
  * TxPlayAnnouncementArgWrapper

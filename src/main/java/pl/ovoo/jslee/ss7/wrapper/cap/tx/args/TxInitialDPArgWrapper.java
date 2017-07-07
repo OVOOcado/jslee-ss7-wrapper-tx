@@ -29,16 +29,16 @@ import org.mobicents.protocols.ss7.inap.api.isup.CallingPartysCategoryInap;
 import org.mobicents.protocols.ss7.inap.api.isup.HighLayerCompatibilityInap;
 import org.mobicents.protocols.ss7.inap.api.isup.RedirectionInformationInap;
 
-import pl.ovoo.ss7.wrapper.cap.args.BearerCapabilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CallingPartysCategoryWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventTypeBCSM;
-import pl.ovoo.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectionInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapabilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartysCategoryWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
 
 
 /**

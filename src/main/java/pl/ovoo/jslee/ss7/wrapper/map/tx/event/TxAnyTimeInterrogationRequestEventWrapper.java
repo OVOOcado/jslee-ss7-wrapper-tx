@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationRequest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
-import pl.ovoo.ss7.wrapper.map.event.AnyTimeInterrogationRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.AnyTimeInterrogationRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

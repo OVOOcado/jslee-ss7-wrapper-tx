@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import java.util.Arrays;
 
-import pl.ovoo.ss7.wrapper.map.args.DataCodingWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.DataCodingWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpUiWrapper;
 
 
 /**

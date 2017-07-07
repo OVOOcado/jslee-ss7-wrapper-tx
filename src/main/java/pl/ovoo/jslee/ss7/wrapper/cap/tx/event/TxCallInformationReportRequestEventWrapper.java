@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.CallInformationReportRequest;
-import pl.ovoo.ss7.wrapper.cap.args.CallInformationReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.CallInformationReportRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.CallInformationReportRequestEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationReportArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationReportArgWrapper;
 

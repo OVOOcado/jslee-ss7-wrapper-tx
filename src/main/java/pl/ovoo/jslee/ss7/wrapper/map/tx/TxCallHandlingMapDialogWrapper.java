@@ -26,12 +26,12 @@ import org.mobicents.protocols.ss7.map.api.service.callhandling.MAPDialogCallHan
 import org.mobicents.slee.resource.map.service.callhandling.wrappers.MAPDialogCallHandlingWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.CallHandlingMapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
 
 /**
  * TxCallHandlingMapDialogWrapper

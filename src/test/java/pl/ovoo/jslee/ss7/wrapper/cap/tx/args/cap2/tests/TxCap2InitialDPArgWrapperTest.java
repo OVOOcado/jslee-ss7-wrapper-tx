@@ -30,11 +30,11 @@ import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.primitives.TimeAndTimezone;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxTimeAndTimezoneWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCap2InitialDPArgWrapperTest extends WrapperBaseTest {
 

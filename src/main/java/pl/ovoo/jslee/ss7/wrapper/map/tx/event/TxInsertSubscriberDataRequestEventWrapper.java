@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.InsertSubscriberDataRequest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataArg_v1Wrapper;
-import pl.ovoo.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
-import pl.ovoo.ss7.wrapper.map.event.InsertSubscriberDataRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.InsertSubscriberDataRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

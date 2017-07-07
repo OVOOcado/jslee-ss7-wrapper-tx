@@ -20,8 +20,8 @@
 
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
-import pl.ovoo.ss7.wrapper.cap.args.ResetTimerArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.TimerID;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ResetTimerArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.TimerID;
 
 /**
  * TxResetTimerArgWrapper

@@ -23,8 +23,8 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.SendRoutingInformationResponse;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
-import pl.ovoo.ss7.wrapper.map.event.SendRoutingInfoResponseEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.SendRoutingInfoResponseEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
 
 import javax.slee.ActivityContextInterface;

@@ -30,9 +30,9 @@ import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwOptions;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwOptionsForwardingReason;
 
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPForwardingOptionsWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
 public class TxMAPForwardingOptionsWrapperTest extends WrapperBaseTest {
 

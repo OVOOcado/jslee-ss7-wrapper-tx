@@ -21,10 +21,10 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 
-import pl.ovoo.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SmRpDaWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SmRpOaWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SmRpUiWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpDaWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpOaWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpUiWrapper;
 
 /**
  * Created by karolsimka on 08.06.17.

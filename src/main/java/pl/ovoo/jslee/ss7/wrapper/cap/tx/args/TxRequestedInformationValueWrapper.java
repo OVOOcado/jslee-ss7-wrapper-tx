@@ -22,7 +22,7 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformation;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformationType;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
 
 /**
  * TxRequestedInformationValueWrapper

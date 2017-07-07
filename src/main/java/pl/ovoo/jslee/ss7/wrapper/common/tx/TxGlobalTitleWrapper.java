@@ -27,7 +27,7 @@ import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle0001;
 import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle0010;
 import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle0011;
 import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle0100;
-import pl.ovoo.ss7.wrapper.common.args.GlobalTitleWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper;
 
 /**
  * TxGlobalTitleWrapper

@@ -25,14 +25,14 @@ import org.mobicents.protocols.ss7.indicator.RoutingIndicator;
 import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle;
 import org.mobicents.protocols.ss7.sccp.parameter.ParameterFactory;
 import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.common.args.CommonArgsFactory;
-import pl.ovoo.ss7.wrapper.common.args.GlobalTitleWrapper;
-import pl.ovoo.ss7.wrapper.common.args.GlobalTitleWrapper.EncodingScheme;
-import pl.ovoo.ss7.wrapper.common.args.GlobalTitleWrapper.GlobalTitleIndicator;
-import pl.ovoo.ss7.wrapper.common.args.GlobalTitleWrapper.Nature;
-import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper.Type;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.common.args.CommonArgsFactory;
+import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.EncodingScheme;
+import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.GlobalTitleIndicator;
+import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.Nature;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper.Type;
 
 /**
  * TxCommonArgsFactory
@@ -79,7 +79,7 @@ public class TxCommonArgsFactory implements CommonArgsFactory {
     }
     
     @Override
-    public GlobalTitleWrapper createGlobalTitle(String address, Integer translationType, GlobalTitleIndicator globalTitleIndicator, pl.ovoo.ss7.wrapper.common.args.GlobalTitleWrapper.NumberingPlan numberingPlan, EncodingScheme encodingScheme, Nature nature) throws Ss7WrapperException {
+    public GlobalTitleWrapper createGlobalTitle(String address, Integer translationType, GlobalTitleIndicator globalTitleIndicator, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.NumberingPlan numberingPlan, EncodingScheme encodingScheme, Nature nature) throws Ss7WrapperException {
     	
     	org.mobicents.protocols.ss7.sccp.parameter.EncodingScheme es = null;
     	if(encodingScheme != null){

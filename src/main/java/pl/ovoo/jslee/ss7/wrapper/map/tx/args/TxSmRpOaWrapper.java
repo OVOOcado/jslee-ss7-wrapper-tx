@@ -21,9 +21,9 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.SmRpOaWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpOaWrapper;
 
 /**
  * Created by karolsimka on 03.07.17.

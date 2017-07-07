@@ -42,13 +42,6 @@ import org.mobicents.protocols.ss7.map.api.service.callhandling.MAPDialogCallHan
 import org.mobicents.protocols.ss7.map.api.service.mobility.MAPDialogMobility;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationRequest;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationInformation;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCFInfo;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusActivationIndicator;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusProvisionIndicator;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusQuiescentIndicator;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusRegisterIndicator;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBasicServiceCode;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwFeature;
@@ -63,18 +56,18 @@ import org.mobicents.protocols.ss7.map.api.service.supplementary.SupplementaryCo
 import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
 import org.mobicents.slee.resource.map.MAPContextInterfaceFactory;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.CallHandlingMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
-import pl.ovoo.ss7.wrapper.map.MobilityMapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.args.*;
+import pl.ovoo.jslee.ss7.wrapper.map.CallHandlingMapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.MapApplicationContextWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.MobilityMapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.*;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.TxCallHandlingMapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.TxMobilityMapDialogWrapper;
 
@@ -203,9 +196,8 @@ public class TxMapArgsFactory implements MapArgsFactory {
     }
     
     @Override
-    public AnyTimeInterrogationResultWrapper createAnyTimeInterrogationResult(SubscriberCFInfoWrapper subscriberCFInfoWrapper, MAPSubscriberInfoWrapper mAPSubscriberInfoWrapper){
+    public AnyTimeInterrogationResultWrapper createAnyTimeInterrogationResult(MAPSubscriberInfoWrapper mAPSubscriberInfoWrapper){
     	AnyTimeInterrogationResultWrapper atiResult = new TxAnyTimeInterrogationResultWrapper(
-    			subscriberCFInfoWrapper,
     			mAPSubscriberInfoWrapper);    	
     	return atiResult;
     }
@@ -219,120 +211,6 @@ public class TxMapArgsFactory implements MapArgsFactory {
     }
     
     @Override
-    public SubscriberCFInfoWrapper createSubscriberCFInfoWrapper(CFInfoWrapper cFNoReplyTS10,
-    		CFInfoWrapper cFSubscriberBusyTS10,
-    		CFInfoWrapper cFSubscriberNotReachableTS10){
-    	
-    	AddressString cFSubscriberBusyTS10FTN = null;
-    	SubscriberCfStatus cFStatusSubscriberBusyTS10 = null;
-    	if(cFSubscriberBusyTS10 != null){
-    		if(cFSubscriberBusyTS10.getForwardedToNumber() != null){
-	    		cFSubscriberBusyTS10FTN = mapParameterFactory.createCfAddressString(
-	    				AddressNature.getInstance(cFSubscriberBusyTS10.getForwardedToNumber().getNature().getValue()),
-	    				NumberingPlan.getInstance(cFSubscriberBusyTS10.getForwardedToNumber().getNumberingPlan().getValue()),
-	    				cFSubscriberBusyTS10.getForwardedToNumber().getAddress());
-    		}
-    		if(cFSubscriberBusyTS10.hasCFStatus()){
-    			CFStatusWrapper status = cFSubscriberBusyTS10.getCFStatus();
-    			CfStatusQuiescentIndicator q = status.hasQuiescent() ? (status.getQuiescent() ? CfStatusQuiescentIndicator.QUIESCENT : CfStatusQuiescentIndicator.NOT_QUIESCENT)
-    					: null;
-    			CfStatusActivationIndicator a = status.hasActive() ? (status.getActive() ? CfStatusActivationIndicator.ACTIVE : CfStatusActivationIndicator.NOT_ACTIVE)
-    					: null;
-    			CfStatusRegisterIndicator r = status.hasRegistered() ? (status.getRegistered() ? CfStatusRegisterIndicator.REGISTERED : CfStatusRegisterIndicator.NOT_REGISTERED)
-    					: null;
-    			CfStatusProvisionIndicator p = status.hasProvided() ? (status.getProvided() ? CfStatusProvisionIndicator.PROVIDED : CfStatusProvisionIndicator.NOT_PROVIDED)
-    					: null;
-    			cFStatusSubscriberBusyTS10 = mapParameterFactory.createSubscriberCfStatus(q, a, r, p);
-    		}
-    		
-    	}
-    	AddressString cFNoReplyTS10FTN = null;
-    	SubscriberCfStatus cFStatusNoReplyTS10 = null;
-    	if(cFNoReplyTS10 != null){
-    		if(cFNoReplyTS10.getForwardedToNumber() != null){
-	    		cFNoReplyTS10FTN = mapParameterFactory.createCfAddressString(
-	    				AddressNature.getInstance(cFNoReplyTS10.getForwardedToNumber().getNature().getValue()),
-	    				NumberingPlan.getInstance(cFNoReplyTS10.getForwardedToNumber().getNumberingPlan().getValue()),
-	    				cFNoReplyTS10.getForwardedToNumber().getAddress());
-    		}
-    		if(cFNoReplyTS10.hasCFStatus()){
-    			CFStatusWrapper status = cFNoReplyTS10.getCFStatus();
-    			CfStatusQuiescentIndicator q = status.hasQuiescent() ? (status.getQuiescent() ? CfStatusQuiescentIndicator.QUIESCENT : CfStatusQuiescentIndicator.NOT_QUIESCENT)
-    					: null;
-    			CfStatusActivationIndicator a = status.hasActive() ? (status.getActive() ? CfStatusActivationIndicator.ACTIVE : CfStatusActivationIndicator.NOT_ACTIVE)
-    					: null;
-    			CfStatusRegisterIndicator r = status.hasRegistered() ? (status.getRegistered() ? CfStatusRegisterIndicator.REGISTERED : CfStatusRegisterIndicator.NOT_REGISTERED)
-    					: null;
-    			CfStatusProvisionIndicator p = status.hasProvided() ? (status.getProvided() ? CfStatusProvisionIndicator.PROVIDED : CfStatusProvisionIndicator.NOT_PROVIDED)
-    					: null;
-    			cFStatusNoReplyTS10 = mapParameterFactory.createSubscriberCfStatus(q, a, r, p);
-    		}
-    	}
-    	AddressString cFSubscriberNotReachableTS10FTN = null;
-    	SubscriberCfStatus cFStatusSubscriberNotReachableTS10 = null;
-    	if(cFSubscriberNotReachableTS10 != null){
-    		if(cFSubscriberNotReachableTS10.getForwardedToNumber() != null){
-	    		cFSubscriberNotReachableTS10FTN = mapParameterFactory.createCfAddressString(
-	    				AddressNature.getInstance(cFSubscriberNotReachableTS10.getForwardedToNumber().getNature().getValue()),
-	    				NumberingPlan.getInstance(cFSubscriberNotReachableTS10.getForwardedToNumber().getNumberingPlan().getValue()),
-	    				cFSubscriberNotReachableTS10.getForwardedToNumber().getAddress());
-    		}
-    		if(cFSubscriberNotReachableTS10.hasCFStatus()){
-    			CFStatusWrapper status = cFSubscriberNotReachableTS10.getCFStatus();
-    			CfStatusQuiescentIndicator q = status.hasQuiescent() ? (status.getQuiescent() ? CfStatusQuiescentIndicator.QUIESCENT : CfStatusQuiescentIndicator.NOT_QUIESCENT)
-    					: null;
-    			CfStatusActivationIndicator a = status.hasActive() ? (status.getActive() ? CfStatusActivationIndicator.ACTIVE : CfStatusActivationIndicator.NOT_ACTIVE)
-    					: null;
-    			CfStatusRegisterIndicator r = status.hasRegistered() ? (status.getRegistered() ? CfStatusRegisterIndicator.REGISTERED : CfStatusRegisterIndicator.NOT_REGISTERED)
-    					: null;
-    			CfStatusProvisionIndicator p = status.hasProvided() ? (status.getProvided() ? CfStatusProvisionIndicator.PROVIDED : CfStatusProvisionIndicator.NOT_PROVIDED)
-    					: null;
-    			cFStatusSubscriberNotReachableTS10 = mapParameterFactory.createSubscriberCfStatus(q, a, r, p);
-    		}
-    	}
-    	
-
-    	SubscriberCfStatus cfEmptyStatus = mapParameterFactory.createSubscriberCfStatus(null, null, null, null);
-    	AddressString emtpyForwardedTo = mapParameterFactory.createCfAddressString(
-				AddressNature.getInstance(ForwardedToNumberWrapper.Nature.NATIONAL.getValue()),
-				NumberingPlan.getInstance(ForwardedToNumberWrapper.NumberingPlan.ISDN.getValue()),
-				""); 
-    	
-    	SubscriberCFInfo subscriberCFInfo = mapParameterFactory.createSubscriberCFInfo(
-    			cFSubscriberBusyTS10FTN, cFStatusSubscriberBusyTS10, 
-    			emtpyForwardedTo, cfEmptyStatus, 
-    			cFSubscriberNotReachableTS10FTN, cFStatusSubscriberNotReachableTS10, 
-    			emtpyForwardedTo, cfEmptyStatus, 
-    			cFNoReplyTS10FTN, cFStatusNoReplyTS10,
-    			emtpyForwardedTo, cfEmptyStatus);
-    	
-    	return new TxSubscriberCFInfoWrapper(subscriberCFInfo);
-    }
-    
-    @Override
-    public CFStatusWrapper createCFStatusWrapper(boolean hasActive, boolean getActive, 
-    		boolean hasProvided, boolean getProvided,
-    		boolean hasQuiescent, boolean getQuiescent, 
-    		boolean hasRegistered, boolean getRegistered){
-    	CfStatusQuiescentIndicator q = hasQuiescent ? (getQuiescent ? CfStatusQuiescentIndicator.QUIESCENT : CfStatusQuiescentIndicator.NOT_QUIESCENT)
-				: null;
-		CfStatusActivationIndicator a = hasActive ? (getActive ? CfStatusActivationIndicator.ACTIVE : CfStatusActivationIndicator.NOT_ACTIVE)
-				: null;
-		CfStatusRegisterIndicator r = hasRegistered ? (getRegistered ? CfStatusRegisterIndicator.REGISTERED : CfStatusRegisterIndicator.NOT_REGISTERED)
-				: null;
-		CfStatusProvisionIndicator p = hasProvided ? (getProvided ? CfStatusProvisionIndicator.PROVIDED : CfStatusProvisionIndicator.NOT_PROVIDED)
-				: null;
-    	SubscriberCfStatus subscriberCfStatus = mapParameterFactory.createSubscriberCfStatus(q, a, r, p);
-    	return new TxCFStatusWrapper(subscriberCfStatus);
-    }
-    
-    
-    @Override
-    public CFInfoWrapper createCFInfoWrapper(ForwardedToNumberWrapper forwardedToNumberWrapper, CFStatusWrapper cFStatusWrapper){
-    	return new TxCFInfoWrapper(cFStatusWrapper, forwardedToNumberWrapper);
-    }
-    
-    @Override
     public AnyTimeInterrogationArgWrapper createAnyTimeInterrogationArg(MAPSubscriberIdentityWrapper subscriberIdentity, MAPRequestedInfoWrapper mAPRequestedInfo, AddressStringWrapper gsmSCF_Address){
     	AnyTimeInterrogationRequest ati = mapParameterFactory.createAnyTimeInterrogationRequest(
     			((TxMAPSubscriberIdentityWrapper)subscriberIdentity).getTxMAPSubscriberIdentity(), 
@@ -342,12 +220,6 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	AnyTimeInterrogationArgWrapper atiWrapper = new TxAnyTimeInterrogationArgWrapper(ati);
     	
     	return atiWrapper;
-    }
-    
-    @Override
-    public MAPRequestedInfoWrapper createMAPRequestedInfoWrapper(boolean prop_reqPresent, boolean locationInformationPresent, boolean currentLocationPresent, boolean subscriberStatePresent){
-    	RequestedInfo requestedInfo = mapParameterFactory.createRequestedInfo(locationInformationPresent, subscriberStatePresent, null, currentLocationPresent, null, false, false, false, prop_reqPresent);
-    	return new TxMAPRequestedInfoWrapper(requestedInfo);
     }
     
     @Override
@@ -678,4 +550,18 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
 		return txMtArg;
 	}
+
+	public MAPProvider getMapProvider() {
+		return mapProvider;
+	}
+
+	public MAPParameterFactory getMapParameterFactory() {
+		return mapParameterFactory;
+	}
+
+	public MAPContextInterfaceFactory getMapContextInterfaceFactory() {
+		return mapContextInterfaceFactory;
+	}
+	
+	
 }

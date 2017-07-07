@@ -29,9 +29,9 @@ import org.mobicents.protocols.ss7.isup.ParameterException;
 import org.mobicents.protocols.ss7.isup.impl.message.parameter.GenericNumberImpl;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericDigits;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
-import pl.ovoo.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.GenericDigitsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
 
 /**
  * TxEstablishTemporaryConnectionArgWrapper

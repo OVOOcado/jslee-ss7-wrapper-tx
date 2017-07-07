@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ResetTimerRequest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxResetTimerArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.ResetTimerArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.ResetTimerRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ResetTimerArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.ResetTimerRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.EstablishTemporaryConnectionRequest;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.EstablishTemporaryConnectionRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.EstablishTemporaryConnectionRequestEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEstablishTemporaryConnectionArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2EstablishTemporaryConnectionArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3EstablishTemporaryConnectionArgWrapper;

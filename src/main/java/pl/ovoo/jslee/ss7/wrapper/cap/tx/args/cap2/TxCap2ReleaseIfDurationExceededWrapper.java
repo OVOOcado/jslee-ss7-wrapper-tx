@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.AudibleIndicator;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
 
 /**
  * OcCap2ReleaseIfDurationExceededWrapper

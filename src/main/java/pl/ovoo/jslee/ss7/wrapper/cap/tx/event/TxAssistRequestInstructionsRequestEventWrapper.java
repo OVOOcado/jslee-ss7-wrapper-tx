@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.AssistRequestInstructionsRequest;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.AssistRequestInstructionsRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.AssistRequestInstructionsRequestEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AssistRequestInstructionsArgWrapper;
 

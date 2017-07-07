@@ -20,7 +20,7 @@
 
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
-import pl.ovoo.ss7.wrapper.map.args.MtForwardSMResponseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardSMResponseWrapper;
 
 /**
  * Created by karolsimka on 09.06.17.

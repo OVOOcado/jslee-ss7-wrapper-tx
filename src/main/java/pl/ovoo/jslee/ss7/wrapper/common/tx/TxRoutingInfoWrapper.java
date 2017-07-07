@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.common.tx;
 
 import org.mobicents.protocols.ss7.map.api.service.callhandling.RoutingInfo;
 
-import pl.ovoo.ss7.wrapper.common.args.RoutingInfoWrapper;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper.Nature;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper.NumberingPlan;
+import pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.Nature;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.NumberingPlan;
 
 /**
  * Created by karolsimka on 06.06.17.

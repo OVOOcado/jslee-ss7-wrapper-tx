@@ -23,7 +23,7 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 import org.mobicents.protocols.ss7.cap.api.EsiBcsm.TBusySpecificInfo;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.EventSpecificInformationBCSM;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEventSpecificInformationBCSMWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2EventSpecificInformationBCSMWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2EventSpecificInformationBCSMWrapper;
 
 /**
  * TxCap2EventSpecificInformationBCSMWrapper

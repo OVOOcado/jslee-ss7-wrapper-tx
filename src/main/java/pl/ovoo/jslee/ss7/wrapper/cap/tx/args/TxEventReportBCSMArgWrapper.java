@@ -23,11 +23,11 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.primitives.ReceivingSideID;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.EventSpecificInformationBCSM;
 import org.mobicents.protocols.ss7.inap.api.primitives.MiscCallInfo;
-import pl.ovoo.ss7.wrapper.cap.args.EventReportBCSMArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventTypeBCSM;
-import pl.ovoo.ss7.wrapper.cap.args.MiscCallInfoWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
 
 /**
  * TxEventReportBCSMArgWrapper

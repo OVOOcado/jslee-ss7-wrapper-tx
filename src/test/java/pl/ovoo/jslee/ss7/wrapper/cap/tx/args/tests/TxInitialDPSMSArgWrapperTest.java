@@ -53,22 +53,22 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.CSGId;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.LSAIdentity;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallReferenceNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyBCDNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxTimeAndTimezoneWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.MAPLocationInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
 public class TxInitialDPSMSArgWrapperTest extends WrapperBaseTest {

@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwOptions;
-import pl.ovoo.ss7.wrapper.map.args.ForwardingReason;
-import pl.ovoo.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.ForwardingReason;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
 
 /**
  * TxMAPForwardingOptionsWrapper

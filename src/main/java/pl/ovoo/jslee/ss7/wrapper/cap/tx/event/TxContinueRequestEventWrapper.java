@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ContinueRequest;
-import pl.ovoo.ss7.wrapper.cap.event.ContinueRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.ContinueRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

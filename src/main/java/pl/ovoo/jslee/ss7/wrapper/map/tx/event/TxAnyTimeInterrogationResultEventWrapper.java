@@ -22,12 +22,10 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationResponse;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationResultWrapper;
-import pl.ovoo.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SubscriberCFInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.event.AnyTimeInterrogationResultEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.AnyTimeInterrogationResultEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
-import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSubscriberCFInfoWrapper;
 
 import javax.slee.ActivityContextInterface;
 
@@ -48,14 +46,10 @@ public class TxAnyTimeInterrogationResultEventWrapper extends TxMapEventWrapper 
     @Override
     public AnyTimeInterrogationResultWrapper getArgument() {
     	MAPSubscriberInfoWrapper mAPSubscriberInfoWrapper = null;
-    	SubscriberCFInfoWrapper subscriberCFInfoWrapper = null;
-    	if(anyTimeInterrogationResponse.getSubscriberCFInfo()!= null){
-    		subscriberCFInfoWrapper = new TxSubscriberCFInfoWrapper(anyTimeInterrogationResponse.getSubscriberCFInfo());
-    	}
     	if(anyTimeInterrogationResponse.getSubscriberInfo()!= null){
     		mAPSubscriberInfoWrapper = new TxMAPSubscriberInfoWrapper(anyTimeInterrogationResponse.getSubscriberInfo());
     	}
-        return new TxAnyTimeInterrogationResultWrapper(subscriberCFInfoWrapper, mAPSubscriberInfoWrapper);
+        return new TxAnyTimeInterrogationResultWrapper(mAPSubscriberInfoWrapper);
     }
     
     @Override

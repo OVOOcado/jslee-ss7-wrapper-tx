@@ -22,10 +22,10 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.RequestReportSMSEventRequest;
 import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.SMSEvent;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SMSEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.RequestReportSMSEventRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.RequestReportSMSEventRequestEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRequestReportSMSEventArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSMSEventWrapper;
 

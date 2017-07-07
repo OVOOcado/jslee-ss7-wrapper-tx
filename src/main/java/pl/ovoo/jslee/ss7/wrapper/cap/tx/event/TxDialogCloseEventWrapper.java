@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.slee.resource.cap.events.DialogClose;
-import pl.ovoo.ss7.wrapper.cap.event.DialogCloseEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.DialogCloseEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

@@ -21,8 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.inap.api.primitives.LegID;
-import pl.ovoo.ss7.wrapper.cap.args.LegIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.LegType;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LegType;
 
 /**
  * OcLegIDWrapper

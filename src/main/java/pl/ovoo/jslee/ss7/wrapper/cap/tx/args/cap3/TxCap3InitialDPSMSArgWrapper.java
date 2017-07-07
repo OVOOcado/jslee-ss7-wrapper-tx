@@ -20,7 +20,7 @@
 
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3;
 
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3InitialDPSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3InitialDPSMSArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
 
 /**

@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwFeature;
-import pl.ovoo.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper;
 
 /**
  * TxMAPExt_ForwFeatureWrapper

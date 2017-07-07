@@ -28,17 +28,17 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBasicServiceCode;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyBCDNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallReferenceNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxExtBasicServiceCodeWrapper;
-import pl.ovoo.ss7.wrapper.common.args.IMSIAddressWrapper;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.MAPLocationInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
 /**

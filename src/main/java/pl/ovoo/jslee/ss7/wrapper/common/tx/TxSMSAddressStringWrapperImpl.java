@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.common.tx;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.SMSAddressString;
-import pl.ovoo.ss7.wrapper.common.args.SMSAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SMSAddressStringWrapper;
 
 public class TxSMSAddressStringWrapperImpl implements SMSAddressStringWrapper{
 

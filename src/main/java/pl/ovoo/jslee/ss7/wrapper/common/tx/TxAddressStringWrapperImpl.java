@@ -24,7 +24,7 @@ package pl.ovoo.jslee.ss7.wrapper.common.tx;
 
 import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
 
 // TODO to remove
 public class TxAddressStringWrapperImpl implements AddressStringWrapper{

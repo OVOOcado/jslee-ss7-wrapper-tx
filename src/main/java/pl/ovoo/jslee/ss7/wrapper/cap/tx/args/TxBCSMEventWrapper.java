@@ -21,10 +21,10 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.BCSMEvent;
-import pl.ovoo.ss7.wrapper.cap.args.BCSMEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventTypeBCSM;
-import pl.ovoo.ss7.wrapper.cap.args.LegIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.MonitorMode;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.MonitorMode;
 
 /**
  * TxBCSMEventWrapper

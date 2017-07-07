@@ -33,9 +33,9 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxCap2AChBillingChargingCharacteristicsWrapperTest extends WrapperBaseTest {
 

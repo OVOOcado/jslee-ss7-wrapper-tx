@@ -32,7 +32,6 @@ import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.isup.message.parameter.LocationNumber;
 import org.mobicents.protocols.ss7.map.api.MAPException;
 import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
-import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.CellGlobalIdOrServiceAreaIdOrLAI;
 import org.mobicents.protocols.ss7.map.api.primitives.DiameterIdentity;
 import org.mobicents.protocols.ss7.map.api.primitives.IMEI;
@@ -60,12 +59,6 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.PSSubscriberStateChoice;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RAIdentity;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RouteingNumber;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCFInfo;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusActivationIndicator;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusProvisionIndicator;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusQuiescentIndicator;
-import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberCfStatus.CfStatusRegisterIndicator;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberState;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberStateChoice;
@@ -74,13 +67,11 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.CSGId;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.LSAIdentity;
 
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
-import pl.ovoo.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
-import pl.ovoo.ss7.wrapper.map.args.SubscriberCFInfoWrapper;
-import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSubscriberCFInfoWrapper;
 
 public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
 
@@ -88,45 +79,6 @@ public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
 
     @Before
     public void setUp() throws Exception {
-
-        AddressString cfAddressString1 = mapParameterFactory.createCfAddressString(AddressNature.abbreviated_number,
-                NumberingPlan.data, "609283124");
-        AddressString cfAddressString2 = mapParameterFactory.createCfAddressString(
-                AddressNature.national_significant_number, NumberingPlan.land_mobile, "607356936");
-        AddressString cfAddressString3 = mapParameterFactory
-                .createCfAddressString(AddressNature.network_specific_number, NumberingPlan.national, "720567834");
-        AddressString cfAddressString4 = mapParameterFactory.createCfAddressString(AddressNature.reserved,
-                NumberingPlan.private_plan, "567893456");
-        AddressString cfAddressString5 = mapParameterFactory.createCfAddressString(AddressNature.subscriber_number,
-                NumberingPlan.reserved, "678987345");
-        AddressString cfAddressString6 = mapParameterFactory.createCfAddressString(AddressNature.international_number,
-                NumberingPlan.ISDN, "698734567");
-
-        SubscriberCfStatus subscriberCfStatus1 = mapParameterFactory.createSubscriberCfStatus(
-                CfStatusQuiescentIndicator.NOT_QUIESCENT, CfStatusActivationIndicator.NOT_ACTIVE,
-                CfStatusRegisterIndicator.REGISTERED, CfStatusProvisionIndicator.NOT_PROVIDED);
-        SubscriberCfStatus subscriberCfStatus2 = mapParameterFactory.createSubscriberCfStatus(
-                CfStatusQuiescentIndicator.QUIESCENT, CfStatusActivationIndicator.NOT_ACTIVE,
-                CfStatusRegisterIndicator.REGISTERED, CfStatusProvisionIndicator.NOT_PROVIDED);
-        SubscriberCfStatus subscriberCfStatus3 = mapParameterFactory.createSubscriberCfStatus(
-                CfStatusQuiescentIndicator.QUIESCENT, CfStatusActivationIndicator.ACTIVE,
-                CfStatusRegisterIndicator.NOT_REGISTERED, CfStatusProvisionIndicator.NOT_PROVIDED);
-        SubscriberCfStatus subscriberCfStatus4 = mapParameterFactory.createSubscriberCfStatus(
-                CfStatusQuiescentIndicator.QUIESCENT, CfStatusActivationIndicator.NOT_ACTIVE,
-                CfStatusRegisterIndicator.REGISTERED, CfStatusProvisionIndicator.PROVIDED);
-        SubscriberCfStatus subscriberCfStatus5 = mapParameterFactory.createSubscriberCfStatus(
-                CfStatusQuiescentIndicator.NOT_QUIESCENT, CfStatusActivationIndicator.ACTIVE,
-                CfStatusRegisterIndicator.NOT_REGISTERED, CfStatusProvisionIndicator.NOT_PROVIDED);
-        SubscriberCfStatus subscriberCfStatus6 = mapParameterFactory.createSubscriberCfStatus(
-                CfStatusQuiescentIndicator.QUIESCENT, CfStatusActivationIndicator.NOT_ACTIVE,
-                CfStatusRegisterIndicator.REGISTERED, CfStatusProvisionIndicator.NOT_PROVIDED);
-
-        SubscriberCFInfo subscriberCFInfo = mapParameterFactory.createSubscriberCFInfo(cfAddressString1,
-                subscriberCfStatus1, cfAddressString2, subscriberCfStatus2, cfAddressString3, subscriberCfStatus3,
-                cfAddressString4, subscriberCfStatus4, cfAddressString5, subscriberCfStatus5, cfAddressString6,
-                subscriberCfStatus6);
-
-        SubscriberCFInfoWrapper txSubscriberCFInfoWrapper = new TxSubscriberCFInfoWrapper(subscriberCFInfo);
 
         GeographicalInformation geographicalInformation = mapParameterFactory.createGeographicalInformation(1, 2, 3);
         ISDNAddressString isdnaAddressString = mapParameterFactory.createISDNAddressString(
@@ -183,7 +135,7 @@ public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
                 mnpInfoRes);
         MAPSubscriberInfoWrapper txMAPSubscriberInfoWrapper = new TxMAPSubscriberInfoWrapper(subscriberInfo);
 
-        txAnyTimeInterrogationResultWrapper = new TxAnyTimeInterrogationResultWrapper(txSubscriberCFInfoWrapper,
+        txAnyTimeInterrogationResultWrapper = new TxAnyTimeInterrogationResultWrapper(
                 txMAPSubscriberInfoWrapper);
     }
 
@@ -196,41 +148,6 @@ public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
 
         assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberInfo().getLocationInformation().getVlrNumber()
                 .getAddress().equals(tx.getSubscriberInfo().getLocationInformation().getVlrNumber().getAddress()));
-
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus()
-                .getActive() == tx.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus().getActive());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus()
-                .getProvided() == tx.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus().getProvided());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus()
-                .getQuiescent() == tx.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus().getQuiescent());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus()
-                .getRegistered() == tx.getSubscriberCFInfo().getCFNoReplyTS10().getCFStatus().getRegistered());
-
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus()
-                .getActive() == tx.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus().getActive());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus()
-                .getProvided() == tx.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus().getProvided());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus()
-                .getQuiescent() == tx.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus().getQuiescent());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus()
-                .getRegistered() == tx.getSubscriberCFInfo().getCFSubscriberBusyTS10().getCFStatus().getRegistered());
-
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberNotReachableTS10()
-                .getCFStatus()
-                .getActive() == tx.getSubscriberCFInfo().getCFSubscriberNotReachableTS10().getCFStatus().getActive());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberNotReachableTS10()
-                .getCFStatus().getProvided() == tx.getSubscriberCFInfo().getCFSubscriberNotReachableTS10().getCFStatus()
-                        .getProvided());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberNotReachableTS10()
-                .getCFStatus().getQuiescent() == tx.getSubscriberCFInfo().getCFSubscriberNotReachableTS10()
-                        .getCFStatus().getQuiescent());
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberNotReachableTS10()
-                .getCFStatus().getRegistered() == tx.getSubscriberCFInfo().getCFSubscriberNotReachableTS10()
-                        .getCFStatus().getRegistered());
-
-        assertTrue(txAnyTimeInterrogationResultWrapper.getSubscriberCFInfo().getCFSubscriberBusyTS10()
-                .getForwardedToNumber().getNature().getValue() == tx.getSubscriberCFInfo().getCFSubscriberBusyTS10()
-                        .getForwardedToNumber().getNature().getValue());
 
     }
 

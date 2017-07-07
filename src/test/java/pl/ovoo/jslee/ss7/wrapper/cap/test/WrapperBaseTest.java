@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pl.ovoo.ss7.wrapper.cap.test;
+package pl.ovoo.jslee.ss7.wrapper.cap.test;
 
 import org.mobicents.protocols.ss7.cap.CAPParameterFactoryImpl;
 import org.mobicents.protocols.ss7.cap.api.CAPParameterFactory;
@@ -42,7 +42,7 @@ import org.mobicents.protocols.ss7.map.api.MAPParameterFactory;
 import org.mobicents.protocols.ss7.sccp.impl.parameter.ParameterFactoryImpl;
 import org.mobicents.protocols.ss7.sccp.parameter.ParameterFactory;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
 public abstract class WrapperBaseTest {
 

@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2AChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2AChBillingChargingCharacteristicsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
 
 /**
  * OcCap2AChBillingChargingCharacteristicsWrapper

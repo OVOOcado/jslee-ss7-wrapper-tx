@@ -27,9 +27,9 @@ import org.mobicents.protocols.ss7.cap.api.EsiBcsm.RouteSelectFailureSpecificInf
 import org.mobicents.protocols.ss7.cap.api.EsiBcsm.TBusySpecificInfo;
 import org.mobicents.protocols.ss7.cap.api.EsiBcsm.TDisconnectSpecificInfo;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.EventSpecificInformationBCSM;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.CauseWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
 
 /**
  * TxEventSpecificInformationBCSMWrapper

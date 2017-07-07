@@ -22,7 +22,7 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx;
 
 import org.mobicents.protocols.ss7.cap.api.CAPProvider;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.CAPDialogCircuitSwitchedCall;
-import pl.ovoo.ss7.wrapper.cap.Cap3CallCapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.Cap3CallCapDialogWrapper;
 
 /**
  * TxCap2CallCapDialogWrapper

@@ -21,10 +21,10 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
-import pl.ovoo.ss7.wrapper.common.args.ISDNAddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.args.SmDeliveryOutcome;
+import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SmDeliveryOutcome;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
-import pl.ovoo.ss7.wrapper.map.args.SmsDeliverTpduWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SmsDeliverTpduWrapper;
 
 /**
  * Created by karolsimka on 12.06.17.
@@ -52,7 +52,7 @@ public class TxSmsDeliverTpduWrapper implements SmsDeliverTpduWrapper {
         return SmDeliveryOutcome.valueOf(this.smDeliveryOutcome.getCode());
     }
 
-    public void setSmDeliveryOutcome(pl.ovoo.ss7.wrapper.common.args.SmDeliveryOutcome smDeliveryOutcome){
+    public void setSmDeliveryOutcome(SmDeliveryOutcome smDeliveryOutcome){
         this.smDeliveryOutcome = org.mobicents.protocols.ss7.map.api.service.sms.SMDeliveryOutcome.getInstance(smDeliveryOutcome.getValue());
     }
 }

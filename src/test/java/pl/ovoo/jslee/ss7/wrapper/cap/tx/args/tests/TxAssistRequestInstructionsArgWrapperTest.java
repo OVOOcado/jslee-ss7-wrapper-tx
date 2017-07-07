@@ -29,10 +29,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
 
-import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxGenericNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxAssistRequestInstructionsArgWrapperTest extends WrapperBaseTest {
 

@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.isup.message.parameter.UserServiceInformation;
-import pl.ovoo.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
 
 /**
  * TxITU_TUserServiceInformationWrapper

@@ -21,9 +21,9 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBasicServiceCode;
-import pl.ovoo.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ExtBearerServiceCodeWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ExtTeleserviceCodeWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBearerServiceCodeWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtTeleserviceCodeWrapper;
 
 /**
  * TxExtBasicServiceCodeWrapper

@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
-import pl.ovoo.ss7.wrapper.map.args.MAPRequestedInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPRequestedInfoWrapper;
 
 /**
  * TxMAPSubscriberIdentityWrapper

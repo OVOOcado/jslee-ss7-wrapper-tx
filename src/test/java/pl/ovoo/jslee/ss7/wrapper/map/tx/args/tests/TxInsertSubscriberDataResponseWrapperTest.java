@@ -45,8 +45,8 @@ import org.mobicents.protocols.ss7.map.api.service.supplementary.SupplementaryCo
 import org.mobicents.protocols.ss7.map.service.mobility.subscriberManagement.InsertSubscriberDataResponseImpl;
 
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMapArgsFactory;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataResponseWrapper;
 
 public class TxInsertSubscriberDataResponseWrapperTest extends WrapperBaseTest {

@@ -32,12 +32,12 @@ import org.mobicents.protocols.ss7.map.api.dialog.Reason;
 
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPErrorWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPUserAbortChoiceWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.DialogState;
-import pl.ovoo.ss7.wrapper.map.MapApplicationContextWrapper;
-import pl.ovoo.ss7.wrapper.map.MapDialogWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPErrorWrapper;
-import pl.ovoo.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.DialogState;
+import pl.ovoo.jslee.ss7.wrapper.map.MapApplicationContextWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
 
 /**
  * TxMapDialogWrapperImpl

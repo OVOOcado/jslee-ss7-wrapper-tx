@@ -25,10 +25,10 @@ import org.mobicents.protocols.ss7.cap.api.CAPDialog;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.dialog.CAPDialogState;
 import org.mobicents.protocols.ss7.cap.api.dialog.CAPUserAbortReason;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.ApplicationContextWrapper;
-import pl.ovoo.ss7.wrapper.cap.CapDialogWrapper;
-import pl.ovoo.ss7.wrapper.cap.DialogState;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.ApplicationContextWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.DialogState;
 
 import javax.slee.ActivityContextInterface;
 

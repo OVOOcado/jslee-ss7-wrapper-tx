@@ -22,8 +22,8 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import java.util.ArrayList;
 
-import pl.ovoo.ss7.wrapper.cap.args.CallInformationRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationType;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType;
 
 /**
  * TxCallInformationRequestArgWrapper

@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.slee.resource.map.events.DialogUserAbort;
-import pl.ovoo.ss7.wrapper.map.event.DialogUserAbortEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.DialogUserAbortEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.cap.api.primitives.SendingSideID;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
-import pl.ovoo.ss7.wrapper.cap.args.AChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SendingSideIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.AChBillingChargingCharacteristicsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper;
 
 /**
  * OcApplyChargingArgWrapper

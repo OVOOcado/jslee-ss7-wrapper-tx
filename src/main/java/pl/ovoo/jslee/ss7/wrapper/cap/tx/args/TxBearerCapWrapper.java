@@ -23,9 +23,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.isup.BearerCap;
 import org.mobicents.protocols.ss7.isup.message.parameter.UserServiceInformation;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.BearerCapWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
 
 /**
  * TxBearerCapWrapper

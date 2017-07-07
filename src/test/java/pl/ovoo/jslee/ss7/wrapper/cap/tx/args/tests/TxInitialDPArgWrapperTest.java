@@ -43,14 +43,15 @@ import org.mobicents.protocols.ss7.isup.message.parameter.RedirectionInformation
 import org.mobicents.protocols.ss7.isup.message.parameter.UserServiceInformation;
 import org.mobicents.protocols.ss7.isup.message.parameter.UserTeleserviceInformation;
 
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.BearerCapabilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectionInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapabilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBearerCapabilityWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallingPartyNumberWrapper;
@@ -59,7 +60,6 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRedirectingPartyNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRedirectionInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.test.WrapperBaseTest;
 
 public class TxInitialDPArgWrapperTest extends WrapperBaseTest {
 

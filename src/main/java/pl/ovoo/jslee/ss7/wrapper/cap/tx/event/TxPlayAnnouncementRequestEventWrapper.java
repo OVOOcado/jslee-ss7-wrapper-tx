@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.PlayAnnouncementRequest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxPlayAnnouncementArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.PlayAnnouncementRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.PlayAnnouncementRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

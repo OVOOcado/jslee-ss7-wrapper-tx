@@ -22,7 +22,7 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.slee.resource.cap.events.ErrorComponent;
 import org.mobicents.slee.resource.cap.events.InvokeTimeout;
-import pl.ovoo.ss7.wrapper.cap.event.OperationErrorEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.OperationErrorEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 

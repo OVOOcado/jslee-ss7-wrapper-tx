@@ -21,7 +21,7 @@
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.service.callhandling.CallReferenceNumber;
-import pl.ovoo.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
 
 /**
  * OcCallReferenceNumberWrapper

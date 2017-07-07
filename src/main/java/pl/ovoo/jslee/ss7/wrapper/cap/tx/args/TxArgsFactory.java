@@ -20,10 +20,11 @@
 
 package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
+import javax.slee.ActivityContextInterface;
+
 import org.mobicents.protocols.ss7.cap.api.CAPApplicationContext;
 import org.mobicents.protocols.ss7.cap.api.CAPDialog;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
-import org.mobicents.protocols.ss7.cap.api.CAPMessage;
 import org.mobicents.protocols.ss7.cap.api.CAPProvider;
 import org.mobicents.protocols.ss7.cap.api.EsiBcsm.TBusySpecificInfo;
 import org.mobicents.protocols.ss7.cap.api.EsiSms.OSmsFailureSpecificInfo;
@@ -39,7 +40,6 @@ import org.mobicents.protocols.ss7.cap.api.primitives.ReceivingSideID;
 import org.mobicents.protocols.ss7.cap.api.primitives.SendingSideID;
 import org.mobicents.protocols.ss7.cap.api.primitives.TimeAndTimezone;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.CAPDialogCircuitSwitchedCall;
-import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.InitialDPRequest;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.AudibleIndicator;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.BearerCapability;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
@@ -80,100 +80,98 @@ import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.CallReferenceNumber;
 import org.mobicents.slee.resource.cap.CAPContextInterfaceFactory;
-import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1ConnectArgWrapper;
-import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1EventReportBCSMArgWrapper;
-import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
-import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1RequestReportBCSMEventArgWrapper;
-import pl.ovoo.jslee.ss7.wrapper.cap.tx.event.TxEventWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.ApplicationContextWrapper;
-import pl.ovoo.ss7.wrapper.cap.CapDialogWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ArgsFactory;
-import pl.ovoo.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.BCSMEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.BearerCapWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.BearerCapabilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CancelArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.CauseWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventReportSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.EventTypeBCSM;
-import pl.ovoo.ss7.wrapper.cap.args.EventTypeSMS;
-import pl.ovoo.ss7.wrapper.cap.args.FreeFormatDataWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.GenericDigitsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.GenericNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.InbandInfoWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.InformationToSendWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.LegIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.LegType;
-import pl.ovoo.ss7.wrapper.cap.args.MessageIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.MiscCallInfoWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.MonitorMode;
-import pl.ovoo.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RPCauseValue;
-import pl.ovoo.ss7.wrapper.cap.args.RPCauseWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RedirectionInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ReleaseCallArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ReleaseSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.RequestedInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.ResetTimerArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SMSCauseWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SMSEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SendingSideIDWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1ConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1EventReportBCSMArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap1.Cap1RequestReportBCSMEventArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2AChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2AssistRequestInstructionsArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2BCSMEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2CallInformationReportArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ConnectArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2DPSpecificCriteriaWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2EventSpecificInformationBCSMWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2FCIBCCCAMELsequence1Wrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap2.Cap2TimeInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3AChBillingChargingCharacteristicsWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3ApplyChargingArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3FurnishChargingInformationArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3InitialDPArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3InitialDPSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3ReleaseIfDurationExceededWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3TimeDurationChargingResultWrapper;
-import pl.ovoo.ss7.wrapper.cap.args.cap3.Cap3TimeInformationWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.DialogOpenRequestEventWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.EventWrapper;
+
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.ApplicationContextWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ArgsFactory;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapabilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CancelArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeSMS;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.FreeFormatDataWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.FurnishChargingInformationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.InbandInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LegType;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.MessageIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.MonitorMode;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RPCauseValue;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RPCauseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ReleaseCallArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ReleaseSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ResetTimerArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSCauseWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1ConnectArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1EventReportBCSMArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1RequestReportBCSMEventArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2AChBillingChargingCharacteristicsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2AssistRequestInstructionsArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2BCSMEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationReportArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ConnectArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2DPSpecificCriteriaWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2EventSpecificInformationBCSMWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FCIBCCCAMELsequence1Wrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FurnishChargingInformationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3AChBillingChargingCharacteristicsWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3ApplyChargingArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3FurnishChargingInformationArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3InitialDPSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3ReleaseIfDurationExceededWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3TimeDurationChargingResultWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3TimeInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.TxCap1CallCapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.TxCap2CallCapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.TxCap3CallCapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.TxCapDialogWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.TxSmsCapDialogWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1ConnectArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1EventReportBCSMArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1RequestReportBCSMEventArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AChBillingChargingCharacteristicsWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingReportArgWrapper;
@@ -199,12 +197,10 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3InitialDPSMSArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3ReleaseIfDurationExceededWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3TimeDurationChargingResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3TimeInformationWrapper;
-import pl.ovoo.ss7.wrapper.common.args.AddressStringWrapper;
-import pl.ovoo.ss7.wrapper.common.args.SccpAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
-
-import javax.slee.ActivityContextInterface;
 
 /**
  * TxArgsFactory
@@ -218,36 +214,6 @@ public class TxArgsFactory implements ArgsFactory {
     public TxArgsFactory(final CAPProvider capProvider, final CAPContextInterfaceFactory cginAciFactory) {
         this.capProvider = capProvider;
         this.cginAciFactory = cginAciFactory;
-    }
-
-
-    @Override
-    public void relay(final DialogOpenRequestEventWrapper dialogOpenRequestEvent, final SccpAddressWrapper destSccpAddress) throws Ss7WrapperException {
-        final EventWrapper[] eventWrappers = dialogOpenRequestEvent.getComponentEvents();
-        final TxEventWrapper txEventWrapper = (TxEventWrapper) eventWrappers[0];
-        final CAPApplicationContext capApplicationContext = txEventWrapper.getCapMessage().getCAPDialog().getApplicationContext();
-        final TxSccpAddressWrapperImpl srcTxSccpAddress = (TxSccpAddressWrapperImpl) dialogOpenRequestEvent.getArgument().getRemoteSccpAddress();
-        final TxSccpAddressWrapperImpl destTxSccpAddress = (TxSccpAddressWrapperImpl) destSccpAddress;
-
-        final Long remoteDialogId = txEventWrapper.getCapMessage().getCAPDialog().getRemoteDialogId();
-        txEventWrapper.getCapMessage().getCAPDialog().release();
-        try {
-            final CAPDialogCircuitSwitchedCall relayDialog = capProvider.getCAPServiceCircuitSwitchedCall()
-                    .createNewRelayedDialog(capApplicationContext, srcTxSccpAddress.getTxSccpAddress(), destTxSccpAddress.getTxSccpAddress(), remoteDialogId);
-            final CAPMessage capMessage = txEventWrapper.getCapMessage();
-
-            if(capMessage.getOperationCode() == 0) {
-                final InitialDPRequest idp = (InitialDPRequest)capMessage;
-                relayDialog.addInitialDPRequest(idp.getServiceKey(), idp.getCalledPartyNumber(), idp.getCallingPartyNumber(), idp.getCallingPartysCategory(), idp.getCGEncountered(), idp.getIPSSPCapabilities(), idp.getLocationNumber(), idp.getOriginalCalledPartyID(), idp.getExtensions(), idp.getHighLayerCompatibility(), idp.getAdditionalCallingPartyNumber(), idp.getBearerCapability(), idp.getEventTypeBCSM(), idp.getRedirectingPartyID(), idp.getRedirectionInformation(), idp.getCause(), idp.getServiceInteractionIndicatorsTwo(), idp.getCarrier(), idp.getCugIndex(), idp.getCugInterlock(), idp.getCugOutgoingAccess(), idp.getIMSI(), idp.getSubscriberState(), idp.getLocationInformation(), idp.getExtBasicServiceCode(), idp.getCallReferenceNumber(), idp.getMscAddress(), idp.getCalledPartyBCDNumber(), idp.getTimeAndTimezone(), idp.getCallForwardingSSPending(), idp.getInitialDPArgExtension());
-            }
-            relayDialog.send();
-            relayDialog.release();
-        } catch (CAPException e) {
-            throw new Ss7WrapperException(e);
-        }
-
-
-
     }
 
     @Override
@@ -1069,4 +1035,11 @@ public class TxArgsFactory implements ArgsFactory {
         final FreeFormatData txFreeFormatData = capProvider.getCAPParameterFactory().createFreeFormatData(freeFormatData);
         return new TxFreeFormatDataWrapper(txFreeFormatData);
     }
+
+
+	public CAPContextInterfaceFactory getCginAciFactory() {
+		return cginAciFactory;
+	}
+    
+    
 }

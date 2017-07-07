@@ -22,9 +22,9 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.protocols.ss7.cap.api.service.sms.ConnectSMSRequest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxConnectSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.Ss7WrapperException;
-import pl.ovoo.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
-import pl.ovoo.ss7.wrapper.cap.event.ConnectSMSRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.ConnectSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
