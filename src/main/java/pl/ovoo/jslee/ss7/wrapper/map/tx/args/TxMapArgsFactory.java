@@ -42,6 +42,7 @@ import org.mobicents.protocols.ss7.map.api.service.callhandling.MAPDialogCallHan
 import org.mobicents.protocols.ss7.map.api.service.mobility.MAPDialogMobility;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.AnyTimeInterrogationRequest;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationInformation;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberInfo;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBasicServiceCode;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtForwFeature;
@@ -550,6 +551,12 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
 		return txMtArg;
 	}
+    
+    @Override
+    public MAPRequestedInfoWrapper createMAPRequestedInfoWrapper(boolean locationInformationPresent, boolean currentLocationPresent, boolean subscriberStatePresent){
+    	RequestedInfo requestedInfo = getMapParameterFactory().createRequestedInfo(locationInformationPresent, subscriberStatePresent, null, currentLocationPresent, null, false, false, false);
+    	return new TxMAPRequestedInfoWrapper(requestedInfo);
+    }
 
 	public MAPProvider getMapProvider() {
 		return mapProvider;
