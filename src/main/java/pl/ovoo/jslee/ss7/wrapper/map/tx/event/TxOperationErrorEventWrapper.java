@@ -48,6 +48,10 @@ public class TxOperationErrorEventWrapper extends TxMapEventWrapper implements O
         this.invokeTimeout = invokeTimeout;
     }
     
+    public ErrorComponent getOperationErrorEvent() {
+        return operationErrorEvent;
+    }
+
     @Override
     public long getInvokeId(){
     	return operationErrorEvent.getInvokeId();

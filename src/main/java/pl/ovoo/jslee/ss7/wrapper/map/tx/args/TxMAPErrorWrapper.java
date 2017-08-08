@@ -21,6 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import org.mobicents.protocols.ss7.map.api.errors.MAPErrorMessage;
+
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorMessageWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
 
 /**
@@ -29,6 +31,8 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPErrorWrapper implements MAPErrorWrapper {
+    
+    private MAPErrorMessageWrapper mapErrorMessageWrapper;
 
     private final MAPErrorMessage mAPErrorMessage;
 
@@ -39,10 +43,19 @@ public class TxMAPErrorWrapper implements MAPErrorWrapper {
     public MAPErrorMessage getTxMAPErrorMessage() {
         return mAPErrorMessage;
     }
+    
+    @Override
+    public MAPErrorMessageWrapper getMapErrorMessage() {
+        if (this.mapErrorMessageWrapper == null && mAPErrorMessage != null){
+            this.mapErrorMessageWrapper = new TxMAPErrorMessageWrapper(mAPErrorMessage);
+        }
+        return this.mapErrorMessageWrapper;
+    }
 
     @Override
     public String toString() {
         return "TxMAPErrorWrapper [mAPErrorMessage=" + mAPErrorMessage + "]";
     }
+
 
 }

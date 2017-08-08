@@ -47,4 +47,9 @@ public class TxOperationErrorEventWrapper extends TxEventWrapper implements Oper
         this.operationErrorEvent = null;
         this.invokeTimeout = invokeTimeout;
     }
+
+    public ErrorComponent getOperationErrorEvent() {
+        return operationErrorEvent;
+    }
+    
 }
