@@ -24,17 +24,26 @@ import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
+import org.mobicents.protocols.ss7.cap.errors.CAPErrorMessageCancelFailedImpl;
+import org.mobicents.protocols.ss7.cap.errors.CAPErrorMessageParameterlessImpl;
+import org.mobicents.protocols.ss7.cap.errors.CAPErrorMessageRequestedInfoErrorImpl;
+import org.mobicents.protocols.ss7.cap.errors.CAPErrorMessageSystemFailureImpl;
+import org.mobicents.protocols.ss7.cap.errors.CAPErrorMessageTaskRefusedImpl;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.map.api.MAPException;
 import org.mobicents.protocols.ss7.map.api.errors.MAPErrorMessage;
 import org.mobicents.protocols.ss7.map.errors.MAPErrorMessageAbsentSubscriberImpl;
 import org.mobicents.protocols.ss7.map.errors.MAPErrorMessageCUGRejectImpl;
+import org.mobicents.protocols.ss7.map.errors.MAPErrorMessageParameterlessImpl;
 import org.mobicents.protocols.ss7.map.errors.MAPErrorMessagePwRegistrationFailureImpl;
 
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.map.args.ErrorComponentWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorMessageWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorMessageWrapper.ErrorCode;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxErrorComponentWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPErrorWrapper;
 
 public class TxMAPErrorWrapperTest extends WrapperBaseTest {
@@ -50,11 +59,13 @@ public class TxMAPErrorWrapperTest extends WrapperBaseTest {
                 true);
         MAPErrorMessageCUGRejectImpl mapErrorMessageCUGRejectImpl = new MAPErrorMessageCUGRejectImpl();
         MAPErrorMessagePwRegistrationFailureImpl mapErrorMessagePwRegistrationFailureImpl = new MAPErrorMessagePwRegistrationFailureImpl();
-
+        
         MAPErrorMessage mapErrorMessage1 = (MAPErrorMessage) mapErrorMessageAbsentSubscriberImpl;
+        ErrorComponentWrapper componentWrapper = new TxErrorComponentWrapper(mapErrorMessage1);
+        MAPErrorMessageWrapper mapErrorMessage = componentWrapper.getMAPErrorMessage();
+        ErrorCode messageErrorCode1 = mapErrorMessage.getMessageErrorCode();
         mapError1 = new TxMAPErrorWrapper(mapErrorMessage1);
-        ErrorCode messageErrorCode1 = mapError1.getMapErrorMessage().getMessageErrorCode();
-
+        
         MAPErrorMessage mapErrorMessage2 = (MAPErrorMessage) mapErrorMessageCUGRejectImpl;
         mapError2 = new TxMAPErrorWrapper(mapErrorMessage2);
         ErrorCode messageErrorCode2 = mapError2.getMapErrorMessage().getMessageErrorCode();

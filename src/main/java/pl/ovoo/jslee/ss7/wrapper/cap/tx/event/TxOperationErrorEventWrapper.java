@@ -22,7 +22,10 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.event;
 
 import org.mobicents.slee.resource.cap.events.ErrorComponent;
 import org.mobicents.slee.resource.cap.events.InvokeTimeout;
+
+import pl.ovoo.jslee.ss7.wrapper.cap.args.ErrorComponentWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.event.OperationErrorEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxErrorComponentWrapper;
 
 import javax.slee.ActivityContextInterface;
 
@@ -33,23 +36,33 @@ import javax.slee.ActivityContextInterface;
  */
 public class TxOperationErrorEventWrapper extends TxEventWrapper implements OperationErrorEventWrapper {
 
-    final ErrorComponent operationErrorEvent;
+    private ErrorComponentWrapper operationErrorEvent = null;
+
+    final ErrorComponent txOperationErrorEvent;
     final InvokeTimeout invokeTimeout;
 
     public TxOperationErrorEventWrapper(final ErrorComponent operationErrorEvent, final ActivityContextInterface aci) {
         super(aci, operationErrorEvent.getWrappedEvent());
-        this.operationErrorEvent = operationErrorEvent;
+        this.txOperationErrorEvent = operationErrorEvent;
         this.invokeTimeout = null;
     }
 
     public TxOperationErrorEventWrapper(final InvokeTimeout invokeTimeout, final ActivityContextInterface aci) {
         super(aci, invokeTimeout.getWrappedEvent());
-        this.operationErrorEvent = null;
+        this.txOperationErrorEvent = null;
         this.invokeTimeout = invokeTimeout;
     }
 
-    public ErrorComponent getOperationErrorEvent() {
-        return operationErrorEvent;
+    public ErrorComponent getTxOperationErrorEvent() {
+        return txOperationErrorEvent;
     }
-    
+
+    @Override
+    public ErrorComponentWrapper getOperationErrorEvent() {
+        if (this.operationErrorEvent == null && txOperationErrorEvent != null) {
+            this.operationErrorEvent = new TxErrorComponentWrapper(txOperationErrorEvent.getCAPErrorMessage());
+        }
+        return this.operationErrorEvent;
+    }
+
 }

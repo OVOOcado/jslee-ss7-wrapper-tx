@@ -20,11 +20,14 @@
 
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
+import javax.slee.ActivityContextInterface;
+
 import org.mobicents.slee.resource.map.events.ErrorComponent;
 import org.mobicents.slee.resource.map.events.InvokeTimeout;
-import pl.ovoo.jslee.ss7.wrapper.map.event.OperationErrorEventWrapper;
 
-import javax.slee.ActivityContextInterface;
+import pl.ovoo.jslee.ss7.wrapper.map.args.ErrorComponentWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.event.OperationErrorEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxErrorComponentWrapper;
 
 /**
  * TxOperationErrorEventWrapper
@@ -32,28 +35,38 @@ import javax.slee.ActivityContextInterface;
  * @author pawel.borecki@ovoo.pl
  */
 public class TxOperationErrorEventWrapper extends TxMapEventWrapper implements OperationErrorEventWrapper {
+    
+    private ErrorComponentWrapper operationErrorEvent = null;
 
-    final ErrorComponent operationErrorEvent;
+    final ErrorComponent txOperationErrorEvent;
     final InvokeTimeout invokeTimeout;
 
     public TxOperationErrorEventWrapper(final ErrorComponent operationErrorEvent, final ActivityContextInterface aci) {
         super(aci);
-        this.operationErrorEvent = operationErrorEvent;
+        this.txOperationErrorEvent = operationErrorEvent;
         this.invokeTimeout = null;
     }
 
     public TxOperationErrorEventWrapper(final InvokeTimeout invokeTimeout, final ActivityContextInterface aci) {
         super(aci);
-        this.operationErrorEvent = null;
+        this.txOperationErrorEvent = null;
         this.invokeTimeout = invokeTimeout;
     }
     
-    public ErrorComponent getOperationErrorEvent() {
-        return operationErrorEvent;
+    public ErrorComponent getTxOperationErrorEvent() {
+        return txOperationErrorEvent;
     }
 
     @Override
     public long getInvokeId(){
-    	return operationErrorEvent.getInvokeId();
+    	return txOperationErrorEvent.getInvokeId();
+    }
+
+    @Override
+    public ErrorComponentWrapper getOperationErrorEvent() {
+        if (this.operationErrorEvent == null && txOperationErrorEvent != null){
+            this.operationErrorEvent = new TxErrorComponentWrapper(txOperationErrorEvent.getMAPErrorMessage());
+        }
+        return this.operationErrorEvent;
     }
 }
