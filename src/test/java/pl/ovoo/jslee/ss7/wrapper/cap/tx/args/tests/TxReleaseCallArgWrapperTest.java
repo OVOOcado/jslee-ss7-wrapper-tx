@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper;
 
+
+/**
+ * The Class TxReleaseCallArgWrapperTest.
+ */
 public class TxReleaseCallArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx release call arg wrapper. */
     TxReleaseCallArgWrapper txReleaseCallArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -55,6 +65,9 @@ public class TxReleaseCallArgWrapperTest extends WrapperBaseTest {
         txReleaseCallArgWrapper.setInitialCallSegment(causeWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

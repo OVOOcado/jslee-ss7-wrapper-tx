@@ -23,53 +23,86 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 import pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper;
 
+
 /**
- * TxForwardedToNumberWrapper
+ * TxForwardedToNumberWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxForwardedToNumberWrapper implements ForwardedToNumberWrapper {
 
+    /** The forwarded to number. */
     private final AddressString forwardedToNumber;
 
+    /**
+     * Instantiates a new tx forwarded to number wrapper.
+     *
+     * @param forwardedToNumber the forwarded to number
+     */
     public TxForwardedToNumberWrapper(final AddressString forwardedToNumber) {
         this.forwardedToNumber = forwardedToNumber;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper#getAddress()
+     */
     @Override
     public String getAddress() {
         return forwardedToNumber.getAddress();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper#getNature()
+     */
     @Override
     public Nature getNature() {
         return Nature.valueOf(forwardedToNumber.getAddressNature().getIndicator());
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper#getNumberingPlan()
+     */
     @Override
     public NumberingPlan getNumberingPlan() {
         return NumberingPlan.valueOf(forwardedToNumber.getNumberingPlan().getIndicator());
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper#hasAddress()
+     */
     @Override
     public boolean hasAddress() {
         return forwardedToNumber.getAddress() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper#hasNature()
+     */
     @Override
     public boolean hasNature() {
         return forwardedToNumber.getAddressNature() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper#hasNumberingPlan()
+     */
     @Override
     public boolean hasNumberingPlan() {
         return forwardedToNumber.getNumberingPlan() != null;
     }
 
+    /**
+     * Gets the tx forwarded to number.
+     *
+     * @return the tx forwarded to number
+     */
     public AddressString getTxForwardedToNumber() {
         return forwardedToNumber;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxForwardedToNumberWrapper [forwardedToNumber=" + forwardedToNumber + "]";

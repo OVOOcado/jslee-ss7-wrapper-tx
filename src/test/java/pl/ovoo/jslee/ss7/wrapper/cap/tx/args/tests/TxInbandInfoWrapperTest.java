@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInbandInfoWrapper;
 
+
+/**
+ * The Class TxInbandInfoWrapperTest.
+ */
 public class TxInbandInfoWrapperTest extends WrapperBaseTest {
 
+    /** The tx inband info wrapper. */
     TxInbandInfoWrapper txInbandInfoWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -48,6 +58,9 @@ public class TxInbandInfoWrapperTest extends WrapperBaseTest {
         txInbandInfoWrapper = new TxInbandInfoWrapper(inbandInfo);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

@@ -28,20 +28,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.ResetTimerRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxResetTimerRequestEventWrapper
+ * TxResetTimerRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxResetTimerRequestEventWrapper extends TxEventWrapper implements ResetTimerRequestEventWrapper {
 
+    /** The reset timer request. */
     private final ResetTimerRequest resetTimerRequest;
 
+    /**
+     * Instantiates a new tx reset timer request event wrapper.
+     *
+     * @param resetTimerRequest the reset timer request
+     * @param aci the aci
+     */
     public TxResetTimerRequestEventWrapper(final ResetTimerRequest resetTimerRequest, final ActivityContextInterface aci) {
         super(aci, resetTimerRequest);
         this.resetTimerRequest = resetTimerRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public ResetTimerArgWrapper getArgument() throws Ss7WrapperException {
         final TxResetTimerArgWrapper txResetTimerArgWrapper = new TxResetTimerArgWrapper();

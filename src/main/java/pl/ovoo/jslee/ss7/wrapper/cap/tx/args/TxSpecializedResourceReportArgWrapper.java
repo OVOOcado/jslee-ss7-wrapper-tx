@@ -23,7 +23,7 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper;
 
 /**
- * TxSpecializedResourceReportArgWrapper
+ * TxSpecializedResourceReportArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */

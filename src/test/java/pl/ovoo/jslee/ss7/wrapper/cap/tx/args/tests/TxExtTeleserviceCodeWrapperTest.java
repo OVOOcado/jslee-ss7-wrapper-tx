@@ -33,10 +33,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxExtTeleserviceCodeWrapper;
 
+
+/**
+ * The Class TxExtTeleserviceCodeWrapperTest.
+ */
 public class TxExtTeleserviceCodeWrapperTest extends WrapperBaseTest {
 
+    /** The tx ext teleservice code wrapper. */
     TxExtTeleserviceCodeWrapper txExtTeleserviceCodeWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -45,6 +55,9 @@ public class TxExtTeleserviceCodeWrapperTest extends WrapperBaseTest {
         txExtTeleserviceCodeWrapper = new TxExtTeleserviceCodeWrapper(extTeleserviceCode);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
 

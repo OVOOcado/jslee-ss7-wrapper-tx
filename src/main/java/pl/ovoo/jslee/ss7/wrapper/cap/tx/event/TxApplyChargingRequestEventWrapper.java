@@ -30,20 +30,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.ApplyChargingRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxApplyChargingRequestEventWrapper
+ * TxApplyChargingRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxApplyChargingRequestEventWrapper extends TxEventWrapper implements ApplyChargingRequestEventWrapper {
 
+    /** The apply charging request. */
     private final ApplyChargingRequest applyChargingRequest;
 
+    /**
+     * Instantiates a new tx apply charging request event wrapper.
+     *
+     * @param applyChargingRequest the apply charging request
+     * @param aci the aci
+     */
     public TxApplyChargingRequestEventWrapper(final ApplyChargingRequest applyChargingRequest, final ActivityContextInterface aci) {
         super(aci, applyChargingRequest);
         this.applyChargingRequest = applyChargingRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public ApplyChargingArgWrapper getArgument() throws Ss7WrapperException {
         final TxApplyChargingArgWrapper applyChargingArgWrapper;

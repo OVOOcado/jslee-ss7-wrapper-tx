@@ -26,29 +26,45 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper;
 
 import java.io.UnsupportedEncodingException;
 
+
 /**
- * TxGenericDigitsWrapper
+ * TxGenericDigitsWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxGenericDigitsWrapper implements GenericDigitsWrapper {
 
+	/** The generic digits. */
 	private final GenericDigits genericDigits;
 
+	/**
+	 * Instantiates a new tx generic digits wrapper.
+	 *
+	 * @param genericDigits the generic digits
+	 */
 	public TxGenericDigitsWrapper(final GenericDigits genericDigits) {
 		this.genericDigits = genericDigits;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper#setEncodingScheme(pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper.EncodingScheme)
+	 */
 	@Override
 	public void setEncodingScheme(final EncodingScheme encodingScheme) {
 		genericDigits.setEncodingScheme(encodingScheme.getValue());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper#setTypeOfDigits(pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper.TypeOfDigits)
+	 */
 	@Override
 	public void setTypeOfDigits(final TypeOfDigits typeOfDigits) {
 		genericDigits.setTypeOfDigits(typeOfDigits.getValue());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper#setAddress(java.lang.String)
+	 */
 	@Override
 	public void setAddress(final String address) throws Ss7WrapperException {
 		try {
@@ -58,16 +74,25 @@ public class TxGenericDigitsWrapper implements GenericDigitsWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper#getEncodingScheme()
+	 */
 	@Override
 	public EncodingScheme getEncodingScheme() {
 		return EncodingScheme.valueOf(genericDigits.getEncodingScheme());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper#getTypeOfDigits()
+	 */
 	@Override
 	public TypeOfDigits getTypeOfDigits() {
 		return TypeOfDigits.valueOf(genericDigits.getTypeOfDigits());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper#getAddress()
+	 */
 	@Override
 	public String getAddress() throws Ss7WrapperException {
 		try {
@@ -77,10 +102,18 @@ public class TxGenericDigitsWrapper implements GenericDigitsWrapper {
 		}
 	}
 
+	/**
+	 * Gets the tx generic digits.
+	 *
+	 * @return the tx generic digits
+	 */
 	public GenericDigits getTxGenericDigits() {
 		return genericDigits;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxGenericDigitsWrapper [genericDigits=" + genericDigits + "]";

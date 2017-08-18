@@ -72,18 +72,28 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpUiWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoForSMResponseWrapper;
 
+
 /**
  * Created by karolsimka on 26.06.17.
  */
 public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SMSMapDialogWrapper {
 
+    /** The dialog. */
     private MAPDialogSms dialog;
 
+    /**
+     * Instantiates a new tx sms map dialog wrapper.
+     *
+     * @param dialog the dialog
+     */
     public TxSMSMapDialogWrapper(final MAPDialogSms dialog) {
         super(dialog);
         this.dialog = dialog;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.SMSMapDialogWrapper#sendSendRoutingInfoForSMRequest(long, pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper)
+     */
     @Override
     public int sendSendRoutingInfoForSMRequest(long sriTimeout, SendRoutingInfoForSMRequestArgWrapper arg) throws Ss7WrapperException {
         try {
@@ -94,6 +104,9 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.SMSMapDialogWrapper#sendSendRoutingInfoForSMResponse(long, pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper)
+     */
     @Override
     public void sendSendRoutingInfoForSMResponse(long invoke, SendRoutingInfoForSMResponseWrapper arg) throws Ss7WrapperException {
         try{
@@ -115,6 +128,9 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.SMSMapDialogWrapper#sendMtForwardSMRequest(long, pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper)
+     */
     @Override
     public int sendMtForwardSMRequest(long timeout, MtForwardShortMessageRequestWrapper arg) throws Ss7WrapperException{
         try{

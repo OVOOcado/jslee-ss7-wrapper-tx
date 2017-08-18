@@ -25,24 +25,37 @@ import org.mobicents.protocols.ss7.map.api.primitives.CellGlobalIdOrServiceAreaI
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper;
 
+
 /**
- * TxCellGlobalIdWrapper
+ * TxCellGlobalIdWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCellGlobalIdWrapper implements CellGlobalIdWrapper {
 
+    /** The cell global id or service area id fixed length. */
     private final CellGlobalIdOrServiceAreaIdFixedLength cellGlobalIdOrServiceAreaIdFixedLength;
 
+    /**
+     * Instantiates a new tx cell global id wrapper.
+     *
+     * @param cellGlobalIdOrServiceAreaIdFixedLength the cell global id or service area id fixed length
+     */
     public TxCellGlobalIdWrapper(final CellGlobalIdOrServiceAreaIdFixedLength cellGlobalIdOrServiceAreaIdFixedLength) {
         this.cellGlobalIdOrServiceAreaIdFixedLength = cellGlobalIdOrServiceAreaIdFixedLength;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#hasMobileCountryCode()
+     */
     @Override
     public boolean hasMobileCountryCode() {
         return true;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#getMobileCountryCode()
+     */
     @Override
     public String getMobileCountryCode() throws Ss7WrapperException {
         try {
@@ -52,11 +65,17 @@ public class TxCellGlobalIdWrapper implements CellGlobalIdWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#hasMobileNetworkCode()
+     */
     @Override
     public boolean hasMobileNetworkCode() {
         return true;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#getMobileNetworkCode()
+     */
     @Override
     public String getMobileNetworkCode() throws Ss7WrapperException {
         try {
@@ -66,11 +85,17 @@ public class TxCellGlobalIdWrapper implements CellGlobalIdWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#hasCellId()
+     */
     @Override
     public boolean hasCellId() {
         return true;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#getCellId()
+     */
     @Override
     public int getCellId() throws Ss7WrapperException {
         try {
@@ -80,11 +105,17 @@ public class TxCellGlobalIdWrapper implements CellGlobalIdWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#hasLocationAreaCode()
+     */
     @Override
     public boolean hasLocationAreaCode() {
         return true;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper#getLocationAreaCode()
+     */
     @Override
     public int getLocationAreaCode() throws Ss7WrapperException {
         try {
@@ -94,6 +125,9 @@ public class TxCellGlobalIdWrapper implements CellGlobalIdWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCellGlobalIdWrapper [cellGlobalIdOrServiceAreaIdFixedLength=" + cellGlobalIdOrServiceAreaIdFixedLength

@@ -31,20 +31,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxDialogOpenArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogOpenRequestEventWrapper
+ * TxDialogOpenRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenRequestEventWrapper extends TxEventWrapper implements DialogOpenRequestEventWrapper {
 
+    /** The event. */
     private final CAPMessage event;
 
+    /**
+     * Instantiates a new tx dialog open request event wrapper.
+     *
+     * @param event the event
+     * @param aci the aci
+     */
     public TxDialogOpenRequestEventWrapper(final CAPMessage event, final ActivityContextInterface aci) {
         super(aci, event);
         this.event = event;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.DialogOpenRequestEventWrapper#getComponentEvents()
+     */
     @Override
     public EventWrapper[] getComponentEvents() {
         if (event instanceof InitialDPRequest) {
@@ -60,6 +71,9 @@ public class TxDialogOpenRequestEventWrapper extends TxEventWrapper implements D
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.DialogOpenRequestEventWrapper#getArgument()
+     */
     @Override
     public DialogOpenArgWrapper getArgument() {
         return new TxDialogOpenArgWrapper(getTxDialog());

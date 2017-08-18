@@ -49,10 +49,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataResponseWrapper;
 
+
+/**
+ * The Class TxInsertSubscriberDataResponseWrapperTest.
+ */
 public class TxInsertSubscriberDataResponseWrapperTest extends WrapperBaseTest {
 
+    /** The tx insert subscriber data response wrapper. */
     TxInsertSubscriberDataResponseWrapper txInsertSubscriberDataResponseWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
         TxMapArgsFactory txMapArgsFactory = new TxMapArgsFactory(mapParameterFactory);
@@ -92,6 +102,9 @@ public class TxInsertSubscriberDataResponseWrapperTest extends WrapperBaseTest {
                 insertSubscriberDataResponseImpl);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException {

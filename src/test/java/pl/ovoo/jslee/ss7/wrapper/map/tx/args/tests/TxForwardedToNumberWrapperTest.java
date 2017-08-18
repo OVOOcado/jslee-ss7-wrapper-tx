@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxForwardedToNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class TxForwardedToNumberWrapperTest.
+ */
 public class TxForwardedToNumberWrapperTest extends WrapperBaseTest {
 
+    /** The tx forwarded to number wrapper. */
     TxForwardedToNumberWrapper txForwardedToNumberWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
         
@@ -48,6 +58,9 @@ public class TxForwardedToNumberWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

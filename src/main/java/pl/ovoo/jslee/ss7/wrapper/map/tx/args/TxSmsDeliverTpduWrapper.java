@@ -26,32 +26,54 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.SmDeliveryOutcome;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SmsDeliverTpduWrapper;
 
+
 /**
  * Created by karolsimka on 12.06.17.
  */
 public class TxSmsDeliverTpduWrapper implements SmsDeliverTpduWrapper {
 
+    /** The msisdn. */
     private ISDNAddressString msisdn;
 
+    /** The sm delivery outcome. */
     private org.mobicents.protocols.ss7.map.api.service.sms.SMDeliveryOutcome smDeliveryOutcome;
 
+    /**
+     * Instantiates a new tx sms deliver tpdu wrapper.
+     */
     public TxSmsDeliverTpduWrapper() {super();}
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SmsDeliverTpduWrapper#getMsisdn()
+     */
     @Override
     public ISDNAddressStringWrapper getMsisdn(){
         return new TxISDNAddressStringWrapperImpl(msisdn);
     }
 
+    /**
+     * Sets the msisdn.
+     *
+     * @param msisdn the new msisdn
+     */
     public void setMsisdn(ISDNAddressStringWrapper msisdn){
         TxISDNAddressStringWrapperImpl txMsisdn = (TxISDNAddressStringWrapperImpl)msisdn;
         this.msisdn = txMsisdn.getTxAddress();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SmsDeliverTpduWrapper#getOutcome()
+     */
     @Override
     public SmDeliveryOutcome getOutcome() {
         return SmDeliveryOutcome.valueOf(this.smDeliveryOutcome.getCode());
     }
 
+    /**
+     * Sets the sm delivery outcome.
+     *
+     * @param smDeliveryOutcome the new sm delivery outcome
+     */
     public void setSmDeliveryOutcome(SmDeliveryOutcome smDeliveryOutcome){
         this.smDeliveryOutcome = org.mobicents.protocols.ss7.map.api.service.sms.SMDeliveryOutcome.getInstance(smDeliveryOutcome.getValue());
     }

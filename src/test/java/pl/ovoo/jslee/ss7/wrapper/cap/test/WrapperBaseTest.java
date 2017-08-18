@@ -44,16 +44,33 @@ import org.mobicents.protocols.ss7.sccp.parameter.ParameterFactory;
 
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class WrapperBaseTest.
+ */
 public abstract class WrapperBaseTest {
 
+    /** The serialize file path. */
     private final String serializeFilePath = "testFile.ser";
 
+    /** The map parameter factory. */
     public MAPParameterFactory mapParameterFactory;
+    
+    /** The isup factory. */
     public ISUPParameterFactory isupFactory;
+    
+    /** The cap factory. */
     public CAPParameterFactory capFactory;
+    
+    /** The inap factory. */
     public INAPParameterFactory inapFactory;
+    
+    /** The parameter factory. */
     public ParameterFactory parameterFactory;
 
+    /**
+     * Instantiates a new wrapper base test.
+     */
     public WrapperBaseTest() {
 
         mapParameterFactory = new MAPParameterFactoryImpl();
@@ -64,6 +81,12 @@ public abstract class WrapperBaseTest {
 
     }
 
+    /**
+     * Serialize to file.
+     *
+     * @param obj the obj
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public void serializeToFile(Object obj) throws IOException {
         FileOutputStream fileOut = new FileOutputStream(serializeFilePath);
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -72,6 +95,13 @@ public abstract class WrapperBaseTest {
         fileOut.close();
     }
 
+    /**
+     * Deserialize from file.
+     *
+     * @return the object
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws ClassNotFoundException the class not found exception
+     */
     public Object deserializeFromFile() throws IOException, ClassNotFoundException {
         FileInputStream fileIn = new FileInputStream(serializeFilePath);
         ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -82,6 +112,16 @@ public abstract class WrapperBaseTest {
         return ob;
     }
 
+    /**
+     * Test serialization.
+     *
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws ClassNotFoundException the class not found exception
+     * @throws CAPException the CAP exception
+     * @throws Ss7WrapperException the ss7 wrapper exception
+     * @throws INAPException the INAP exception
+     * @throws MAPException the MAP exception
+     */
     @Test
     public abstract void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException;

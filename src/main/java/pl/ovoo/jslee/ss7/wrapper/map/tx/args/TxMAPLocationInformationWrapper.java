@@ -26,22 +26,35 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 
+
 /**
- * TxMAPLocationInformationWrapper
+ * TxMAPLocationInformationWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMAPLocationInformationWrapper implements MAPLocationInformationWrapper {
 
+    /** The vlr number. */
     private transient ISDNAddressStringWrapper vlrNumber = null;
+    
+    /** The cell global id or service area id or lai. */
     private transient MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper cellGlobalIdOrServiceAreaIdOrLAI = null;
 
+    /** The map location information. */
     private final LocationInformation mapLocationInformation;
 
+    /**
+     * Instantiates a new tx map location information wrapper.
+     *
+     * @param mapLocationInformation the map location information
+     */
     public TxMAPLocationInformationWrapper(final LocationInformation mapLocationInformation) {
         this.mapLocationInformation = mapLocationInformation;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper#getVlrNumber()
+     */
     @Override
     public ISDNAddressStringWrapper getVlrNumber() {
         if (this.vlrNumber == null && this.mapLocationInformation.getVlrNumber() != null) {
@@ -50,16 +63,25 @@ public class TxMAPLocationInformationWrapper implements MAPLocationInformationWr
         return this.vlrNumber;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper#hasVlrNumber()
+     */
     @Override
     public boolean hasVlrNumber() {
         return mapLocationInformation.getVlrNumber() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper#hasCellGlobalIdOrServiceAreaIdOrLAI()
+     */
     @Override
     public boolean hasCellGlobalIdOrServiceAreaIdOrLAI() {
         return mapLocationInformation.getCellGlobalIdOrServiceAreaIdOrLAI() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper#getCellGlobalIdOrServiceAreaIdOrLAI()
+     */
     @Override
     public MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper getCellGlobalIdOrServiceAreaIdOrLAI() {
         if (this.cellGlobalIdOrServiceAreaIdOrLAI == null
@@ -70,10 +92,18 @@ public class TxMAPLocationInformationWrapper implements MAPLocationInformationWr
         return this.cellGlobalIdOrServiceAreaIdOrLAI;
     }
 
+    /**
+     * Gets the tx map location information.
+     *
+     * @return the tx map location information
+     */
     public LocationInformation getTxMapLocationInformation() {
         return mapLocationInformation;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPLocationInformationWrapper [mapLocationInformation=" + mapLocationInformation + "]";

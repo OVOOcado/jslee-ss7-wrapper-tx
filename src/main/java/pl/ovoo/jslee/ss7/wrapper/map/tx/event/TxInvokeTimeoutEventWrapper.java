@@ -31,20 +31,31 @@ import org.mobicents.slee.resource.map.events.InvokeTimeout;
 
 import pl.ovoo.jslee.ss7.wrapper.map.event.InvokeTimeoutEventWrapper;
 
+
 /**
- * TxInvokeTimeoutEventWrapper
- * 
+ * TxInvokeTimeoutEventWrapper.
+ *
  * @author adam.skimina@ovoo.pl
  */
 public class TxInvokeTimeoutEventWrapper extends TxMapEventWrapper implements InvokeTimeoutEventWrapper {
 
+    /** The invoke timeout. */
     private final InvokeTimeout invokeTimeout;
 
+    /**
+     * Instantiates a new tx invoke timeout event wrapper.
+     *
+     * @param invokeTimeout the invoke timeout
+     * @param aci the aci
+     */
     public TxInvokeTimeoutEventWrapper(final InvokeTimeout invokeTimeout, ActivityContextInterface aci) {
         super(aci);
         this.invokeTimeout = invokeTimeout;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId() {
         return invokeTimeout.getWrappedEvent().getInvokeId();

@@ -33,10 +33,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxExtBearerServiceCodeWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class TxExtBearerServiceCodeWrapperTest.
+ */
 public class TxExtBearerServiceCodeWrapperTest extends WrapperBaseTest {
 
+    /** The tx ext bearer service code wrapper. */
     TxExtBearerServiceCodeWrapper txExtBearerServiceCodeWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -47,6 +57,9 @@ public class TxExtBearerServiceCodeWrapperTest extends WrapperBaseTest {
         txExtBearerServiceCodeWrapper = new TxExtBearerServiceCodeWrapper(extBearerServiceCode);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
 

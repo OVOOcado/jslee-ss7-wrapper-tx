@@ -31,10 +31,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxDialogOpenArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class TxDialogOpenArgWrapperTest.
+ */
 public class TxDialogOpenArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx dialog open arg wrapper. */
     TxDialogOpenArgWrapper txDialogOpenArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
         // TCAPProvider
@@ -44,6 +54,9 @@ public class TxDialogOpenArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
         // assertTrue();

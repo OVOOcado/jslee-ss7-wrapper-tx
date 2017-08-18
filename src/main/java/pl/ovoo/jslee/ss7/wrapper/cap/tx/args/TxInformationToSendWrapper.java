@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.InformationToSend;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper;
 
+
 /**
- * TxInformationToSendWrapper
+ * TxInformationToSendWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxInformationToSendWrapper implements InformationToSendWrapper {
 
+	/** The information to send. */
 	private final InformationToSend informationToSend;
 
+	/**
+	 * Instantiates a new tx information to send wrapper.
+	 *
+	 * @param informationToSend the information to send
+	 */
 	public TxInformationToSendWrapper(final InformationToSend informationToSend) {
 		this.informationToSend = informationToSend;
 	}
 
+	/**
+	 * Gets the tx information to send.
+	 *
+	 * @return the tx information to send
+	 */
 	public InformationToSend getTxInformationToSend() {
 		return informationToSend;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxInformationToSendWrapper [informationToSend=" + informationToSend + "]";

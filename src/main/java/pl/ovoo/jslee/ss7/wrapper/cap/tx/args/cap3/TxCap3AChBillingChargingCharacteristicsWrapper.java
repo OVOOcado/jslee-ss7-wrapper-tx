@@ -25,17 +25,26 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3AChBillingChargingCharacteris
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3ReleaseIfDurationExceededWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AChBillingChargingCharacteristicsWrapper;
 
+
 /**
- * TxCap3AChBillingChargingCharacteristicsWrapper
+ * TxCap3AChBillingChargingCharacteristicsWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap3AChBillingChargingCharacteristicsWrapper extends TxCap2AChBillingChargingCharacteristicsWrapper implements Cap3AChBillingChargingCharacteristicsWrapper {
 
+    /**
+     * Instantiates a new tx cap3 a ch billing charging characteristics wrapper.
+     *
+     * @param achBillingChargingCharacteristics the ach billing charging characteristics
+     */
     public TxCap3AChBillingChargingCharacteristicsWrapper(final CAMELAChBillingChargingCharacteristics achBillingChargingCharacteristics) {
         super(achBillingChargingCharacteristics);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AChBillingChargingCharacteristicsWrapper#getTimeDurationCharging()
+     */
     public Cap3TimeDurationChargingWrapper getTimeDurationCharging() {
         final CAMELAChBillingChargingCharacteristics camelaChBillingChargingCharacteristics = getTxAchBillingChargingCharacteristics();
         final Cap3ReleaseIfDurationExceededWrapper cap2ReleaseIfDurationExceededWrapper;
@@ -49,13 +58,26 @@ public class TxCap3AChBillingChargingCharacteristicsWrapper extends TxCap2AChBil
     }
 
 
+    /**
+     * The Class TxCap3TimeDurationChargingWrapper.
+     */
     public static class TxCap3TimeDurationChargingWrapper extends TxCap2TimeDurationChargingWrapper implements Cap3AChBillingChargingCharacteristicsWrapper.Cap3TimeDurationChargingWrapper {
 
 
+        /**
+         * Instantiates a new tx cap3 time duration charging wrapper.
+         *
+         * @param maxCallPeriodDuration the max call period duration
+         * @param tariffSwitchInterval the tariff switch interval
+         * @param cap2ReleaseIfDurationExceededWrapper the cap2 release if duration exceeded wrapper
+         */
         public TxCap3TimeDurationChargingWrapper(final long maxCallPeriodDuration, final Long tariffSwitchInterval, final Cap3ReleaseIfDurationExceededWrapper cap2ReleaseIfDurationExceededWrapper) {
             super(maxCallPeriodDuration, tariffSwitchInterval, cap2ReleaseIfDurationExceededWrapper);
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AChBillingChargingCharacteristicsWrapper.TxCap2TimeDurationChargingWrapper#getReleaseIfDurationExceeded()
+         */
         public Cap3ReleaseIfDurationExceededWrapper getReleaseIfDurationExceeded() {
             return (TxCap3ReleaseIfDurationExceededWrapper) super.getReleaseIfDurationExceeded();
         }

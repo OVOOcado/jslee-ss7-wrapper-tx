@@ -27,26 +27,40 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogProviderAbortEventWrapper
+ * TxDialogProviderAbortEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogProviderAbortEventWrapper extends TxMapEventWrapper implements DialogProviderAbortEventWrapper {
 
+    /** The dialog provider abort event. */
     private final DialogProviderAbort dialogProviderAbortEvent;
 
+    /**
+     * Instantiates a new tx dialog provider abort event wrapper.
+     *
+     * @param dialogProviderAbortEvent the dialog provider abort event
+     * @param aci the aci
+     */
     public TxDialogProviderAbortEventWrapper(final DialogProviderAbort dialogProviderAbortEvent, final ActivityContextInterface aci) {
         super(aci);
         this.dialogProviderAbortEvent = dialogProviderAbortEvent;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.DialogProviderAbortEventWrapper#getPeerAbortCause()
+     */
     @Override
     public PAbortCauseType getPeerAbortCause() {
     	throw  new NotImplementedException();
 
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return dialogProviderAbortEvent.getWrappedEvent().getInvokeId();

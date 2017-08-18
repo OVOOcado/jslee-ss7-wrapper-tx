@@ -25,19 +25,29 @@ import org.mobicents.protocols.ss7.cap.api.isup.RedirectingPartyIDCap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
 
+
 /**
- * OcCallingPartyNumberWrapper
+ * OcCallingPartyNumberWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWrapper {
 
+    /** The redirecting party number. */
     private final RedirectingPartyIDCap redirectingPartyNumber;
 
+    /**
+     * Instantiates a new tx redirecting party number wrapper.
+     *
+     * @param redirectingPartyNumber the redirecting party number
+     */
     public TxRedirectingPartyNumberWrapper(final RedirectingPartyIDCap redirectingPartyNumber) {
         this.redirectingPartyNumber = redirectingPartyNumber;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#getAddress()
+     */
     @Override
     public String getAddress() throws Ss7WrapperException {
         try {
@@ -47,6 +57,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#getNature()
+     */
     @Override
     public Nature getNature() throws Ss7WrapperException {
         try {
@@ -59,6 +72,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#getNumberingPlan()
+     */
     @Override
     public NumberingPlan getNumberingPlan() throws Ss7WrapperException {
         try {
@@ -71,6 +87,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#hasAddress()
+     */
     @Override
     public boolean hasAddress() throws Ss7WrapperException {
         try {
@@ -80,6 +99,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#hasNature()
+     */
     @Override
     public boolean hasNature() throws Ss7WrapperException {
         try {
@@ -89,6 +111,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#hasNumberingPlan()
+     */
     @Override
     public boolean hasNumberingPlan() throws Ss7WrapperException {
         try {
@@ -98,6 +123,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#hasPresentation()
+     */
     @Override
     public boolean hasPresentation() throws Ss7WrapperException {
         try {
@@ -107,6 +135,9 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper#getPresentation()
+     */
     @Override
     public Presentation getPresentation() throws Ss7WrapperException {
         try {
@@ -119,10 +150,18 @@ public class TxRedirectingPartyNumberWrapper implements RedirectingPartyNumberWr
         }
     }
 
+    /**
+     * Gets the tx redirecting party number.
+     *
+     * @return the tx redirecting party number
+     */
     public RedirectingPartyIDCap getTxRedirectingPartyNumber() {
         return redirectingPartyNumber;
     }
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxRedirectingPartyNumberWrapper [redirectingPartyNumber=" + redirectingPartyNumber + "]";

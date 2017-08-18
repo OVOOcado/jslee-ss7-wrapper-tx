@@ -32,29 +32,43 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
 
 
+
 /**
- * TxAssistRequestInstructionsArgWrapper
+ * TxAssistRequestInstructionsArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstructionsArgWrapper {
 
+    /** The correlation id. */
     private transient GenericNumberWrapper correlationID = null;
 
+    /** The tx correlation id. */
     private GenericNumber txCorrelationID;
 
+    /** The generic number impl. */
     private GenericNumberImpl genericNumberImpl;
 
+    /** The logger. */
     private static Logger logger = Logger.getLogger(TxAssistRequestInstructionsArgWrapper.class);
 
+    /**
+     * Instantiates a new tx assist request instructions arg wrapper.
+     */
     public TxAssistRequestInstructionsArgWrapper() {
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper#hasCorrelationID()
+     */
     @Override
     public boolean hasCorrelationID() {
         return txCorrelationID != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper#getCorrelationID()
+     */
     @Override
     public GenericNumberWrapper getCorrelationID() {
         if (this.correlationID == null && this.txCorrelationID != null) {
@@ -63,6 +77,9 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         return this.correlationID;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper#setCorrelationID(pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper)
+     */
     @Override
     public void setCorrelationID(final GenericNumberWrapper correlationID) {
         if (correlationID == null) {
@@ -75,20 +92,36 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         }
     }
 
+    /**
+     * Gets the tx correlation id.
+     *
+     * @return the tx correlation id
+     */
     public GenericNumber getTxCorrelationID() {
         return txCorrelationID;
     }
 
+    /**
+     * Sets the tx correlation id.
+     *
+     * @param txCorrelationID the new tx correlation id
+     */
     public void setTxCorrelationID(final GenericNumber txCorrelationID) {
         this.correlationID = null;
         this.txCorrelationID = txCorrelationID;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxAssistRequestInstructionsArgWrapper [txCorrelationID=" + txCorrelationID + "]";
     }
 
+    /* (non-Javadoc)
+     * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
+     */
     @Override
     public void readExternal(ObjectInput oin) throws IOException, ClassNotFoundException {
         genericNumberImpl = new GenericNumberImpl();
@@ -104,6 +137,9 @@ public class TxAssistRequestInstructionsArgWrapper implements AssistRequestInstr
         this.txCorrelationID = genericNumberImpl;
     }
 
+    /* (non-Javadoc)
+     * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
+     */
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         genericNumberImpl = (GenericNumberImpl) txCorrelationID;

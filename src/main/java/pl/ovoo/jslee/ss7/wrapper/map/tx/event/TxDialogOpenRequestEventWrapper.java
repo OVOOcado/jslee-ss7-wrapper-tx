@@ -30,30 +30,47 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogOpenRequestEventWrapper
+ * TxDialogOpenRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenRequestEventWrapper extends TxMapEventWrapper implements DialogOpenRequestEventWrapper {
 
+    /** The event. */
     private final MAPEvent<MAPMessage> event;
 
+    /**
+     * Instantiates a new tx dialog open request event wrapper.
+     *
+     * @param event the event
+     * @param aci the aci
+     */
     public TxDialogOpenRequestEventWrapper(final MAPEvent<MAPMessage> event, final ActivityContextInterface aci) {
         super(aci);
         this.event = event;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.DialogOpenRequestEventWrapper#getComponentEvents()
+     */
     @Override
     public MapEventWrapper[] getComponentEvents() {
     	throw  new NotImplementedException();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.DialogOpenRequestEventWrapper#getArgument()
+     */
     @Override
     public DialogOpenArgWrapper getArgument() {
         return new TxDialogOpenArgWrapper(getTxDialog());
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return event.getWrappedEvent().getInvokeId();

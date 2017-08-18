@@ -23,19 +23,29 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper;
 
+
 /**
- * OcRequestReportSMSEventArgWrapperImpl
+ * OcRequestReportSMSEventArgWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRequestReportSMSEventArgWrapper implements RequestReportSMSEventArgWrapper {
 
+    /** The sms event wrappers. */
     private final SMSEventWrapper[] smsEventWrappers;
 
+    /**
+     * Instantiates a new tx request report sms event arg wrapper.
+     *
+     * @param smsEventWrappers the sms event wrappers
+     */
     public TxRequestReportSMSEventArgWrapper(final SMSEventWrapper[] smsEventWrappers) {
         this.smsEventWrappers = smsEventWrappers;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper#getSMSEvents()
+     */
     @Override
     public SMSEventWrapper[] getSMSEvents() {
         return smsEventWrappers;

@@ -32,10 +32,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallingPartysCategoryWrapper;
 
+
+/**
+ * The Class TxCallingPartysCategoryWrapperTest.
+ */
 public class TxCallingPartysCategoryWrapperTest extends WrapperBaseTest {
 
+    /** The tx calling partys category wrapper. */
     TxCallingPartysCategoryWrapper txCallingPartysCategoryWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -47,6 +57,9 @@ public class TxCallingPartysCategoryWrapperTest extends WrapperBaseTest {
         txCallingPartysCategoryWrapper = new TxCallingPartysCategoryWrapper(callingPartysCategoryInap);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws Ss7WrapperException, ClassNotFoundException, IOException {
 

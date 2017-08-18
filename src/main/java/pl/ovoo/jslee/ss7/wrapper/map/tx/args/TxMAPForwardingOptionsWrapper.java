@@ -24,19 +24,29 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import pl.ovoo.jslee.ss7.wrapper.map.args.ForwardingReason;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
 
+
 /**
- * TxMAPForwardingOptionsWrapper
+ * TxMAPForwardingOptionsWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPForwardingOptionsWrapper implements MAPForwardingOptionsWrapper {
 
+    /** The ext forw options. */
     private final ExtForwOptions extForwOptions;
 
+    /**
+     * Instantiates a new tx map forwarding options wrapper.
+     *
+     * @param extForwOptions the ext forw options
+     */
     public TxMAPForwardingOptionsWrapper(final ExtForwOptions extForwOptions) {
         this.extForwOptions = extForwOptions;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingOptionsWrapper#getForwardingReason()
+     */
     @Override
     public ForwardingReason getForwardingReason() {
         if (extForwOptions.getExtForwOptionsForwardingReason() != null) {
@@ -45,10 +55,18 @@ public class TxMAPForwardingOptionsWrapper implements MAPForwardingOptionsWrappe
         return null;
     }
 
+    /**
+     * Gets the tx ext forw options.
+     *
+     * @return the tx ext forw options
+     */
     public ExtForwOptions getTxExtForwOptions() {
         return extForwOptions;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPForwardingOptionsWrapper [extForwOptions=" + extForwOptions + "]";

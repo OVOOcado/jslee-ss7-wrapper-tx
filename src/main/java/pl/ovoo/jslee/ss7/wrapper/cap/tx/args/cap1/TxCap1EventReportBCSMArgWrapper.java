@@ -24,7 +24,7 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEventReportBCSMArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1EventReportBCSMArgWrapper;
 
 /**
- * TxEventReportBCSMArgWrapper
+ * TxEventReportBCSMArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */

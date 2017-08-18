@@ -23,19 +23,31 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.FreeFormatData;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.FreeFormatDataWrapper;
 
+
 /**
- * TxFreeFormatDataWrapper
+ * TxFreeFormatDataWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxFreeFormatDataWrapper implements FreeFormatDataWrapper {
 
+    /** The tx free format data. */
     private final FreeFormatData txFreeFormatData;
 
+    /**
+     * Instantiates a new tx free format data wrapper.
+     *
+     * @param freeFormatData the free format data
+     */
     public TxFreeFormatDataWrapper(final FreeFormatData freeFormatData) {
         this.txFreeFormatData = freeFormatData;
     }
 
+    /**
+     * Gets the tx free format data.
+     *
+     * @return the tx free format data
+     */
     public FreeFormatData getTxFreeFormatData() {
         return txFreeFormatData;
     }

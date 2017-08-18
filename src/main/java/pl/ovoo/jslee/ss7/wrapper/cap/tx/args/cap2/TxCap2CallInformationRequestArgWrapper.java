@@ -26,18 +26,24 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrap
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSendingSideIDWrapper;
 
+
 /**
- * TxCap2CallInformationRequestArgWrapper
+ * TxCap2CallInformationRequestArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2CallInformationRequestArgWrapper extends TxCallInformationRequestArgWrapper
         implements Cap2CallInformationRequestArgWrapper {
 
+    /** The leg id. */
     private transient SendingSideIDWrapper legID = null;
 
+    /** The tx leg id. */
     private SendingSideID txLegID;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrapper#setLegID(pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper)
+     */
     @Override
     public void setLegID(final SendingSideIDWrapper sendingSideID) {
         if (sendingSideID == null) {
@@ -51,6 +57,9 @@ public class TxCap2CallInformationRequestArgWrapper extends TxCallInformationReq
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationRequestArgWrapper#getLegID()
+     */
     @Override
     public SendingSideIDWrapper getLegID() {
         if (this.legID == null && txLegID != null) {
@@ -59,15 +68,28 @@ public class TxCap2CallInformationRequestArgWrapper extends TxCallInformationReq
         return this.legID;
     }
 
+    /**
+     * Gets the tx leg id.
+     *
+     * @return the tx leg id
+     */
     public SendingSideID getTxLegID() {
         return txLegID;
     }
 
+    /**
+     * Sets the tx leg id.
+     *
+     * @param txLegID the new tx leg id
+     */
     public void setTxLegID(final SendingSideID txLegID) {
         this.txLegID = txLegID;
         this.legID = null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2CallInformationRequestArgWrapper [txLegID=" + txLegID + "]";

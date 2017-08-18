@@ -22,24 +22,37 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CancelArgWrapper;
 
+
 /**
- * OcCancelArgWrapper
+ * OcCancelArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCancelArgWrapper implements CancelArgWrapper {
 
+	/** The is all requests. */
 	private boolean isAllRequests;
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CancelArgWrapper#setAllRequests()
+	 */
 	@Override
 	public void setAllRequests() {
 		isAllRequests = true;
 	}
 
+	/**
+	 * Checks if is tx all requests.
+	 *
+	 * @return true, if is tx all requests
+	 */
 	public boolean isTxAllRequests() {
 		return isAllRequests;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxCancelArgWrapper [isAllRequests=" + isAllRequests + "]";

@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.ContinueSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxContinueRequestEventWrapper
+ * TxContinueRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxContinueSMSRequestEventWrapper extends TxEventWrapper implements ContinueSMSRequestEventWrapper {
 
+    /** The continue sms request. */
     private final ContinueSMSRequest continueSMSRequest;
 
+    /**
+     * Instantiates a new tx continue sms request event wrapper.
+     *
+     * @param continueSMSRequest the continue sms request
+     * @param aci the aci
+     */
     public TxContinueSMSRequestEventWrapper(final ContinueSMSRequest continueSMSRequest, final ActivityContextInterface aci) {
         super(aci, continueSMSRequest);
         this.continueSMSRequest = continueSMSRequest;

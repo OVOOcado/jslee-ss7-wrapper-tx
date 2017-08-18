@@ -25,20 +25,31 @@ import pl.ovoo.jslee.ss7.wrapper.map.event.DialogDelimiterEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogDelimiterEventWrapper
+ * TxDialogDelimiterEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogDelimiterEventWrapper extends TxMapEventWrapper implements DialogDelimiterEventWrapper {
 
+    /** The dialog delimiter event. */
     private final DialogDelimiter dialogDelimiterEvent;
 
+    /**
+     * Instantiates a new tx dialog delimiter event wrapper.
+     *
+     * @param dialogDelimiterEvent the dialog delimiter event
+     * @param aci the aci
+     */
     public TxDialogDelimiterEventWrapper(final DialogDelimiter dialogDelimiterEvent, final ActivityContextInterface aci) {
         super(aci);
         this.dialogDelimiterEvent = dialogDelimiterEvent;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return dialogDelimiterEvent.getWrappedEvent().getInvokeId();

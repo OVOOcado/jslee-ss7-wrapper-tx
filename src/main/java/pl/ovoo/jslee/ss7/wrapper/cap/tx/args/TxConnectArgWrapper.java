@@ -32,23 +32,41 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
 
 import java.util.ArrayList;
 
+
 /**
- * TxConnectArgWrapper
+ * TxConnectArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxConnectArgWrapper implements ConnectArgWrapper {
 
+    /** The original called party id. */
     private transient OriginalCalledNumberWrapper originalCalledPartyID = null;
+    
+    /** The destination routing address. */
     private transient CalledPartyNumberWrapper[] destinationRoutingAddress = null;
+    
+    /** The redirecting party id. */
     private transient RedirectingPartyNumberWrapper redirectingPartyID = null;
+    
+    /** The redirection information wrapper. */
     private transient RedirectionInformationWrapper redirectionInformationWrapper = null;
 
+    /** The tx original called party id. */
     private OriginalCalledNumberCap txOriginalCalledPartyID;
+    
+    /** The tx redirecting party id cap. */
     private RedirectingPartyIDCap txRedirectingPartyIDCap;
+    
+    /** The tx redirection information inap. */
     private RedirectionInformationInap txRedirectionInformationInap;
+    
+    /** The tx destination routing address. */
     private ArrayList<CalledPartyNumberCap> txDestinationRoutingAddress;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper#setOriginalCalledPartyID(pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper)
+     */
     @Override
     public void setOriginalCalledPartyID(final OriginalCalledNumberWrapper originalCalledPartyID) {
         if (originalCalledPartyID == null) {
@@ -62,6 +80,9 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper#getOriginalCalledPartyID()
+     */
     @Override
     public OriginalCalledNumberWrapper getOriginalCalledPartyID() {
         if (this.originalCalledPartyID == null && txOriginalCalledPartyID != null) {
@@ -70,6 +91,9 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
         return this.originalCalledPartyID;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper#setRedirectingPartyID(pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper)
+     */
     @Override
     public void setRedirectingPartyID(final RedirectingPartyNumberWrapper redirectingPartyID) {
         if (redirectingPartyID == null) {
@@ -82,6 +106,11 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
         }
     }
 
+    /**
+     * Gets the redirecting party id.
+     *
+     * @return the redirecting party id
+     */
     public RedirectingPartyNumberWrapper getRedirectingPartyID() {
         if (this.redirectingPartyID == null && txRedirectingPartyIDCap != null) {
             this.redirectingPartyID = new TxRedirectingPartyNumberWrapper(txRedirectingPartyIDCap);
@@ -89,6 +118,9 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
         return this.redirectingPartyID;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper#setRedirectionInformation(pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper)
+     */
     @Override
     public void setRedirectionInformation(final RedirectionInformationWrapper redirectionInformation) {
         if (redirectionInformation == null) {
@@ -101,10 +133,18 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
         }
     }
 
+    /**
+     * Gets the redirection information wrapper.
+     *
+     * @return the redirection information wrapper
+     */
     public RedirectionInformationWrapper getRedirectionInformationWrapper() {
         return this.redirectionInformationWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper#setDestinationRoutingAddress(pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper[])
+     */
     @Override
     public void setDestinationRoutingAddress(final CalledPartyNumberWrapper[] destinationRoutingAddress) {
         if (destinationRoutingAddress == null || destinationRoutingAddress.length == 0) {
@@ -121,6 +161,9 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper#getDestinationRoutingAddress()
+     */
     @Override
     public CalledPartyNumberWrapper[] getDestinationRoutingAddress() {
         if (this.destinationRoutingAddress == null && txDestinationRoutingAddress != null) {
@@ -134,42 +177,85 @@ public class TxConnectArgWrapper implements ConnectArgWrapper {
         return this.destinationRoutingAddress;
     }
 
+    /**
+     * Gets the tx original called party id.
+     *
+     * @return the tx original called party id
+     */
     public OriginalCalledNumberCap getTxOriginalCalledPartyID() {
         return txOriginalCalledPartyID;
     }
 
+    /**
+     * Sets the tx original called party id.
+     *
+     * @param txOriginalCalledPartyID the new tx original called party id
+     */
     public void setTxOriginalCalledPartyID(final OriginalCalledNumberCap txOriginalCalledPartyID) {
         this.originalCalledPartyID = null;
         this.txOriginalCalledPartyID = txOriginalCalledPartyID;
     }
 
+    /**
+     * Gets the tx redirecting party id cap.
+     *
+     * @return the tx redirecting party id cap
+     */
     public RedirectingPartyIDCap getTxRedirectingPartyIDCap() {
         return txRedirectingPartyIDCap;
     }
 
+    /**
+     * Sets the tx redirecting party id cap.
+     *
+     * @param txRedirectingPartyIDCap the new tx redirecting party id cap
+     */
     public void setTxRedirectingPartyIDCap(final RedirectingPartyIDCap txRedirectingPartyIDCap) {
         this.redirectingPartyID = null;
         this.txRedirectingPartyIDCap = txRedirectingPartyIDCap;
     }
 
+    /**
+     * Gets the tx redirection information inap.
+     *
+     * @return the tx redirection information inap
+     */
     public RedirectionInformationInap getTxRedirectionInformationInap() {
         return txRedirectionInformationInap;
     }
 
+    /**
+     * Sets the tx redirection information inap.
+     *
+     * @param txRedirectionInformationInap the new tx redirection information inap
+     */
     public void setTxRedirectionInformationInap(final RedirectionInformationInap txRedirectionInformationInap) {
         this.redirectionInformationWrapper = null;
         this.txRedirectionInformationInap = txRedirectionInformationInap;
     }
 
+    /**
+     * Gets the tx destination routing address.
+     *
+     * @return the tx destination routing address
+     */
     public ArrayList<CalledPartyNumberCap> getTxDestinationRoutingAddress() {
         return txDestinationRoutingAddress;
     }
 
+    /**
+     * Sets the tx destination routing address.
+     *
+     * @param txDestinationRoutingAddress the new tx destination routing address
+     */
     public void setTxDestinationRoutingAddress(final ArrayList<CalledPartyNumberCap> txDestinationRoutingAddress) {
         this.destinationRoutingAddress = null;
         this.txDestinationRoutingAddress = txDestinationRoutingAddress;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxConnectArgWrapper [txOriginalCalledPartyID=" + txOriginalCalledPartyID + ", txRedirectingPartyIDCap="

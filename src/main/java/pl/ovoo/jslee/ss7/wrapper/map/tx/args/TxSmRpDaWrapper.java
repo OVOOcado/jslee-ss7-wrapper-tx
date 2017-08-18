@@ -25,17 +25,26 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpDaWrapper;
 
+
 /**
  * Created by karolsimka on 03.07.17.
  */
 public class TxSmRpDaWrapper implements SmRpDaWrapper {
 
+    /** The imsi address wrapper. */
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
 
+    /** The imsi. */
     private IMSI imsi;
 
+    /**
+     * Instantiates a new tx sm rp da wrapper.
+     */
     public TxSmRpDaWrapper() {super();}
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SmRpDaWrapper#getIMSI()
+     */
     @Override
     public IMSIAddressWrapper getIMSI() {
         if (this.imsiAddressWrapper == null && this.imsi != null) {
@@ -44,6 +53,11 @@ public class TxSmRpDaWrapper implements SmRpDaWrapper {
         return this.imsiAddressWrapper;
     }
 
+    /**
+     * Sets the imsi.
+     *
+     * @param imsi the new imsi
+     */
     public void setIMSI(IMSIAddressWrapper imsi) {
         if (imsi == null) {
             this.imsi = null;
@@ -55,15 +69,28 @@ public class TxSmRpDaWrapper implements SmRpDaWrapper {
         }
     }
 
+    /**
+     * Gets the tx imsi.
+     *
+     * @return the tx imsi
+     */
     public IMSI getTxImsi() {
         return this.imsi;
     }
 
+    /**
+     * Sets the tx imsi.
+     *
+     * @param imsi the new tx imsi
+     */
     public void setTxImsi(IMSI imsi) {
         this.imsi = imsi;
         this.imsiAddressWrapper = null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxSmRpDaWrapper [IMSI=" + imsi + "]";

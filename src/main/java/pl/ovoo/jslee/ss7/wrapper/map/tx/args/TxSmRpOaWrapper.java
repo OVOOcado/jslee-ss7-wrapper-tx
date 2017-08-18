@@ -25,17 +25,26 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpOaWrapper;
 
+
 /**
  * Created by karolsimka on 03.07.17.
  */
 public class TxSmRpOaWrapper implements SmRpOaWrapper {
 
+    /** The service centre address oa wrapper. */
     private transient ISDNAddressStringWrapper serviceCentreAddressOaWrapper = null;
 
+    /** The service centre address oa. */
     private ISDNAddressString serviceCentreAddressOa;
 
+    /**
+     * Instantiates a new tx sm rp oa wrapper.
+     */
     public TxSmRpOaWrapper(){super();}
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SmRpOaWrapper#getServiceCentreAddressOA()
+     */
     @Override
     public ISDNAddressStringWrapper getServiceCentreAddressOA() {
         if (this.serviceCentreAddressOaWrapper == null && this.serviceCentreAddressOa != null) {
@@ -44,6 +53,11 @@ public class TxSmRpOaWrapper implements SmRpOaWrapper {
         return this.serviceCentreAddressOaWrapper;
     }
 
+    /**
+     * Sets the service centre address oa.
+     *
+     * @param serviceCentreAddressOa the new service centre address oa
+     */
     public void setServiceCentreAddressOa(ISDNAddressStringWrapper serviceCentreAddressOa){
         if (serviceCentreAddressOa == null) {
             this.serviceCentreAddressOa = null;
@@ -55,16 +69,29 @@ public class TxSmRpOaWrapper implements SmRpOaWrapper {
         }
     }
 
+    /**
+     * Gets the tx service centre address oa.
+     *
+     * @return the tx service centre address oa
+     */
     public ISDNAddressString getTxServiceCentreAddressOa() {
         return this.serviceCentreAddressOa;
     }
 
+    /**
+     * Sets the tx service centre address oa.
+     *
+     * @param serviceCentreAddressOa the new tx service centre address oa
+     */
     public void setTxServiceCentreAddressOa(ISDNAddressString serviceCentreAddressOa) {
         this.serviceCentreAddressOa = serviceCentreAddressOa;
         this.serviceCentreAddressOaWrapper = null;
 
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxSmRpOaWrapper [serviceCentreAddressOA=" + serviceCentreAddressOa + "]";

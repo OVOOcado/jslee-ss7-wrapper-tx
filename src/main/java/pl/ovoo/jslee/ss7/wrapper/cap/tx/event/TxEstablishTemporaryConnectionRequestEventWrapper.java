@@ -31,20 +31,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3EstablishTemporaryConnec
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxEstablishTemporaryConnectionRequestEventWrapper
+ * TxEstablishTemporaryConnectionRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEstablishTemporaryConnectionRequestEventWrapper extends TxEventWrapper implements EstablishTemporaryConnectionRequestEventWrapper {
 
+    /** The establish temporary connection request. */
     private final EstablishTemporaryConnectionRequest establishTemporaryConnectionRequest;
 
+    /**
+     * Instantiates a new tx establish temporary connection request event wrapper.
+     *
+     * @param establishTemporaryConnectionRequest the establish temporary connection request
+     * @param aci the aci
+     */
     public TxEstablishTemporaryConnectionRequestEventWrapper(final EstablishTemporaryConnectionRequest establishTemporaryConnectionRequest, final ActivityContextInterface aci) {
         super(aci, establishTemporaryConnectionRequest);
         this.establishTemporaryConnectionRequest = establishTemporaryConnectionRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public EstablishTemporaryConnectionArgWrapper getArgument() throws Ss7WrapperException {
         final TxEstablishTemporaryConnectionArgWrapper establishTemporaryConnectionArgWrapper;

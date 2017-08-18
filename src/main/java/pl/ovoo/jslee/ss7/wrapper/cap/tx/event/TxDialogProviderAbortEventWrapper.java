@@ -26,20 +26,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.DialogProviderAbortEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogProviderAbortEventWrapper
+ * TxDialogProviderAbortEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogProviderAbortEventWrapper extends TxEventWrapper implements DialogProviderAbortEventWrapper {
 
+    /** The dialog provider abort event. */
     private final DialogProviderAbort dialogProviderAbortEvent;
 
+    /**
+     * Instantiates a new tx dialog provider abort event wrapper.
+     *
+     * @param dialogProviderAbortEvent the dialog provider abort event
+     * @param aci the aci
+     */
     public TxDialogProviderAbortEventWrapper(final DialogProviderAbort dialogProviderAbortEvent, final ActivityContextInterface aci) {
         super(aci, dialogProviderAbortEvent.getWrappedEvent());
         this.dialogProviderAbortEvent = dialogProviderAbortEvent;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.DialogProviderAbortEventWrapper#getPeerAbortCause()
+     */
     @Override
     public PAbortCauseType getPeerAbortCause() {
         if (dialogProviderAbortEvent.getPAbortCauseType() == null) {

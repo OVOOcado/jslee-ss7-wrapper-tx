@@ -72,17 +72,29 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationRequestAr
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2FurnishChargingInformationArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
 
+
 /**
- * TxSmsCapDialogWrapperImpl
+ * TxSmsCapDialogWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements CallCapDialogWrapper {
 
+    /** The Constant INVOKE_TIMEOUT. */
     public static final int INVOKE_TIMEOUT = 600000;
+    
+    /** The dialog circuit switched call. */
     protected final CAPDialogCircuitSwitchedCall dialogCircuitSwitchedCall;
+    
+    /** The cap provider. */
     protected final CAPProvider capProvider;
 
+    /**
+     * Instantiates a new tx call cap dialog wrapper impl.
+     *
+     * @param dialogCircuitSwitchedCall the dialog circuit switched call
+     * @param capProvider the cap provider
+     */
     public TxCallCapDialogWrapperImpl(final CAPDialogCircuitSwitchedCall dialogCircuitSwitchedCall, final CAPProvider capProvider) {
         super(dialogCircuitSwitchedCall);
         this.dialogCircuitSwitchedCall = dialogCircuitSwitchedCall;
@@ -90,6 +102,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
     }
 
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendReleaseCall(pl.ovoo.jslee.ss7.wrapper.cap.args.ReleaseCallArgWrapper)
+     */
     @Override
     public int sendReleaseCall(final ReleaseCallArgWrapper releaseCallArg) throws Ss7WrapperException {
         final TxReleaseCallArgWrapper txReleaseCallArgWrapper = (TxReleaseCallArgWrapper) releaseCallArg;
@@ -101,6 +116,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendContinue()
+     */
     @Override
     public int sendContinue() throws Ss7WrapperException {
         try {
@@ -110,6 +128,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendConnect(pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectArgWrapper)
+     */
     @Override
     public int sendConnect(final ConnectArgWrapper connectArg) throws Ss7WrapperException {
         try {
@@ -131,6 +152,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendDisconnectForwardConnection()
+     */
     @Override
     public int sendDisconnectForwardConnection() throws Ss7WrapperException {
         try {
@@ -140,6 +164,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendRequestReportBCSMEvent(pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper)
+     */
     @Override
     public int sendRequestReportBCSMEvent(final RequestReportBCSMEventArgWrapper requestReportBCSMEventArg) throws Ss7WrapperException {
         final TxRequestReportBCSMEventArgWrapper txRequestReportBCSMEventArgWrapper = (TxRequestReportBCSMEventArgWrapper) requestReportBCSMEventArg;
@@ -150,6 +177,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendCancel(pl.ovoo.jslee.ss7.wrapper.cap.args.CancelArgWrapper)
+     */
     @Override
     public int sendCancel(final CancelArgWrapper cancelArg) throws Ss7WrapperException {
         try {
@@ -164,6 +194,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendCallInformationRequest(pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationRequestArgWrapper)
+     */
     @Override
     public int sendCallInformationRequest(final CallInformationRequestArgWrapper callInformationRequestArg) throws Ss7WrapperException {
         final TxCallInformationRequestArgWrapper txCallInformationRequestArgWrapper = (TxCallInformationRequestArgWrapper) callInformationRequestArg;
@@ -182,6 +215,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendApplyCharging(pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper)
+     */
     @Override
     public int sendApplyCharging(final ApplyChargingArgWrapper applyChargingArg) throws Ss7WrapperException {
         final TxApplyChargingArgWrapper txApplyChargingArgWrapper = (TxApplyChargingArgWrapper) applyChargingArg;
@@ -193,6 +229,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendEstablishTemporaryConnection(pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper)
+     */
     @Override
     public int sendEstablishTemporaryConnection(final EstablishTemporaryConnectionArgWrapper establishTemporaryConnectionArgWrapper) throws Ss7WrapperException {
         final TxEstablishTemporaryConnectionArgWrapper txEstablishTemporaryConnectionArgWrapper = (TxEstablishTemporaryConnectionArgWrapper) establishTemporaryConnectionArgWrapper;
@@ -217,6 +256,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendPlayAnnouncement(long, pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper)
+     */
     @Override
     public int sendPlayAnnouncement(final long timeout, final PlayAnnouncementArgWrapper playAnnouncementArg) throws Ss7WrapperException {
         final TxPlayAnnouncementArgWrapper txPlayAnnouncementArgWrapper = (TxPlayAnnouncementArgWrapper) playAnnouncementArg;
@@ -228,6 +270,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendInitialDP(pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper)
+     */
     @Override
     public int sendInitialDP(final InitialDPArgWrapper initialDPArg) throws Ss7WrapperException {
         try {
@@ -268,6 +313,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendEventReportBCSM(pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper)
+     */
     @Override
     public int sendEventReportBCSM(final EventReportBCSMArgWrapper eventReportBCSMArg) throws Ss7WrapperException {
         final TxEventReportBCSMArgWrapper txEventReportBCSMArgWrapper = (TxEventReportBCSMArgWrapper) eventReportBCSMArg;
@@ -280,6 +328,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendActivityTest(long)
+     */
     @Override
     public int sendActivityTest(final long invoke) throws Ss7WrapperException {
         try {
@@ -290,6 +341,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendSpecializedResourceReport(long, pl.ovoo.jslee.ss7.wrapper.cap.args.SpecializedResourceReportArgWrapper)
+     */
     @Override
     public int sendSpecializedResourceReport(final long invoke, final SpecializedResourceReportArgWrapper specializedResourceReportArg) throws Ss7WrapperException {
         try {
@@ -299,6 +353,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendAssistRequestInstructions(pl.ovoo.jslee.ss7.wrapper.cap.args.AssistRequestInstructionsArgWrapper)
+     */
     @Override
     public int sendAssistRequestInstructions(final AssistRequestInstructionsArgWrapper assistRequestInstructionsArg) throws Ss7WrapperException {
         try {
@@ -319,6 +376,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendCallInformationReport(pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationReportArgWrapper)
+     */
     @Override
     public int sendCallInformationReport(final CallInformationReportArgWrapper callInformationReportArg) throws Ss7WrapperException {
         final TxCallInformationReportArgWrapper txCallInformationReportArgWrapper = (TxCallInformationReportArgWrapper) callInformationReportArg;
@@ -336,6 +396,9 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendFurnishChargingInformation(pl.ovoo.jslee.ss7.wrapper.cap.args.FurnishChargingInformationArgWrapper)
+     */
     @Override
     public int sendFurnishChargingInformation(final FurnishChargingInformationArgWrapper furnishChargingInformationArg) throws Ss7WrapperException {
         final TxFurnishChargingInformationArgWrapper txFurnishChargingInformationArgWrapper = (TxFurnishChargingInformationArgWrapper) furnishChargingInformationArg;

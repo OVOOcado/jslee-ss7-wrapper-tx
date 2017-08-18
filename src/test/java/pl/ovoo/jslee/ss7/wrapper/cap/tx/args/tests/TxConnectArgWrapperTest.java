@@ -44,10 +44,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxConnectArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
 
+
+/**
+ * The Class TxConnectArgWrapperTest.
+ */
 public class TxConnectArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx connect arg wrapper. */
     TxConnectArgWrapper txConnectArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws CAPException the CAP exception
+     */
     @Before
     public void setUp() throws CAPException {
 
@@ -84,6 +94,9 @@ public class TxConnectArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
         serializeToFile(txConnectArgWrapper);

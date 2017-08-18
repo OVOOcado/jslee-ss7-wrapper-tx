@@ -31,10 +31,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType;
 
+
+/**
+ * The Class TxCallInformationRequestArgWrapperTest.
+ */
 public class TxCallInformationRequestArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx call information request arg wrapper. */
     TxCallInformationRequestArgWrapper txCallInformationRequestArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -49,6 +59,9 @@ public class TxCallInformationRequestArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     public void testSerialization() throws ClassNotFoundException, IOException {
 

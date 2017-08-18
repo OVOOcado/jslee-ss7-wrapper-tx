@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.InbandInfo;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.InbandInfoWrapper;
 
+
 /**
- * TxInbandInfoWrapper
+ * TxInbandInfoWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxInbandInfoWrapper implements InbandInfoWrapper {
 
+	/** The inband info. */
 	private final InbandInfo inbandInfo;
 
+	/**
+	 * Instantiates a new tx inband info wrapper.
+	 *
+	 * @param inbandInfo the inband info
+	 */
 	public TxInbandInfoWrapper(final InbandInfo inbandInfo) {
 		this.inbandInfo = inbandInfo;
 	}
 
+	/**
+	 * Gets the tx inband info.
+	 *
+	 * @return the tx inband info
+	 */
 	public InbandInfo getTxInbandInfo() {
 		return inbandInfo;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxInbandInfoWrapper [inbandInfo=" + inbandInfo + "]";

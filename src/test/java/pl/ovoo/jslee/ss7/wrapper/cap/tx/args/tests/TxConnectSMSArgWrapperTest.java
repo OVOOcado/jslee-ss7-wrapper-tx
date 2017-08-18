@@ -39,10 +39,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 
+
+/**
+ * The Class TxConnectSMSArgWrapperTest.
+ */
 public class TxConnectSMSArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx connect sms arg wrapper. */
     TxConnectSMSArgWrapper txConnectSMSArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -60,6 +70,9 @@ public class TxConnectSMSArgWrapperTest extends WrapperBaseTest {
         txConnectSMSArgWrapper.setSMSCAddress(isdnaAddressStringWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
         serializeToFile(txConnectSMSArgWrapper);

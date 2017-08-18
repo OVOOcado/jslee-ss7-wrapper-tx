@@ -26,23 +26,38 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MonitorMode;
 
+
 /**
- * TxBCSMEventWrapper
+ * TxBCSMEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxBCSMEventWrapper implements BCSMEventWrapper {
 
+    /** The bcsm event. */
     protected final BCSMEvent bcsmEvent;
 
+    /**
+     * Instantiates a new tx bcsm event wrapper.
+     *
+     * @param bcsmEvent the bcsm event
+     */
     public TxBCSMEventWrapper(final BCSMEvent bcsmEvent) {
         this.bcsmEvent = bcsmEvent;
     }
 
+    /**
+     * Gets the tx bcsm event.
+     *
+     * @return the tx bcsm event
+     */
     public BCSMEvent getTxBcsmEvent() {
         return bcsmEvent;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper#getEventTypeBCSM()
+     */
     @Override
     public EventTypeBCSM getEventTypeBCSM() {
         if (bcsmEvent.getEventTypeBCSM() != null) {
@@ -51,6 +66,9 @@ public class TxBCSMEventWrapper implements BCSMEventWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper#getMonitorMode()
+     */
     @Override
     public MonitorMode getMonitorMode() {
         if (bcsmEvent.getMonitorMode() != null) {
@@ -59,11 +77,17 @@ public class TxBCSMEventWrapper implements BCSMEventWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper#hasLegID()
+     */
     @Override
     public boolean hasLegID() {
         return bcsmEvent.getLegID() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper#getLegID()
+     */
     @Override
     public LegIDWrapper getLegID() {
         if (bcsmEvent.getLegID() != null) {

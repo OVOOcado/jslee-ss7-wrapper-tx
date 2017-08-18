@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.DialogOpenAcceptEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogOpenAcceptEventWrapper
+ * TxDialogOpenAcceptEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenAcceptEventWrapper extends TxEventWrapper implements DialogOpenAcceptEventWrapper {
 
+    /** The dialog accept. */
     private final DialogAccept dialogAccept;
 
+    /**
+     * Instantiates a new tx dialog open accept event wrapper.
+     *
+     * @param dialogAccept the dialog accept
+     * @param aci the aci
+     */
     public TxDialogOpenAcceptEventWrapper(final DialogAccept dialogAccept, final ActivityContextInterface aci) {
         super(aci, dialogAccept.getWrappedEvent());
         this.dialogAccept = dialogAccept;

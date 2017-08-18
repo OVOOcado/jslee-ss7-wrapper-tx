@@ -25,19 +25,29 @@ import org.mobicents.protocols.ss7.inap.api.isup.HighLayerCompatibilityInap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper;
 
+
 /**
- * TxHighLayerCompatibilityWrapper
+ * TxHighLayerCompatibilityWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxHighLayerCompatibilityWrapper implements HighLayerCompatibilityWrapper {
 
+    /** The high layer compatibility inap. */
     private final HighLayerCompatibilityInap highLayerCompatibilityInap;
 
+    /**
+     * Instantiates a new tx high layer compatibility wrapper.
+     *
+     * @param highLayerCompatibilityInap the high layer compatibility inap
+     */
     public TxHighLayerCompatibilityWrapper(final HighLayerCompatibilityInap highLayerCompatibilityInap) {
         this.highLayerCompatibilityInap = highLayerCompatibilityInap;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper#hasCharacteristics()
+     */
     @Override
     public boolean hasCharacteristics() throws Ss7WrapperException {
         try {
@@ -47,6 +57,9 @@ public class TxHighLayerCompatibilityWrapper implements HighLayerCompatibilityWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper#getCharacteristics()
+     */
     @Override
     public Characteristics getCharacteristics() throws Ss7WrapperException {
         try {
@@ -56,6 +69,9 @@ public class TxHighLayerCompatibilityWrapper implements HighLayerCompatibilityWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper#getCodingStandard()
+     */
     @Override
     public CodingStandard getCodingStandard() throws Ss7WrapperException {
         try {
@@ -65,6 +81,9 @@ public class TxHighLayerCompatibilityWrapper implements HighLayerCompatibilityWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper#getInterpretation()
+     */
     @Override
     public Interpretation getInterpretation() throws Ss7WrapperException {
         try {
@@ -74,6 +93,9 @@ public class TxHighLayerCompatibilityWrapper implements HighLayerCompatibilityWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper#getPresentation()
+     */
     @Override
     public Presentation getPresentation() throws Ss7WrapperException {
         try {
@@ -83,10 +105,18 @@ public class TxHighLayerCompatibilityWrapper implements HighLayerCompatibilityWr
         }
     }
 
+    /**
+     * Gets the tx high layer compatibility inap.
+     *
+     * @return the tx high layer compatibility inap
+     */
     public HighLayerCompatibilityInap getTxHighLayerCompatibilityInap() {
         return highLayerCompatibilityInap;
     }
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxHighLayerCompatibilityWrapper [highLayerCompatibilityInap=" + highLayerCompatibilityInap + "]";

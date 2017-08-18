@@ -34,10 +34,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapperTest.
+ */
 public class TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapperTest extends WrapperBaseTest {
 
+    /** The tx map cell global id or service area id or lai wrapper. */
     TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper txMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -48,6 +58,9 @@ public class TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapperTest extends WrapperBas
                 cellGlobalIdOrServiceAreaIdOrLAI);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

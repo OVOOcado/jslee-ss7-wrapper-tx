@@ -28,18 +28,29 @@ import pl.ovoo.jslee.ss7.wrapper.map.event.SendRoutingInfoForSMRequestEventWrapp
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
  * Created by karolsimka on 07.06.17.
  */
 public class TxSendRoutingInfoForSMRequestEventWrapper extends TxMapEventWrapper implements SendRoutingInfoForSMRequestEventWrapper {
 
+    /** The send routing info for sm request. */
     private final SendRoutingInfoForSMRequest sendRoutingInfoForSMRequest;
 
+    /**
+     * Instantiates a new tx send routing info for sm request event wrapper.
+     *
+     * @param sendRoutingInfoForSMRequest the send routing info for sm request
+     * @param aci the aci
+     */
     public TxSendRoutingInfoForSMRequestEventWrapper(final SendRoutingInfoForSMRequest sendRoutingInfoForSMRequest, final ActivityContextInterface aci) {
         super(aci);
         this.sendRoutingInfoForSMRequest = sendRoutingInfoForSMRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.SendRoutingInfoForSMRequestEventWrapper#getArgument()
+     */
     @Override
     public SendRoutingInfoForSMRequestArgWrapper getArgument() {
         TxSendRoutingInfoForSMRequestArgWrapper sri = new TxSendRoutingInfoForSMRequestArgWrapper();
@@ -47,6 +58,9 @@ public class TxSendRoutingInfoForSMRequestEventWrapper extends TxMapEventWrapper
         return sri;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId() {
         return sendRoutingInfoForSMRequest.getInvokeId();

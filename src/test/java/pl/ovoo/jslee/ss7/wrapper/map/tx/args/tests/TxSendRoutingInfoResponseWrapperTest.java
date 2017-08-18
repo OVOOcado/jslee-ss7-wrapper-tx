@@ -40,10 +40,20 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
 
+
+/**
+ * The Class TxSendRoutingInfoResponseWrapperTest.
+ */
 public class TxSendRoutingInfoResponseWrapperTest extends WrapperBaseTest {
 
+    /** The tx send routing info response wrapper. */
     TxSendRoutingInfoResponseWrapper txSendRoutingInfoResponseWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
         txSendRoutingInfoResponseWrapper = new TxSendRoutingInfoResponseWrapper();
@@ -57,6 +67,9 @@ public class TxSendRoutingInfoResponseWrapperTest extends WrapperBaseTest {
         txSendRoutingInfoResponseWrapper.setRoutingInfo(txRoutingInfoWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException {

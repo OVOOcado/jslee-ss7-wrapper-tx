@@ -24,7 +24,7 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEstablishTemporaryConnectionArgWr
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2EstablishTemporaryConnectionArgWrapper;
 
 /**
- * TxEstablishTemporaryConnectionArgWrapper
+ * TxEstablishTemporaryConnectionArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */

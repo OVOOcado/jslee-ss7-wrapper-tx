@@ -28,15 +28,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper;
 
 import java.util.ArrayList;
 
+
 /**
- * TxRequestReportBCSMEventArgWrapper
+ * TxRequestReportBCSMEventArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRequestReportBCSMEventArgWrapper implements RequestReportBCSMEventArgWrapper {
 
+    /** The tx bcsm events. */
     private ArrayList<BCSMEvent> txBcsmEvents;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper#setBcsmEvents(pl.ovoo.jslee.ss7.wrapper.cap.args.BCSMEventWrapper[])
+     */
     @Override
     public void setBcsmEvents(final BCSMEventWrapper[] bcsmEvents) {
         if (bcsmEvents == null || bcsmEvents.length == 0) {
@@ -51,6 +56,9 @@ public class TxRequestReportBCSMEventArgWrapper implements RequestReportBCSMEven
         this.txBcsmEvents = bcsmEventsLocal;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportBCSMEventArgWrapper#getBcsmEvents()
+     */
     @Override
     public BCSMEventWrapper[] getBcsmEvents() {
         if (txBcsmEvents == null || txBcsmEvents.isEmpty()) {
@@ -66,10 +74,20 @@ public class TxRequestReportBCSMEventArgWrapper implements RequestReportBCSMEven
         }
     }
 
+    /**
+     * Gets the tx bcsm events.
+     *
+     * @return the tx bcsm events
+     */
     public ArrayList<BCSMEvent> getTxBcsmEvents() {
         return txBcsmEvents;
     }
 
+    /**
+     * Sets the tx bcsm events.
+     *
+     * @param txBcsmEvents the new tx bcsm events
+     */
     public void setTxBcsmEvents(final ArrayList<BCSMEvent> txBcsmEvents) {
         this.txBcsmEvents = txBcsmEvents;
     }

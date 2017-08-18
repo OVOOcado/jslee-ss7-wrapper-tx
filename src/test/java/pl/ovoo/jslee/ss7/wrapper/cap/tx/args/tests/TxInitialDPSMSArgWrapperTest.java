@@ -71,10 +71,20 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
+
+/**
+ * The Class TxInitialDPSMSArgWrapperTest.
+ */
 public class TxInitialDPSMSArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx initial dpsms arg wrapper. */
     TxInitialDPSMSArgWrapper txInitialDPSMSArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -150,6 +160,9 @@ public class TxInitialDPSMSArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

@@ -23,20 +23,30 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.InsertSubscriberDataResponse;
 import pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataResponseWrapper;
 
+
 /**
- * TxInsertSubscriberDataResponseWrapper
+ * TxInsertSubscriberDataResponseWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxInsertSubscriberDataResponseWrapper implements InsertSubscriberDataResponseWrapper {
 
+    /** The insert subscriber data response. */
     private final InsertSubscriberDataResponse insertSubscriberDataResponse;
 
+    /**
+     * Instantiates a new tx insert subscriber data response wrapper.
+     *
+     * @param insertSubscriberDataResponse the insert subscriber data response
+     */
     public TxInsertSubscriberDataResponseWrapper(InsertSubscriberDataResponse insertSubscriberDataResponse) {
         super();
         this.insertSubscriberDataResponse = insertSubscriberDataResponse;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxInsertSubscriberDataResponseWrapper [insertSubscriberDataResponse=" + insertSubscriberDataResponse

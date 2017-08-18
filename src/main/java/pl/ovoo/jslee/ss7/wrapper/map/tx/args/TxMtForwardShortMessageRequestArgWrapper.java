@@ -26,43 +26,82 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpDaWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpOaWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SmRpUiWrapper;
 
+
 /**
  * Created by karolsimka on 08.06.17.
  */
 public class TxMtForwardShortMessageRequestArgWrapper implements MtForwardShortMessageRequestWrapper {
 
+    /** The sm rp da wrapper. */
     private SmRpDaWrapper smRpDaWrapper;
+    
+    /** The sm rp oa wrapper. */
     private SmRpOaWrapper smRpOaWrapper;
+    
+    /** The sm rp ui wrapper. */
     private SmRpUiWrapper smRpUiWrapper;
 
+    /**
+     * Instantiates a new tx mt forward short message request arg wrapper.
+     */
     public TxMtForwardShortMessageRequestArgWrapper() {
         super();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper#getSm_Rp_Da()
+     */
     @Override
     public SmRpDaWrapper getSm_Rp_Da() {
         return this.smRpDaWrapper;
     }
+    
+    /**
+     * Sets the sm_ rp_ da.
+     *
+     * @param sm_rp_da the new sm_ rp_ da
+     */
     public void setSm_Rp_Da(SmRpDaWrapper sm_rp_da){
         this.smRpDaWrapper = sm_rp_da;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper#getSm_Rp_Ui()
+     */
     @Override
     public SmRpUiWrapper getSm_Rp_Ui() {
         return this.smRpUiWrapper;
     }
+    
+    /**
+     * Sets the sm_ rp_ ui.
+     *
+     * @param sm_rp_ui the new sm_ rp_ ui
+     */
     public void setSm_Rp_Ui(SmRpUiWrapper sm_rp_ui){
         this.smRpUiWrapper = sm_rp_ui;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper#getSm_Rp_Oa()
+     */
     @Override
     public SmRpOaWrapper getSm_Rp_Oa() {
         return this.smRpOaWrapper;
     }
+    
+    /**
+     * Sets the sm_ rp_ oa.
+     *
+     * @param sm_rp_oa the new sm_ rp_ oa
+     */
     public void setSm_Rp_Oa(SmRpOaWrapper sm_rp_oa){
         this.smRpOaWrapper = sm_rp_oa;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMtForwardShortMessageRequestArgWrapper [Sm_Rp_Da=" + smRpDaWrapper + ", Sm_Rp_Oa="

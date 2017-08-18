@@ -30,20 +30,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxReleaseCallArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxReleaseCallRequestEventWrapper
+ * TxReleaseCallRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxReleaseCallRequestEventWrapper extends TxEventWrapper implements ReleaseCallRequestEventWrapper {
 
+    /** The release call request. */
     private final ReleaseCallRequest releaseCallRequest;
 
+    /**
+     * Instantiates a new tx release call request event wrapper.
+     *
+     * @param releaseCallRequest the release call request
+     * @param aci the aci
+     */
     public TxReleaseCallRequestEventWrapper(final ReleaseCallRequest releaseCallRequest, final ActivityContextInterface aci) {
         super(aci, releaseCallRequest);
         this.releaseCallRequest = releaseCallRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public ReleaseCallArgWrapper getArgument() throws Ss7WrapperException {
         try {

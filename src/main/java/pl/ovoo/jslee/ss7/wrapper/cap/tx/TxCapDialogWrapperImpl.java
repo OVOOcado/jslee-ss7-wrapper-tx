@@ -32,29 +32,49 @@ import pl.ovoo.jslee.ss7.wrapper.cap.DialogState;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxCapDialogWrapperImpl
+ * TxCapDialogWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCapDialogWrapperImpl implements CapDialogWrapper {
 
+    /** The activity context interface. */
     private ActivityContextInterface activityContextInterface;
+    
+    /** The dialog. */
     private CAPDialog dialog;
 
+    /**
+     * Instantiates a new tx cap dialog wrapper impl.
+     *
+     * @param dialog the dialog
+     */
     public TxCapDialogWrapperImpl(final CAPDialog dialog) {
         this.dialog = dialog;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getActivityContextInterface()
+     */
     @Override
     public ActivityContextInterface getActivityContextInterface() {
         return activityContextInterface;
     }
 
+    /**
+     * Sets the activity context interface.
+     *
+     * @param activityContextInterface the new activity context interface
+     */
     public void setActivityContextInterface(final ActivityContextInterface activityContextInterface) {
         this.activityContextInterface = activityContextInterface;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getDialogState()
+     */
     @Override
     public DialogState getDialogState() {
         final CAPDialogState state = dialog.getState();
@@ -77,6 +97,9 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#refuseDialog()
+     */
     @Override
     public void refuseDialog() throws Ss7WrapperException {
         try {
@@ -86,6 +109,9 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#sendClose(boolean)
+     */
     @Override
     public void sendClose(final boolean b) throws Ss7WrapperException {
         try {
@@ -95,6 +121,9 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#sendUserAbort()
+     */
     @Override
     public void sendUserAbort() throws Ss7WrapperException {
         try {
@@ -104,6 +133,9 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#sendDelimiter()
+     */
     @Override
     public void sendDelimiter() throws Ss7WrapperException {
         try {
@@ -113,16 +145,25 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getDialogID()
+     */
     @Override
     public String getDialogID(){
     	return dialog.getLocalDialogId().toString();
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#acceptDialog()
+     */
     @Override
     public void acceptDialog() throws Ss7WrapperException {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getApplicationContext()
+     */
     @Override
     public ApplicationContextWrapper getApplicationContext() {
     	final CAPApplicationContext ac = dialog.getApplicationContext();

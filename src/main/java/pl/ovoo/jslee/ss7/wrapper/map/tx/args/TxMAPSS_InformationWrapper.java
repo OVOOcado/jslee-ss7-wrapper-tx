@@ -24,28 +24,46 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_InformationWrapper;
 
+
 /**
- * TxMAPSS_InformationWrapper
+ * TxMAPSS_InformationWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPSS_InformationWrapper implements MAPSS_InformationWrapper {
 
+    /** The ext ss info. */
     private final ExtSSInfo extSSInfo;
 
+    /**
+     * Instantiates a new tx maps s_ information wrapper.
+     *
+     * @param extSSInfo the ext ss info
+     */
     public TxMAPSS_InformationWrapper(final ExtSSInfo extSSInfo) {
         this.extSSInfo = extSSInfo;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_InformationWrapper#getForwardingInfo()
+     */
     @Override
     public MAPForwardingInfoWrapper getForwardingInfo() {
         return new TxMAPForwardingInfoWrapper(extSSInfo.getForwardingInfo());
     }
 
+    /**
+     * Gets the tx ext ss info.
+     *
+     * @return the tx ext ss info
+     */
     public ExtSSInfo getTxExtSSInfo() {
         return extSSInfo;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPSS_InformationWrapper [extSSInfo=" + extSSInfo + "]";

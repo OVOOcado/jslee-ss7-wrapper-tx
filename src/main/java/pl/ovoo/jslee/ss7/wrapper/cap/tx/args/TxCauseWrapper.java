@@ -23,19 +23,29 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.isup.message.parameter.CauseIndicators;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper;
 
+
 /**
- * TxCauseWrapper
+ * TxCauseWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCauseWrapper implements CauseWrapper {
 
+	/** The cause. */
 	private final CauseIndicators cause;
 
+	/**
+	 * Instantiates a new tx cause wrapper.
+	 *
+	 * @param cause the cause
+	 */
 	public TxCauseWrapper(final CauseIndicators cause) {
 		this.cause = cause;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#getCodingStandard()
+	 */
 	@Override
 	public CodingStandard getCodingStandard() {
 		if (cause.getCodingStandard() >= 0) {
@@ -44,6 +54,9 @@ public class TxCauseWrapper implements CauseWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#getLocation()
+	 */
 	@Override
 	public Location getLocation() {
 		if (cause.getLocation() >= 0) {
@@ -52,6 +65,9 @@ public class TxCauseWrapper implements CauseWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#getRecommendation()
+	 */
 	@Override
 	public Recommendation getRecommendation() {
 		if (cause.getRecommendation() >= 0) {
@@ -60,6 +76,9 @@ public class TxCauseWrapper implements CauseWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#getCauseValue()
+	 */
 	@Override
 	public CauseValue getCauseValue() {
 		if (cause.getCauseValue() >= 0) {
@@ -68,35 +87,58 @@ public class TxCauseWrapper implements CauseWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#setCodingStandard(pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper.CodingStandard)
+	 */
 	@Override
 	public void setCodingStandard(final CodingStandard codingStandard) {
 		cause.setCodingStandard(codingStandard.getValue());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#setLocation(pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper.Location)
+	 */
 	@Override
 	public void setLocation(final Location location) {
 		cause.setLocation(location.getValue());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#setRecommendation(pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper.Recommendation)
+	 */
 	@Override
 	public void setRecommendation(final Recommendation recommendation) {
 		cause.setRecommendation(recommendation.getValue());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#setCauseValue(pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper.CauseValue)
+	 */
 	@Override
 	public void setCauseValue(final CauseValue causeValue) {
 		cause.setCauseValue(causeValue.getValue());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper#hasCauseValue()
+	 */
 	@Override
 	public boolean hasCauseValue() {
 		return cause.getCauseValue() >= 0;
 	}
 
+	/**
+	 * Gets the tx cause.
+	 *
+	 * @return the tx cause
+	 */
 	public CauseIndicators getTxCause() {
 		return cause;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxCauseWrapper [cause=" + cause + "]";

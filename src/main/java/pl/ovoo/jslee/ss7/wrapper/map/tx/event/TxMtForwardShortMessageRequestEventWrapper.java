@@ -34,18 +34,29 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWr
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpOaWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpUiWrapper;
 
+
 /**
  * Created by karolsimka on 08.06.17.
  */
 public class TxMtForwardShortMessageRequestEventWrapper extends TxMapEventWrapper implements MtForwardShortMessageRequestEventWrapper {
 
+    /** The mt forward short message request. */
     private final MtForwardShortMessageRequest mtForwardShortMessageRequest;
 
+    /**
+     * Instantiates a new tx mt forward short message request event wrapper.
+     *
+     * @param mtForwardShortMessageRequest the mt forward short message request
+     * @param aci the aci
+     */
     public TxMtForwardShortMessageRequestEventWrapper(final MtForwardShortMessageRequest mtForwardShortMessageRequest, final ActivityContextInterface aci) {
         super(aci);
         this.mtForwardShortMessageRequest = mtForwardShortMessageRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MtForwardShortMessageRequestEventWrapper#getArgument()
+     */
     @Override
     public MtForwardShortMessageRequestWrapper getArgument() {
         TxMtForwardShortMessageRequestArgWrapper txMtForwardShortMessageRequestArgWrapper = new TxMtForwardShortMessageRequestArgWrapper();
@@ -67,6 +78,9 @@ public class TxMtForwardShortMessageRequestEventWrapper extends TxMapEventWrappe
         return txMtForwardShortMessageRequestArgWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId() {
         return mtForwardShortMessageRequest.getInvokeId();

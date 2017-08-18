@@ -51,10 +51,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSS_InformationWrapper;
 
+
+/**
+ * The Class TxMAPSS_InformationWrapperTest.
+ */
 public class TxMAPSS_InformationWrapperTest extends WrapperBaseTest {
 
+    /** The tx maps s_ information wrapper. */
     TxMAPSS_InformationWrapper txMAPSS_InformationWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -87,6 +97,9 @@ public class TxMAPSS_InformationWrapperTest extends WrapperBaseTest {
         txMAPSS_InformationWrapper = new TxMAPSS_InformationWrapper(extSSInfo);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException {

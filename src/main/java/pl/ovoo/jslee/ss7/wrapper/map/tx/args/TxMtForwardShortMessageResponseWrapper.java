@@ -22,20 +22,33 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 
 import pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardSMResponseWrapper;
 
+
 /**
  * Created by karolsimka on 09.06.17.
  */
 public class TxMtForwardShortMessageResponseWrapper implements MtForwardSMResponseWrapper{
 
+    /** The text. */
     private String text;
 
+    /**
+     * Instantiates a new tx mt forward short message response wrapper.
+     */
     public TxMtForwardShortMessageResponseWrapper() {super();}
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardSMResponseWrapper#getText()
+     */
     @Override
     public String getText() {
         return text;
     }
 
+    /**
+     * Sets the text.
+     *
+     * @param text the new text
+     */
     public void setText(String text){
         this.text = text;
     }

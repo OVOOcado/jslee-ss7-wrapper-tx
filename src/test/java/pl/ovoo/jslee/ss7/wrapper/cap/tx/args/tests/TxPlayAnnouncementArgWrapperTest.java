@@ -38,10 +38,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInformationToSendWrapper;
 
+
+/**
+ * The Class TxPlayAnnouncementArgWrapperTest.
+ */
 public class TxPlayAnnouncementArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx play announcement arg wrapper. */
     TxPlayAnnouncementArgWrapper txPlayAnnouncementArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -57,6 +67,9 @@ public class TxPlayAnnouncementArgWrapperTest extends WrapperBaseTest {
         txPlayAnnouncementArgWrapper.setRequestAnnouncementComplete(new Boolean(true));
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

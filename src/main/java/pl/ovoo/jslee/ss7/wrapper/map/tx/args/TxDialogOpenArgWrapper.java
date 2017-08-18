@@ -26,24 +26,39 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.DialogOpenArgWrapper;
 
+
 /**
- * TxDialogOpenArgWrapper
+ * TxDialogOpenArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenArgWrapper implements DialogOpenArgWrapper {
 
+    /** The local sccp address wrapper. */
     private transient SccpAddressWrapper localSccpAddressWrapper = null;
+    
+    /** The remote sccp address wrapper. */
     private transient SccpAddressWrapper remoteSccpAddressWrapper = null;
 
+    /** The local sccp address. */
     private final SccpAddress localSccpAddress;
+    
+    /** The remote sccp address. */
     private final SccpAddress remoteSccpAddress;
 
+    /**
+     * Instantiates a new tx dialog open arg wrapper.
+     *
+     * @param dialog the dialog
+     */
     public TxDialogOpenArgWrapper(final MAPDialog dialog) {
         localSccpAddress = dialog.getLocalAddress();
         remoteSccpAddress = dialog.getRemoteAddress();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.DialogOpenArgWrapper#getLocalSccpAddress()
+     */
     @Override
     public SccpAddressWrapper getLocalSccpAddress() {
         if (this.localSccpAddressWrapper == null && this.localSccpAddress != null) {
@@ -52,6 +67,9 @@ public class TxDialogOpenArgWrapper implements DialogOpenArgWrapper {
         return this.localSccpAddressWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.DialogOpenArgWrapper#getRemoteSccpAddress()
+     */
     @Override
     public SccpAddressWrapper getRemoteSccpAddress() {
         if (this.remoteSccpAddressWrapper == null && this.remoteSccpAddress != null) {
@@ -60,6 +78,9 @@ public class TxDialogOpenArgWrapper implements DialogOpenArgWrapper {
         return this.remoteSccpAddressWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxDialogOpenArgWrapper [localSccpAddress=" + localSccpAddress + ", remoteSccpAddress="

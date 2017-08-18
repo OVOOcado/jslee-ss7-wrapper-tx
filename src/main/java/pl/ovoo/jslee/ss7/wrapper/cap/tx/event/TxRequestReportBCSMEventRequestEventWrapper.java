@@ -29,20 +29,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1RequestReportBCSMEventAr
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxRequestReportBCSMEventRequestEventWrapper
+ * TxRequestReportBCSMEventRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRequestReportBCSMEventRequestEventWrapper extends TxEventWrapper implements RequestReportBCSMEventRequestEventWrapper {
 
+    /** The request report bcsm event request. */
     private final RequestReportBCSMEventRequest requestReportBCSMEventRequest;
 
+    /**
+     * Instantiates a new tx request report bcsm event request event wrapper.
+     *
+     * @param requestReportBCSMEventRequest the request report bcsm event request
+     * @param aci the aci
+     */
     public TxRequestReportBCSMEventRequestEventWrapper(final RequestReportBCSMEventRequest requestReportBCSMEventRequest, final ActivityContextInterface aci) {
         super(aci, requestReportBCSMEventRequest);
         this.requestReportBCSMEventRequest = requestReportBCSMEventRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public RequestReportBCSMEventArgWrapper getArgument() throws Ss7WrapperException {
         final TxRequestReportBCSMEventArgWrapper requestReportBCSMEventArgWrapper = new TxCap1RequestReportBCSMEventArgWrapper();

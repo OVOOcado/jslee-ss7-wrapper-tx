@@ -23,28 +23,46 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.CallReferenceNumber;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
 
+
 /**
- * OcCallReferenceNumberWrapper
+ * OcCallReferenceNumberWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallReferenceNumberWrapper implements CallReferenceNumberWrapper {
 
+	/** The call reference number. */
 	private final CallReferenceNumber callReferenceNumber;
 
+	/**
+	 * Instantiates a new tx call reference number wrapper.
+	 *
+	 * @param callReferenceNumber the call reference number
+	 */
 	public TxCallReferenceNumberWrapper(final CallReferenceNumber callReferenceNumber) {
 		this.callReferenceNumber = callReferenceNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper#getData()
+	 */
 	@Override
 	public byte[] getData() {
 		return callReferenceNumber.getData();
 	}
 
+	/**
+	 * Gets the tx call reference number.
+	 *
+	 * @return the tx call reference number
+	 */
 	public CallReferenceNumber getTxCallReferenceNumber() {
 		return callReferenceNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxCallReferenceNumberWrapper [callReferenceNumber=" + callReferenceNumber + "]";

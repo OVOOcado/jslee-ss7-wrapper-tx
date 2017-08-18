@@ -23,19 +23,31 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.FCIBCCCAMELsequence1;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FCIBCCCAMELsequence1Wrapper;
 
+
 /**
- * TxCap2FCIBCCCAMELsequence1Wrapper
+ * TxCap2FCIBCCCAMELsequence1Wrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2FCIBCCCAMELsequence1Wrapper implements Cap2FCIBCCCAMELsequence1Wrapper {
 
+    /** The tx fcibcccame lsequence1. */
     private final FCIBCCCAMELsequence1 txFCIBCCCAMELsequence1;
 
+    /**
+     * Instantiates a new tx cap2 fcibcccame lsequence1 wrapper.
+     *
+     * @param txFCIBCCCAMELsequence1 the tx fcibcccame lsequence1
+     */
     public TxCap2FCIBCCCAMELsequence1Wrapper(final FCIBCCCAMELsequence1 txFCIBCCCAMELsequence1) {
         this.txFCIBCCCAMELsequence1 = txFCIBCCCAMELsequence1;
     }
 
+    /**
+     * Gets the tx fcibcccame lsequence1.
+     *
+     * @return the tx fcibcccame lsequence1
+     */
     public FCIBCCCAMELsequence1 getTxFCIBCCCAMELsequence1() {
         return txFCIBCCCAMELsequence1;
     }

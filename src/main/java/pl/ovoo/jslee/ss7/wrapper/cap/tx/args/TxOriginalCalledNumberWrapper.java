@@ -25,23 +25,38 @@ import org.mobicents.protocols.ss7.cap.api.isup.OriginalCalledNumberCap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
 
+
 /**
- * TxOriginalCalledNumberWrapper
+ * TxOriginalCalledNumberWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrapper {
 
+	/** The original called number. */
 	private final OriginalCalledNumberCap originalCalledNumber;
 
+	/**
+	 * Instantiates a new tx original called number wrapper.
+	 *
+	 * @param originalCalledNumber the original called number
+	 */
 	public TxOriginalCalledNumberWrapper(final OriginalCalledNumberCap originalCalledNumber) {
 		this.originalCalledNumber = originalCalledNumber;
 	}
 
+	/**
+	 * Gets the tx original called number.
+	 *
+	 * @return the tx original called number
+	 */
 	public OriginalCalledNumberCap getTxOriginalCalledNumber() {
 		return originalCalledNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#hasAddress()
+	 */
 	@Override
 	public boolean hasAddress() throws Ss7WrapperException {
 		try {
@@ -52,6 +67,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#hasNature()
+	 */
 	@Override
 	public boolean hasNature() throws Ss7WrapperException {
 		try {
@@ -61,6 +79,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#hasNumberingPlan()
+	 */
 	@Override
 	public boolean hasNumberingPlan() throws Ss7WrapperException {
 		try {
@@ -70,6 +91,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#getAddress()
+	 */
 	@Override
 	public String getAddress() throws Ss7WrapperException {
 		try {
@@ -82,6 +106,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#getPresentation()
+	 */
 	@Override
 	public Presentation getPresentation() throws Ss7WrapperException {
 		try {
@@ -95,6 +122,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#getNature()
+	 */
 	@Override
 	public Nature getNature() throws Ss7WrapperException {
 		try {
@@ -107,6 +137,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper#getNumberingPlan()
+	 */
 	@Override
 	public NumberingPlan getNumberingPlan() throws Ss7WrapperException {
 		try {
@@ -120,6 +153,9 @@ public class TxOriginalCalledNumberWrapper implements OriginalCalledNumberWrappe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxOriginalCalledNumberWrapper [originalCalledNumber=" + originalCalledNumber + "]";

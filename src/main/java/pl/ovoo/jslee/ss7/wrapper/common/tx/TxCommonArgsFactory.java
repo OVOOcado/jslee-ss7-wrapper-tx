@@ -34,8 +34,9 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.Nature;
 import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper.Type;
 
+
 /**
- * TxCommonArgsFactory
+ * TxCommonArgsFactory.
  *
  * @author pawel.borecki@ovoo.pl
  */
@@ -43,16 +44,25 @@ public class TxCommonArgsFactory implements CommonArgsFactory {
 
 	//private MAPProvider mapProvider;
 	//private MAPContextInterfaceFactory mapContextInterfaceFactory;
-    //private CAPProvider capProvider;
+    /** The parameter factory. */
+	//private CAPProvider capProvider;
     private ParameterFactory parameterFactory;    
     /*public TxCommonArgsFactory(final CAPProvider capProvider) {
         this.capProvider = capProvider;
     }*/
 
+    /**
+     * Instantiates a new tx common args factory.
+     *
+     * @param parameterFactory the parameter factory
+     */
     public TxCommonArgsFactory(final ParameterFactory parameterFactory) {
         this.parameterFactory = parameterFactory;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.common.args.CommonArgsFactory#createSccpAddress(boolean, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper, java.lang.Integer, java.lang.Integer, pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper.Type)
+     */
     @Override
     public SccpAddressWrapper createSccpAddress(boolean routeOnPC, GlobalTitleWrapper gt, Integer pc, Integer ssn, Type type) throws Ss7WrapperException {
     	if (routeOnPC) {
@@ -78,6 +88,9 @@ public class TxCommonArgsFactory implements CommonArgsFactory {
     	return new TxSccpAddressWrapperImpl(sccpAddress);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.common.args.CommonArgsFactory#createGlobalTitle(java.lang.String, java.lang.Integer, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.GlobalTitleIndicator, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.NumberingPlan, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.EncodingScheme, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.Nature)
+     */
     @Override
     public GlobalTitleWrapper createGlobalTitle(String address, Integer translationType, GlobalTitleIndicator globalTitleIndicator, pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper.NumberingPlan numberingPlan, EncodingScheme encodingScheme, Nature nature) throws Ss7WrapperException {
     	

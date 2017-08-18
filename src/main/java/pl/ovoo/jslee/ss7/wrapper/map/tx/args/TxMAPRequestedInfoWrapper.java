@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.RequestedInfo;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPRequestedInfoWrapper;
 
+
 /**
- * TxMAPSubscriberIdentityWrapper
+ * TxMAPSubscriberIdentityWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPRequestedInfoWrapper implements MAPRequestedInfoWrapper {
 
+    /** The requested info. */
     private final RequestedInfo requestedInfo;
 
+    /**
+     * Instantiates a new tx map requested info wrapper.
+     *
+     * @param requestedInfo the requested info
+     */
     public TxMAPRequestedInfoWrapper(final RequestedInfo requestedInfo) {
         this.requestedInfo = requestedInfo;
     }
 
+    /**
+     * Gets the tx requested info.
+     *
+     * @return the tx requested info
+     */
     public RequestedInfo getTxRequestedInfo() {
         return requestedInfo;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPRequestedInfoWrapper [requestedInfo=" + requestedInfo + "]";

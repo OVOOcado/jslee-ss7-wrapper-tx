@@ -25,24 +25,37 @@ import java.util.Arrays;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPCallForwardingDataWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper;
 
+
 /**
- * TxMAPCallForwardingDataWrapper
+ * TxMAPCallForwardingDataWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPCallForwardingDataWrapper implements MAPCallForwardingDataWrapper{
 	
+    /** The m ap ext_ forw feature wrappers. */
     private MAPExt_ForwFeatureWrapper[] mAPExt_ForwFeatureWrappers;
 
+    /**
+     * Instantiates a new tx map call forwarding data wrapper.
+     *
+     * @param mAPExt_ForwFeatureWrappers the m ap ext_ forw feature wrappers
+     */
     public TxMAPCallForwardingDataWrapper(final MAPExt_ForwFeatureWrapper[] mAPExt_ForwFeatureWrappers) {
         this.mAPExt_ForwFeatureWrappers = mAPExt_ForwFeatureWrappers;
     }
         
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPCallForwardingDataWrapper#getForwardingFeatureList()
+     */
     @Override
     public MAPExt_ForwFeatureWrapper[] getForwardingFeatureList(){
     	return mAPExt_ForwFeatureWrappers;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPCallForwardingDataWrapper [mAPExt_ForwFeatureWrappers="

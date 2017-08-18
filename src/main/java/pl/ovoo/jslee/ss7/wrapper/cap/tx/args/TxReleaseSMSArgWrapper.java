@@ -24,21 +24,32 @@ import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.RPCause;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RPCauseWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ReleaseSMSArgWrapper;
 
+
 /**
- * TxReleaseCallArgWrapper
+ * TxReleaseCallArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxReleaseSMSArgWrapper implements ReleaseSMSArgWrapper {
 
+    /** The rp cause wrapper. */
     private transient RPCauseWrapper rpCauseWrapper = null;
 
+    /** The rp cause. */
     private RPCause rpCause;
 
+    /**
+     * Instantiates a new tx release sms arg wrapper.
+     *
+     * @param rpCause the rp cause
+     */
     public TxReleaseSMSArgWrapper(final RPCause rpCause) {
         this.rpCause = rpCause;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ReleaseSMSArgWrapper#getRPCause()
+     */
     @Override
     public RPCauseWrapper getRPCause() {
         if (this.rpCauseWrapper == null && this.rpCause != null) {
@@ -47,6 +58,9 @@ public class TxReleaseSMSArgWrapper implements ReleaseSMSArgWrapper {
         return this.rpCauseWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxReleaseSMSArgWrapper [rpCause=" + rpCause + "]";

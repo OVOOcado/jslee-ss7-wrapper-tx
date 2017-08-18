@@ -25,17 +25,23 @@ import java.util.ArrayList;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType;
 
+
 /**
- * TxCallInformationRequestArgWrapper
+ * TxCallInformationRequestArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallInformationRequestArgWrapper implements CallInformationRequestArgWrapper {
 
+    /** The requested information type list. */
     private transient RequestedInformationType[] requestedInformationTypeList = null;
 
+    /** The tx requested information types. */
     private ArrayList<org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformationType> txRequestedInformationTypes;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationRequestArgWrapper#setRequestedInformationTypeList(pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType[])
+     */
     @Override
     public void setRequestedInformationTypeList(final RequestedInformationType[] requestedInformationTypeList) {
         if (requestedInformationTypeList == null || requestedInformationTypeList.length == 0) {
@@ -57,6 +63,9 @@ public class TxCallInformationRequestArgWrapper implements CallInformationReques
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationRequestArgWrapper#getRequestedInformationTypeList()
+     */
     @Override
     public RequestedInformationType[] getRequestedInformationTypeList() {
         if (this.requestedInformationTypeList == null && this.txRequestedInformationTypes != null) {
@@ -71,16 +80,29 @@ public class TxCallInformationRequestArgWrapper implements CallInformationReques
         return this.requestedInformationTypeList;
     }
 
+    /**
+     * Gets the tx requested information types.
+     *
+     * @return the tx requested information types
+     */
     public ArrayList<org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformationType> getTxRequestedInformationTypes() {
         return txRequestedInformationTypes;
     }
 
+    /**
+     * Sets the tx requested information types.
+     *
+     * @param txRequestedInformationTypes the new tx requested information types
+     */
     public void setTxRequestedInformationTypes(
             final ArrayList<org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformationType> txRequestedInformationTypes) {
         this.txRequestedInformationTypes = txRequestedInformationTypes;
         this.requestedInformationTypeList = null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCallInformationRequestArgWrapper [txRequestedInformationTypes=" + txRequestedInformationTypes + "]";

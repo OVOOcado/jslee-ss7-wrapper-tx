@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.CancelRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDisconnectForwardConnectionRequestEventWrapper
+ * TxDisconnectForwardConnectionRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCancelRequestEventWrapper extends TxEventWrapper implements CancelRequestEventWrapper {
 
+    /** The cancel request. */
     private final CancelRequest cancelRequest;
 
+    /**
+     * Instantiates a new tx cancel request event wrapper.
+     *
+     * @param cancelRequest the cancel request
+     * @param aci the aci
+     */
     public TxCancelRequestEventWrapper(final CancelRequest cancelRequest, final ActivityContextInterface aci) {
         super(aci, cancelRequest);
         this.cancelRequest = cancelRequest;

@@ -24,14 +24,20 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3TimeDurationChargingResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2TimeDurationChargingResultWrapper;
 
+
 /**
- * OcCap2TimeDurationChargingResultWrapper
+ * OcCap2TimeDurationChargingResultWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap3TimeDurationChargingResultWrapper extends TxCap2TimeDurationChargingResultWrapper implements Cap3TimeDurationChargingResultWrapper {
 
 
+    /**
+     * Instantiates a new tx cap3 time duration charging result wrapper.
+     *
+     * @param timeDurationChargingResult the time duration charging result
+     */
     public TxCap3TimeDurationChargingResultWrapper(final TimeDurationChargingResult timeDurationChargingResult) {
         super(timeDurationChargingResult);
     }

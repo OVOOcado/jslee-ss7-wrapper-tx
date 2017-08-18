@@ -30,20 +30,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.FurnishChargingInformationRequestEven
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxFurnishChargingInformationRequestEventWrapper
+ * TxFurnishChargingInformationRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxFurnishChargingInformationRequestEventWrapper extends TxEventWrapper implements FurnishChargingInformationRequestEventWrapper {
 
+    /** The furnish charging information request. */
     private final FurnishChargingInformationRequest furnishChargingInformationRequest;
 
+    /**
+     * Instantiates a new tx furnish charging information request event wrapper.
+     *
+     * @param furnishChargingInformationRequest the furnish charging information request
+     * @param aci the aci
+     */
     public TxFurnishChargingInformationRequestEventWrapper(final FurnishChargingInformationRequest furnishChargingInformationRequest, final ActivityContextInterface aci) {
         super(aci, furnishChargingInformationRequest);
         this.furnishChargingInformationRequest = furnishChargingInformationRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public FurnishChargingInformationArgWrapper getArgument() throws Ss7WrapperException {
         final TxFurnishChargingInformationArgWrapper txFurnishChargingInformationArgWrapper;

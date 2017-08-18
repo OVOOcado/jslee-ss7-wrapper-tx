@@ -24,24 +24,37 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
 
+
 /**
- * TxMAPSubscriberInfoWrapper
+ * TxMAPSubscriberInfoWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPSubscriberInfoWrapper implements MAPSubscriberInfoWrapper {
 
+    /** The subscriber info. */
     private final SubscriberInfo subscriberInfo;
 
+    /**
+     * Instantiates a new tx map subscriber info wrapper.
+     *
+     * @param subscriberInfo the subscriber info
+     */
     public TxMAPSubscriberInfoWrapper(final SubscriberInfo subscriberInfo) {
         this.subscriberInfo = subscriberInfo;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper#hasLocationInformation()
+     */
     @Override
     public boolean hasLocationInformation() {
         return subscriberInfo.getLocationInformation() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper#getLocationInformation()
+     */
     @Override
     public MAPLocationInformationWrapper getLocationInformation() {
         if (subscriberInfo.getLocationInformation() != null) {
@@ -50,10 +63,18 @@ public class TxMAPSubscriberInfoWrapper implements MAPSubscriberInfoWrapper {
         return null;
     }
 
+    /**
+     * Gets the tx subscriber info.
+     *
+     * @return the tx subscriber info
+     */
     public SubscriberInfo getTxSubscriberInfo() {
         return subscriberInfo;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPSubscriberInfoWrapper [subscriberInfo=" + subscriberInfo + "]";

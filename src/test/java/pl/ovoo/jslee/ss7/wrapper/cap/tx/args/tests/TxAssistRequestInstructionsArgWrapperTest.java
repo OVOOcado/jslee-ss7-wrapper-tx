@@ -34,10 +34,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxGenericNumberWrapper;
 
+
+/**
+ * The Class TxAssistRequestInstructionsArgWrapperTest.
+ */
 public class TxAssistRequestInstructionsArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx assist request instructions arg wrapper. */
     TxAssistRequestInstructionsArgWrapper txAssistRequestInstructionsArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -56,6 +66,9 @@ public class TxAssistRequestInstructionsArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     public void testSerialization() throws IOException, ClassNotFoundException {
 

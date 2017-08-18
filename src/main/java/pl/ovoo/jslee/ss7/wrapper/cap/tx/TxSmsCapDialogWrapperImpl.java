@@ -41,21 +41,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSMSEventWrapper;
 
 import java.util.ArrayList;
 
+
 /**
- * TxSmsCapDialogWrapperImpl
+ * TxSmsCapDialogWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxSmsCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements SmsCapDialogWrapper {
 
+    /** The cap dialog sms. */
     private final CAPDialogSms capDialogSms;
 
+    /**
+     * Instantiates a new tx sms cap dialog wrapper impl.
+     *
+     * @param capDialogSms the cap dialog sms
+     */
     public TxSmsCapDialogWrapperImpl(final CAPDialogSms capDialogSms) {
         super(capDialogSms);
         this.capDialogSms = capDialogSms;
     }
 
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.SmsCapDialogWrapper#sendReleaseSMS(pl.ovoo.jslee.ss7.wrapper.cap.args.ReleaseSMSArgWrapper)
+     */
     @Override
     public int sendReleaseSMS(final ReleaseSMSArgWrapper releaseSMSArg) throws Ss7WrapperException {
         final TxReleaseSMSArgWrapper txReleaseSMSArg = (TxReleaseSMSArgWrapper) releaseSMSArg;
@@ -67,6 +77,9 @@ public class TxSmsCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.SmsCapDialogWrapper#sendRequestReportSMSEvent(pl.ovoo.jslee.ss7.wrapper.cap.args.RequestReportSMSEventArgWrapper)
+     */
     @Override
     public int sendRequestReportSMSEvent(final RequestReportSMSEventArgWrapper cap3RequestReportSMSEventArg) throws Ss7WrapperException {
         final ArrayList<SMSEvent> smsEventWrappers = new ArrayList<SMSEvent>(cap3RequestReportSMSEventArg.getSMSEvents().length);
@@ -81,6 +94,9 @@ public class TxSmsCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.SmsCapDialogWrapper#sendConnectSMS(pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper)
+     */
     @Override
     public int sendConnectSMS(final ConnectSMSArgWrapper cap3ConnectSMSArg) throws Ss7WrapperException {
     	try {
@@ -93,6 +109,9 @@ public class TxSmsCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.SmsCapDialogWrapper#sendInitialDPSMS(pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPSMSArgWrapper)
+     */
     @Override
     public int sendInitialDPSMS(final InitialDPSMSArgWrapper initialDPSMSArg) throws Ss7WrapperException {
         try {
@@ -117,6 +136,9 @@ public class TxSmsCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.SmsCapDialogWrapper#sendContinueSMS()
+     */
     @Override
     public int sendContinueSMS() throws Ss7WrapperException {
     	try {
@@ -126,6 +148,9 @@ public class TxSmsCapDialogWrapperImpl extends TxCapDialogWrapperImpl implements
 		}
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.SmsCapDialogWrapper#sendEventReportSMS(pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper)
+     */
     @Override
     public int sendEventReportSMS(EventReportSMSArgWrapper eventReportSMSArgWrapper) throws Ss7WrapperException {
     	final TxEventReportSMSArgWrapperImpl txeventReportSMSArgWrapper = (TxEventReportSMSArgWrapperImpl) eventReportSMSArgWrapper;

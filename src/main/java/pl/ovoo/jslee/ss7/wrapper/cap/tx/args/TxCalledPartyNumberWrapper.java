@@ -25,19 +25,29 @@ import org.mobicents.protocols.ss7.cap.api.isup.CalledPartyNumberCap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper;
 
+
 /**
- * OcCallingPartyNumberWrapper
+ * OcCallingPartyNumberWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 
+	/** The called party number. */
 	private final CalledPartyNumberCap calledPartyNumber;
 
+	/**
+	 * Instantiates a new tx called party number wrapper.
+	 *
+	 * @param calledPartyNumber the called party number
+	 */
 	public TxCalledPartyNumberWrapper(final CalledPartyNumberCap calledPartyNumber) {
 		this.calledPartyNumber = calledPartyNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#getAddress()
+	 */
 	@Override
 	public String getAddress() throws Ss7WrapperException {
 		try {
@@ -47,6 +57,9 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#getNature()
+	 */
 	@Override
 	public Nature getNature() throws Ss7WrapperException {
 		try {
@@ -56,6 +69,9 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#getNumberingPlan()
+	 */
 	@Override
 	public NumberingPlan getNumberingPlan() throws Ss7WrapperException {
 		try {
@@ -65,6 +81,9 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#hasAddress()
+	 */
 	@Override
 	public boolean hasAddress() throws Ss7WrapperException {
 		try {
@@ -74,6 +93,9 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#hasNature()
+	 */
 	@Override
 	public boolean hasNature() throws Ss7WrapperException {
 		try {
@@ -83,6 +105,9 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#hasNumberingPlan()
+	 */
 	@Override
 	public boolean hasNumberingPlan() throws Ss7WrapperException {
 		try {
@@ -92,6 +117,9 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper#getRoutingToInternalNetworkNumber()
+	 */
 	@Override
 	public RoutingToInternalNetworkNumber getRoutingToInternalNetworkNumber() throws Ss7WrapperException {
 		try {
@@ -102,10 +130,18 @@ public class TxCalledPartyNumberWrapper implements CalledPartyNumberWrapper {
 		}
 	}
 
+	/**
+	 * Gets the tx called party number.
+	 *
+	 * @return the tx called party number
+	 */
 	public CalledPartyNumberCap getTxCalledPartyNumber() {
 		return calledPartyNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxCalledPartyNumberWrapper [calledPartyNumber=" + calledPartyNumber + "]";

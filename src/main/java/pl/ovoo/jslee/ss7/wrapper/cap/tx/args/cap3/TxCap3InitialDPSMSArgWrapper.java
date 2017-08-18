@@ -24,7 +24,7 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3InitialDPSMSArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPSMSArgWrapper;
 
 /**
- * TxCap3InitialDPSMSArgWrapper
+ * TxCap3InitialDPSMSArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */

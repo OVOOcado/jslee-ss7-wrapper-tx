@@ -29,37 +29,68 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper;
 
+
 /**
- * TxAnyTimeInterrogationArgWrapper
+ * TxAnyTimeInterrogationArgWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxAnyTimeInterrogationArgWrapper implements AnyTimeInterrogationArgWrapper {
 
+    /** The gsm scf. */
     private transient ISDNAddressStringWrapper gsmScf = null;
 
+    /** The any time interrogation request. */
     private AnyTimeInterrogationRequest anyTimeInterrogationRequest;
 
+    /**
+     * Instantiates a new tx any time interrogation arg wrapper.
+     *
+     * @param anyTimeInterrogationRequest the any time interrogation request
+     */
     public TxAnyTimeInterrogationArgWrapper(final AnyTimeInterrogationRequest anyTimeInterrogationRequest) {
         this.anyTimeInterrogationRequest = anyTimeInterrogationRequest;
     }
 
+    /**
+     * Gets the tx subscriber identity.
+     *
+     * @return the tx subscriber identity
+     */
     public SubscriberIdentity getTxSubscriberIdentity() {
         return anyTimeInterrogationRequest.getSubscriberIdentity();
     }
 
+    /**
+     * Gets the tx requested info.
+     *
+     * @return the tx requested info
+     */
     public RequestedInfo getTxRequestedInfo() {
         return anyTimeInterrogationRequest.getRequestedInfo();
     }
 
+    /**
+     * Gets the tx gsm scf address.
+     *
+     * @return the tx gsm scf address
+     */
     public ISDNAddressString getTxGsmScfAddress() {
         return anyTimeInterrogationRequest.getGsmSCFAddress();
     }
 
+    /**
+     * Gets the tx any time interrogation request.
+     *
+     * @return the tx any time interrogation request
+     */
     public AnyTimeInterrogationRequest getTxAnyTimeInterrogationRequest() {
         return anyTimeInterrogationRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper#getGsmScf()
+     */
     @Override
     public ISDNAddressStringWrapper getGsmScf() {
         if (this.gsmScf == null && anyTimeInterrogationRequest.getGsmSCFAddress() != null) {
@@ -68,6 +99,9 @@ public class TxAnyTimeInterrogationArgWrapper implements AnyTimeInterrogationArg
         return this.gsmScf;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxAnyTimeInterrogationArgWrapper [anyTimeInterrogationRequest=" + anyTimeInterrogationRequest + "]";

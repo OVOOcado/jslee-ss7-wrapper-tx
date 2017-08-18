@@ -26,22 +26,36 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
 
+
 /**
- * TxSendRoutingInfoRequestArgWrapper
+ * TxSendRoutingInfoRequestArgWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxSendRoutingInfoRequestArgWrapper implements SendRoutingInfoRequestArgWrapper {
+    
+    /** The msisdn wrapper. */
     private transient ISDNAddressStringWrapper msisdnWrapper = null;
+    
+    /** The gmsc address wrapper. */
     private transient ISDNAddressStringWrapper gmscAddressWrapper = null;
 
+    /** The msisdn. */
     private ISDNAddressString msisdn;
+    
+    /** The gmsc address. */
     private ISDNAddressString gmscAddress;
 
+    /**
+     * Instantiates a new tx send routing info request arg wrapper.
+     */
     public TxSendRoutingInfoRequestArgWrapper() {
         super();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper#getMsisdn()
+     */
     @Override
     public ISDNAddressStringWrapper getMsisdn() {
         if (this.msisdnWrapper == null && this.msisdn != null) {
@@ -50,6 +64,11 @@ public class TxSendRoutingInfoRequestArgWrapper implements SendRoutingInfoReques
         return this.msisdnWrapper;
     }
 
+    /**
+     * Sets the msisdn.
+     *
+     * @param msisdn the new msisdn
+     */
     public void setMsisdn(ISDNAddressStringWrapper msisdn) {
         if (msisdn == null) {
             this.msisdn = null;
@@ -61,20 +80,40 @@ public class TxSendRoutingInfoRequestArgWrapper implements SendRoutingInfoReques
         }
     }
 
+    /**
+     * Gets the tx msisdn.
+     *
+     * @return the tx msisdn
+     */
     public ISDNAddressString getTxMsisdn() {
         return this.msisdn;
     }
 
+    /**
+     * Sets the tx msisdn.
+     *
+     * @param msisdn the new tx msisdn
+     */
     public void setTxMsisdn(ISDNAddressString msisdn) {
         this.msisdn = msisdn;
         this.msisdnWrapper = null;
 
     }
 
+    /**
+     * Gets the tx gmsc address.
+     *
+     * @return the tx gmsc address
+     */
     public ISDNAddressString getTxGmscAddress() {
         return this.gmscAddress;
     }
 
+    /**
+     * Sets the gmsc address.
+     *
+     * @param gmscAddress the new gmsc address
+     */
     public void setGmscAddress(ISDNAddressStringWrapper gmscAddress) {
         if (gmscAddress == null) {
             this.gmscAddress = null;
@@ -86,6 +125,9 @@ public class TxSendRoutingInfoRequestArgWrapper implements SendRoutingInfoReques
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper#getGmscAddress()
+     */
     @Override
     public ISDNAddressStringWrapper getGmscAddress() {
         if (this.gmscAddressWrapper == null && this.gmscAddress != null) {
@@ -94,6 +136,9 @@ public class TxSendRoutingInfoRequestArgWrapper implements SendRoutingInfoReques
         return this.gmscAddressWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxSendRoutingInfoRequestArgWrapper [msisdn=" + msisdn + "]";

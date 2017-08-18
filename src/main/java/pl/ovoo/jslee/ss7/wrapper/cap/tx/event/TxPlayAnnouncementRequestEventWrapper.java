@@ -28,20 +28,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.PlayAnnouncementRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxPlayAnnouncementRequestEventWrapper
+ * TxPlayAnnouncementRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxPlayAnnouncementRequestEventWrapper extends TxEventWrapper implements PlayAnnouncementRequestEventWrapper {
 
+    /** The play announcement request. */
     private final PlayAnnouncementRequest playAnnouncementRequest;
 
+    /**
+     * Instantiates a new tx play announcement request event wrapper.
+     *
+     * @param playAnnouncementRequest the play announcement request
+     * @param aci the aci
+     */
     public TxPlayAnnouncementRequestEventWrapper(final PlayAnnouncementRequest playAnnouncementRequest, final ActivityContextInterface aci) {
         super(aci, playAnnouncementRequest);
         this.playAnnouncementRequest = playAnnouncementRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public PlayAnnouncementArgWrapper getArgument() throws Ss7WrapperException {
         final TxPlayAnnouncementArgWrapper playAnnouncementArgWrapper;

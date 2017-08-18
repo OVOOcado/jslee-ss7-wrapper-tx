@@ -27,22 +27,35 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingFeatureWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingOptionsWrapper;
 
+
 /**
- * TxMAPForwardingFeatureWrapper
+ * TxMAPForwardingFeatureWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPForwardingFeatureWrapper implements MAPForwardingFeatureWrapper {
 
+    /** The map forwarding options wrapper. */
     private transient MAPForwardingOptionsWrapper mapForwardingOptionsWrapper = null;
+    
+    /** The address string wrapper. */
     private transient AddressStringWrapper addressStringWrapper = null;
 
+    /** The ext forw feature. */
     private ExtForwFeature extForwFeature;
 
+    /**
+     * Instantiates a new tx map forwarding feature wrapper.
+     *
+     * @param extForwFeature the ext forw feature
+     */
     public TxMAPForwardingFeatureWrapper(final ExtForwFeature extForwFeature) {
         this.extForwFeature = extForwFeature;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingFeatureWrapper#getForwardingOptions()
+     */
     @Override
     public MAPForwardingOptionsWrapper getForwardingOptions() {
         if (this.mapForwardingOptionsWrapper == null && this.extForwFeature.getForwardingOptions() != null) {
@@ -51,6 +64,9 @@ public class TxMAPForwardingFeatureWrapper implements MAPForwardingFeatureWrappe
         return mapForwardingOptionsWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingFeatureWrapper#getForwardedToNumber()
+     */
     @Override
     public AddressStringWrapper getForwardedToNumber() {
         if (this.addressStringWrapper == null && this.extForwFeature.getForwardedToNumber() != null) {
@@ -59,6 +75,9 @@ public class TxMAPForwardingFeatureWrapper implements MAPForwardingFeatureWrappe
         return this.addressStringWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingFeatureWrapper#getCFStatus()
+     */
     @Override
     public byte[] getCFStatus() {
         if (extForwFeature.getSsStatus() != null) {
@@ -80,10 +99,18 @@ public class TxMAPForwardingFeatureWrapper implements MAPForwardingFeatureWrappe
      * }
      */
 
+    /**
+     * Gets the tx ext forw feature.
+     *
+     * @return the tx ext forw feature
+     */
     public ExtForwFeature getTxExtForwFeature() {
         return extForwFeature;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPForwardingFeatureWrapper [extForwFeature=" + extForwFeature + "]";

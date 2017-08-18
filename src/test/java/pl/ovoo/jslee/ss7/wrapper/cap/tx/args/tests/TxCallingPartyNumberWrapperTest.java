@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallingPartyNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
 
+
+/**
+ * The Class TxCallingPartyNumberWrapperTest.
+ */
 public class TxCallingPartyNumberWrapperTest extends WrapperBaseTest {
 
+	/** The tx calling party number wrapper. */
 	TxCallingPartyNumberWrapper txCallingPartyNumberWrapper;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -49,6 +59,9 @@ public class TxCallingPartyNumberWrapperTest extends WrapperBaseTest {
 		txCallingPartyNumberWrapper = new TxCallingPartyNumberWrapper(callingPartyNumberCap);
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+	 */
 	@Test
 	public void testSerialization() throws ClassNotFoundException, IOException, Ss7WrapperException, CAPException {
 		serializeToFile(txCallingPartyNumberWrapper);

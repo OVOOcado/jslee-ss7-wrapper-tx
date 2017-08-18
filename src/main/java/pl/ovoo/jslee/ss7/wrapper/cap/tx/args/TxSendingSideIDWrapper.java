@@ -24,19 +24,29 @@ import org.mobicents.protocols.ss7.cap.api.primitives.SendingSideID;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.LegType;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper;
 
+
 /**
- * TxReceivingSideIDWrapper
+ * TxReceivingSideIDWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxSendingSideIDWrapper implements SendingSideIDWrapper {
 
+    /** The sending side id. */
     private final SendingSideID sendingSideID;
 
+    /**
+     * Instantiates a new tx sending side id wrapper.
+     *
+     * @param sendingSideID the sending side id
+     */
     public TxSendingSideIDWrapper(final SendingSideID sendingSideID) {
         this.sendingSideID = sendingSideID;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper#getSendingSideID()
+     */
     @Override
     public LegType getSendingSideID() {
         if (sendingSideID.getSendingSideID() != null) {
@@ -45,10 +55,18 @@ public class TxSendingSideIDWrapper implements SendingSideIDWrapper {
         return null;
     }
 
+    /**
+     * Gets the tx sending side id.
+     *
+     * @return the tx sending side id
+     */
     public SendingSideID getTxSendingSideID() {
         return sendingSideID;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxSendingSideIDWrapper [sendingSideID=" + sendingSideID + "]";

@@ -25,20 +25,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.DialogUserAbortEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogUserAbortEventWrapper
+ * TxDialogUserAbortEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogUserAbortEventWrapper extends TxEventWrapper implements DialogUserAbortEventWrapper {
 
+    /** The dialog user abort event. */
     private final DialogUserAbort dialogUserAbortEvent;
 
+    /**
+     * Instantiates a new tx dialog user abort event wrapper.
+     *
+     * @param dialogUserAbortEvent the dialog user abort event
+     * @param aci the aci
+     */
     public TxDialogUserAbortEventWrapper(final DialogUserAbort dialogUserAbortEvent, final ActivityContextInterface aci) {
         super(aci, dialogUserAbortEvent.getWrappedEvent());
         this.dialogUserAbortEvent = dialogUserAbortEvent;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxDialogUserAbortEventWrapper{" +
@@ -46,6 +57,9 @@ public class TxDialogUserAbortEventWrapper extends TxEventWrapper implements Dia
                 '}';
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.DialogUserAbortEventWrapper#getUserInformation()
+     */
     @Override
     public Object[] getUserInformation(){
 		return new Object [] { this.dialogUserAbortEvent.getUserReason() };

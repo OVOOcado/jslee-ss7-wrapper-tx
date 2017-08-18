@@ -23,19 +23,29 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.inap.api.primitives.MiscCallInfo;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper;
 
+
 /**
- * OcMiscCallInfoWrapper
+ * OcMiscCallInfoWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMiscCallInfoWrapper implements MiscCallInfoWrapper {
 
+	/** The tx misc call info. */
 	private final MiscCallInfo txMiscCallInfo;
 
+	/**
+	 * Instantiates a new tx misc call info wrapper.
+	 *
+	 * @param miscCallInfo the misc call info
+	 */
 	public TxMiscCallInfoWrapper(final MiscCallInfo miscCallInfo) {
 		this.txMiscCallInfo = miscCallInfo;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper#getMessageType()
+	 */
 	@Override
 	public MessageType getMessageType() {
 		if (txMiscCallInfo.getMessageType() != null) {
@@ -44,15 +54,26 @@ public class TxMiscCallInfoWrapper implements MiscCallInfoWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper#hasMessageType()
+	 */
 	@Override
 	public boolean hasMessageType() {
 		return txMiscCallInfo.getMessageType() != null;
 	}
 
+	/**
+	 * Gets the tx misc call info.
+	 *
+	 * @return the tx misc call info
+	 */
 	public MiscCallInfo getTxMiscCallInfo() {
 		return txMiscCallInfo;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxMiscCallInfoWrapper [txMiscCallInfo=" + txMiscCallInfo + "]";

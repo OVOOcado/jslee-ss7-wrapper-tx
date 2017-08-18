@@ -33,10 +33,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.TimerID;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxResetTimerArgWrapper;
 
+
+/**
+ * The Class TxResetTimerArgWrapperTest.
+ */
 public class TxResetTimerArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx reset timer arg wrapper. */
     TxResetTimerArgWrapper txResetTimerArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -47,6 +57,9 @@ public class TxResetTimerArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

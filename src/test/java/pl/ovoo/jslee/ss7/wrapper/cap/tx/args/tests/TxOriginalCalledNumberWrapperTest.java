@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper;
 
+
+/**
+ * The Class TxOriginalCalledNumberWrapperTest.
+ */
 public class TxOriginalCalledNumberWrapperTest extends WrapperBaseTest {
 
+    /** The tx original called number wrapper. */
     TxOriginalCalledNumberWrapper txOriginalCalledNumberWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -55,6 +65,9 @@ public class TxOriginalCalledNumberWrapperTest extends WrapperBaseTest {
         txOriginalCalledNumberWrapper = new TxOriginalCalledNumberWrapper(originalCalledNumberCap);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

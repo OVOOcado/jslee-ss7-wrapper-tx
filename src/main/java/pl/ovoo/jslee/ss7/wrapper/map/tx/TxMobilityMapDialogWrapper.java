@@ -39,20 +39,30 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataArg_v1Wrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
 
+
 /**
- * TxMapDialogWrapperImpl
+ * TxMapDialogWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implements MobilityMapDialogWrapper {
     
+    /** The dialog. */
     private MAPDialogMobility dialog;
 
+    /**
+     * Instantiates a new tx mobility map dialog wrapper.
+     *
+     * @param dialog the dialog
+     */
     public TxMobilityMapDialogWrapper(final MAPDialogMobility dialog) {
         super(dialog);
         this.dialog = dialog;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MobilityMapDialogWrapper#sendAnyTimeInterrogation(long, pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationArgWrapper)
+     */
     @Override
     public void sendAnyTimeInterrogation(long atiTimeout, AnyTimeInterrogationArgWrapper arg) throws Ss7WrapperException {
     	try {
@@ -68,6 +78,9 @@ public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implement
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MobilityMapDialogWrapper#sendAnyTimeInterrogationResponse(long, pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper)
+     */
     @Override
     public void sendAnyTimeInterrogationResponse(long invoke, AnyTimeInterrogationResultWrapper arg) throws Ss7WrapperException {
     	try {
@@ -82,6 +95,9 @@ public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implement
 		}
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MobilityMapDialogWrapper#sendAnyTimeSubscriptionInterrogation(long, pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper)
+     */
     @Override
     public void sendAnyTimeSubscriptionInterrogation(long atiTimeout, AnyTimeSubscriptionInterrogationArgWrapper arg) throws Ss7WrapperException {
     	//try {
@@ -97,6 +113,9 @@ public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implement
         //}
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MobilityMapDialogWrapper#sendInsertSubscriberDataArg_v1(long, pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper)
+     */
     @Override
     public void sendInsertSubscriberDataArg_v1(long isdTimeout, InsertSubscriberDataArg_v1Wrapper arg) throws Ss7WrapperException {
     	try {
@@ -112,6 +131,9 @@ public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implement
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MobilityMapDialogWrapper#sendInsertSubscriberDataResponse(long)
+     */
     @Override
     public void sendInsertSubscriberDataResponse(long invoke) throws Ss7WrapperException {
     	try {
@@ -121,6 +143,11 @@ public class TxMobilityMapDialogWrapper extends TxMapDialogWrapperImpl implement
 		}
     }
 
+	/**
+	 * Gets the dialog.
+	 *
+	 * @return the dialog
+	 */
 	public MAPDialogMobility getDialog() {
 		return dialog;
 	}

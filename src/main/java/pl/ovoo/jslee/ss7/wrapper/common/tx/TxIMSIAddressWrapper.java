@@ -23,24 +23,39 @@ package pl.ovoo.jslee.ss7.wrapper.common.tx;
 import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
 
+
 /**
- * TxIMSIAddressWrapper
+ * TxIMSIAddressWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxIMSIAddressWrapper implements IMSIAddressWrapper{
 
+    /** The imsi. */
     private final IMSI imsi;
 
+    /**
+     * Instantiates a new tx imsi address wrapper.
+     *
+     * @param imsi the imsi
+     */
     public TxIMSIAddressWrapper(final IMSI imsi) {
         this.imsi = imsi;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper#getAddress()
+     */
     @Override
     public String getAddress() {
         return imsi.getData();
     }
     
+    /**
+     * Gets the tx imsi.
+     *
+     * @return the tx imsi
+     */
     public IMSI getTxImsi(){
     	return imsi;
     }

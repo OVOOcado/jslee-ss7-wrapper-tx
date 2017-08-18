@@ -34,10 +34,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSCauseWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSMSCauseWrapper;
 
+
+/**
+ * The Class TxSMSCauseWrapperTest.
+ */
 public class TxSMSCauseWrapperTest extends WrapperBaseTest {
 
+    /** The tx sms cause wrapper. */
     TxSMSCauseWrapper txSMSCauseWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -46,6 +56,9 @@ public class TxSMSCauseWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

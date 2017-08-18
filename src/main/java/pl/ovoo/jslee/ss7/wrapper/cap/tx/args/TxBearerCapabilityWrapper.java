@@ -24,21 +24,32 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapabilityWrapper;
 
+
 /**
- * TxBearerCapabilityWrapper
+ * TxBearerCapabilityWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxBearerCapabilityWrapper implements BearerCapabilityWrapper {
 
+    /** The bearer cap wrapper. */
     private transient BearerCapWrapper bearerCapWrapper = null;
 
+    /** The bearer capability. */
     private final BearerCapability bearerCapability;
 
+    /**
+     * Instantiates a new tx bearer capability wrapper.
+     *
+     * @param bearerCapability the bearer capability
+     */
     public TxBearerCapabilityWrapper(final BearerCapability bearerCapability) {
         this.bearerCapability = bearerCapability;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapabilityWrapper#getBearerCap()
+     */
     @Override
     public BearerCapWrapper getBearerCap() {
         if (this.bearerCapWrapper == null && bearerCapability.getBearerCap() != null) {
@@ -47,10 +58,18 @@ public class TxBearerCapabilityWrapper implements BearerCapabilityWrapper {
         return this.bearerCapWrapper;
     }
 
+    /**
+     * Gets the tx bearer capability.
+     *
+     * @return the tx bearer capability
+     */
     public BearerCapability getTxBearerCapability() {
         return bearerCapability;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxBearerCapabilityWrapper [bearerCapability=" + bearerCapability + "]";

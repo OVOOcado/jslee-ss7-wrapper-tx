@@ -26,16 +26,27 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.Nature;
 import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.NumberingPlan;
 
+
 /**
  * Created by karolsimka on 06.06.17.
  */
 public class TxRoutingInfoWrapper implements RoutingInfoWrapper {
+    
+    /** The routing info. */
     private final RoutingInfo routingInfo;
 
+    /**
+     * Instantiates a new tx routing info wrapper.
+     *
+     * @param routingInfo the routing info
+     */
     public TxRoutingInfoWrapper(final RoutingInfo routingInfo) {
         this.routingInfo = routingInfo;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper#getRoamingNumber()
+     */
     @Override
     public String getRoamingNumber() {
         if (routingInfo.getRoamingNumber() != null) {
@@ -44,6 +55,9 @@ public class TxRoutingInfoWrapper implements RoutingInfoWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper#getNumberingPlan()
+     */
     @Override
     public NumberingPlan getNumberingPlan() {
         if (routingInfo.getRoamingNumber() != null && routingInfo.getRoamingNumber().getNumberingPlan() != null) {
@@ -52,6 +66,9 @@ public class TxRoutingInfoWrapper implements RoutingInfoWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper#getNatureOfAddress()
+     */
     @Override
     public Nature getNatureOfAddress() {
         if (routingInfo.getRoamingNumber() != null && routingInfo.getRoamingNumber().getAddressNature() != null) {
@@ -60,6 +77,11 @@ public class TxRoutingInfoWrapper implements RoutingInfoWrapper {
         return null;
     }
 
+    /**
+     * Gets the tx routing info.
+     *
+     * @return the tx routing info
+     */
     public RoutingInfo getTxRoutingInfo() {
         return routingInfo;
     }

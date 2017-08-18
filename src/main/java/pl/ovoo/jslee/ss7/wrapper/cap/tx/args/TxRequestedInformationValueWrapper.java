@@ -24,19 +24,29 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.RequestedInformationType;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
 
+
 /**
- * TxRequestedInformationValueWrapper
+ * TxRequestedInformationValueWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRequestedInformationValueWrapper implements RequestedInformationValueWrapper {
 
+	/** The requested information value. */
 	private final RequestedInformation requestedInformationValue;
 
+	/**
+	 * Instantiates a new tx requested information value wrapper.
+	 *
+	 * @param requestedInformationValue the requested information value
+	 */
 	public TxRequestedInformationValueWrapper(final RequestedInformation requestedInformationValue) {
 		this.requestedInformationValue = requestedInformationValue;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper#isCallConnectedElapsedTimeValueChosen()
+	 */
 	@Override
 	public boolean isCallConnectedElapsedTimeValueChosen() {
 		return requestedInformationValue.getCallConnectedElapsedTimeValue() != null
@@ -44,6 +54,9 @@ public class TxRequestedInformationValueWrapper implements RequestedInformationV
 						.equals(requestedInformationValue.getRequestedInformationType());
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper#getCallConnectedElapsedTimeValue()
+	 */
 	@Override
 	public Integer getCallConnectedElapsedTimeValue() {
 		if (requestedInformationValue.getCallConnectedElapsedTimeValue() != null
@@ -54,10 +67,18 @@ public class TxRequestedInformationValueWrapper implements RequestedInformationV
 		return null;
 	}
 
+	/**
+	 * Gets the tx requested information value.
+	 *
+	 * @return the tx requested information value
+	 */
 	public RequestedInformation getTxRequestedInformationValue() {
 		return requestedInformationValue;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxRequestedInformationValueWrapper [requestedInformationValue=" + requestedInformationValue + "]";

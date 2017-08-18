@@ -26,19 +26,29 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.AChBillingChargingCharacteristicsWrapp
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper;
 
+
 /**
- * OcApplyChargingArgWrapper
+ * OcApplyChargingArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxApplyChargingArgWrapper implements ApplyChargingArgWrapper {
 
+    /** The a ch billing charging characteristics wrapper. */
     private transient AChBillingChargingCharacteristicsWrapper aChBillingChargingCharacteristicsWrapper = null;
+    
+    /** The party to charge. */
     private transient SendingSideIDWrapper partyToCharge = null;
 
+    /** The tx ach billing charging characteristics. */
     private CAMELAChBillingChargingCharacteristics txAchBillingChargingCharacteristics;
+    
+    /** The tx party to charge. */
     private SendingSideID txPartyToCharge;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper#setAChBillingChargingCharacteristics(pl.ovoo.jslee.ss7.wrapper.cap.args.AChBillingChargingCharacteristicsWrapper)
+     */
     @Override
     public void setAChBillingChargingCharacteristics(
             final AChBillingChargingCharacteristicsWrapper aChBillingChargingCharacteristics) {
@@ -54,6 +64,9 @@ public class TxApplyChargingArgWrapper implements ApplyChargingArgWrapper {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper#setPartyToCharge(pl.ovoo.jslee.ss7.wrapper.cap.args.SendingSideIDWrapper)
+     */
     @Override
     public void setPartyToCharge(final SendingSideIDWrapper partyToCharge) {
         if (partyToCharge == null) {
@@ -67,6 +80,9 @@ public class TxApplyChargingArgWrapper implements ApplyChargingArgWrapper {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingArgWrapper#getPartyToCharge()
+     */
     @Override
     public SendingSideIDWrapper getPartyToCharge() {
         if (this.partyToCharge == null && this.txPartyToCharge != null) {
@@ -75,6 +91,11 @@ public class TxApplyChargingArgWrapper implements ApplyChargingArgWrapper {
         return this.partyToCharge;
     }
 
+    /**
+     * Gets the a ch billing charging characteristics.
+     *
+     * @return the a ch billing charging characteristics
+     */
     public AChBillingChargingCharacteristicsWrapper getAChBillingChargingCharacteristics() {
         if (this.aChBillingChargingCharacteristicsWrapper == null && this.txAchBillingChargingCharacteristics != null) {
             this.aChBillingChargingCharacteristicsWrapper = new TxAChBillingChargingCharacteristicsWrapper(
@@ -83,25 +104,48 @@ public class TxApplyChargingArgWrapper implements ApplyChargingArgWrapper {
         return this.aChBillingChargingCharacteristicsWrapper;
     }
 
+    /**
+     * Gets the tx ach billing charging characteristics.
+     *
+     * @return the tx ach billing charging characteristics
+     */
     public CAMELAChBillingChargingCharacteristics getTxAchBillingChargingCharacteristics() {
         return txAchBillingChargingCharacteristics;
     }
 
+    /**
+     * Sets the tx ach billing charging characteristics.
+     *
+     * @param txAchBillingChargingCharacteristics the new tx ach billing charging characteristics
+     */
     public void setTxAchBillingChargingCharacteristics(
             final CAMELAChBillingChargingCharacteristics txAchBillingChargingCharacteristics) {
         this.aChBillingChargingCharacteristicsWrapper = null;
         this.txAchBillingChargingCharacteristics = txAchBillingChargingCharacteristics;
     }
 
+    /**
+     * Gets the tx party to charge.
+     *
+     * @return the tx party to charge
+     */
     public SendingSideID getTxPartyToCharge() {
         return txPartyToCharge;
     }
 
+    /**
+     * Sets the tx party to charge.
+     *
+     * @param txPartyToCharge the new tx party to charge
+     */
     public void setTxPartyToCharge(final SendingSideID txPartyToCharge) {
         this.partyToCharge = null;
         this.txPartyToCharge = txPartyToCharge;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxApplyChargingArgWrapper [txAchBillingChargingCharacteristics=" + txAchBillingChargingCharacteristics

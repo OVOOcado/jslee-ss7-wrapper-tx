@@ -72,26 +72,48 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.*;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.TxCallHandlingMapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.TxMobilityMapDialogWrapper;
 
+
 /**
- * TxArgsFactory
+ * TxArgsFactory.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMapArgsFactory implements MapArgsFactory {
 
+	/** The map provider. */
 	private MAPProvider mapProvider;
+	
+	/** The map parameter factory. */
 	private MAPParameterFactory mapParameterFactory;
+	
+	/** The map context interface factory. */
 	private MAPContextInterfaceFactory mapContextInterfaceFactory;
 
+    /**
+     * Instantiates a new tx map args factory.
+     *
+     * @param mapParameterFactory the map parameter factory
+     */
     public TxMapArgsFactory(final MAPParameterFactory mapParameterFactory) {
         this.mapParameterFactory = mapParameterFactory;
     }
 
+    /**
+     * Instantiates a new tx map args factory.
+     *
+     * @param mapProvider the map provider
+     */
     public TxMapArgsFactory(final MAPProvider mapProvider) {
         this.mapProvider = mapProvider;
         this.mapParameterFactory = mapProvider.getMAPParameterFactory();
     }
 
+    /**
+     * Instantiates a new tx map args factory.
+     *
+     * @param mapProvider the map provider
+     * @param mapContextInterfaceFactory the map context interface factory
+     */
     public TxMapArgsFactory(final MAPProvider mapProvider, final MAPContextInterfaceFactory mapContextInterfaceFactory) {
 		super();
         this.mapParameterFactory = mapProvider.getMAPParameterFactory();
@@ -101,6 +123,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
 
 
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMapLocationInformation(pl.ovoo.jslee.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper)
+	 */
 	@Override
     public MAPLocationInformationWrapper createMapLocationInformation(final MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper mapCellGlobalIdOrServiceAreaIdOrLAI,
                                                                       final ISDNAddressStringWrapper vlrNumber) {
@@ -125,6 +150,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
         return new TxMAPLocationInformationWrapper(locationInformation);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createIsdnAddressString(pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.Nature, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.NumberingPlan, java.lang.String)
+     */
     @Override
     public ISDNAddressStringWrapper createIsdnAddressString(final ISDNAddressStringWrapper.Nature nature,
                                                             final ISDNAddressStringWrapper.NumberingPlan numberingPlan,
@@ -146,6 +174,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
         return new TxISDNAddressStringWrapperImpl(isdnAddressString);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createAddressString(pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.Nature, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper.NumberingPlan, java.lang.String)
+     */
     @Override
     public AddressStringWrapper createAddressString(final ISDNAddressStringWrapper.Nature nature,
 													 final ISDNAddressStringWrapper.NumberingPlan numberingPlan,
@@ -167,6 +198,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		return new TxAddressStringWrapperImpl(addressString);
 	}
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createForwardedToNumber(pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper.Nature, pl.ovoo.jslee.ss7.wrapper.map.args.ForwardedToNumberWrapper.NumberingPlan, java.lang.String)
+     */
     @Override
     public ForwardedToNumberWrapper createForwardedToNumber(final ForwardedToNumberWrapper.Nature nature,
     		final ForwardedToNumberWrapper.NumberingPlan numberingPlan,
@@ -188,6 +222,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
         return new TxForwardedToNumberWrapper(ftnAddressString);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPSubscriberIdentity(pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper)
+     */
     @Override
     public MAPSubscriberIdentityWrapper createMAPSubscriberIdentity(AddressStringWrapper msisdn){
     	ISDNAddressString txMsisdn = ((TxISDNAddressStringWrapperImpl)msisdn).getTxAddress();
@@ -196,6 +233,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createAnyTimeInterrogationResult(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper)
+     */
     @Override
     public AnyTimeInterrogationResultWrapper createAnyTimeInterrogationResult(MAPSubscriberInfoWrapper mAPSubscriberInfoWrapper){
     	AnyTimeInterrogationResultWrapper atiResult = new TxAnyTimeInterrogationResultWrapper(
@@ -203,6 +243,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return atiResult;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPSubscriberInfoWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper)
+     */
     @Override
     public MAPSubscriberInfoWrapper createMAPSubscriberInfoWrapper(MAPLocationInformationWrapper mAPLocationInformationWrapper){
     	SubscriberInfo mAPSubscriberInfo = mapParameterFactory.createSubscriberInfo(
@@ -211,6 +254,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return new TxMAPSubscriberInfoWrapper(mAPSubscriberInfo);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createAnyTimeInterrogationArg(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper, pl.ovoo.jslee.ss7.wrapper.map.args.MAPRequestedInfoWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper)
+     */
     @Override
     public AnyTimeInterrogationArgWrapper createAnyTimeInterrogationArg(MAPSubscriberIdentityWrapper subscriberIdentity, MAPRequestedInfoWrapper mAPRequestedInfo, AddressStringWrapper gsmSCF_Address){
     	AnyTimeInterrogationRequest ati = mapParameterFactory.createAnyTimeInterrogationRequest(
@@ -223,6 +269,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return atiWrapper;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createCallHandlingMapDialogWrapper(pl.ovoo.jslee.ss7.wrapper.map.MapApplicationContextWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper)
+     */
     @Override
     public CallHandlingMapDialogWrapper createCallHandlingMapDialogWrapper(MapApplicationContextWrapper mapApplicationContextWrapper, SccpAddressWrapper srcAddress, SccpAddressWrapper destAddress) throws Ss7WrapperException {
         try{
@@ -248,6 +297,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMobilityMapDialogWrapper(pl.ovoo.jslee.ss7.wrapper.map.MapApplicationContextWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper)
+     */
     @Override
     public MobilityMapDialogWrapper createMobilityMapDialogWrapper(MapApplicationContextWrapper mapApplicationContextWrapper, SccpAddressWrapper srcAddress, SccpAddressWrapper destAddress) throws Ss7WrapperException {
     	try{
@@ -282,6 +334,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	}
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createAnyTimeSubscriptionInterrogationArg(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper, pl.ovoo.jslee.ss7.wrapper.map.args.MAPRequestedSubscriptionInfoWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper)
+     */
     @Override
     public AnyTimeSubscriptionInterrogationArgWrapper createAnyTimeSubscriptionInterrogationArg(MAPSubscriberIdentityWrapper subscriberIdentity, MAPRequestedSubscriptionInfoWrapper mAPRequestedInfo, AddressStringWrapper gsmSCF_Address){
     	AnyTimeSubscriptionInterrogationArgWrapper ati = new TxAnyTimeSubscriptionInterrogationArgWrapper();
@@ -292,6 +347,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return ati;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPRequestedSubscriptionInfoWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_ForBS_CodeWrapper)
+     */
     @Override
     public MAPRequestedSubscriptionInfoWrapper createMAPRequestedSubscriptionInfoWrapper(MAPSS_ForBS_CodeWrapper ssForBSCode){
     	//TODO upgrade to newer version of restcomm map-api
@@ -308,6 +366,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPSS_ForBS_CodeWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.SSCode)
+     */
     @Override
     public MAPSS_ForBS_CodeWrapper createMAPSS_ForBS_CodeWrapper(SSCode ssCode){
     	org.mobicents.protocols.ss7.map.api.service.supplementary.SSCode txSSCode = null;
@@ -319,6 +380,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createInsertSubscriberDataArg_v1Wrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_InformationWrapper[], pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper)
+     */
     @Override
     public InsertSubscriberDataArg_v1Wrapper createInsertSubscriberDataArg_v1Wrapper(MAPSS_InformationWrapper[] mapss_Informations, IMSIAddressWrapper imsi){
     	final InsertSubscriberDataArg_v1Wrapper isd = new TxInsertSubscriberDataArg_v1Wrapper(null);
@@ -328,12 +392,18 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return isd;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPSS_InformationWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingInfoWrapper)
+     */
     @Override
     public MAPSS_InformationWrapper createMAPSS_InformationWrapper(MAPForwardingInfoWrapper mAPForwardingInfoWrapper){
     	final ExtSSInfo extSSInfo = mapParameterFactory.createExtSSInfo(((TxMAPForwardingInfoWrapper)mAPForwardingInfoWrapper).getTxExtForwInfo());
     	return new TxMAPSS_InformationWrapper(extSSInfo);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPForwardingInfoWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingFeatureWrapper[], pl.ovoo.jslee.ss7.wrapper.map.args.SSCode)
+     */
     @Override
     public MAPForwardingInfoWrapper createMAPForwardingInfoWrapper(MAPForwardingFeatureWrapper[] mapForwardingFeatures, SSCode ss_Code){
     	ArrayList<ExtForwFeature> txMapForwardingFeatures = null;
@@ -361,6 +431,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return new TxMAPForwardingInfoWrapper(extForwInfo);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPForwardingFeatureWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper)
+     */
     @Override
     public MAPForwardingFeatureWrapper createMAPForwardingFeatureWrapper(MAPExt_ForwFeatureWrapper mAPExt_ForwFeatureWrapper){
     	if(mAPExt_ForwFeatureWrapper != null){
@@ -380,6 +453,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPCallForwardingDataWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_ForwFeatureWrapper[])
+     */
     @Override
     public MAPCallForwardingDataWrapper createMAPCallForwardingDataWrapper(MAPExt_ForwFeatureWrapper[] mAPExt_ForwFeatureWrappers){
     	if(mAPExt_ForwFeatureWrappers == null){
@@ -417,6 +493,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		return new TxMAPCallForwardingDataWrapper(callForwardingData);*/
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#cloneMAPCallForwardingDataWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPCallForwardingDataWrapper)
+     */
     @Override
     public MAPCallForwardingDataWrapper cloneMAPCallForwardingDataWrapper(MAPCallForwardingDataWrapper mAPCallForwardingDataWrapper){
     	if(mAPCallForwardingDataWrapper.getForwardingFeatureList() != null){
@@ -451,6 +530,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return null;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPExt_ForwFeatureWrapper(pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_BasicServiceCodeWrapper, pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingOptionsWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper, byte[])
+     */
     @Override
     public MAPExt_ForwFeatureWrapper createMAPExt_ForwFeatureWrapper(
     		MAPExt_BasicServiceCodeWrapper mAPExt_BasicServiceCode, 
@@ -482,6 +564,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return new TxMAPExt_ForwFeatureWrapper(extForwFeature);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPExt_BasicServiceCodeWrapper(byte[])
+     */
     @Override
     public MAPExt_BasicServiceCodeWrapper createMAPExt_BasicServiceCodeWrapper(byte[] ext_Teleservice){
     	ExtTeleserviceCode extTeleserviceCode = mapParameterFactory.createExtTeleserviceCode(ext_Teleservice);
@@ -489,6 +574,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return new TxMAPExt_BasicServiceCodeWrapper(basicServiceCode);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPForwardingOptionsWrapper(boolean, boolean, boolean, pl.ovoo.jslee.ss7.wrapper.map.args.ForwardingReason)
+     */
     @Override
     public MAPForwardingOptionsWrapper createMAPForwardingOptionsWrapper(boolean notificationToForwardingParty, boolean redirectingPresentation, boolean notificationToCallingParty, ForwardingReason forwardingReason){
     	final ExtForwOptions extForwOptions = mapParameterFactory.createExtForwOptions(notificationToForwardingParty,
@@ -496,12 +584,18 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return new TxMAPForwardingOptionsWrapper(extForwOptions);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPErrorWrapper()
+     */
     @Override
     public MAPErrorWrapper createMAPErrorWrapper(){
     	MAPErrorMessage param = mapProvider.getMAPErrorMessageFactory().createMAPErrorMessageParameterless((long)1);
     	return new TxMAPErrorWrapper(param);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPUserAbortChoiceWrapper()
+     */
     @Override
     public MAPUserAbortChoiceWrapper createMAPUserAbortChoiceWrapper(){
         MAPUserAbortChoice choice = mapParameterFactory.createMAPUserAbortChoice();
@@ -509,6 +603,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return new TxMAPUserAbortChoiceWrapper(choice);
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createSendRoutingInfoRequestArgWrapper(pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper)
+     */
     @Override
     public SendRoutingInfoRequestArgWrapper createSendRoutingInfoRequestArgWrapper(ISDNAddressStringWrapper msisdn, ISDNAddressStringWrapper gmscAddress){
         TxSendRoutingInfoRequestArgWrapper txSri = new TxSendRoutingInfoRequestArgWrapper();
@@ -518,6 +615,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
         
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createSendRoutingInfoRequestForSMArgWrapper(pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper)
+     */
     @Override
 	public SendRoutingInfoForSMRequestArgWrapper createSendRoutingInfoRequestForSMArgWrapper(ISDNAddressStringWrapper msisdn, AddressStringWrapper scAddress){
     	TxSendRoutingInfoForSMRequestArgWrapper txSriSm = new TxSendRoutingInfoForSMRequestArgWrapper();
@@ -526,6 +626,9 @@ public class TxMapArgsFactory implements MapArgsFactory {
     	return txSriSm;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMtForwardShortMessageRequestWrapper(java.lang.String, java.nio.charset.Charset, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper, java.lang.String, boolean, boolean, int, int, int)
+	 */
 	@Override
 	public MtForwardShortMessageRequestWrapper createMtForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress, boolean moreMessagesToSend,
 			boolean isConcatened, int msgRef, int segmCnt, int segmNum){
@@ -552,20 +655,38 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		return txMtArg;
 	}
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPRequestedInfoWrapper(boolean, boolean, boolean)
+     */
     @Override
     public MAPRequestedInfoWrapper createMAPRequestedInfoWrapper(boolean locationInformationPresent, boolean currentLocationPresent, boolean subscriberStatePresent){
     	RequestedInfo requestedInfo = getMapParameterFactory().createRequestedInfo(locationInformationPresent, subscriberStatePresent, null, currentLocationPresent, null, false, false, false);
     	return new TxMAPRequestedInfoWrapper(requestedInfo);
     }
 
+	/**
+	 * Gets the map provider.
+	 *
+	 * @return the map provider
+	 */
 	public MAPProvider getMapProvider() {
 		return mapProvider;
 	}
 
+	/**
+	 * Gets the map parameter factory.
+	 *
+	 * @return the map parameter factory
+	 */
 	public MAPParameterFactory getMapParameterFactory() {
 		return mapParameterFactory;
 	}
 
+	/**
+	 * Gets the map context interface factory.
+	 *
+	 * @return the map context interface factory
+	 */
 	public MAPContextInterfaceFactory getMapContextInterfaceFactory() {
 		return mapContextInterfaceFactory;
 	}

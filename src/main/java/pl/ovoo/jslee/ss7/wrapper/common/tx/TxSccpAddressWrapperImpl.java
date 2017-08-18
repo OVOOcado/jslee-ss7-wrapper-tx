@@ -26,20 +26,30 @@ import org.mobicents.protocols.ss7.sccp.parameter.SccpAddress;
 import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 
+
 /**
- * TxSccpAddressWrapperImpl
+ * TxSccpAddressWrapperImpl.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxSccpAddressWrapperImpl implements SccpAddressWrapper {
 
+	/** The sccp address. */
 	private final SccpAddress sccpAddress;
 
+	/**
+	 * Instantiates a new tx sccp address wrapper impl.
+	 *
+	 * @param sccpAddress the sccp address
+	 */
 	public TxSccpAddressWrapperImpl(SccpAddress sccpAddress) {
 		super();
 		this.sccpAddress = sccpAddress;
 	}	
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper#getGlobalTitle()
+	 */
 	@Override
     public GlobalTitleWrapper getGlobalTitle(){
 		if(this.sccpAddress.getGlobalTitle() != null){
@@ -50,26 +60,43 @@ public class TxSccpAddressWrapperImpl implements SccpAddressWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper#getRouteOnPC()
+	 */
 	@Override
 	public boolean getRouteOnPC() {
 		return this.sccpAddress.getAddressIndicator().getRoutingIndicator().equals(RoutingIndicator.ROUTING_BASED_ON_DPC_AND_SSN);
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper#getSSN()
+	 */
 	@Override
 	public Integer getSSN() {
 		return this.sccpAddress.getSubsystemNumber();
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper#getPC()
+	 */
 	@Override
 	public Integer getPC() {
 		return this.sccpAddress.getSignalingPointCode();
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper#getType()
+	 */
 	@Override
 	public Type getType() {
 		return null;
 	}
 
+	/**
+	 * Gets the tx sccp address.
+	 *
+	 * @return the tx sccp address
+	 */
 	public SccpAddress getTxSccpAddress() {
 		return sccpAddress;
 	}

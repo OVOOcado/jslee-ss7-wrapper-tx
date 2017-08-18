@@ -33,20 +33,31 @@ import pl.ovoo.jslee.ss7.wrapper.map.CallHandlingMapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
 
+
 /**
- * TxCallHandlingMapDialogWrapper
+ * TxCallHandlingMapDialogWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallHandlingMapDialogWrapper extends TxMapDialogWrapperImpl implements CallHandlingMapDialogWrapper {
+    
+    /** The dialog. */
     private MAPDialogCallHandling dialog;
 
 
+    /**
+     * Instantiates a new tx call handling map dialog wrapper.
+     *
+     * @param dialog the dialog
+     */
     public TxCallHandlingMapDialogWrapper(final MAPDialogCallHandling dialog) {
         super(dialog);
         this.dialog = dialog;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.CallHandlingMapDialogWrapper#sendSendRoutingInfoRequest(long, pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoRequestArgWrapper)
+     */
     @Override
     public int sendSendRoutingInfoRequest(long sriTimeout, SendRoutingInfoRequestArgWrapper arg) throws Ss7WrapperException{
         try {
@@ -63,6 +74,9 @@ public class TxCallHandlingMapDialogWrapper extends TxMapDialogWrapperImpl imple
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.CallHandlingMapDialogWrapper#sendSendRoutingInfoResponse(long, pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper)
+     */
     @Override
     public void sendSendRoutingInfoResponse(long invoke, SendRoutingInfoResponseWrapper arg) throws Ss7WrapperException{
         try {

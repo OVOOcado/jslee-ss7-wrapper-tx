@@ -30,20 +30,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AssistRequestInstruction
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxAssistRequestInstructionsRequestEventWrapper
+ * TxAssistRequestInstructionsRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxAssistRequestInstructionsRequestEventWrapper extends TxEventWrapper implements AssistRequestInstructionsRequestEventWrapper {
 
+    /** The assist request instructions request. */
     private final AssistRequestInstructionsRequest assistRequestInstructionsRequest;
 
+    /**
+     * Instantiates a new tx assist request instructions request event wrapper.
+     *
+     * @param assistRequestInstructionsRequest the assist request instructions request
+     * @param aci the aci
+     */
     public TxAssistRequestInstructionsRequestEventWrapper(final AssistRequestInstructionsRequest assistRequestInstructionsRequest, final ActivityContextInterface aci) {
         super(aci, assistRequestInstructionsRequest);
         this.assistRequestInstructionsRequest = assistRequestInstructionsRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.AssistRequestInstructionsRequestEventWrapper#getArgument()
+     */
     @Override
     public AssistRequestInstructionsArgWrapper getArgument() throws Ss7WrapperException {
         try {

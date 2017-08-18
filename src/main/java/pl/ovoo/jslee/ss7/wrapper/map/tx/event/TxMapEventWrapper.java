@@ -28,26 +28,43 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.TxMapDialogWrapperImpl;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxEMapEventWrapper
+ * TxEMapEventWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public abstract class TxMapEventWrapper implements MapEventWrapper {
 
+    /** The aci. */
     private final ActivityContextInterface aci;
+    
+    /** The dialog. */
     private final MAPDialog dialog;
 
+    /**
+     * Instantiates a new tx map event wrapper.
+     *
+     * @param aci the aci
+     */
     public TxMapEventWrapper(final ActivityContextInterface aci) {
         this.aci = aci;
         this.dialog = (MAPDialog) aci.getActivity();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getDialog()
+     */
     @Override
     public MapDialogWrapper getDialog() {
         return createMapDialogWrapper();
     }
 
+    /**
+     * Creates the map dialog wrapper.
+     *
+     * @return the map dialog wrapper
+     */
     private MapDialogWrapper createMapDialogWrapper() {
         if (dialog instanceof MAPDialogMobility) {
             final TxMapDialogWrapperImpl txMapDialogWrapperImpl = new TxMapDialogWrapperImpl((MAPDialogMobility)dialog);
@@ -57,10 +74,20 @@ public abstract class TxMapEventWrapper implements MapEventWrapper {
         return null;
     }
 
+    /**
+     * Gets the tx dialog.
+     *
+     * @return the tx dialog
+     */
     protected MAPDialog getTxDialog() {
         return dialog;
     }
 
+    /**
+     * Gets the aci.
+     *
+     * @return the aci
+     */
     protected ActivityContextInterface getAci() {
         return aci;
     }

@@ -24,28 +24,46 @@ import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.RPCause;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RPCauseValue;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RPCauseWrapper;
 
+
 /**
- * TxRPCauseWrapperImpl
+ * TxRPCauseWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRPCauseWrapperImpl implements RPCauseWrapper {
 
+    /** The rp cause. */
     private final RPCause rpCause;
 
+    /**
+     * Instantiates a new tx rp cause wrapper impl.
+     *
+     * @param rpCause the rp cause
+     */
     public TxRPCauseWrapperImpl(final RPCause rpCause) {
         this.rpCause = rpCause;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RPCauseWrapper#getRpCauseValue()
+     */
     @Override
     public RPCauseValue getRpCauseValue() {
         return RPCauseValue.valueOf(rpCause.getData());
     }
 
+    /**
+     * Gets the tx rp cause.
+     *
+     * @return the tx rp cause
+     */
     public RPCause getTxRpCause() {
         return rpCause;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxRPCauseWrapperImpl [rpCause=" + rpCause + "]";

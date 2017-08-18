@@ -24,26 +24,40 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeInformationWrapper;
 
+
 /**
- * OcCap2TimeDurationChargingResultWrapper
+ * OcCap2TimeDurationChargingResultWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2TimeDurationChargingResultWrapper implements Cap2TimeDurationChargingResultWrapper {
 
+    /** The time duration charging result. */
     private transient Cap2TimeInformationWrapper timeDurationChargingResult = null;
 
+    /** The tx time duration charging result. */
     private final TimeDurationChargingResult txTimeDurationChargingResult;
 
+    /**
+     * Instantiates a new tx cap2 time duration charging result wrapper.
+     *
+     * @param timeDurationChargingResult the time duration charging result
+     */
     public TxCap2TimeDurationChargingResultWrapper(final TimeDurationChargingResult timeDurationChargingResult) {
         this.txTimeDurationChargingResult = timeDurationChargingResult;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper#hasTimeInformation()
+     */
     @Override
     public boolean hasTimeInformation() {
         return txTimeDurationChargingResult.getTimeInformation() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper#getTimeInformation()
+     */
     @Override
     public Cap2TimeInformationWrapper getTimeInformation() {
         if (this.timeDurationChargingResult == null && hasTimeInformation()) {
@@ -53,15 +67,26 @@ public class TxCap2TimeDurationChargingResultWrapper implements Cap2TimeDuration
         return this.timeDurationChargingResult;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper#getCallActive()
+     */
     @Override
     public boolean getCallActive() {
         return txTimeDurationChargingResult.getLegActive();
     }
 
+    /**
+     * Gets the tx time duration charging result.
+     *
+     * @return the tx time duration charging result
+     */
     public TimeDurationChargingResult getTxTimeDurationChargingResult() {
         return txTimeDurationChargingResult;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2TimeDurationChargingResultWrapper [txTimeDurationChargingResult=" + txTimeDurationChargingResult

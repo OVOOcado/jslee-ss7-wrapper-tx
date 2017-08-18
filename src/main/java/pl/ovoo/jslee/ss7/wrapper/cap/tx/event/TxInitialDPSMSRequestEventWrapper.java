@@ -27,20 +27,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.InitialDPSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxInitialDPSMSRequestEventWrapper
+ * TxInitialDPSMSRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxInitialDPSMSRequestEventWrapper extends TxEventWrapper implements InitialDPSMSRequestEventWrapper {
 
+    /** The initial dpsms request. */
     private final InitialDPSMSRequest initialDPSMSRequest;
 
+    /**
+     * Instantiates a new tx initial dpsms request event wrapper.
+     *
+     * @param initialDPSMSRequest the initial dpsms request
+     * @param aci the aci
+     */
     public TxInitialDPSMSRequestEventWrapper(final InitialDPSMSRequest initialDPSMSRequest, final ActivityContextInterface aci) {
         super(aci, initialDPSMSRequest);
         this.initialDPSMSRequest = initialDPSMSRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.InitialDPSMSRequestEventWrapper#getArgument()
+     */
     @Override
     public InitialDPSMSArgWrapper getArgument() {
         final TxInitialDPSMSArgWrapper txInitialDPSMSArgWrapper = new TxInitialDPSMSArgWrapper();

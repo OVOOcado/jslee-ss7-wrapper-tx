@@ -33,10 +33,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxGenericNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
 
+
+/**
+ * The Class TxGenericNumberWrapperTest.
+ */
 public class TxGenericNumberWrapperTest extends WrapperBaseTest {
 
+    /** The tx generic number wrapper. */
     TxGenericNumberWrapper txGenericNumberWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -52,6 +62,9 @@ public class TxGenericNumberWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
 

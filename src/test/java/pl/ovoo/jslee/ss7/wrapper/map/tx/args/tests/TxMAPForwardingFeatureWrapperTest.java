@@ -47,10 +47,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPForwardingFeatureWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class TxMAPForwardingFeatureWrapperTest.
+ */
 public class TxMAPForwardingFeatureWrapperTest extends WrapperBaseTest {
 
+    /** The tx map forwarding feature wrapper. */
     TxMAPForwardingFeatureWrapper txMAPForwardingFeatureWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -77,6 +87,9 @@ public class TxMAPForwardingFeatureWrapperTest extends WrapperBaseTest {
         txMAPForwardingFeatureWrapper = new TxMAPForwardingFeatureWrapper(extForwFeature);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

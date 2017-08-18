@@ -23,28 +23,46 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.AudibleIndicator;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper;
 
+
 /**
- * OcCap2ReleaseIfDurationExceededWrapper
+ * OcCap2ReleaseIfDurationExceededWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2ReleaseIfDurationExceededWrapper implements Cap2ReleaseIfDurationExceededWrapper {
 
+    /** The audible indicator. */
     private final AudibleIndicator audibleIndicator;
 
+    /**
+     * Instantiates a new tx cap2 release if duration exceeded wrapper.
+     *
+     * @param audibleIndicator the audible indicator
+     */
     public TxCap2ReleaseIfDurationExceededWrapper(final AudibleIndicator audibleIndicator) {
         this.audibleIndicator = audibleIndicator;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ReleaseIfDurationExceededWrapper#getTone()
+     */
     @Override
     public boolean getTone() {
         return audibleIndicator.getTone();
     }
 
+    /**
+     * Gets the tx audible indicator.
+     *
+     * @return the tx audible indicator
+     */
     public AudibleIndicator getTxAudibleIndicator() {
         return audibleIndicator;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2ReleaseIfDurationExceededWrapper [audibleIndicator=" + audibleIndicator + "]";

@@ -29,20 +29,30 @@ import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle0011;
 import org.mobicents.protocols.ss7.sccp.parameter.GlobalTitle0100;
 import pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper;
 
+
 /**
- * TxGlobalTitleWrapper
+ * TxGlobalTitleWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 
+	/** The global title. */
 	private final GlobalTitle globalTitle;
 
+	/**
+	 * Instantiates a new tx global title wrapper.
+	 *
+	 * @param globalTitle the global title
+	 */
 	public TxGlobalTitleWrapper(GlobalTitle globalTitle) {
 		super();
 		this.globalTitle = globalTitle;
 	}	
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper#getAddress()
+	 */
 	@Override
     public String getAddress(){
 		if(this.globalTitle != null){
@@ -53,6 +63,9 @@ public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper#getNumberingPlan()
+	 */
 	@Override
     public NumberingPlan getNumberingPlan(){
 		if(this.globalTitle != null){
@@ -66,6 +79,9 @@ public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 		return null;
 	}
 	
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper#getNatureOfAddress()
+	 */
 	@Override
     public Nature getNatureOfAddress(){
 		if(this.globalTitle != null){
@@ -79,6 +95,9 @@ public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper#getGlobalTitleIndicator()
+	 */
 	@Override
 	public GlobalTitleIndicator getGlobalTitleIndicator() {
 		if(this.globalTitle != null){
@@ -87,6 +106,9 @@ public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper#getTranslationType()
+	 */
 	@Override
 	public Integer getTranslationType() {
 		if(this.globalTitle != null){
@@ -103,6 +125,9 @@ public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.GlobalTitleWrapper#getEncodingScheme()
+	 */
 	@Override
 	public EncodingScheme getEncodingScheme() {
 		if(this.globalTitle != null){
@@ -126,6 +151,11 @@ public class TxGlobalTitleWrapper implements GlobalTitleWrapper {
 		return null;
 	}
 
+	/**
+	 * Gets the tx global title.
+	 *
+	 * @return the tx global title
+	 */
 	public GlobalTitle getTxGlobalTitle() {
 		return globalTitle;
 	}

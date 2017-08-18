@@ -33,10 +33,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxCellGlobalIdWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 
+
+/**
+ * The Class TxCellGlobalIdWrapperTest.
+ */
 public class TxCellGlobalIdWrapperTest extends WrapperBaseTest {
 
+	/** The tx cell global id wrapper. */
 	TxCellGlobalIdWrapper txCellGlobalIdWrapper;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -46,6 +56,9 @@ public class TxCellGlobalIdWrapperTest extends WrapperBaseTest {
 		txCellGlobalIdWrapper = new TxCellGlobalIdWrapper(cellGlobalIdOrServiceAreaIdFixedLength);
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+	 */
 	@Override
 	public void testSerialization()
 			throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

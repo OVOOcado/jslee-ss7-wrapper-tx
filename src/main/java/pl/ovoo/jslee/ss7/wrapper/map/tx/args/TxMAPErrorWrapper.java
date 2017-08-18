@@ -25,25 +25,41 @@ import org.mobicents.protocols.ss7.map.api.errors.MAPErrorMessage;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorMessageWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
 
+
 /**
- * TxMAPSubscriberIdentityWrapper
+ * TxMAPSubscriberIdentityWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPErrorWrapper implements MAPErrorWrapper {
     
+    /** The map error message wrapper. */
     private MAPErrorMessageWrapper mapErrorMessageWrapper;
 
+    /** The m ap error message. */
     private final MAPErrorMessage mAPErrorMessage;
 
+    /**
+     * Instantiates a new tx map error wrapper.
+     *
+     * @param mAPErrorMessage the m ap error message
+     */
     public TxMAPErrorWrapper(final MAPErrorMessage mAPErrorMessage) {
         this.mAPErrorMessage = mAPErrorMessage;
     }
 
+    /**
+     * Gets the tx map error message.
+     *
+     * @return the tx map error message
+     */
     public MAPErrorMessage getTxMAPErrorMessage() {
         return mAPErrorMessage;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper#getMapErrorMessage()
+     */
     @Override
     public MAPErrorMessageWrapper getMapErrorMessage() {
         if (this.mapErrorMessageWrapper == null && mAPErrorMessage != null){
@@ -52,6 +68,9 @@ public class TxMAPErrorWrapper implements MAPErrorWrapper {
         return this.mapErrorMessageWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPErrorWrapper [mAPErrorMessage=" + mAPErrorMessage + "]";

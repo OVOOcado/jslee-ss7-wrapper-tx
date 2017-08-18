@@ -25,38 +25,64 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeSMS;
 
+
 /**
- * OcSMSEventWrapperImpl
+ * OcSMSEventWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEventReportSMSArgWrapperImpl implements EventReportSMSArgWrapper {
 
+	/** The tx event type sms. */
 	private org.mobicents.protocols.ss7.cap.api.service.sms.primitive.EventTypeSMS txEventTypeSMS;
+    
+    /** The tx event specific information sms. */
     private EventSpecificInformationSMS txEventSpecificInformationSMS;
 
+    /**
+     * Instantiates a new tx event report sms arg wrapper impl.
+     */
     public TxEventReportSMSArgWrapperImpl() {
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper#getEventTypeSMS()
+     */
     @Override
     public EventTypeSMS getEventTypeSMS() {
         return EventTypeSMS.valueOf(txEventTypeSMS.getCode());
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper#getEventSpecificInformationSMS()
+     */
     @Override
     public EventSpecificInformationSMSWrapper getEventSpecificInformationSMS() {
         return new TxEventSpecificInformationSMSWrapper(txEventSpecificInformationSMS);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportSMSArgWrapper#hasEventSpecificInformationSMS()
+     */
     @Override
     public boolean hasEventSpecificInformationSMS(){
     	return (txEventSpecificInformationSMS != null);
     }
     
+    /**
+     * Sets the tx event specific information bcsm.
+     *
+     * @param txEventSpecificInformationSMS the new tx event specific information bcsm
+     */
     public void setTxEventSpecificInformationBCSM(EventSpecificInformationSMS txEventSpecificInformationSMS){
     	this.txEventSpecificInformationSMS = txEventSpecificInformationSMS;
     }
     
+    /**
+     * Sets the tx event type sms.
+     *
+     * @param txEventTypeSMS the new tx event type sms
+     */
     public void setTxEventTypeSMS(org.mobicents.protocols.ss7.cap.api.service.sms.primitive.EventTypeSMS txEventTypeSMS){
     	this.txEventTypeSMS = txEventTypeSMS;
     }

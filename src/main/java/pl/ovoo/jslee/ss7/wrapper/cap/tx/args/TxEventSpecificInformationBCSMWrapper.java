@@ -31,19 +31,29 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CauseWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper;
 
+
 /**
- * TxEventSpecificInformationBCSMWrapper
+ * TxEventSpecificInformationBCSMWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInformationBCSMWrapper {
 
+    /** The tx event specific information bcsm. */
     private final EventSpecificInformationBCSM txEventSpecificInformationBCSM;
 
+    /**
+     * Instantiates a new tx event specific information bcsm wrapper.
+     *
+     * @param eventSpecificInformationBCSM the event specific information bcsm
+     */
     public TxEventSpecificInformationBCSMWrapper(final EventSpecificInformationBCSM eventSpecificInformationBCSM) {
         this.txEventSpecificInformationBCSM = eventSpecificInformationBCSM;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#isTCalledPartyBusySpecificInfoChosen()
+     */
     @Override
     public boolean isTCalledPartyBusySpecificInfoChosen() {
         return txEventSpecificInformationBCSM.getTBusySpecificInfo() != null &&
@@ -65,6 +75,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         txEventSpecificInformationBCSM.getDpSpecificInfoAlt() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#isOCalledPartyBusySpecificInfoChosen()
+     */
     @Override
     public boolean isOCalledPartyBusySpecificInfoChosen() {
         return txEventSpecificInformationBCSM.getTBusySpecificInfo() == null &&
@@ -86,6 +99,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
                 txEventSpecificInformationBCSM.getDpSpecificInfoAlt() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#isTDisconnectSpecificInfoChosen()
+     */
     @Override
     public boolean isTDisconnectSpecificInfoChosen() {
         return txEventSpecificInformationBCSM.getTBusySpecificInfo() == null &&
@@ -107,6 +123,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
                 txEventSpecificInformationBCSM.getDpSpecificInfoAlt() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#isODisconnectSpecificInfoChosen()
+     */
     @Override
     public boolean isODisconnectSpecificInfoChosen() {
         return txEventSpecificInformationBCSM.getTBusySpecificInfo() == null &&
@@ -128,6 +147,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
                 txEventSpecificInformationBCSM.getDpSpecificInfoAlt() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#isRouteSelectFailureSpecificInfoChosen()
+     */
     @Override
     public boolean isRouteSelectFailureSpecificInfoChosen() {
         return txEventSpecificInformationBCSM.getTBusySpecificInfo() == null &&
@@ -149,6 +171,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
                 txEventSpecificInformationBCSM.getDpSpecificInfoAlt() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#getTCalledPartyBusySpecificInfo()
+     */
     @Override
     public TCalledPartyBusySpecificInfoWrapper getTCalledPartyBusySpecificInfo() {
         if (txEventSpecificInformationBCSM.getTBusySpecificInfo() != null) {
@@ -157,6 +182,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#getOCalledPartyBusySpecificInfo()
+     */
     @Override
     public OCalledPartyBusySpecificInfoWrapper getOCalledPartyBusySpecificInfo() {
         if (txEventSpecificInformationBCSM.getOCalledPartyBusySpecificInfo() != null) {
@@ -165,6 +193,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#getTDisconnectSpecificInfo()
+     */
     @Override
     public TDisconnectSpecificInfoWrapper getTDisconnectSpecificInfo() {
         if (txEventSpecificInformationBCSM.getTDisconnectSpecificInfo() != null) {
@@ -173,6 +204,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#getODisconnectSpecificInfo()
+     */
     @Override
     public ODisconnectSpecificInfoWrapper getODisconnectSpecificInfo() {
         if (txEventSpecificInformationBCSM.getODisconnectSpecificInfo() != null) {
@@ -181,6 +215,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper#getRouteSelectFailureSpecificInfo()
+     */
     @Override
     public RouteSelectFailureSpecificInfoWrapper getRouteSelectFailureSpecificInfo() {
         if (txEventSpecificInformationBCSM.getRouteSelectFailureSpecificInfo() != null) {
@@ -189,18 +226,35 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         return null;
     }
 
+    /**
+     * Gets the tx event specific information bcsm.
+     *
+     * @return the tx event specific information bcsm
+     */
     public EventSpecificInformationBCSM getTxEventSpecificInformationBCSM() {
         return txEventSpecificInformationBCSM;
     }
 
+    /**
+     * The Class TxTCalledPartyBusySpecificInfoWrapper.
+     */
     public static class TxTCalledPartyBusySpecificInfoWrapper implements TCalledPartyBusySpecificInfoWrapper {
 
+        /** The t called party busy specific info. */
         protected final TBusySpecificInfo tCalledPartyBusySpecificInfo;
 
+        /**
+         * Instantiates a new tx t called party busy specific info wrapper.
+         *
+         * @param tCalledPartyBusySpecificInfo the t called party busy specific info
+         */
         public TxTCalledPartyBusySpecificInfoWrapper(final TBusySpecificInfo tCalledPartyBusySpecificInfo) {
             this.tCalledPartyBusySpecificInfo = tCalledPartyBusySpecificInfo;
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.TCalledPartyBusySpecificInfoWrapper#hasBusyCause()
+         */
         @Override
         public boolean hasBusyCause() throws Ss7WrapperException {
             try {
@@ -210,6 +264,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
             }
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.TCalledPartyBusySpecificInfoWrapper#getBusyCause()
+         */
         @Override
         public CauseWrapper getBusyCause() throws Ss7WrapperException {
             try {
@@ -223,19 +280,36 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
 
         }
 
+        /**
+         * Gets the tx t called party busy specific info.
+         *
+         * @return the tx t called party busy specific info
+         */
         public TBusySpecificInfo getTxTCalledPartyBusySpecificInfo() {
             return tCalledPartyBusySpecificInfo;
         }
     }
 
+    /**
+     * The Class TxOCalledPartyBusySpecificInfoWrapper.
+     */
     public static class TxOCalledPartyBusySpecificInfoWrapper implements OCalledPartyBusySpecificInfoWrapper {
 
+        /** The t called party busy specific info. */
         private final OCalledPartyBusySpecificInfo tCalledPartyBusySpecificInfo;
 
+        /**
+         * Instantiates a new tx o called party busy specific info wrapper.
+         *
+         * @param tCalledPartyBusySpecificInfo the t called party busy specific info
+         */
         public TxOCalledPartyBusySpecificInfoWrapper(final OCalledPartyBusySpecificInfo tCalledPartyBusySpecificInfo) {
             this.tCalledPartyBusySpecificInfo = tCalledPartyBusySpecificInfo;
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.OCalledPartyBusySpecificInfoWrapper#hasBusyCause()
+         */
         @Override
         public boolean hasBusyCause() throws Ss7WrapperException {
             try {
@@ -245,6 +319,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
             }
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.OCalledPartyBusySpecificInfoWrapper#getBusyCause()
+         */
         @Override
         public CauseWrapper getBusyCause() throws Ss7WrapperException {
             try {
@@ -260,14 +337,26 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
     }
 
 
+    /**
+     * The Class TxTDisconnectSpecificInfoWrapper.
+     */
     public static class TxTDisconnectSpecificInfoWrapper implements TDisconnectSpecificInfoWrapper {
 
+        /** The t disconnect specific info. */
         private final TDisconnectSpecificInfo tDisconnectSpecificInfo;
 
+        /**
+         * Instantiates a new tx t disconnect specific info wrapper.
+         *
+         * @param tDisconnectSpecificInfo the t disconnect specific info
+         */
         public TxTDisconnectSpecificInfoWrapper(final TDisconnectSpecificInfo tDisconnectSpecificInfo) {
             this.tDisconnectSpecificInfo = tDisconnectSpecificInfo;
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.TDisconnectSpecificInfoWrapper#hasReleaseCause()
+         */
         @Override
         public boolean hasReleaseCause() throws Ss7WrapperException {
             try {
@@ -277,6 +366,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
             }
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.TDisconnectSpecificInfoWrapper#getReleaseCause()
+         */
         @Override
         public CauseWrapper getReleaseCause() throws Ss7WrapperException {
             try {
@@ -291,14 +383,26 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
         }
     }
 
+    /**
+     * The Class TxODisconnectSpecificInfoWrapper.
+     */
     public static class TxODisconnectSpecificInfoWrapper implements ODisconnectSpecificInfoWrapper {
 
+        /** The o disconnect specific info. */
         private final ODisconnectSpecificInfo oDisconnectSpecificInfo;
 
+        /**
+         * Instantiates a new tx o disconnect specific info wrapper.
+         *
+         * @param oDisconnectSpecificInfo the o disconnect specific info
+         */
         public TxODisconnectSpecificInfoWrapper(final ODisconnectSpecificInfo oDisconnectSpecificInfo) {
             this.oDisconnectSpecificInfo = oDisconnectSpecificInfo;
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.ODisconnectSpecificInfoWrapper#hasReleaseCause()
+         */
         @Override
         public boolean hasReleaseCause() throws Ss7WrapperException {
             try {
@@ -308,6 +412,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
             }
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.ODisconnectSpecificInfoWrapper#getReleaseCause()
+         */
         @Override
         public CauseWrapper getReleaseCause() throws Ss7WrapperException {
             try {
@@ -323,14 +430,26 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
     }
 
 
+    /**
+     * The Class TxRouteSelectFailureSpecificInfoWrapper.
+     */
     public static class TxRouteSelectFailureSpecificInfoWrapper implements RouteSelectFailureSpecificInfoWrapper {
 
+        /** The route select failure specific info. */
         private final RouteSelectFailureSpecificInfo routeSelectFailureSpecificInfo;
 
+        /**
+         * Instantiates a new tx route select failure specific info wrapper.
+         *
+         * @param routeSelectFailureSpecificInfo the route select failure specific info
+         */
         public TxRouteSelectFailureSpecificInfoWrapper(final RouteSelectFailureSpecificInfo routeSelectFailureSpecificInfo) {
             this.routeSelectFailureSpecificInfo = routeSelectFailureSpecificInfo;
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.RouteSelectFailureSpecificInfoWrapper#hasFailureCause()
+         */
         @Override
         public boolean hasFailureCause() throws Ss7WrapperException {
             try {
@@ -340,6 +459,9 @@ public class TxEventSpecificInformationBCSMWrapper implements EventSpecificInfor
             }
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper.RouteSelectFailureSpecificInfoWrapper#getFailureCause()
+         */
         @Override
         public CauseWrapper getFailureCause() throws Ss7WrapperException {
             try {

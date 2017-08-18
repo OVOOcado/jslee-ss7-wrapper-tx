@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.ContinueRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxContinueRequestEventWrapper
+ * TxContinueRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxContinueRequestEventWrapper extends TxEventWrapper implements ContinueRequestEventWrapper {
 
+    /** The continue request. */
     private final ContinueRequest continueRequest;
 
+    /**
+     * Instantiates a new tx continue request event wrapper.
+     *
+     * @param continueRequest the continue request
+     * @param aci the aci
+     */
     public TxContinueRequestEventWrapper(final ContinueRequest continueRequest, final ActivityContextInterface aci) {
         super(aci, continueRequest);
         this.continueRequest = continueRequest;

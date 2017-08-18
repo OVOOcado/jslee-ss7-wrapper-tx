@@ -25,18 +25,24 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapp
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2AssistRequestInstructionsArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper;
 
+
 /**
- * TxAssistRequestInstructionsArgWrapper
+ * TxAssistRequestInstructionsArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2AssistRequestInstructionsArgWrapper extends TxAssistRequestInstructionsArgWrapper
         implements Cap2AssistRequestInstructionsArgWrapper {
 
+    /** The cap2ipssp capabilities wrapper. */
     private transient Cap2IPSSPCapabilitiesWrapper cap2ipsspCapabilitiesWrapper = null;
 
+    /** The tx ipssp capabilities. */
     private IPSSPCapabilities txIpsspCapabilities;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2AssistRequestInstructionsArgWrapper#setIPSSPCapabilitiesWrapper(pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper)
+     */
     @Override
     public void setIPSSPCapabilitiesWrapper(final Cap2IPSSPCapabilitiesWrapper ipsspCapabilitiesWrapper) {
         if (ipsspCapabilitiesWrapper == null) {
@@ -49,6 +55,11 @@ public class TxCap2AssistRequestInstructionsArgWrapper extends TxAssistRequestIn
         }
     }
 
+    /**
+     * Gets the IPSSP capabilities wrapper.
+     *
+     * @return the IPSSP capabilities wrapper
+     */
     public Cap2IPSSPCapabilitiesWrapper getIPSSPCapabilitiesWrapper() {
         if(this.cap2ipsspCapabilitiesWrapper ==null&&this.txIpsspCapabilities !=null) {
             this.cap2ipsspCapabilitiesWrapper = new TxCap2IPSSPCapabilitiesWrapper(txIpsspCapabilities);
@@ -56,15 +67,28 @@ public class TxCap2AssistRequestInstructionsArgWrapper extends TxAssistRequestIn
         return this.cap2ipsspCapabilitiesWrapper;
     }
 
+    /**
+     * Gets the tx ipssp capabilities.
+     *
+     * @return the tx ipssp capabilities
+     */
     public IPSSPCapabilities getTxIpsspCapabilities() {
         return txIpsspCapabilities;
     }
 
+    /**
+     * Sets the tx ipssp capabilities.
+     *
+     * @param txIpsspCapabilities the new tx ipssp capabilities
+     */
     public void setTxIpsspCapabilities(final IPSSPCapabilities txIpsspCapabilities) {
         this.txIpsspCapabilities = txIpsspCapabilities;
         this.cap2ipsspCapabilitiesWrapper = null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAssistRequestInstructionsArgWrapper#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2AssistRequestInstructionsArgWrapper [txIpsspCapabilities=" + txIpsspCapabilities + "]";

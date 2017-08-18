@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.DialogCloseEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogCloseEventWrapper
+ * TxDialogCloseEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogCloseEventWrapper extends TxEventWrapper implements DialogCloseEventWrapper {
 
+    /** The dialog close event. */
     private final DialogClose dialogCloseEvent;
 
+    /**
+     * Instantiates a new tx dialog close event wrapper.
+     *
+     * @param dialogCloseEvent the dialog close event
+     * @param aci the aci
+     */
     public TxDialogCloseEventWrapper(final DialogClose dialogCloseEvent, final ActivityContextInterface aci) {
         super(aci, dialogCloseEvent.getWrappedEvent());
         this.dialogCloseEvent = dialogCloseEvent;

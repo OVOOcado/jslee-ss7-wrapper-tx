@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.DisconnectForwardConnectionRequestEve
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDisconnectForwardConnectionRequestEventWrapper
+ * TxDisconnectForwardConnectionRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDisconnectForwardConnectionRequestEventWrapper extends TxEventWrapper implements DisconnectForwardConnectionRequestEventWrapper {
 
+    /** The disconnect forward connection request. */
     private final DisconnectForwardConnectionRequest disconnectForwardConnectionRequest;
 
+    /**
+     * Instantiates a new tx disconnect forward connection request event wrapper.
+     *
+     * @param disconnectForwardConnectionRequest the disconnect forward connection request
+     * @param aci the aci
+     */
     public TxDisconnectForwardConnectionRequestEventWrapper(final DisconnectForwardConnectionRequest disconnectForwardConnectionRequest, final ActivityContextInterface aci) {
         super(aci, disconnectForwardConnectionRequest);
         this.disconnectForwardConnectionRequest = disconnectForwardConnectionRequest;

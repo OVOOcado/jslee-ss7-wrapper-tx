@@ -36,10 +36,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxTimeAndTimezoneWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2InitialDPArgWrapper;
 
+
+/**
+ * The Class TxCap2InitialDPArgWrapperTest.
+ */
 public class TxCap2InitialDPArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx cap2 initial dp arg wrapper. */
     TxCap2InitialDPArgWrapper txCap2InitialDPArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -52,6 +62,9 @@ public class TxCap2InitialDPArgWrapperTest extends WrapperBaseTest {
         txCap2InitialDPArgWrapper.setTimeAndTimezone(timeAndTimeZoneWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

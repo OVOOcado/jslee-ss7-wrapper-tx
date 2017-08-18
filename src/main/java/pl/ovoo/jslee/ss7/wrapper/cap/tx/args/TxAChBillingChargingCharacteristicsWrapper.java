@@ -23,24 +23,39 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.CAMELAChBillingChargingCharacteristics;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.AChBillingChargingCharacteristicsWrapper;
 
+
 /**
- * OcAChBillingChargingCharacteristicsWrapper
+ * OcAChBillingChargingCharacteristicsWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxAChBillingChargingCharacteristicsWrapper implements AChBillingChargingCharacteristicsWrapper {
 
+	/** The ach billing charging characteristics. */
 	private final CAMELAChBillingChargingCharacteristics achBillingChargingCharacteristics;
 
+	/**
+	 * Instantiates a new tx a ch billing charging characteristics wrapper.
+	 *
+	 * @param achBillingChargingCharacteristics the ach billing charging characteristics
+	 */
 	public TxAChBillingChargingCharacteristicsWrapper(
 			final CAMELAChBillingChargingCharacteristics achBillingChargingCharacteristics) {
 		this.achBillingChargingCharacteristics = achBillingChargingCharacteristics;
 	}
 
+	/**
+	 * Gets the tx ach billing charging characteristics.
+	 *
+	 * @return the tx ach billing charging characteristics
+	 */
 	public CAMELAChBillingChargingCharacteristics getTxAchBillingChargingCharacteristics() {
 		return achBillingChargingCharacteristics;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxAChBillingChargingCharacteristicsWrapper [achBillingChargingCharacteristics="

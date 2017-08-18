@@ -28,23 +28,36 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
 
+
 /**
  * Created by karolsimka on 07.06.17.
  */
 public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoForSMResponseWrapper {
 
+    /** The imsi address wrapper. */
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
+    
+    /** The msc address wrapper. */
     private transient ISDNAddressStringWrapper mscAddressWrapper = null;
     //private transient ISDNAddressStringWrapper sgsnAddressWrapper = null;
 
+    /** The imsi. */
     private IMSI imsi;
+    
+    /** The msc address. */
     private ISDNAddressString mscAddress;
     //private ISDNAddressString sgsnAddress;
 
+    /**
+     * Instantiates a new tx send routing info for sm response wrapper.
+     */
     public TxSendRoutingInfoForSMResponseWrapper() {
         super();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper#getIMSI()
+     */
     @Override
     public IMSIAddressWrapper getIMSI() {
         if (this.imsiAddressWrapper == null && this.imsi != null) {
@@ -53,6 +66,11 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
         return this.imsiAddressWrapper;
     }
 
+    /**
+     * Sets the imsi.
+     *
+     * @param imsi the new imsi
+     */
     public void setImsi(IMSIAddressWrapper imsi) {
         if (imsi == null) {
             this.imsi = null;
@@ -64,6 +82,9 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper#getMscAddress()
+     */
     @Override
     public ISDNAddressStringWrapper getMscAddress() {
         if (this.mscAddressWrapper == null && this.mscAddress != null) {
@@ -72,6 +93,11 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
         return this.mscAddressWrapper;
     }
 
+    /**
+     * Sets the msc address.
+     *
+     * @param mscAddress the new msc address
+     */
     public void setMscAddress(ISDNAddressStringWrapper mscAddress) {
         if (mscAddress == null) {
             this.mscAddress = null;
@@ -83,19 +109,39 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
         }
     }
 
+    /**
+     * Gets the tx imsi.
+     *
+     * @return the tx imsi
+     */
     public IMSI getTxImsi() {
         return imsi;
     }
 
+    /**
+     * Sets the tx imsi.
+     *
+     * @param imsi the new tx imsi
+     */
     public void setTxImsi(IMSI imsi) {
         this.imsi = imsi;
         this.imsiAddressWrapper = null;
     }
 
+    /**
+     * Gets the tx msc address.
+     *
+     * @return the tx msc address
+     */
     public ISDNAddressString getTxMscAddress() {
         return mscAddress;
     }
 
+    /**
+     * Sets the tx msc address.
+     *
+     * @param mscAddress the new tx msc address
+     */
     public void setTxMscAddress(ISDNAddressString mscAddress) {
         this.mscAddress = mscAddress;
         this.mscAddressWrapper = null;
@@ -129,7 +175,10 @@ public class TxSendRoutingInfoForSMResponseWrapper implements SendRoutingInfoFor
 //        this.mscAddressWrapper = null;
 //    }
 
-    @Override
+    /* (non-Javadoc)
+ * @see java.lang.Object#toString()
+ */
+@Override
     public String toString() {
         return "TxSendRoutingInfoForSMResponseWrapper [imsi=" + imsi + ", mscAddress=" + mscAddress + "]";
     }

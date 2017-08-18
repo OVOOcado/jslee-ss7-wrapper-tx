@@ -33,10 +33,20 @@ import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyBCDNumberWrapper;
 
+
+/**
+ * The Class TxCalledPartyBCDNumberWrapperTest.
+ */
 public class TxCalledPartyBCDNumberWrapperTest extends WrapperBaseTest {
 
+    /** The tx called party bcd number wrapper. */
     TxCalledPartyBCDNumberWrapper txCalledPartyBCDNumberWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -45,6 +55,9 @@ public class TxCalledPartyBCDNumberWrapperTest extends WrapperBaseTest {
         txCalledPartyBCDNumberWrapper = new TxCalledPartyBCDNumberWrapper(calledPartyBCDNumber);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     public void testSerialization() throws ClassNotFoundException, IOException {
 

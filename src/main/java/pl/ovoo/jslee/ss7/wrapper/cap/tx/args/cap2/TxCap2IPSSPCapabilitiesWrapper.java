@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.IPSSPCapabilities;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2IPSSPCapabilitiesWrapper;
 
+
 /**
- * TxCap2IPSSPCapabilitiesWrapper
+ * TxCap2IPSSPCapabilitiesWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2IPSSPCapabilitiesWrapper implements Cap2IPSSPCapabilitiesWrapper {
 
+    /** The tx ipssp capabilities. */
     private final IPSSPCapabilities txIpsspCapabilities;
 
+    /**
+     * Instantiates a new tx cap2 ipssp capabilities wrapper.
+     *
+     * @param ipsspCapabilities the ipssp capabilities
+     */
     public TxCap2IPSSPCapabilitiesWrapper(final IPSSPCapabilities ipsspCapabilities) {
         this.txIpsspCapabilities = ipsspCapabilities;
     }
 
+    /**
+     * Gets the tx ipssp capabilities.
+     *
+     * @return the tx ipssp capabilities
+     */
     public IPSSPCapabilities getTxIpsspCapabilities() {
         return txIpsspCapabilities;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2IPSSPCapabilitiesWrapper [txIpsspCapabilities=" + txIpsspCapabilities + "]";

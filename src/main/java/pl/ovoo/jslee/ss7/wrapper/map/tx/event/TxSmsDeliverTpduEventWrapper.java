@@ -28,18 +28,29 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmsDeliverTpduWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
  * Created by karolsimka on 12.06.17.
  */
 public class TxSmsDeliverTpduEventWrapper extends TxMapEventWrapper implements SmsDeliverTpduEventWrapper{
 
+    /** The report sm delivery status request. */
     private final ReportSMDeliveryStatusRequest reportSMDeliveryStatusRequest;
 
+    /**
+     * Instantiates a new tx sms deliver tpdu event wrapper.
+     *
+     * @param reportSMDeliveryStatusRequest the report sm delivery status request
+     * @param aci the aci
+     */
     public TxSmsDeliverTpduEventWrapper(final ReportSMDeliveryStatusRequest reportSMDeliveryStatusRequest, final ActivityContextInterface aci) {
         super(aci);
         this.reportSMDeliveryStatusRequest = reportSMDeliveryStatusRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.SmsDeliverTpduEventWrapper#getArgument()
+     */
     @Override
     public TxSmsDeliverTpduWrapper getArgument() {
         TxSmsDeliverTpduWrapper smd = new TxSmsDeliverTpduWrapper();
@@ -48,6 +59,9 @@ public class TxSmsDeliverTpduEventWrapper extends TxMapEventWrapper implements S
         return smd;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId() {
         return reportSMDeliveryStatusRequest.getInvokeId();

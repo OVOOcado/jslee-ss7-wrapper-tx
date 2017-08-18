@@ -37,10 +37,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
 
+
+/**
+ * The Class TxEstablishTemporaryConnectionArgWrapperTest.
+ */
 public class TxEstablishTemporaryConnectionArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx establish temporary connection arg wrapper. */
     TxEstablishTemporaryConnectionArgWrapper txEstablishTemporaryConnectionArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -67,6 +77,9 @@ public class TxEstablishTemporaryConnectionArgWrapperTest extends WrapperBaseTes
         txEstablishTemporaryConnectionArgWrapper.setAssistingSSPIPRoutingAddress(genericNumberWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException {
 

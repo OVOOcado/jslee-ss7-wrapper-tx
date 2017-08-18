@@ -41,32 +41,61 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
+
 /**
- * OcCap1InitialDPArgWrapper
+ * OcCap1InitialDPArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements Cap1InitialDPArgWrapper {
 
+    /** The called party bcd number wrapper. */
     private transient CalledPartyBCDNumberWrapper calledPartyBCDNumberWrapper = null;
+    
+    /** The call reference number wrapper. */
     private transient CallReferenceNumberWrapper callReferenceNumberWrapper = null;
+    
+    /** The ext basic service code wrapper. */
     private transient ExtBasicServiceCodeWrapper extBasicServiceCodeWrapper = null;
+    
+    /** The imsi wrapper. */
     private transient IMSIAddressWrapper imsiWrapper = null;
+    
+    /** The location information wrapper. */
     private transient MAPLocationInformationWrapper locationInformationWrapper = null;
+    
+    /** The msc address wrapper. */
     private transient ISDNAddressStringWrapper mscAddressWrapper = null;
 
+    /** The called party bcd number. */
     private CalledPartyBCDNumber calledPartyBCDNumber;
+    
+    /** The call reference number. */
     private CallReferenceNumber callReferenceNumber;
+    
+    /** The ext basic service code. */
     private ExtBasicServiceCode extBasicServiceCode;
+    
+    /** The imsi. */
     private IMSI imsi;
+    
+    /** The location information. */
     private LocationInformation locationInformation;
+    
+    /** The msc address. */
     private ISDNAddressString mscAddress;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#hasCalledPartyBCDNumber()
+     */
     @Override
     public boolean hasCalledPartyBCDNumber() {
         return calledPartyBCDNumber != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#getCalledPartyBCDNumber()
+     */
     @Override
     public CalledPartyBCDNumberWrapper getCalledPartyBCDNumber() {
         if (this.calledPartyBCDNumberWrapper == null && this.calledPartyBCDNumber != null) {
@@ -75,6 +104,9 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         return this.calledPartyBCDNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#setCalledPartyBCDNumber(pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper)
+     */
     @Override
     public void setCalledPartyBCDNumber(final CalledPartyBCDNumberWrapper calledPartyBCDNumber) {
         if (calledPartyBCDNumber == null) {
@@ -87,11 +119,17 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#hasCallReferenceNumber()
+     */
     @Override
     public boolean hasCallReferenceNumber() {
         return callReferenceNumber != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#getCallReferenceNumber()
+     */
     @Override
     public CallReferenceNumberWrapper getCallReferenceNumber() {
         if (this.callReferenceNumberWrapper == null && this.callReferenceNumber != null) {
@@ -100,6 +138,9 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         return this.callReferenceNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#setCallReferenceNumber(pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper)
+     */
     @Override
     public void setCallReferenceNumber(final CallReferenceNumberWrapper callReferenceNumber) {
         if (callReferenceNumber == null) {
@@ -112,11 +153,17 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#hasExtBasicServiceCode()
+     */
     @Override
     public boolean hasExtBasicServiceCode() {
         return extBasicServiceCode != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#getExtBasicServiceCode()
+     */
     @Override
     public ExtBasicServiceCodeWrapper getExtBasicServiceCode() {
         if (this.extBasicServiceCodeWrapper == null && extBasicServiceCode != null) {
@@ -125,11 +172,17 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         return this.extBasicServiceCodeWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#hasIMSI()
+     */
     @Override
     public boolean hasIMSI() {
         return imsi != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#getIMSI()
+     */
     @Override
     public IMSIAddressWrapper getIMSI() {
         if (this.imsiWrapper == null && this.imsi != null) {
@@ -138,11 +191,17 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         return this.imsiWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#hasLocationInformation()
+     */
     @Override
     public boolean hasLocationInformation() {
         return locationInformation != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#getLocationInformation()
+     */
     @Override
     public MAPLocationInformationWrapper getLocationInformation() {
         if (this.locationInformationWrapper == null && this.locationInformation != null) {
@@ -151,6 +210,9 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         return this.locationInformationWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#setLocationInformation(pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper)
+     */
     @Override
     public void setLocationInformation(final MAPLocationInformationWrapper locationInformation) {
         if (locationInformation == null) {
@@ -163,11 +225,17 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#hasMscAddress()
+     */
     @Override
     public boolean hasMscAddress() {
         return mscAddress != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap1.Cap1InitialDPArgWrapper#getMscAddress()
+     */
     @Override
     public ISDNAddressStringWrapper getMscAddress() {
         if (this.mscAddressWrapper == null && this.mscAddress != null) {
@@ -176,55 +244,115 @@ public class TxCap1InitialDPArgWrapper extends TxInitialDPArgWrapper implements 
         return this.mscAddressWrapper;
     }
 
+    /**
+     * Gets the tx called party bcd number.
+     *
+     * @return the tx called party bcd number
+     */
     public CalledPartyBCDNumber getTxCalledPartyBCDNumber() {
         return calledPartyBCDNumber;
     }
 
+    /**
+     * Gets the tx call reference number.
+     *
+     * @return the tx call reference number
+     */
     public CallReferenceNumber getTxCallReferenceNumber() {
         return callReferenceNumber;
     }
 
+    /**
+     * Gets the tx ext basic service code.
+     *
+     * @return the tx ext basic service code
+     */
     public ExtBasicServiceCode getTxExtBasicServiceCode() {
         return extBasicServiceCode;
     }
 
+    /**
+     * Gets the tx imsi.
+     *
+     * @return the tx imsi
+     */
     public IMSI getTxImsi() {
         return imsi;
     }
 
+    /**
+     * Gets the tx location information.
+     *
+     * @return the tx location information
+     */
     public LocationInformation getTxLocationInformation() {
         return locationInformation;
     }
 
+    /**
+     * Gets the tx msc address.
+     *
+     * @return the tx msc address
+     */
     public ISDNAddressString getTxMscAddress() {
         return mscAddress;
     }
 
+    /**
+     * Sets the tx called party bcd number.
+     *
+     * @param calledPartyBCDNumber the new tx called party bcd number
+     */
     public void setTxCalledPartyBCDNumber(final CalledPartyBCDNumber calledPartyBCDNumber) {
         this.calledPartyBCDNumber = calledPartyBCDNumber;
         this.calledPartyBCDNumberWrapper = null;
     }
 
+    /**
+     * Sets the tx call reference number.
+     *
+     * @param callReferenceNumber the new tx call reference number
+     */
     public void setTxCallReferenceNumber(final CallReferenceNumber callReferenceNumber) {
         this.callReferenceNumber = callReferenceNumber;
         this.callReferenceNumberWrapper = null;
     }
 
+    /**
+     * Sets the tx ext basic service code.
+     *
+     * @param extBasicServiceCode the new tx ext basic service code
+     */
     public void setTxExtBasicServiceCode(final ExtBasicServiceCode extBasicServiceCode) {
         this.extBasicServiceCode = extBasicServiceCode;
         this.extBasicServiceCodeWrapper = null;
     }
 
+    /**
+     * Sets the tx imsi.
+     *
+     * @param imsi the new tx imsi
+     */
     public void setTxImsi(final IMSI imsi) {
         this.imsi = imsi;
         this.imsiWrapper = null;
     }
 
+    /**
+     * Sets the tx location information.
+     *
+     * @param txLocationInformation the new tx location information
+     */
     public void setTxLocationInformation(final LocationInformation txLocationInformation) {
         this.locationInformation = txLocationInformation;
         this.locationInformationWrapper = null;
     }
 
+    /**
+     * Sets the tx msc address.
+     *
+     * @param mscAddress the new tx msc address
+     */
     public void setTxMscAddress(final ISDNAddressString mscAddress) {
         this.mscAddress = mscAddress;
         this.mscAddressWrapper = null;

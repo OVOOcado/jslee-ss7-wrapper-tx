@@ -33,29 +33,49 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.TxSmsCapDialogWrapperImpl;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * OcEventWrapper
+ * OcEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEventWrapper implements EventWrapper {
 
+    /** The aci. */
     private final ActivityContextInterface aci;
+    
+    /** The dialog. */
     private final CAPDialog dialog;
+    
+    /** The cap message. */
     //private CAPProvider capProvider;
     private final CAPMessage capMessage;
 
+    /**
+     * Instantiates a new tx event wrapper.
+     *
+     * @param aci the aci
+     * @param capMessage the cap message
+     */
     public TxEventWrapper(final ActivityContextInterface aci, CAPMessage capMessage) {
         this.aci = aci;
         this.dialog = (CAPDialog) aci.getActivity();
         this.capMessage = capMessage;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.EventWrapper#getDialog()
+     */
     @Override
     public CapDialogWrapper getDialog() {
         return createCallCapDialogWrapper();
     }
 
+    /**
+     * Creates the call cap dialog wrapper.
+     *
+     * @return the cap dialog wrapper
+     */
     private CapDialogWrapper createCallCapDialogWrapper() {
         if (dialog instanceof CAPDialogCircuitSwitchedCall) {
             final TxCapDialogWrapperImpl txCap1CallCapDialogWrapper;
@@ -91,14 +111,29 @@ public class TxEventWrapper implements EventWrapper {
         return null;
     }
 
+    /**
+     * Gets the tx dialog.
+     *
+     * @return the tx dialog
+     */
     protected CAPDialog getTxDialog() {
         return dialog;
     }
 
+    /**
+     * Gets the aci.
+     *
+     * @return the aci
+     */
     protected ActivityContextInterface getAci() {
         return aci;
     }
 
+    /**
+     * Gets the cap message.
+     *
+     * @return the cap message
+     */
     public CAPMessage getCapMessage() {
         return capMessage;
     }

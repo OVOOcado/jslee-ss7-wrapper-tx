@@ -23,20 +23,36 @@ package pl.ovoo.jslee.ss7.wrapper.common.tx;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 
+
+/**
+ * The Class TxISDNAddressStringWrapperImpl.
+ */
 public class TxISDNAddressStringWrapperImpl implements ISDNAddressStringWrapper{
 
+	/** The address. */
 	private final ISDNAddressString address;
 
+	/**
+	 * Instantiates a new tx isdn address string wrapper impl.
+	 *
+	 * @param address the address
+	 */
 	public TxISDNAddressStringWrapperImpl(final ISDNAddressString address) {
 		super();
 		this.address = address;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#getAddress()
+	 */
 	@Override
 	public String getAddress() {
 		return address.getAddress();
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#getNature()
+	 */
 	@Override
 	public Nature getNature() {
 		if (address.getAddressNature() != null) {
@@ -45,6 +61,9 @@ public class TxISDNAddressStringWrapperImpl implements ISDNAddressStringWrapper{
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#getNumberingPlan()
+	 */
 	@Override
 	public NumberingPlan getNumberingPlan() {
 		if (address.getNumberingPlan() != null) {
@@ -53,21 +72,35 @@ public class TxISDNAddressStringWrapperImpl implements ISDNAddressStringWrapper{
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#hasAddress()
+	 */
 	@Override
 	public boolean hasAddress(){
 		return address.getAddress() != null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#hasNature()
+	 */
 	@Override
 	public boolean hasNature(){
 		return address.getAddressNature() != null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#hasNumberingPlan()
+	 */
 	@Override
 	public boolean hasNumberingPlan(){
 		return address.getNumberingPlan() != null;
 	}
 
+	/**
+	 * Gets the tx address.
+	 *
+	 * @return the tx address
+	 */
 	public ISDNAddressString getTxAddress() {
 		return address;
 	}

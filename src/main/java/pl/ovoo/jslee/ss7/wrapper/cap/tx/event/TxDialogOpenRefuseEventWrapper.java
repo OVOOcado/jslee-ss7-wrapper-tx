@@ -25,15 +25,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.DialogOpenRefuseEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogOpenRefuseEventWrapper
+ * TxDialogOpenRefuseEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenRefuseEventWrapper extends TxEventWrapper implements DialogOpenRefuseEventWrapper {
 
+    /** The dialog release. */
     private final DialogRelease dialogRelease;
 
+    /**
+     * Instantiates a new tx dialog open refuse event wrapper.
+     *
+     * @param dialogRelease the dialog release
+     * @param aci the aci
+     */
     public TxDialogOpenRefuseEventWrapper(final DialogRelease dialogRelease, final ActivityContextInterface aci) {
         super(aci, dialogRelease.getWrappedEvent());
         this.dialogRelease = dialogRelease;

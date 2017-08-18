@@ -23,24 +23,37 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBearerServiceCode;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBearerServiceCodeWrapper;
 
+
 /**
- * TxExtBearerServiceCodeWrapper
+ * TxExtBearerServiceCodeWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxExtBearerServiceCodeWrapper implements ExtBearerServiceCodeWrapper {
 
+	/** The ext bearer service code. */
 	private final ExtBearerServiceCode extBearerServiceCode;
 
+	/**
+	 * Instantiates a new tx ext bearer service code wrapper.
+	 *
+	 * @param extBearerServiceCode the ext bearer service code
+	 */
 	public TxExtBearerServiceCodeWrapper(final ExtBearerServiceCode extBearerServiceCode) {
 		this.extBearerServiceCode = extBearerServiceCode;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBearerServiceCodeWrapper#getData()
+	 */
 	@Override
 	public byte[] getData() {
 		return extBearerServiceCode.getData();
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxExtBearerServiceCodeWrapper [extBearerServiceCode=" + extBearerServiceCode + "]";

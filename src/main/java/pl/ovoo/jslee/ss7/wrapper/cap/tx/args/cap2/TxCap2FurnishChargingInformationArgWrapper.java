@@ -25,18 +25,24 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxFurnishChargingInformationArgWrap
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FCIBCCCAMELsequence1Wrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FurnishChargingInformationArgWrapper;
 
+
 /**
- * TxCap2FurnishChargingInformationArgWrapper
+ * TxCap2FurnishChargingInformationArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2FurnishChargingInformationArgWrapper extends TxFurnishChargingInformationArgWrapper
         implements Cap2FurnishChargingInformationArgWrapper {
 
+    /** The CIBCCCAME lsequence1. */
     private transient Cap2FCIBCCCAMELsequence1Wrapper fCIBCCCAMELsequence1 = null;
 
+    /** The tx fcibcccame lsequence1. */
     private FCIBCCCAMELsequence1 txFCIBCCCAMELsequence1;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FurnishChargingInformationArgWrapper#getFCIBCCCAMELsequence1()
+     */
     @Override
     public Cap2FCIBCCCAMELsequence1Wrapper getFCIBCCCAMELsequence1() {
         if (this.fCIBCCCAMELsequence1 == null && txFCIBCCCAMELsequence1 != null) {
@@ -46,6 +52,9 @@ public class TxCap2FurnishChargingInformationArgWrapper extends TxFurnishChargin
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FurnishChargingInformationArgWrapper#setFCIBCCCAMELsequence1(pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2FCIBCCCAMELsequence1Wrapper)
+     */
     @Override
     public void setFCIBCCCAMELsequence1(final Cap2FCIBCCCAMELsequence1Wrapper fcibcccameLsequence1) {
         if (fcibcccameLsequence1 == null) {
@@ -58,15 +67,28 @@ public class TxCap2FurnishChargingInformationArgWrapper extends TxFurnishChargin
         }
     }
 
+    /**
+     * Gets the tx fcibcccame lsequence1.
+     *
+     * @return the tx fcibcccame lsequence1
+     */
     public FCIBCCCAMELsequence1 getTxFCIBCCCAMELsequence1() {
         return txFCIBCCCAMELsequence1;
     }
 
+    /**
+     * Sets the tx fcibcccame lsequence1.
+     *
+     * @param txFCIBCCCAMELsequence1 the new tx fcibcccame lsequence1
+     */
     public void setTxFCIBCCCAMELsequence1(final FCIBCCCAMELsequence1 txFCIBCCCAMELsequence1) {
         this.txFCIBCCCAMELsequence1 = txFCIBCCCAMELsequence1;
         this.fCIBCCCAMELsequence1 = null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2FurnishChargingInformationArgWrapper [txFCIBCCCAMELsequence1=" + txFCIBCCCAMELsequence1 + "]";

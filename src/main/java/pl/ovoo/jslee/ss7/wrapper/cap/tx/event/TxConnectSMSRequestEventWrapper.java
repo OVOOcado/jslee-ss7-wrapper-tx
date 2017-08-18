@@ -28,20 +28,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.ConnectSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxConnectRequestEventWrapper
+ * TxConnectRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxConnectSMSRequestEventWrapper extends TxEventWrapper implements ConnectSMSRequestEventWrapper {
 
+    /** The connect sms request. */
     private final ConnectSMSRequest connectSMSRequest;
 
+    /**
+     * Instantiates a new tx connect sms request event wrapper.
+     *
+     * @param connectSMSRequest the connect sms request
+     * @param aci the aci
+     */
     public TxConnectSMSRequestEventWrapper(final ConnectSMSRequest connectSMSRequest, final ActivityContextInterface aci) {
         super(aci, connectSMSRequest);
         this.connectSMSRequest = connectSMSRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public ConnectSMSArgWrapper getArgument() throws Ss7WrapperException {
         final TxConnectSMSArgWrapper connectSMSArgWrapper = new TxConnectSMSArgWrapper();

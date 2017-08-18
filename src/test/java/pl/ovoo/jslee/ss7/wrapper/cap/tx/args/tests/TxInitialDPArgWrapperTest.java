@@ -61,10 +61,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxOriginalCalledNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRedirectingPartyNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxRedirectionInformationWrapper;
 
+
+/**
+ * The Class TxInitialDPArgWrapperTest.
+ */
 public class TxInitialDPArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx initial dp arg wrapper. */
     TxInitialDPArgWrapper txInitialDPArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -134,6 +144,9 @@ public class TxInitialDPArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

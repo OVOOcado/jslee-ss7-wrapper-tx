@@ -30,17 +30,27 @@ import pl.ovoo.jslee.ss7.wrapper.cap.Cap2CallCapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingReportArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ResetTimerArgWrapper;
 
+
 /**
- * TxCap2CallCapDialogWrapper
+ * TxCap2CallCapDialogWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2CallCapDialogWrapper extends TxCap1CallCapDialogWrapper implements Cap2CallCapDialogWrapper {
 
+    /**
+     * Instantiates a new tx cap2 call cap dialog wrapper.
+     *
+     * @param dialogCircuitSwitchedCall the dialog circuit switched call
+     * @param capProvider the cap provider
+     */
     public TxCap2CallCapDialogWrapper(final CAPDialogCircuitSwitchedCall dialogCircuitSwitchedCall, final CAPProvider capProvider) {
         super(dialogCircuitSwitchedCall, capProvider);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.Cap2CallCapDialogWrapper#sendApplyChargingReport(pl.ovoo.jslee.ss7.wrapper.cap.args.ApplyChargingReportArgWrapper)
+     */
     @Override
     public int sendApplyChargingReport(final ApplyChargingReportArgWrapper applyChargingReportArg) throws Ss7WrapperException {
         final TxCap2ApplyChargingReportArgWrapper txApplyChargingReportArgWrapper = (TxCap2ApplyChargingReportArgWrapper) applyChargingReportArg;
@@ -51,6 +61,9 @@ public class TxCap2CallCapDialogWrapper extends TxCap1CallCapDialogWrapper imple
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.Cap2CallCapDialogWrapper#sendResetTimer(pl.ovoo.jslee.ss7.wrapper.cap.args.ResetTimerArgWrapper)
+     */
     @Override
     public int sendResetTimer(final ResetTimerArgWrapper resetTimerArgWrapper) throws Ss7WrapperException {
         final TxResetTimerArgWrapper txResetTimerArgWrapper = (TxResetTimerArgWrapper) resetTimerArgWrapper;

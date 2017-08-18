@@ -47,10 +47,20 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageRequestArgWr
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpOaWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSmRpUiWrapper;
 
+
+/**
+ * The Class TxMtForwardShortMessageRequestArgWrapperTest.
+ */
 public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx mt forward short message request arg wrapper. */
     TxMtForwardShortMessageRequestArgWrapper txMtForwardShortMessageRequestArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
         txMtForwardShortMessageRequestArgWrapper = new TxMtForwardShortMessageRequestArgWrapper();
@@ -78,6 +88,9 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
         txMtForwardShortMessageRequestArgWrapper.setSm_Rp_Ui(txSmRpUiWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException {
@@ -102,6 +115,12 @@ public class TxMtForwardShortMessageRequestArgWrapperTest extends WrapperBaseTes
 
     }
 
+    /**
+     * Gets the charset from gsm coding.
+     *
+     * @param value the value
+     * @return the charset from gsm coding
+     */
     public static Charset getCharsetFromGsmCoding(int value){
         switch(value){
             case 0:

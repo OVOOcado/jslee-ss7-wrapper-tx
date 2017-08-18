@@ -24,28 +24,42 @@ import org.mobicents.protocols.ss7.map.api.primitives.CellGlobalIdOrServiceAreaI
 import pl.ovoo.jslee.ss7.wrapper.map.args.CellGlobalIdWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper;
 
+
 /**
- * TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper
+ * TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper implements MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper {
 
+    /** The cell global id wrapper. */
     private transient CellGlobalIdWrapper cellGlobalIdWrapper = null;
 
+    /** The cell global id or service area id or lai. */
     private final CellGlobalIdOrServiceAreaIdOrLAI cellGlobalIdOrServiceAreaIdOrLAI;
 
+    /**
+     * Instantiates a new tx map cell global id or service area id or lai wrapper.
+     *
+     * @param cellGlobalIdOrServiceAreaIdOrLAI the cell global id or service area id or lai
+     */
     public TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper(
             final CellGlobalIdOrServiceAreaIdOrLAI cellGlobalIdOrServiceAreaIdOrLAI) {
         this.cellGlobalIdOrServiceAreaIdOrLAI = cellGlobalIdOrServiceAreaIdOrLAI;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper#isCellGlobalIdOrServiceAreaIdFixedLengthChosen()
+     */
     @Override
     public boolean isCellGlobalIdOrServiceAreaIdFixedLengthChosen() {
         return cellGlobalIdOrServiceAreaIdOrLAI.getCellGlobalIdOrServiceAreaIdFixedLength() != null
                 && cellGlobalIdOrServiceAreaIdOrLAI.getLAIFixedLength() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPCellGlobalIdOrServiceAreaIdOrLAIWrapper#getCellGlobalIdOrServiceAreaIdFixedLength()
+     */
     @Override
     public CellGlobalIdWrapper getCellGlobalIdOrServiceAreaIdFixedLength() {
         if (this.cellGlobalIdWrapper == null
@@ -56,10 +70,18 @@ public class TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper implements MAPCellGlob
         return this.cellGlobalIdWrapper;
     }
 
+    /**
+     * Gets the tx cell global id or service area id or lai.
+     *
+     * @return the tx cell global id or service area id or lai
+     */
     public CellGlobalIdOrServiceAreaIdOrLAI getTxCellGlobalIdOrServiceAreaIdOrLAI() {
         return cellGlobalIdOrServiceAreaIdOrLAI;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPCellGlobalIdOrServiceAreaIdOrLAIWrapper [cellGlobalIdOrServiceAreaIdOrLAI="

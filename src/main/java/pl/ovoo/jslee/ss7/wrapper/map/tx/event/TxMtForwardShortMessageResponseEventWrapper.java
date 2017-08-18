@@ -27,18 +27,29 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMtForwardShortMessageResponseWrap
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
  * Created by karolsimka on 09.06.17.
  */
 public class TxMtForwardShortMessageResponseEventWrapper extends TxMapEventWrapper implements MtForwardSMResponseEventWrapper {
 
+    /** The mt forward short message response. */
     private final MtForwardShortMessageResponse mtForwardShortMessageResponse;
 
+    /**
+     * Instantiates a new tx mt forward short message response event wrapper.
+     *
+     * @param mtForwardShortMessageResponse the mt forward short message response
+     * @param aci the aci
+     */
     public TxMtForwardShortMessageResponseEventWrapper(final MtForwardShortMessageResponse mtForwardShortMessageResponse, final ActivityContextInterface aci) {
         super(aci);
         this.mtForwardShortMessageResponse = mtForwardShortMessageResponse;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MtForwardSMResponseEventWrapper#getArgument()
+     */
     @Override
     public MtForwardSMResponseWrapper getArgument() {
         TxMtForwardShortMessageResponseWrapper sri = new TxMtForwardShortMessageResponseWrapper();
@@ -48,6 +59,9 @@ public class TxMtForwardShortMessageResponseEventWrapper extends TxMapEventWrapp
         return sri;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId() {
         return mtForwardShortMessageResponse.getInvokeId();

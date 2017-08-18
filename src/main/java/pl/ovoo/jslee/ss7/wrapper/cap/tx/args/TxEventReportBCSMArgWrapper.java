@@ -29,19 +29,30 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
 
+
 /**
- * TxEventReportBCSMArgWrapper
+ * TxEventReportBCSMArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
 
+    /** The tx event type bcsm. */
     private org.mobicents.protocols.ss7.cap.api.primitives.EventTypeBCSM txEventTypeBCSM;
+    
+    /** The tx leg id. */
     private ReceivingSideID txLegID;
+    
+    /** The tx event specific information bcsm. */
     private EventSpecificInformationBCSM txEventSpecificInformationBCSM;
+    
+    /** The tx misc call info. */
     private MiscCallInfo txMiscCallInfo;
 
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#getEventTypeBCSM()
+     */
     @Override
     public EventTypeBCSM getEventTypeBCSM() {
         if (txEventTypeBCSM != null) {
@@ -50,6 +61,9 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#setEventTypeBCSM(pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM)
+     */
     @Override
     public void setEventTypeBCSM(final EventTypeBCSM eventTypeBCSM) {
         if (eventTypeBCSM == null) {
@@ -59,6 +73,9 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#getLegID()
+     */
     @Override
     public ReceivingSideIDWrapper getLegID() {
         if (txLegID != null) {
@@ -67,6 +84,9 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#setLegID(pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper)
+     */
     @Override
     public void setLegID(final ReceivingSideIDWrapper legID) {
         if (legID == null) {
@@ -76,11 +96,17 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#hasEventSpecificInformationBCSM()
+     */
     @Override
     public boolean hasEventSpecificInformationBCSM() {
         return txEventSpecificInformationBCSM != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#getEventSpecificInformationBCSM()
+     */
     @Override
     public EventSpecificInformationBCSMWrapper getEventSpecificInformationBCSM() {
         if (txEventSpecificInformationBCSM != null) {
@@ -89,6 +115,9 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#setEventSpecificInformationBCSM(pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationBCSMWrapper)
+     */
     @Override
     public void setEventSpecificInformationBCSM(final EventSpecificInformationBCSMWrapper eventSpecificInformationBCSM) {
         if (eventSpecificInformationBCSM == null) {
@@ -98,6 +127,9 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#getMiscCallInfo()
+     */
     @Override
     public MiscCallInfoWrapper getMiscCallInfo() {
         if (txMiscCallInfo != null) {
@@ -106,6 +138,9 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#setMiscCallInfo(pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper)
+     */
     @Override
     public void setMiscCallInfo(final MiscCallInfoWrapper miscCallInfo) {
         if (miscCallInfo == null) {
@@ -115,45 +150,91 @@ public class TxEventReportBCSMArgWrapper implements EventReportBCSMArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#hasMiscCallInfo()
+     */
     @Override
     public boolean hasMiscCallInfo() {
         return txMiscCallInfo != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventReportBCSMArgWrapper#hasLegID()
+     */
     @Override
     public boolean hasLegID() {
         return txLegID != null;
     }
 
 
+    /**
+     * Gets the tx event type bcsm.
+     *
+     * @return the tx event type bcsm
+     */
     public org.mobicents.protocols.ss7.cap.api.primitives.EventTypeBCSM getTxEventTypeBCSM() {
         return txEventTypeBCSM;
     }
 
+    /**
+     * Sets the tx event type bcsm.
+     *
+     * @param txEventTypeBCSM the new tx event type bcsm
+     */
     public void setTxEventTypeBCSM(final org.mobicents.protocols.ss7.cap.api.primitives.EventTypeBCSM txEventTypeBCSM) {
         this.txEventTypeBCSM = txEventTypeBCSM;
     }
 
+    /**
+     * Gets the tx leg id.
+     *
+     * @return the tx leg id
+     */
     public ReceivingSideID getTxLegID() {
         return txLegID;
     }
 
+    /**
+     * Sets the tx leg id.
+     *
+     * @param txLegID the new tx leg id
+     */
     public void setTxLegID(final ReceivingSideID txLegID) {
         this.txLegID = txLegID;
     }
 
+    /**
+     * Gets the tx event specific information bcsm.
+     *
+     * @return the tx event specific information bcsm
+     */
     public EventSpecificInformationBCSM getTxEventSpecificInformationBCSM() {
         return txEventSpecificInformationBCSM;
     }
 
+    /**
+     * Sets the tx event specific information bcsm.
+     *
+     * @param txEventSpecificInformationBCSM the new tx event specific information bcsm
+     */
     public void setTxEventSpecificInformationBCSM(final EventSpecificInformationBCSM txEventSpecificInformationBCSM) {
         this.txEventSpecificInformationBCSM = txEventSpecificInformationBCSM;
     }
 
+    /**
+     * Gets the tx misc call info.
+     *
+     * @return the tx misc call info
+     */
     public MiscCallInfo getTxMiscCallInfo() {
         return txMiscCallInfo;
     }
 
+    /**
+     * Sets the tx misc call info.
+     *
+     * @param txMiscCallInfo the new tx misc call info
+     */
     public void setTxMiscCallInfo(final MiscCallInfo txMiscCallInfo) {
         this.txMiscCallInfo = txMiscCallInfo;
     }

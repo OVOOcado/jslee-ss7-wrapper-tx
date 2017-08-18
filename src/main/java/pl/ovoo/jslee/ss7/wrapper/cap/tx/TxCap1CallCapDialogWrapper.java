@@ -24,13 +24,20 @@ import org.mobicents.protocols.ss7.cap.api.CAPProvider;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.CAPDialogCircuitSwitchedCall;
 import pl.ovoo.jslee.ss7.wrapper.cap.Cap1CallCapDialogWrapper;
 
+
 /**
- * OcCap1CallCapDialogWrapper
+ * OcCap1CallCapDialogWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap1CallCapDialogWrapper extends TxCallCapDialogWrapperImpl implements Cap1CallCapDialogWrapper {
 
+    /**
+     * Instantiates a new tx cap1 call cap dialog wrapper.
+     *
+     * @param dialogCircuitSwitchedCall the dialog circuit switched call
+     * @param capProvider the cap provider
+     */
     public TxCap1CallCapDialogWrapper(final CAPDialogCircuitSwitchedCall dialogCircuitSwitchedCall, final CAPProvider capProvider) {
         super(dialogCircuitSwitchedCall, capProvider);
     }

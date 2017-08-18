@@ -25,20 +25,31 @@ import pl.ovoo.jslee.ss7.wrapper.map.event.DialogUserAbortEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogUserAbortEventWrapper
+ * TxDialogUserAbortEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogUserAbortEventWrapper extends TxMapEventWrapper implements DialogUserAbortEventWrapper {
 
+    /** The dialog user abort event. */
     private final DialogUserAbort dialogUserAbortEvent;
 
+    /**
+     * Instantiates a new tx dialog user abort event wrapper.
+     *
+     * @param dialogUserAbortEvent the dialog user abort event
+     * @param aci the aci
+     */
     public TxDialogUserAbortEventWrapper(final DialogUserAbort dialogUserAbortEvent, final ActivityContextInterface aci) {
         super(aci);
         this.dialogUserAbortEvent = dialogUserAbortEvent;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxDialogUserAbortEventWrapper{" +
@@ -46,11 +57,17 @@ public class TxDialogUserAbortEventWrapper extends TxMapEventWrapper implements 
                 '}';
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.DialogUserAbortEventWrapper#getUserInformation()
+     */
     @Override
     public Object[] getUserInformation(){
 		return new Object [] { this.dialogUserAbortEvent.getUserReason() };
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return dialogUserAbortEvent.getWrappedEvent().getInvokeId();

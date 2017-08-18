@@ -34,22 +34,34 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
 
+
 /**
  * Created by karolsimka on 06.06.17.
  */
 public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponseWrapper {
 
+    /** The imsi address wrapper. */
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
+    
+    /** The roaming addres wrapper. */
     private transient RoutingInfoWrapper roamingAddresWrapper = null;
 
+    /** The imsi. */
     private IMSI imsi;
 
+    /** The roaming address. */
     private RoutingInfo roamingAddress;
 
+    /**
+     * Instantiates a new tx send routing info response wrapper.
+     */
     public TxSendRoutingInfoResponseWrapper() {
         super();
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper#getImsi()
+     */
     @Override
     public IMSIAddressWrapper getImsi() {
         if (this.imsiAddressWrapper == null && this.imsi != null) {
@@ -58,6 +70,11 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
         return this.imsiAddressWrapper;
     }
 
+    /**
+     * Sets the imsi.
+     *
+     * @param imsi the new imsi
+     */
     public void setImsi(IMSIAddressWrapper imsi) {
         if (imsi == null) {
             this.imsi = null;
@@ -69,6 +86,9 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper#getRoutingInfo()
+     */
     @Override
     public RoutingInfoWrapper getRoutingInfo() {
         if (this.roamingAddresWrapper == null && this.roamingAddress != null) {
@@ -77,6 +97,11 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
         return this.roamingAddresWrapper;
     }
 
+    /**
+     * Sets the routing info.
+     *
+     * @param routingInfo the new routing info
+     */
     public void setRoutingInfo(RoutingInfoWrapper routingInfo) {
         if (routingInfo == null) {
             this.roamingAddress = null;
@@ -94,25 +119,48 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
         }
     }
 
+    /**
+     * Gets the tx roaming address.
+     *
+     * @return the tx roaming address
+     */
     public RoutingInfo getTxRoamingAddress() {
         return roamingAddress;
 
     }
 
+    /**
+     * Sets the tx roaming address.
+     *
+     * @param roamingAddress the new tx roaming address
+     */
     public void setTxRoamingAddress(RoutingInfo  roamingAddress) {
         this.roamingAddress = roamingAddress;
         this.roamingAddresWrapper = null;
     }
 
+    /**
+     * Gets the tx imsi.
+     *
+     * @return the tx imsi
+     */
     public IMSI getTxImsi() {
         return this.imsi;
     }
 
+    /**
+     * Sets the tx imsi.
+     *
+     * @param imsi the new tx imsi
+     */
     public void setTxImsi(IMSI imsi) {
         this.imsi = imsi;
         this.imsiAddressWrapper = null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxSendRoutingInfoResponseWrapper [imsi=" + imsi + ", roamingAddress=" + roamingAddress + "]";

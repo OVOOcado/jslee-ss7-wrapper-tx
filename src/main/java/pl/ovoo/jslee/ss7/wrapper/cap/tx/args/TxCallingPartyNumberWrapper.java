@@ -25,19 +25,29 @@ import org.mobicents.protocols.ss7.cap.api.isup.CallingPartyNumberCap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper;
 
+
 /**
- * OcCallingPartyNumberWrapper
+ * OcCallingPartyNumberWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 
+	/** The calling party number. */
 	private final CallingPartyNumberCap callingPartyNumber;
 
+	/**
+	 * Instantiates a new tx calling party number wrapper.
+	 *
+	 * @param callingPartyNumber the calling party number
+	 */
 	public TxCallingPartyNumberWrapper(final CallingPartyNumberCap callingPartyNumber) {
 		this.callingPartyNumber = callingPartyNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#getAddress()
+	 */
 	@Override
 	public String getAddress() throws Ss7WrapperException {
 		try {
@@ -47,6 +57,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#getNature()
+	 */
 	@Override
 	public Nature getNature() throws Ss7WrapperException {
 		try {
@@ -60,6 +73,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#getNumberingPlan()
+	 */
 	@Override
 	public NumberingPlan getNumberingPlan() throws Ss7WrapperException {
 		try {
@@ -72,6 +88,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#getPresentation()
+	 */
 	@Override
 	public Presentation getPresentation() throws Ss7WrapperException {
 		try {
@@ -85,6 +104,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#getScreening()
+	 */
 	@Override
 	public Screening getScreening() throws Ss7WrapperException {
 		try {
@@ -97,6 +119,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#hasAddress()
+	 */
 	@Override
 	public boolean hasAddress() throws Ss7WrapperException {
 		try {
@@ -106,6 +131,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#hasNature()
+	 */
 	@Override
 	public boolean hasNature() throws Ss7WrapperException {
 		try {
@@ -115,6 +143,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#hasNumberingPlan()
+	 */
 	@Override
 	public boolean hasNumberingPlan() throws Ss7WrapperException {
 		try {
@@ -124,6 +155,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#hasPresentation()
+	 */
 	@Override
 	public boolean hasPresentation() throws Ss7WrapperException {
 		try {
@@ -133,6 +167,9 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper#hasScreening()
+	 */
 	@Override
 	public boolean hasScreening() throws Ss7WrapperException {
 		try {
@@ -142,10 +179,18 @@ public class TxCallingPartyNumberWrapper implements CallingPartyNumberWrapper {
 		}
 	}
 
+	/**
+	 * Gets the tx calling party number.
+	 *
+	 * @return the tx calling party number
+	 */
 	public CallingPartyNumberCap getTxCallingPartyNumber() {
 		return callingPartyNumber;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxCallingPartyNumberWrapper [callingPartyNumber=" + callingPartyNumber + "]";

@@ -41,38 +41,79 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
 
 
+
 /**
- * TxInitialDPArgWrapper
+ * TxInitialDPArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
 
+    /** The calling party number wrapper. */
     private transient CallingPartyNumberWrapper callingPartyNumberWrapper = null;
+    
+    /** The called party number wrapper. */
     private transient CalledPartyNumberWrapper calledPartyNumberWrapper = null;
+    
+    /** The redirecting party number wrapper. */
     private transient RedirectingPartyNumberWrapper redirectingPartyNumberWrapper = null;
+    
+    /** The bearer capability wrapper. */
     private transient BearerCapabilityWrapper bearerCapabilityWrapper = null;
+    
+    /** The high layer compatibility wrapper. */
     private transient HighLayerCompatibilityWrapper highLayerCompatibilityWrapper = null;
+    
+    /** The redirection information wrapper. */
     private transient RedirectionInformationWrapper redirectionInformationWrapper = null;
+    
+    /** The original called number wrapper. */
     private transient OriginalCalledNumberWrapper originalCalledNumberWrapper = null;
+    
+    /** The calling partys category wrapper. */
     private transient CallingPartysCategoryWrapper callingPartysCategoryWrapper = null;
 
+    /** The calling party number. */
     private CallingPartyNumberCap callingPartyNumber;
+    
+    /** The called party number. */
     private CalledPartyNumberCap calledPartyNumber;
+    
+    /** The event type bcsm. */
     private org.mobicents.protocols.ss7.cap.api.primitives.EventTypeBCSM eventTypeBCSM;
+    
+    /** The redirecting party id. */
     private RedirectingPartyIDCap redirectingPartyID;
+    
+    /** The bearer capability. */
     private BearerCapability bearerCapability;
+    
+    /** The high layer compatibility. */
     private HighLayerCompatibilityInap highLayerCompatibility;
+    
+    /** The service key. */
     private int serviceKey;
+    
+    /** The redirection information inap. */
     private RedirectionInformationInap redirectionInformationInap;
+    
+    /** The original called party id. */
     private OriginalCalledNumberCap originalCalledPartyID;
+    
+    /** The calling partys category inap. */
     private CallingPartysCategoryInap callingPartysCategoryInap;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasCallingPartyNumber()
+     */
     @Override
     public boolean hasCallingPartyNumber() {
         return callingPartyNumber != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getCallingPartyNumber()
+     */
     @Override
     public CallingPartyNumberWrapper getCallingPartyNumber() {
         if (this.callingPartyNumberWrapper == null && callingPartyNumber != null) {
@@ -81,6 +122,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.callingPartyNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setCallingPartyNumber(pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartyNumberWrapper)
+     */
     @Override
     public void setCallingPartyNumber(final CallingPartyNumberWrapper callingPartyNumber) {
         if (callingPartyNumber == null) {
@@ -93,6 +137,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getEventTypeBCSM()
+     */
     @Override
     public EventTypeBCSM getEventTypeBCSM() {
         if (eventTypeBCSM == null) {
@@ -101,6 +148,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return EventTypeBCSM.valueOf(eventTypeBCSM.getCode());
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setEventTypeBCSM(pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeBCSM)
+     */
     @Override
     public void setEventTypeBCSM(final EventTypeBCSM eventTypeBCSM) {
         if (eventTypeBCSM == null) {
@@ -111,11 +161,17 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasCalledPartyNumber()
+     */
     @Override
     public boolean hasCalledPartyNumber() {
         return calledPartyNumber != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getCalledPartyNumber()
+     */
     @Override
     public CalledPartyNumberWrapper getCalledPartyNumber() {
         if (this.calledPartyNumberWrapper == null && this.calledPartyNumber != null) {
@@ -124,6 +180,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.calledPartyNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setCalledPartyNumber(pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyNumberWrapper)
+     */
     @Override
     public void setCalledPartyNumber(final CalledPartyNumberWrapper calledPartyNumber) {
         if (calledPartyNumber == null) {
@@ -136,11 +195,17 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasRedirectingPartyID()
+     */
     @Override
     public boolean hasRedirectingPartyID() {
         return redirectingPartyID != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getRedirectingPartyID()
+     */
     @Override
     public RedirectingPartyNumberWrapper getRedirectingPartyID() {
         if (this.redirectingPartyNumberWrapper == null && this.redirectingPartyID != null) {
@@ -149,6 +214,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.redirectingPartyNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setRedirectingPartyID(pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectingPartyNumberWrapper)
+     */
     @Override
     public void setRedirectingPartyID(final RedirectingPartyNumberWrapper redirectingPartyID) {
         if (redirectingPartyID == null) {
@@ -161,11 +229,17 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasBearerCapability()
+     */
     @Override
     public boolean hasBearerCapability() {
         return bearerCapability != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getBearerCapability()
+     */
     @Override
     public BearerCapabilityWrapper getBearerCapability() {
         if (this.bearerCapabilityWrapper == null && this.bearerCapability != null) {
@@ -174,6 +248,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.bearerCapabilityWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setBearerCapability(pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapabilityWrapper)
+     */
     @Override
     public void setBearerCapability(final BearerCapabilityWrapper bearerCapability) {
         if (bearerCapability == null) {
@@ -186,11 +263,17 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasHighLayerCompatibility()
+     */
     @Override
     public boolean hasHighLayerCompatibility() {
         return highLayerCompatibility != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getHighLayerCompatibility()
+     */
     @Override
     public HighLayerCompatibilityWrapper getHighLayerCompatibility() {
         if (this.highLayerCompatibilityWrapper == null && this.highLayerCompatibility != null) {
@@ -199,6 +282,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.highLayerCompatibilityWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setHighLayerCompatibility(pl.ovoo.jslee.ss7.wrapper.cap.args.HighLayerCompatibilityWrapper)
+     */
     @Override
     public void setHighLayerCompatibility(final HighLayerCompatibilityWrapper highLayerCompatibility) {
         if (highLayerCompatibility == null) {
@@ -211,21 +297,33 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getServiceKey()
+     */
     @Override
     public int getServiceKey() {
         return serviceKey;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setServiceKey(int)
+     */
     @Override
     public void setServiceKey(final int serviceKey) {
         this.serviceKey = serviceKey;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasRedirectionInformation()
+     */
     @Override
     public boolean hasRedirectionInformation() {
         return redirectionInformationInap != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getRedirectionInformation()
+     */
     @Override
     public RedirectionInformationWrapper getRedirectionInformation() {
         if (this.redirectionInformationWrapper == null && this.redirectionInformationInap != null) {
@@ -234,6 +332,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.redirectionInformationWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setRedirectionInformation(pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper)
+     */
     @Override
     public void setRedirectionInformation(final RedirectionInformationWrapper redirectionInformation) {
         if (redirectionInformation == null) {
@@ -246,11 +347,17 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasOriginalCalledPartyID()
+     */
     @Override
     public boolean hasOriginalCalledPartyID() {
         return originalCalledPartyID != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getOriginalCalledPartyID()
+     */
     @Override
     public OriginalCalledNumberWrapper getOriginalCalledPartyID() {
         if (this.originalCalledNumberWrapper == null && this.originalCalledPartyID != null) {
@@ -259,6 +366,9 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.originalCalledNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#setOriginalCalledPartyID(pl.ovoo.jslee.ss7.wrapper.cap.args.OriginalCalledNumberWrapper)
+     */
     @Override
     public void setOriginalCalledPartyID(final OriginalCalledNumberWrapper originalCalledPartyID) {
         if (originalCalledPartyID == null) {
@@ -271,11 +381,17 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#hasCallingPartysCategory()
+     */
     @Override
     public boolean hasCallingPartysCategory() {
         return callingPartysCategoryInap != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.InitialDPArgWrapper#getCallingPartysCategory()
+     */
     @Override
     public CallingPartysCategoryWrapper getCallingPartysCategory() {
         if (this.callingPartysCategoryWrapper == null && callingPartysCategoryInap != null) {
@@ -284,86 +400,179 @@ public class TxInitialDPArgWrapper implements InitialDPArgWrapper {
         return this.callingPartysCategoryWrapper;
     }
 
+    /**
+     * Gets the tx calling party number.
+     *
+     * @return the tx calling party number
+     */
     public CallingPartyNumberCap getTxCallingPartyNumber() {
         return callingPartyNumber;
     }
 
+    /**
+     * Gets the tx called party number.
+     *
+     * @return the tx called party number
+     */
     public CalledPartyNumberCap getTxCalledPartyNumber() {
         return calledPartyNumber;
     }
 
+    /**
+     * Gets the tx redirection information inap.
+     *
+     * @return the tx redirection information inap
+     */
     public RedirectionInformationInap getTxRedirectionInformationInap() {
         return redirectionInformationInap;
     }
 
+    /**
+     * Gets the tx original called party id.
+     *
+     * @return the tx original called party id
+     */
     public OriginalCalledNumberCap getTxOriginalCalledPartyID() {
         return originalCalledPartyID;
     }
 
+    /**
+     * Gets the tx calling partys category inap.
+     *
+     * @return the tx calling partys category inap
+     */
     public CallingPartysCategoryInap getTxCallingPartysCategoryInap() {
         return callingPartysCategoryInap;
     }
 
+    /**
+     * Gets the tx high layer compatibility.
+     *
+     * @return the tx high layer compatibility
+     */
     public HighLayerCompatibilityInap getTxHighLayerCompatibility() {
         return highLayerCompatibility;
     }
 
+    /**
+     * Gets the tx bearer capability.
+     *
+     * @return the tx bearer capability
+     */
     public BearerCapability getTxBearerCapability() {
         return bearerCapability;
     }
 
+    /**
+     * Gets the tx event type bcsm.
+     *
+     * @return the tx event type bcsm
+     */
     public org.mobicents.protocols.ss7.cap.api.primitives.EventTypeBCSM getTxEventTypeBCSM() {
         return eventTypeBCSM;
     }
 
+    /**
+     * Gets the tx redirecting party id.
+     *
+     * @return the tx redirecting party id
+     */
     public RedirectingPartyIDCap getTxRedirectingPartyID() {
         return redirectingPartyID;
     }
 
+    /**
+     * Sets the tx calling party number.
+     *
+     * @param callingPartyNumber the new tx calling party number
+     */
     public void setTxCallingPartyNumber(final CallingPartyNumberCap callingPartyNumber) {
         this.callingPartyNumber = callingPartyNumber;
         this.callingPartyNumberWrapper = null;
     }
 
+    /**
+     * Sets the tx called party number.
+     *
+     * @param calledPartyNumber the new tx called party number
+     */
     public void setTxCalledPartyNumber(final CalledPartyNumberCap calledPartyNumber) {
         this.calledPartyNumber = calledPartyNumber;
         this.calledPartyNumberWrapper = null;
     }
 
+    /**
+     * Sets the tx redirection information inap.
+     *
+     * @param redirectionInformationInap the new tx redirection information inap
+     */
     public void setTxRedirectionInformationInap(final RedirectionInformationInap redirectionInformationInap) {
         this.redirectionInformationInap = redirectionInformationInap;
         this.redirectionInformationWrapper = null;
     }
 
+    /**
+     * Sets the tx original called party id.
+     *
+     * @param originalCalledPartyID the new tx original called party id
+     */
     public void setTxOriginalCalledPartyID(final OriginalCalledNumberCap originalCalledPartyID) {
         this.originalCalledPartyID = originalCalledPartyID;
         this.originalCalledNumberWrapper = null;
     }
 
+    /**
+     * Sets the tx calling partys category inap.
+     *
+     * @param callingPartysCategoryInap the new tx calling partys category inap
+     */
     public void setTxCallingPartysCategoryInap(final CallingPartysCategoryInap callingPartysCategoryInap) {
         this.callingPartysCategoryInap = callingPartysCategoryInap;
         this.callingPartysCategoryWrapper = null;
     }
 
+    /**
+     * Sets the tx event type bcsm.
+     *
+     * @param eventTypeBCSM the new tx event type bcsm
+     */
     public void setTxEventTypeBCSM(final org.mobicents.protocols.ss7.cap.api.primitives.EventTypeBCSM eventTypeBCSM) {
         this.eventTypeBCSM = eventTypeBCSM;
     }
 
+    /**
+     * Sets the tx redirecting party id.
+     *
+     * @param redirectingPartyID the new tx redirecting party id
+     */
     public void setTxRedirectingPartyID(final RedirectingPartyIDCap redirectingPartyID) {
         this.redirectingPartyID = redirectingPartyID;
         this.redirectingPartyNumberWrapper = null;
     }
 
+    /**
+     * Sets the tx bearer capability.
+     *
+     * @param bearerCapability the new tx bearer capability
+     */
     public void setTxBearerCapability(final BearerCapability bearerCapability) {
         this.bearerCapability = bearerCapability;
         this.bearerCapabilityWrapper = null;
     }
 
+    /**
+     * Sets the tx high layer compatibility.
+     *
+     * @param highLayerCompatibility the new tx high layer compatibility
+     */
     public void setTxHighLayerCompatibility(final HighLayerCompatibilityInap highLayerCompatibility) {
         this.highLayerCompatibility = highLayerCompatibility;
         this.highLayerCompatibilityWrapper = null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxInitialDPArgWrapper [callingPartyNumber=" + callingPartyNumber + ", calledPartyNumber="

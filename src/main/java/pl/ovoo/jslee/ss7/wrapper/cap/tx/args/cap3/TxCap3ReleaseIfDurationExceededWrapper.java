@@ -24,13 +24,19 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ReleaseIfDurationExceededWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3ReleaseIfDurationExceededWrapper;
 
+
 /**
- * TxCap3ReleaseIfDurationExceededWrapper
+ * TxCap3ReleaseIfDurationExceededWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap3ReleaseIfDurationExceededWrapper extends TxCap2ReleaseIfDurationExceededWrapper implements Cap3ReleaseIfDurationExceededWrapper {
 
+    /**
+     * Instantiates a new tx cap3 release if duration exceeded wrapper.
+     *
+     * @param audibleIndicator the audible indicator
+     */
     public TxCap3ReleaseIfDurationExceededWrapper(final AudibleIndicator audibleIndicator) {
         super(audibleIndicator);
     }

@@ -27,19 +27,32 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 
+
 /**
- * OcRequestReportSMSEventArgWrapperImpl
+ * OcRequestReportSMSEventArgWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxConnectSMSArgWrapper implements ConnectSMSArgWrapper {
 
+    /** The called party bcd number wrapper. */
     private transient CalledPartyBCDNumberWrapper calledPartyBCDNumberWrapper = null;
+    
+    /** The isdn address string wrapper. */
     private transient ISDNAddressStringWrapper isdnAddressStringWrapper = null;
 
+    /** The destination subscriber number. */
     private CalledPartyBCDNumber destinationSubscriberNumber;
+    
+    /** The smsc address. */
     private ISDNAddressString smscAddress;
 
+    /**
+     * Instantiates a new tx connect sms arg wrapper.
+     *
+     * @param destinationSubscriberNumber the destination subscriber number
+     * @param smscAddress the smsc address
+     */
     public TxConnectSMSArgWrapper(final CalledPartyBCDNumber destinationSubscriberNumber,
             ISDNAddressString smscAddress) {
         this.destinationSubscriberNumber = destinationSubscriberNumber;
@@ -47,29 +60,55 @@ public class TxConnectSMSArgWrapper implements ConnectSMSArgWrapper {
 
     }
 
+    /**
+     * Instantiates a new tx connect sms arg wrapper.
+     */
     public TxConnectSMSArgWrapper() {
 
     }
 
+    /**
+     * Gets the tx destination subscriber number.
+     *
+     * @return the tx destination subscriber number
+     */
     public CalledPartyBCDNumber getTxDestinationSubscriberNumber() {
         return destinationSubscriberNumber;
     }
 
+    /**
+     * Gets the tx smsc address.
+     *
+     * @return the tx smsc address
+     */
     public ISDNAddressString getTxSmscAddress() {
         return smscAddress;
     }
 
+    /**
+     * Sets the tx destination subscriber number.
+     *
+     * @param destinationSubscriberNumber the new tx destination subscriber number
+     */
     public void setTxDestinationSubscriberNumber(CalledPartyBCDNumber destinationSubscriberNumber) {
         this.destinationSubscriberNumber = destinationSubscriberNumber;
         this.calledPartyBCDNumberWrapper = null;
 
     }
 
+    /**
+     * Sets the tx smsc address.
+     *
+     * @param smscAddress the new tx smsc address
+     */
     public void setTxSmscAddress(ISDNAddressString smscAddress) {
         this.smscAddress = smscAddress;
         this.isdnAddressStringWrapper = null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper#setDestinationSubscriberNumber(pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper)
+     */
     @Override
     public void setDestinationSubscriberNumber(final CalledPartyBCDNumberWrapper destinationSubscriberNumber) {
         if (destinationSubscriberNumber == null) {
@@ -82,6 +121,9 @@ public class TxConnectSMSArgWrapper implements ConnectSMSArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper#setSMSCAddress(pl.ovoo.jslee.ss7.wrapper.common.args.ISDNAddressStringWrapper)
+     */
     @Override
     public void setSMSCAddress(final ISDNAddressStringWrapper smscAddress) {
         if (smscAddress == null) {
@@ -93,6 +135,9 @@ public class TxConnectSMSArgWrapper implements ConnectSMSArgWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper#getDestinationSubscriberNumber()
+     */
     @Override
     public CalledPartyBCDNumberWrapper getDestinationSubscriberNumber() {
         if (this.calledPartyBCDNumberWrapper == null && destinationSubscriberNumber != null) {
@@ -101,6 +146,9 @@ public class TxConnectSMSArgWrapper implements ConnectSMSArgWrapper {
         return this.calledPartyBCDNumberWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ConnectSMSArgWrapper#getSMSCAddress()
+     */
     @Override
     public ISDNAddressStringWrapper getSMSCAddress() {
         if (this.isdnAddressStringWrapper == null && this.smscAddress != null) {
@@ -109,6 +157,9 @@ public class TxConnectSMSArgWrapper implements ConnectSMSArgWrapper {
         return this.isdnAddressStringWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxConnectSMSArgWrapper [destinationSubscriberNumber=" + destinationSubscriberNumber + ", smscAddress="

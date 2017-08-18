@@ -34,10 +34,20 @@ import org.mobicents.protocols.ss7.isup.message.parameter.UserServiceInformation
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBearerCapWrapper;
 
+
+/**
+ * The Class TxBearerCapWrapperTest.
+ */
 public class TxBearerCapWrapperTest extends WrapperBaseTest {
 
+	/** The tx bearer cap wrapper. */
 	TxBearerCapWrapper txBearerCapWrapper;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 	    
@@ -50,6 +60,9 @@ public class TxBearerCapWrapperTest extends WrapperBaseTest {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+	 */
 	@Test
 	public void testSerialization() throws ClassNotFoundException, IOException, CAPException {
 	    

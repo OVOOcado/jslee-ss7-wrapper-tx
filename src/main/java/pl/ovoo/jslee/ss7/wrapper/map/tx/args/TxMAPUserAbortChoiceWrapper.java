@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.dialog.MAPUserAbortChoice;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
 
+
 /**
- * TxMAPSubscriberIdentityWrapper
+ * TxMAPSubscriberIdentityWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPUserAbortChoiceWrapper implements MAPUserAbortChoiceWrapper {
 
+    /** The choice. */
     private final MAPUserAbortChoice choice;
 
+    /**
+     * Instantiates a new tx map user abort choice wrapper.
+     *
+     * @param choice the choice
+     */
     public TxMAPUserAbortChoiceWrapper(final MAPUserAbortChoice choice) {
         this.choice = choice;
     }
 
+    /**
+     * Gets the tx map user abort choice.
+     *
+     * @return the tx map user abort choice
+     */
     public MAPUserAbortChoice getTxMAPUserAbortChoice() {
         return choice;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPUserAbortChoiceWrapper [choice=" + choice + "]";

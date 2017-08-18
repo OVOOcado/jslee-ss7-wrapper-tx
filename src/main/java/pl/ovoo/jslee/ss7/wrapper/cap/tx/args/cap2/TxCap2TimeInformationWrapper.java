@@ -23,33 +23,54 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.TimeInformation;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeInformationWrapper;
 
+
 /**
- * TxCap2TimeInformationWrapper
+ * TxCap2TimeInformationWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2TimeInformationWrapper implements Cap2TimeInformationWrapper {
 
+    /** The time information. */
     private final TimeInformation timeInformation;
 
+    /**
+     * Instantiates a new tx cap2 time information wrapper.
+     *
+     * @param timeInformation the time information
+     */
     public TxCap2TimeInformationWrapper(final TimeInformation timeInformation) {
         this.timeInformation = timeInformation;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeInformationWrapper#isTimeIfNoTariffSwitchChosen()
+     */
     @Override
     public boolean isTimeIfNoTariffSwitchChosen() {
         return timeInformation.getTimeIfNoTariffSwitch() != null && timeInformation.getTimeIfTariffSwitch() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeInformationWrapper#getTimeIfNoTariffSwitch()
+     */
     @Override
     public Integer getTimeIfNoTariffSwitch() {
         return timeInformation.getTimeIfNoTariffSwitch();
     }
 
+    /**
+     * Gets the tx time information.
+     *
+     * @return the tx time information
+     */
     public TimeInformation getTxTimeInformation() {
         return timeInformation;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2TimeInformationWrapper [timeInformation=" + timeInformation + "]";

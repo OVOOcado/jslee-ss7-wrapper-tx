@@ -26,17 +26,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper;
 
 import java.util.ArrayList;
 
+
 /**
- * TxCallInformationReportArgWrapper
+ * TxCallInformationReportArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallInformationReportArgWrapper implements CallInformationReportArgWrapper {
 
+    /** The requested information list. */
     private transient RequestedInformationWrapper[] requestedInformationList = null;
 
+    /** The tx requested information. */
     private ArrayList<RequestedInformation> txRequestedInformation;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationReportArgWrapper#getRequestedInformationList()
+     */
     @Override
     public RequestedInformationWrapper[] getRequestedInformationList() {
         if (this.requestedInformationList == null && this.txRequestedInformation != null) {
@@ -50,6 +56,9 @@ public class TxCallInformationReportArgWrapper implements CallInformationReportA
         return this.requestedInformationList;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallInformationReportArgWrapper#setRequestedInformationList(pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper[])
+     */
     @Override
     public void setRequestedInformationList(final RequestedInformationWrapper[] requestedInformationList) {
         if (requestedInformationList == null || requestedInformationList.length == 0) {
@@ -66,15 +75,28 @@ public class TxCallInformationReportArgWrapper implements CallInformationReportA
         }
     }
 
+    /**
+     * Gets the tx requested information.
+     *
+     * @return the tx requested information
+     */
     public ArrayList<RequestedInformation> getTxRequestedInformation() {
         return txRequestedInformation;
     }
 
+    /**
+     * Sets the tx requested information.
+     *
+     * @param txRequestedInformation the new tx requested information
+     */
     public void setTxRequestedInformation(final ArrayList<RequestedInformation> txRequestedInformation) {
         this.requestedInformationList = null;
         this.txRequestedInformation = txRequestedInformation;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCallInformationReportArgWrapper [txRequestedInformation=" + txRequestedInformation + "]";

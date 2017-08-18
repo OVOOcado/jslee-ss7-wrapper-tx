@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.supplementary.SSForBSCode;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_ForBS_CodeWrapper;
 
+
 /**
- * TxMAPSS_ForBS_CodeWrapper
+ * TxMAPSS_ForBS_CodeWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPSS_ForBS_CodeWrapper implements MAPSS_ForBS_CodeWrapper {
 
+    /** The s s for bs code. */
     private final SSForBSCode sSForBSCode;
 
+    /**
+     * Instantiates a new tx maps s_ for b s_ code wrapper.
+     *
+     * @param sSForBSCode the s s for bs code
+     */
     public TxMAPSS_ForBS_CodeWrapper(final SSForBSCode sSForBSCode) {
         this.sSForBSCode = sSForBSCode;
     }
 
+    /**
+     * Gets the tx ss for bs code.
+     *
+     * @return the tx ss for bs code
+     */
     public SSForBSCode getTxSSForBSCode() {
         return sSForBSCode;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPSS_ForBS_CodeWrapper [sSForBSCode=" + sSForBSCode + "]";

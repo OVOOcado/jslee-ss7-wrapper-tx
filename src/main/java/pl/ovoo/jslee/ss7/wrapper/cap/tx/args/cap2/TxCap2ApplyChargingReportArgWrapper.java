@@ -25,23 +25,32 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxApplyChargingReportArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingReportArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper;
 
+
 /**
- * TxCap2ApplyChargingReportArgWrapper
+ * TxCap2ApplyChargingReportArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2ApplyChargingReportArgWrapper extends TxApplyChargingReportArgWrapper
         implements Cap2ApplyChargingReportArgWrapper {
 
+    /** The time duration charging result wrapper. */
     private transient Cap2TimeDurationChargingResultWrapper timeDurationChargingResultWrapper = null;
 
+    /** The time duration charging result. */
     private TimeDurationChargingResult timeDurationChargingResult;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingReportArgWrapper#isTimeDurationChargingResultChosen()
+     */
     @Override
     public boolean isTimeDurationChargingResultChosen() {
         return timeDurationChargingResult != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingReportArgWrapper#getTimeDurationChargingResult()
+     */
     @Override
     public Cap2TimeDurationChargingResultWrapper getTimeDurationChargingResult() {
         if (this.timeDurationChargingResultWrapper == null && this.timeDurationChargingResult != null) {
@@ -51,6 +60,9 @@ public class TxCap2ApplyChargingReportArgWrapper extends TxApplyChargingReportAr
         return this.timeDurationChargingResultWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2ApplyChargingReportArgWrapper#setTimeDurationChargingResult(pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2TimeDurationChargingResultWrapper)
+     */
     @Override
     public void setTimeDurationChargingResult(final Cap2TimeDurationChargingResultWrapper timeDurationChargingResult) {
         if (timeDurationChargingResult == null) {
@@ -63,15 +75,28 @@ public class TxCap2ApplyChargingReportArgWrapper extends TxApplyChargingReportAr
         }
     }
 
+    /**
+     * Sets the tx time duration charging result.
+     *
+     * @param timeDurationChargingResult the new tx time duration charging result
+     */
     public void setTxTimeDurationChargingResult(final TimeDurationChargingResult timeDurationChargingResult) {
         this.timeDurationChargingResult = timeDurationChargingResult;
         this.timeDurationChargingResultWrapper = null;
     }
 
+    /**
+     * Gets the tx time duration charging result.
+     *
+     * @return the tx time duration charging result
+     */
     public TimeDurationChargingResult getTxTimeDurationChargingResult() {
         return timeDurationChargingResult;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2ApplyChargingReportArgWrapper [timeDurationChargingResult=" + timeDurationChargingResult + "]";

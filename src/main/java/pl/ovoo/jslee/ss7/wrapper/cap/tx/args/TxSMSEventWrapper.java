@@ -25,29 +25,47 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.EventTypeSMS;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MonitorMode;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper;
 
+
 /**
- * OcSMSEventWrapperImpl
+ * OcSMSEventWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxSMSEventWrapper implements SMSEventWrapper {
 
+    /** The sms event. */
     private final SMSEvent smsEvent;
 
+    /**
+     * Instantiates a new tx sms event wrapper.
+     *
+     * @param smsEvent the sms event
+     */
     public TxSMSEventWrapper(final SMSEvent smsEvent) {
         this.smsEvent = smsEvent;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper#getEventTypeSMS()
+     */
     @Override
     public EventTypeSMS getEventTypeSMS() {
         return EventTypeSMS.valueOf(smsEvent.getEventTypeSMS().getCode());
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.SMSEventWrapper#getMonitorMode()
+     */
     @Override
     public MonitorMode getMonitorMode() {
         return MonitorMode.valueOf(smsEvent.getMonitorMode().getCode());
     }
 
+    /**
+     * Gets the SMS event.
+     *
+     * @return the SMS event
+     */
     public SMSEvent getSMSEvent() {
         return smsEvent;
     }

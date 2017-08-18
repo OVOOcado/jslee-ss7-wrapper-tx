@@ -23,24 +23,37 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtTeleserviceCode;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtTeleserviceCodeWrapper;
 
+
 /**
- * TxExtTeleserviceCodeWrapper
+ * TxExtTeleserviceCodeWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxExtTeleserviceCodeWrapper implements ExtTeleserviceCodeWrapper {
 
+	/** The ext teleservice code. */
 	private final ExtTeleserviceCode extTeleserviceCode;
 
+	/**
+	 * Instantiates a new tx ext teleservice code wrapper.
+	 *
+	 * @param extTeleserviceCode the ext teleservice code
+	 */
 	public TxExtTeleserviceCodeWrapper(final ExtTeleserviceCode extTeleserviceCode) {
 		this.extTeleserviceCode = extTeleserviceCode;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ExtTeleserviceCodeWrapper#getData()
+	 */
 	@Override
 	public byte[] getData() {
 		return extTeleserviceCode.getData();
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxExtTeleserviceCodeWrapper [extTeleserviceCode=" + extTeleserviceCode + "]";

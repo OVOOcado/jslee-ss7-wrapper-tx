@@ -73,10 +73,20 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxAnyTimeInterrogationResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberInfoWrapper;
 
+
+/**
+ * The Class TxAnyTimeInterrogationResultWrapperTest.
+ */
 public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
 
+    /** The tx any time interrogation result wrapper. */
     TxAnyTimeInterrogationResultWrapper txAnyTimeInterrogationResultWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -139,6 +149,9 @@ public class TxAnyTimeInterrogationResultWrapperTest extends WrapperBaseTest {
                 txMAPSubscriberInfoWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException {

@@ -24,23 +24,34 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper;
 
+
 /**
- * TxPlayAnnouncementArgWrapper
+ * TxPlayAnnouncementArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxPlayAnnouncementArgWrapper implements PlayAnnouncementArgWrapper {
 
+    /** The information to send. */
     private transient InformationToSendWrapper informationToSend = null;
 
+    /** The tx request announcement complete. */
     private Boolean txRequestAnnouncementComplete;
+    
+    /** The tx information to send. */
     private InformationToSend txInformationToSend;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper#setRequestAnnouncementComplete(java.lang.Boolean)
+     */
     @Override
     public void setRequestAnnouncementComplete(final Boolean value) {
         txRequestAnnouncementComplete = value;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.PlayAnnouncementArgWrapper#setInformationToSend(pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper)
+     */
     @Override
     public void setInformationToSend(final InformationToSendWrapper informationToSend) {
         if (informationToSend == null) {
@@ -53,6 +64,11 @@ public class TxPlayAnnouncementArgWrapper implements PlayAnnouncementArgWrapper 
         }
     }
 
+    /**
+     * Gets the information to send wrapper.
+     *
+     * @return the information to send wrapper
+     */
     public InformationToSendWrapper getInformationToSendWrapper() {
         if (this.informationToSend == null && this.txInformationToSend != null) {
             this.informationToSend = new TxInformationToSendWrapper(txInformationToSend);
@@ -60,24 +76,47 @@ public class TxPlayAnnouncementArgWrapper implements PlayAnnouncementArgWrapper 
         return this.informationToSend;
     }
 
+    /**
+     * Gets the tx information to send.
+     *
+     * @return the tx information to send
+     */
     public InformationToSend getTxInformationToSend() {
         return txInformationToSend;
     }
 
+    /**
+     * Sets the tx information to send.
+     *
+     * @param txInformationToSend the new tx information to send
+     */
     public void setTxInformationToSend(final InformationToSend txInformationToSend) {
         this.txInformationToSend = txInformationToSend;
         this.informationToSend = null;
     }
 
+    /**
+     * Gets the tx request announcement complete.
+     *
+     * @return the tx request announcement complete
+     */
     public Boolean getTxRequestAnnouncementComplete() {
         return txRequestAnnouncementComplete;
     }
 
+    /**
+     * Sets the tx request announcement complete.
+     *
+     * @param txRequestAnnouncementComplete the new tx request announcement complete
+     */
     public void setTxRequestAnnouncementComplete(final Boolean txRequestAnnouncementComplete) {
         this.txRequestAnnouncementComplete = txRequestAnnouncementComplete;
         
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxPlayAnnouncementArgWrapper [informationToSendWrapper=" + informationToSend

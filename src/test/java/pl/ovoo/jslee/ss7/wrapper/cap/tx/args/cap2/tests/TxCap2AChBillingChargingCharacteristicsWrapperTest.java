@@ -37,10 +37,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2AChBillingChargingCharacteristicsWrapper;
 
+
+/**
+ * The Class TxCap2AChBillingChargingCharacteristicsWrapperTest.
+ */
 public class TxCap2AChBillingChargingCharacteristicsWrapperTest extends WrapperBaseTest {
 
+    /** The tx cap2 a ch billing charging characteristics wrapper. */
     TxCap2AChBillingChargingCharacteristicsWrapper txCap2AChBillingChargingCharacteristicsWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -58,6 +68,9 @@ public class TxCap2AChBillingChargingCharacteristicsWrapperTest extends WrapperB
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

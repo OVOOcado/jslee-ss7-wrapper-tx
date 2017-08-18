@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive.MessageID;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MessageIDWrapper;
 
+
 /**
- * TxMessageIDWrapper
+ * TxMessageIDWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMessageIDWrapper implements MessageIDWrapper {
 
+    /** The message id. */
     private final MessageID messageID;
 
+    /**
+     * Instantiates a new tx message id wrapper.
+     *
+     * @param messageID the message id
+     */
     public TxMessageIDWrapper(final MessageID messageID) {
         this.messageID = messageID;
     }
 
+    /**
+     * Gets the tx message id.
+     *
+     * @return the tx message id
+     */
     public MessageID getTxMessageID() {
         return messageID;
     }
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxMessageIDWrapper [messageID=" + messageID + "]";

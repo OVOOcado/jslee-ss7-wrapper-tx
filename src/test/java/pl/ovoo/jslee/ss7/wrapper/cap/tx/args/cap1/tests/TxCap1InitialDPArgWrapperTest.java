@@ -65,10 +65,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
 
+
+/**
+ * The Class TxCap1InitialDPArgWrapperTest.
+ */
 public class TxCap1InitialDPArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx cap1 initial dp arg wrapper. */
     TxCap1InitialDPArgWrapper txCap1InitialDPArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -131,6 +141,9 @@ public class TxCap1InitialDPArgWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

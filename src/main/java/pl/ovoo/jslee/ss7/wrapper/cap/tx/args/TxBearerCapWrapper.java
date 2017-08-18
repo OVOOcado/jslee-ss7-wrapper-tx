@@ -27,21 +27,32 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ITU_TUserServiceInformationWrapper;
 
+
 /**
- * TxBearerCapWrapper
+ * TxBearerCapWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxBearerCapWrapper implements BearerCapWrapper {
 
+	/** The itu_ t user service information. */
 	private transient ITU_TUserServiceInformationWrapper itu_TUserServiceInformation = null;
 
+	/** The bearer cap. */
 	private final BearerCap bearerCap;
 
+	/**
+	 * Instantiates a new tx bearer cap wrapper.
+	 *
+	 * @param bearerCap the bearer cap
+	 */
 	public TxBearerCapWrapper(final BearerCap bearerCap) {
 		this.bearerCap = bearerCap;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper#isITU_TChosen()
+	 */
 	@Override
 	public boolean isITU_TChosen() throws Ss7WrapperException {
 		try {
@@ -54,6 +65,9 @@ public class TxBearerCapWrapper implements BearerCapWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper#isISO_IECChosen()
+	 */
 	@Override
 	public boolean isISO_IECChosen() throws Ss7WrapperException {
 		try {
@@ -67,6 +81,9 @@ public class TxBearerCapWrapper implements BearerCapWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper#getITU_TUserServiceInformation()
+	 */
 	@Override
 	public ITU_TUserServiceInformationWrapper getITU_TUserServiceInformation() throws Ss7WrapperException {
 		try {
@@ -80,15 +97,26 @@ public class TxBearerCapWrapper implements BearerCapWrapper {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.BearerCapWrapper#getISO_IEC()
+	 */
 	@Override
 	public byte[] getISO_IEC() {
 		return bearerCap.getData();
 	}
 
+	/**
+	 * Gets the tx bearer cap.
+	 *
+	 * @return the tx bearer cap
+	 */
 	public BearerCap getTxBearerCap() {
 		return bearerCap;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxBearerCapWrapper [bearerCap=" + bearerCap + "]";

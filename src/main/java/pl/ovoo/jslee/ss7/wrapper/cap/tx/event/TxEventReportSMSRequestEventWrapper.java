@@ -27,20 +27,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.EventReportSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxEventReportSMSRequestEventWrapper
+ * TxEventReportSMSRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEventReportSMSRequestEventWrapper extends TxEventWrapper implements EventReportSMSRequestEventWrapper {
 
+    /** The event report sms request. */
     private final EventReportSMSRequest eventReportSMSRequest;
 
+    /**
+     * Instantiates a new tx event report sms request event wrapper.
+     *
+     * @param eventReportSMSRequest the event report sms request
+     * @param aci the aci
+     */
     public TxEventReportSMSRequestEventWrapper(final EventReportSMSRequest eventReportSMSRequest, final ActivityContextInterface aci) {
         super(aci, eventReportSMSRequest);
         this.eventReportSMSRequest = eventReportSMSRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.EventReportSMSRequestEventWrapper#getArgument()
+     */
     @Override
     public EventReportSMSArgWrapper getArgument() {        
         final TxEventReportSMSArgWrapperImpl eventReportSMSArgWrapper = new TxEventReportSMSArgWrapperImpl();

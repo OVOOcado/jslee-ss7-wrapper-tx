@@ -33,23 +33,35 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper
 import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper;
 
+
 /**
- * TxEstablishTemporaryConnectionArgWrapper
+ * TxEstablishTemporaryConnectionArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTemporaryConnectionArgWrapper {
 
+    /** The assisting sspip routing address. */
     private transient GenericNumberWrapper assistingSSPIPRoutingAddress = null;
+    
+    /** The assisting dialog correlation id. */
     private transient GenericDigitsWrapper assistingDialogCorrelationID = null;
 
+    /** The tx assisting sspip routing address. */
     private GenericNumber txAssistingSSPIPRoutingAddress;
+    
+    /** The tx assisting dialog correlation id. */
     private GenericDigits txAssistingDialogCorrelationID;
 
+    /** The generic number impl. */
     private GenericNumberImpl genericNumberImpl;
 
+    /** The logger. */
     private static Logger logger = Logger.getLogger(TxEstablishTemporaryConnectionArgWrapper.class);
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper#setAssistingSSPIPRoutingAddress(pl.ovoo.jslee.ss7.wrapper.cap.args.GenericNumberWrapper)
+     */
     @Override
     public void setAssistingSSPIPRoutingAddress(final GenericNumberWrapper assistingSSPIPRoutingAddress) {
         if (assistingSSPIPRoutingAddress == null) {
@@ -62,6 +74,9 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper#setAssistingDialogCorrelationID(pl.ovoo.jslee.ss7.wrapper.cap.args.GenericDigitsWrapper)
+     */
     @Override
     public void setAssistingDialogCorrelationID(final GenericDigitsWrapper cginAssistingDialogCorrelationID) {
         if (cginAssistingDialogCorrelationID == null) {
@@ -74,6 +89,9 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EstablishTemporaryConnectionArgWrapper#getAssistingSSPIPRoutingAddress()
+     */
     @Override
     public GenericNumberWrapper getAssistingSSPIPRoutingAddress() {
         if (this.assistingSSPIPRoutingAddress == null && this.txAssistingSSPIPRoutingAddress != null) {
@@ -82,6 +100,11 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
         return this.assistingSSPIPRoutingAddress;
     }
 
+    /**
+     * Gets the assisting dialog correlation id.
+     *
+     * @return the assisting dialog correlation id
+     */
     public GenericDigitsWrapper getAssistingDialogCorrelationID() {
         if (this.assistingDialogCorrelationID == null && this.txAssistingDialogCorrelationID != null) {
             this.assistingDialogCorrelationID = new TxGenericDigitsWrapper(txAssistingDialogCorrelationID);
@@ -89,24 +112,47 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
         return this.assistingDialogCorrelationID;
     }
 
+    /**
+     * Gets the tx assisting sspip routing address.
+     *
+     * @return the tx assisting sspip routing address
+     */
     public GenericNumber getTxAssistingSSPIPRoutingAddress() {
         return txAssistingSSPIPRoutingAddress;
     }
 
+    /**
+     * Sets the tx assisting sspip routing address.
+     *
+     * @param txAssistingSSPIPRoutingAddress the new tx assisting sspip routing address
+     */
     public void setTxAssistingSSPIPRoutingAddress(final GenericNumber txAssistingSSPIPRoutingAddress) {
         this.txAssistingSSPIPRoutingAddress = txAssistingSSPIPRoutingAddress;
         this.assistingSSPIPRoutingAddress = null;
     }
 
+    /**
+     * Gets the tx assisting dialog correlation id.
+     *
+     * @return the tx assisting dialog correlation id
+     */
     public GenericDigits getTxAssistingDialogCorrelationID() {
         return txAssistingDialogCorrelationID;
     }
 
+    /**
+     * Sets the tx assisting dialog correlation id.
+     *
+     * @param txAssistingDialogCorrelationID the new tx assisting dialog correlation id
+     */
     public void setTxAssistingDialogCorrelationID(final GenericDigits txAssistingDialogCorrelationID) {
         this.txAssistingDialogCorrelationID = txAssistingDialogCorrelationID;
         this.assistingDialogCorrelationID = null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxEstablishTemporaryConnectionArgWrapper [txAssistingSSPIPRoutingAddress="
@@ -114,6 +160,9 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
                 + "]";
     }
 
+    /* (non-Javadoc)
+     * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
+     */
     @Override
     public void readExternal(ObjectInput oin) throws IOException, ClassNotFoundException {
         genericNumberImpl = new GenericNumberImpl();
@@ -131,6 +180,9 @@ public class TxEstablishTemporaryConnectionArgWrapper implements EstablishTempor
 
     }
 
+    /* (non-Javadoc)
+     * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
+     */
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         genericNumberImpl = (GenericNumberImpl) txAssistingSSPIPRoutingAddress;

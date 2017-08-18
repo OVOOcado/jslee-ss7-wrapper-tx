@@ -46,12 +46,26 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxErrorComponentWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPErrorWrapper;
 
+
+/**
+ * The Class TxMAPErrorWrapperTest.
+ */
 public class TxMAPErrorWrapperTest extends WrapperBaseTest {
 
+    /** The map error1. */
     MAPErrorWrapper mapError1;
+    
+    /** The map error2. */
     MAPErrorWrapper mapError2;
+    
+    /** The map error3. */
     MAPErrorWrapper mapError3;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -76,6 +90,9 @@ public class TxMAPErrorWrapperTest extends WrapperBaseTest {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException, MAPException {

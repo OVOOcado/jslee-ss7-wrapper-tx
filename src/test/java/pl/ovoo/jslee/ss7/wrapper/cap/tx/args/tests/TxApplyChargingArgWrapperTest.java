@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAChBillingChargingCharacteristics
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxApplyChargingArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSendingSideIDWrapper;
 
+
+/**
+ * The Class TxApplyChargingArgWrapperTest.
+ */
 public class TxApplyChargingArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx apply charging arg wrapper. */
     TxApplyChargingArgWrapper txApplyChargingArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -56,6 +66,9 @@ public class TxApplyChargingArgWrapperTest extends WrapperBaseTest {
         txApplyChargingArgWrapper.setPartyToCharge(txSendingSideIDWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     public void testSerialization() throws IOException, ClassNotFoundException {
         serializeToFile(txApplyChargingArgWrapper);

@@ -25,23 +25,40 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxEventSpecificInformationBCSMWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2EventSpecificInformationBCSMWrapper;
 
+
 /**
- * TxCap2EventSpecificInformationBCSMWrapper
+ * TxCap2EventSpecificInformationBCSMWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2EventSpecificInformationBCSMWrapper extends TxEventSpecificInformationBCSMWrapper implements Cap2EventSpecificInformationBCSMWrapper {
 
+    /**
+     * Instantiates a new tx cap2 event specific information bcsm wrapper.
+     *
+     * @param eventSpecificInformationSMS the event specific information sms
+     */
     public TxCap2EventSpecificInformationBCSMWrapper(final EventSpecificInformationBCSM eventSpecificInformationSMS) {
         super(eventSpecificInformationSMS);
     }
 
+    /**
+     * The Class TxCap2TCalledPartyBusySpecificInfoWrapper.
+     */
     public static class TxCap2TCalledPartyBusySpecificInfoWrapper extends TxTCalledPartyBusySpecificInfoWrapper implements Cap2TCalledPartyBusySpecificInfoWrapper {
 
+        /**
+         * Instantiates a new tx cap2 t called party busy specific info wrapper.
+         *
+         * @param tCalledPartyBusySpecificInfo the t called party busy specific info
+         */
         public TxCap2TCalledPartyBusySpecificInfoWrapper(final TBusySpecificInfo tCalledPartyBusySpecificInfo) {
             super(tCalledPartyBusySpecificInfo);
         }
 
+        /* (non-Javadoc)
+         * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2EventSpecificInformationBCSMWrapper.Cap2TCalledPartyBusySpecificInfoWrapper#getCallForwardedPresent()
+         */
         @Override
         public boolean getCallForwardedPresent() {
             return tCalledPartyBusySpecificInfo.getCallForwarded();

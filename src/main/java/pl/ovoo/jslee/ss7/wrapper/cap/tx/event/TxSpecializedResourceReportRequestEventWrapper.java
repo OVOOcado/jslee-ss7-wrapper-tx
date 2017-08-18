@@ -27,20 +27,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.SpecializedResourceReportRequestEvent
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxSpecializedResourceReportRequestEventWrapper
+ * TxSpecializedResourceReportRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxSpecializedResourceReportRequestEventWrapper extends TxEventWrapper implements SpecializedResourceReportRequestEventWrapper {
 
+    /** The specialized resource report request. */
     private final SpecializedResourceReportRequest specializedResourceReportRequest;
 
+    /**
+     * Instantiates a new tx specialized resource report request event wrapper.
+     *
+     * @param specializedResourceReportRequest the specialized resource report request
+     * @param aci the aci
+     */
     public TxSpecializedResourceReportRequestEventWrapper(final SpecializedResourceReportRequest specializedResourceReportRequest, final ActivityContextInterface aci) {
         super(aci, specializedResourceReportRequest);
         this.specializedResourceReportRequest = specializedResourceReportRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.SpecializedResourceReportRequestEventWrapper#getArgument()
+     */
     @Override
     public SpecializedResourceReportArgWrapper getArgument() {
         return new TxSpecializedResourceReportArgWrapper();

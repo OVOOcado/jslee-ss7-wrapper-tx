@@ -23,19 +23,29 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBasicServiceCode;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_BasicServiceCodeWrapper;
 
+
 /**
- * TxMAPExt_BasicServiceCodeWrapper
+ * TxMAPExt_BasicServiceCodeWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPExt_BasicServiceCodeWrapper implements MAPExt_BasicServiceCodeWrapper {
 
+    /** The basic service code. */
     private ExtBasicServiceCode basicServiceCode;
 
+    /**
+     * Instantiates a new tx map ext_ basic service code wrapper.
+     *
+     * @param basicServiceCode the basic service code
+     */
     public TxMAPExt_BasicServiceCodeWrapper(final ExtBasicServiceCode basicServiceCode) {
         this.basicServiceCode = basicServiceCode;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPExt_BasicServiceCodeWrapper#getExt_Teleservice()
+     */
     @Override
     public byte[] getExt_Teleservice() {
         if (basicServiceCode.getExtTeleservice() != null) {
@@ -44,10 +54,18 @@ public class TxMAPExt_BasicServiceCodeWrapper implements MAPExt_BasicServiceCode
         return null;
     }
 
+    /**
+     * Gets the tx map ext_ basic service code.
+     *
+     * @return the tx map ext_ basic service code
+     */
     public ExtBasicServiceCode getTxMAPExt_BasicServiceCode() {
         return basicServiceCode;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPExt_BasicServiceCodeWrapper [basicServiceCode=" + basicServiceCode + "]";

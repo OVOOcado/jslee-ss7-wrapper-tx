@@ -29,46 +29,72 @@ import org.apache.log4j.Logger;
 import pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberInfoWrapper;
 
+
 /**
- * TxAnyTimeInterrogationResultWrapper
+ * TxAnyTimeInterrogationResultWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxAnyTimeInterrogationResultWrapper implements AnyTimeInterrogationResultWrapper {
 
+    /** The subscriber info wrapper. */
     private MAPSubscriberInfoWrapper subscriberInfoWrapper;
 
+    /** The logger. */
     private static Logger logger = Logger.getLogger(TxAnyTimeInterrogationResultWrapper.class);
 
+    /**
+     * Instantiates a new tx any time interrogation result wrapper.
+     *
+     * @param subscriberInfoWrapper the subscriber info wrapper
+     */
     public TxAnyTimeInterrogationResultWrapper(final MAPSubscriberInfoWrapper subscriberInfoWrapper) {
         super();
         this.subscriberInfoWrapper = subscriberInfoWrapper;
     }
 
+    /**
+     * Instantiates a new tx any time interrogation result wrapper.
+     */
     public TxAnyTimeInterrogationResultWrapper() {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper#getSubscriberInfo()
+     */
     @Override
     public MAPSubscriberInfoWrapper getSubscriberInfo() {
         return subscriberInfoWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeInterrogationResultWrapper#hasSubscriberInfo()
+     */
     @Override
     public boolean hasSubscriberInfo() {
         return subscriberInfoWrapper != null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxAnyTimeInterrogationResultWrapper [subscriberInfoWrapper=" + subscriberInfoWrapper + "]";
     }
 
+    /* (non-Javadoc)
+     * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
+     */
     @Override
     public void readExternal(ObjectInput oin) throws IOException, ClassNotFoundException {
         this.subscriberInfoWrapper = (MAPSubscriberInfoWrapper) oin.readObject();
     }
 
+    /* (non-Javadoc)
+     * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
+     */
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         out.writeObject(subscriberInfoWrapper);

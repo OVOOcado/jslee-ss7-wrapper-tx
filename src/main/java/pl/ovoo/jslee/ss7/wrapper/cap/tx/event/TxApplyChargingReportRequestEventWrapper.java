@@ -28,20 +28,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingReportArgWr
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxApplyChargingReportRequestEventWrapper
+ * TxApplyChargingReportRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxApplyChargingReportRequestEventWrapper extends TxEventWrapper implements ApplyChargingReportRequestEventWrapper {
 
+    /** The apply charging report request event. */
     private final ApplyChargingReportRequest applyChargingReportRequestEvent;
 
+    /**
+     * Instantiates a new tx apply charging report request event wrapper.
+     *
+     * @param applyChargingReportRequestEvent the apply charging report request event
+     * @param aci the aci
+     */
     public TxApplyChargingReportRequestEventWrapper(final ApplyChargingReportRequest applyChargingReportRequestEvent, final ActivityContextInterface aci) {
         super(aci, applyChargingReportRequestEvent);
         this.applyChargingReportRequestEvent = applyChargingReportRequestEvent;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ApplyChargingReportRequestEventWrapper#getArgument()
+     */
     @Override
     public ApplyChargingReportArgWrapper getArgument() {
         final TxApplyChargingReportArgWrapper txApplyChargingReportArgWrapper;

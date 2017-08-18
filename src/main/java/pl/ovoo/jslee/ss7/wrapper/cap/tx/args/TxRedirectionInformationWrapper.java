@@ -25,23 +25,38 @@ import org.mobicents.protocols.ss7.inap.api.isup.RedirectionInformationInap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper;
 
+
 /**
- * TxRedirectionInformationWrapper
+ * TxRedirectionInformationWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRedirectionInformationWrapper implements RedirectionInformationWrapper {
 
+    /** The redirection information. */
     private final RedirectionInformationInap redirectionInformation;
 
+    /**
+     * Instantiates a new tx redirection information wrapper.
+     *
+     * @param redirectionInformation the redirection information
+     */
     public TxRedirectionInformationWrapper(final RedirectionInformationInap redirectionInformation) {
         this.redirectionInformation = redirectionInformation;
     }
 
+    /**
+     * Gets the tx redirection information.
+     *
+     * @return the tx redirection information
+     */
     public RedirectionInformationInap getTxRedirectionInformation() {
         return redirectionInformation;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper#hasOriginalReason()
+     */
     @Override
     public boolean hasOriginalReason() throws Ss7WrapperException {
         try {
@@ -51,6 +66,9 @@ public class TxRedirectionInformationWrapper implements RedirectionInformationWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper#hasRedirecting()
+     */
     @Override
     public boolean hasRedirecting() throws Ss7WrapperException {
         try {
@@ -60,6 +78,9 @@ public class TxRedirectionInformationWrapper implements RedirectionInformationWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper#hasRedirectingReason()
+     */
     @Override
     public boolean hasRedirectingReason() throws Ss7WrapperException {
         try {
@@ -69,6 +90,9 @@ public class TxRedirectionInformationWrapper implements RedirectionInformationWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper#getOriginalReason()
+     */
     @Override
     public OriginalReason getOriginalReason() throws Ss7WrapperException {
         try {
@@ -78,6 +102,9 @@ public class TxRedirectionInformationWrapper implements RedirectionInformationWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper#getRedirecting()
+     */
     @Override
     public Redirecting getRedirecting() throws Ss7WrapperException {
         try {
@@ -87,6 +114,9 @@ public class TxRedirectionInformationWrapper implements RedirectionInformationWr
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RedirectionInformationWrapper#getRedirectingReason()
+     */
     @Override
     public RedirectingReason getRedirectingReason() throws Ss7WrapperException {
         try {
@@ -96,6 +126,9 @@ public class TxRedirectionInformationWrapper implements RedirectionInformationWr
         }
     }
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxRedirectionInformationWrapper [redirectionInformation=" + redirectionInformation + "]";

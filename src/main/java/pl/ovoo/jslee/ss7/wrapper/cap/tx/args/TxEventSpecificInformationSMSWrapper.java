@@ -23,34 +23,55 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx.args;
 import org.mobicents.protocols.ss7.cap.api.service.sms.primitive.EventSpecificInformationSMS;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper;
 
+
 /**
- * TxEventSpecificInformationSMSWrapperImpl
+ * TxEventSpecificInformationSMSWrapperImpl.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxEventSpecificInformationSMSWrapper implements EventSpecificInformationSMSWrapper{
 
+	/** The event specific information sms. */
 	private final EventSpecificInformationSMS eventSpecificInformationSMS;
 	
+	/**
+	 * Instantiates a new tx event specific information sms wrapper.
+	 *
+	 * @param eventSpecificInformationSMS the event specific information sms
+	 */
 	public TxEventSpecificInformationSMSWrapper(final EventSpecificInformationSMS eventSpecificInformationSMS) {
 		this.eventSpecificInformationSMS = eventSpecificInformationSMS;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper#isO_smsFailureSpecificInfoChosen()
+	 */
 	@Override
     public boolean isO_smsFailureSpecificInfoChosen() {
 		return (this.eventSpecificInformationSMS.getOSmsFailureSpecificInfo() != null);
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper#getFailureCause()
+	 */
 	@Override
     public Integer getFailureCause() {
 		return this.eventSpecificInformationSMS.getOSmsFailureSpecificInfo().getFailureCause().getCode();
 	}
 	
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.EventSpecificInformationSMSWrapper#hasFailureCause()
+	 */
 	@Override
     public boolean hasFailureCause() {
 		return (this.eventSpecificInformationSMS.getOSmsFailureSpecificInfo().getFailureCause() != null);
 	}
 	
+	/**
+	 * Gets the event specific information sms.
+	 *
+	 * @return the event specific information sms
+	 */
 	public EventSpecificInformationSMS getEventSpecificInformationSMS(){
 		return eventSpecificInformationSMS;
 	}

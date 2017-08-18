@@ -25,20 +25,31 @@ import pl.ovoo.jslee.ss7.wrapper.map.event.DialogOpenRefuseEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogOpenRefuseEventWrapper
+ * TxDialogOpenRefuseEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenRefuseEventWrapper extends TxMapEventWrapper implements DialogOpenRefuseEventWrapper {
 
+    /** The dialog reject. */
     private final DialogReject dialogReject;
 
+    /**
+     * Instantiates a new tx dialog open refuse event wrapper.
+     *
+     * @param dialogReject the dialog reject
+     * @param aci the aci
+     */
     public TxDialogOpenRefuseEventWrapper(final DialogReject dialogReject, final ActivityContextInterface aci) {
         super(aci);
         this.dialogReject = dialogReject;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return dialogReject.getWrappedEvent().getInvokeId();

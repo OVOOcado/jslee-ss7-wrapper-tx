@@ -24,13 +24,19 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2TimeInformationWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3TimeInformationWrapper;
 
+
 /**
- * TxCap3TimeInformationWrapper
+ * TxCap3TimeInformationWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap3TimeInformationWrapper extends TxCap2TimeInformationWrapper implements Cap3TimeInformationWrapper {
 
+    /**
+     * Instantiates a new tx cap3 time information wrapper.
+     *
+     * @param timeInformation the time information
+     */
     public TxCap3TimeInformationWrapper(final TimeInformation timeInformation) {
         super(timeInformation);
     }

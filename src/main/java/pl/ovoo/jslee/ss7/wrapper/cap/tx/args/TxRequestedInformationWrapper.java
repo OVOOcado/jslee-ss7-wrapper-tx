@@ -25,26 +25,40 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationType;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationValueWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper;
 
+
 /**
- * OcRequestedInformationWrapper
+ * OcRequestedInformationWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxRequestedInformationWrapper implements RequestedInformationWrapper {
 
+    /** The requested information value. */
     private transient RequestedInformationValueWrapper requestedInformationValue = null;
 
+    /** The tx requested information. */
     private final RequestedInformation txRequestedInformation;
 
+    /**
+     * Instantiates a new tx requested information wrapper.
+     *
+     * @param requestedInformation the requested information
+     */
     public TxRequestedInformationWrapper(final RequestedInformation requestedInformation) {
         this.txRequestedInformation = requestedInformation;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper#hasRequestedInformationType()
+     */
     @Override
     public boolean hasRequestedInformationType() {
         return txRequestedInformation.getRequestedInformationType() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper#getRequestedInformationType()
+     */
     @Override
     public RequestedInformationType getRequestedInformationType() {
         if (txRequestedInformation.getRequestedInformationType() != null) {
@@ -53,11 +67,17 @@ public class TxRequestedInformationWrapper implements RequestedInformationWrappe
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper#hasRequestedInformationValue()
+     */
     @Override
     public boolean hasRequestedInformationValue() {
         return true;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.RequestedInformationWrapper#getRequestedInformationValue()
+     */
     @Override
     public RequestedInformationValueWrapper getRequestedInformationValue() {
         if (this.requestedInformationValue == null && txRequestedInformation != null)
@@ -65,10 +85,18 @@ public class TxRequestedInformationWrapper implements RequestedInformationWrappe
         return this.requestedInformationValue;
     }
 
+    /**
+     * Gets the tx requested information.
+     *
+     * @return the tx requested information
+     */
     public RequestedInformation getTxRequestedInformation() {
         return txRequestedInformation;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxRequestedInformationWrapper [txRequestedInformation=" + txRequestedInformation + "]";

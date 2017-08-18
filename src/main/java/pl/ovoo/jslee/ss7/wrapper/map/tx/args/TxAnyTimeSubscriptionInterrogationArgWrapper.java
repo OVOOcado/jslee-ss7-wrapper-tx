@@ -29,21 +29,35 @@ import pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWra
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPRequestedSubscriptionInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
 
+
 /**
- * TxAnyTimeSubscriptionInterrogationArgWrapper
+ * TxAnyTimeSubscriptionInterrogationArgWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubscriptionInterrogationArgWrapper {
 
+    /** The subscriber identity wrapper. */
     private transient MAPSubscriberIdentityWrapper subscriberIdentityWrapper = null;
+    
+    /** The requested subscription info wrapper. */
     private transient MAPRequestedSubscriptionInfoWrapper requestedSubscriptionInfoWrapper = null;
+    
+    /** The gsm scf address wrapper. */
     private transient AddressStringWrapper gsmScfAddressWrapper = null;
 
+    /** The subscriber identity. */
     private SubscriberIdentity subscriberIdentity;
+    
+    /** The requested subscription info. */
     private RequestedSubscriptionInfo requestedSubscriptionInfo;
+    
+    /** The gsm scf address. */
     private ISDNAddressString gsmScfAddress;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper#setSubscriberIdentity(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper)
+     */
     @Override
     public void setSubscriberIdentity(MAPSubscriberIdentityWrapper mAPSubscriberIdentityWrapper) {
         if (mAPSubscriberIdentityWrapper == null) {
@@ -56,6 +70,11 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubs
         }
     }
 
+    /**
+     * Gets the subscriber identity wrapper.
+     *
+     * @return the subscriber identity wrapper
+     */
     public MAPSubscriberIdentityWrapper getSubscriberIdentityWrapper() {
         if (this.subscriberIdentityWrapper == null && this.subscriberIdentity != null) {
             this.subscriberIdentityWrapper = new TxMAPSubscriberIdentityWrapper(subscriberIdentity);
@@ -63,6 +82,9 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubs
         return this.subscriberIdentityWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper#setRequestedSubscriptionInfo(pl.ovoo.jslee.ss7.wrapper.map.args.MAPRequestedSubscriptionInfoWrapper)
+     */
     @Override
     public void setRequestedSubscriptionInfo(MAPRequestedSubscriptionInfoWrapper mAPRequestedSubscriptionInfoWrapper) {
         if (mAPRequestedSubscriptionInfoWrapper == null) {
@@ -75,6 +97,11 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubs
         }
     }
 
+    /**
+     * Gets the requested subscription info wrapper.
+     *
+     * @return the requested subscription info wrapper
+     */
     public MAPRequestedSubscriptionInfoWrapper getRequestedSubscriptionInfoWrapper() {
         if (this.requestedSubscriptionInfoWrapper == null && this.requestedSubscriptionInfo != null) {
             this.requestedSubscriptionInfoWrapper = new TxMAPRequestedSubscriptionInfoWrapper(
@@ -83,6 +110,9 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubs
         return this.requestedSubscriptionInfoWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.AnyTimeSubscriptionInterrogationArgWrapper#setGsmSCF_Address(pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper)
+     */
     @Override
     public void setGsmSCF_Address(AddressStringWrapper gsmSCF_Address) {
         if (gsmSCF_Address == null) {
@@ -95,6 +125,11 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubs
         }
     }
 
+    /**
+     * Gets the gsm scf address wrapper.
+     *
+     * @return the gsm scf address wrapper
+     */
     public AddressStringWrapper getGsmScfAddressWrapper() {
         if (this.gsmScfAddressWrapper == null && this.gsmScfAddress != null) {
             this.gsmScfAddressWrapper = new TxISDNAddressStringWrapperImpl(gsmScfAddress);
@@ -102,18 +137,36 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapper implements AnyTimeSubs
         return this.gsmScfAddressWrapper;
     }
 
+    /**
+     * Gets the tx subscriber identity.
+     *
+     * @return the tx subscriber identity
+     */
     public SubscriberIdentity getTxSubscriberIdentity() {
         return subscriberIdentity;
     }
 
+    /**
+     * Gets the tx requested subscription info.
+     *
+     * @return the tx requested subscription info
+     */
     public RequestedSubscriptionInfo getTxRequestedSubscriptionInfo() {
         return requestedSubscriptionInfo;
     }
 
+    /**
+     * Gets the tx gsm scf address.
+     *
+     * @return the tx gsm scf address
+     */
     public ISDNAddressString getTxGsmScfAddress() {
         return gsmScfAddress;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxAnyTimeSubscriptionInterrogationArgWrapper [subscriberIdentity=" + subscriberIdentity

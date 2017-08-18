@@ -25,19 +25,29 @@ import org.mobicents.protocols.ss7.inap.api.isup.CallingPartysCategoryInap;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartysCategoryWrapper;
 
+
 /**
- * OcCallingPartysCategoryWrapper
+ * OcCallingPartysCategoryWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallingPartysCategoryWrapper implements CallingPartysCategoryWrapper {
 
+	/** The calling partys category. */
 	private final CallingPartysCategoryInap callingPartysCategory;
 
+	/**
+	 * Instantiates a new tx calling partys category wrapper.
+	 *
+	 * @param callingPartysCategory the calling partys category
+	 */
 	public TxCallingPartysCategoryWrapper(final CallingPartysCategoryInap callingPartysCategory) {
 		this.callingPartysCategory = callingPartysCategory;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartysCategoryWrapper#hasCategory()
+	 */
 	@Override
 	public boolean hasCategory() throws Ss7WrapperException {
 		try {
@@ -47,6 +57,9 @@ public class TxCallingPartysCategoryWrapper implements CallingPartysCategoryWrap
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.cap.args.CallingPartysCategoryWrapper#getCategory()
+	 */
 	@Override
 	public Category getCategory() throws Ss7WrapperException {
 		try {
@@ -59,6 +72,9 @@ public class TxCallingPartysCategoryWrapper implements CallingPartysCategoryWrap
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "TxCallingPartysCategoryWrapper [callingPartysCategory=" + callingPartysCategory + "]";

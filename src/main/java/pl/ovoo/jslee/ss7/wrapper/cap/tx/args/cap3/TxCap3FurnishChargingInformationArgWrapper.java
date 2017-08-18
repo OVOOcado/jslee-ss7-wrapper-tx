@@ -24,7 +24,7 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3FurnishChargingInformationArg
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2FurnishChargingInformationArgWrapper;
 
 /**
- * TxCap2FurnishChargingInformationArgWrapper
+ * TxCap2FurnishChargingInformationArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */

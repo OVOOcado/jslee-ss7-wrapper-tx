@@ -29,20 +29,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.CallInformationRequestRequestEventWra
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxCallInformationRequestRequestEventWrapper
+ * TxCallInformationRequestRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallInformationRequestRequestEventWrapper extends TxEventWrapper implements CallInformationRequestRequestEventWrapper {
 
+    /** The call information request request. */
     private final CallInformationRequestRequest callInformationRequestRequest;
 
+    /**
+     * Instantiates a new tx call information request request event wrapper.
+     *
+     * @param callInformationRequestRequest the call information request request
+     * @param aci the aci
+     */
     public TxCallInformationRequestRequestEventWrapper(final CallInformationRequestRequest callInformationRequestRequest, final ActivityContextInterface aci) {
         super(aci, callInformationRequestRequest);
         this.callInformationRequestRequest = callInformationRequestRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public CallInformationRequestArgWrapper getArgument() throws Ss7WrapperException {
         final TxCallInformationRequestArgWrapper txCallInformationRequestArgWrapper;

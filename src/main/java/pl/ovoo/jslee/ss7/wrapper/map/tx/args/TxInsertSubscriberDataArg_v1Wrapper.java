@@ -30,20 +30,34 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_InformationWrapper;
 
+
 /**
- * TxInsertSubscriberDataArg_v1Wrapper
+ * TxInsertSubscriberDataArg_v1Wrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxInsertSubscriberDataArg_v1Wrapper implements InsertSubscriberDataArg_v1Wrapper {
 
+    /** The mapss_ information wrappers. */
     private transient MAPSS_InformationWrapper[] mapss_InformationWrappers = null;
+    
+    /** The imsi address. */
     private transient IMSIAddressWrapper imsiAddress = null;
 
+    /** The insert subscriber data request. */
     private final InsertSubscriberDataRequest insertSubscriberDataRequest;
+    
+    /** The ext ss infos. */
     private ExtSSInfo[] extSSInfos;
+    
+    /** The imsi. */
     private IMSI imsi;
 
+    /**
+     * Instantiates a new tx insert subscriber data arg_v1 wrapper.
+     *
+     * @param insertSubscriberDataRequest the insert subscriber data request
+     */
     public TxInsertSubscriberDataArg_v1Wrapper(InsertSubscriberDataRequest insertSubscriberDataRequest) {
         super();
         this.insertSubscriberDataRequest = insertSubscriberDataRequest;
@@ -56,6 +70,9 @@ public class TxInsertSubscriberDataArg_v1Wrapper implements InsertSubscriberData
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper#setProvisionedSS(pl.ovoo.jslee.ss7.wrapper.map.args.MAPSS_InformationWrapper[])
+     */
     @Override
     public void setProvisionedSS(MAPSS_InformationWrapper[] mapss_Informations) {
         if (mapss_Informations == null) {
@@ -72,6 +89,9 @@ public class TxInsertSubscriberDataArg_v1Wrapper implements InsertSubscriberData
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper#setImsi(pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper)
+     */
     @Override
     public void setImsi(IMSIAddressWrapper imsi) {
         if (imsi == null) {
@@ -84,6 +104,9 @@ public class TxInsertSubscriberDataArg_v1Wrapper implements InsertSubscriberData
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper#getProvisionedSS()
+     */
     @Override
     public MAPSS_InformationWrapper[] getProvisionedSS() {
         if (this.mapss_InformationWrappers == null && extSSInfos != null) {
@@ -96,6 +119,9 @@ public class TxInsertSubscriberDataArg_v1Wrapper implements InsertSubscriberData
         return this.mapss_InformationWrappers;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.InsertSubscriberDataArg_v1Wrapper#getImsi()
+     */
     @Override
     public IMSIAddressWrapper getImsi() {
         if (this.imsiAddress == null && this.imsi != null) {
@@ -104,14 +130,27 @@ public class TxInsertSubscriberDataArg_v1Wrapper implements InsertSubscriberData
         return this.imsiAddress;
     }
 
+    /**
+     * Gets the tx provisioned ss.
+     *
+     * @return the tx provisioned ss
+     */
     public ExtSSInfo[] getTxProvisionedSS() {
         return extSSInfos;
     }
 
+    /**
+     * Gets the tx imsi.
+     *
+     * @return the tx imsi
+     */
     public IMSI getTxImsi() {
         return this.imsi;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxInsertSubscriberDataArg_v1Wrapper [insertSubscriberDataRequest=" + insertSubscriberDataRequest

@@ -35,10 +35,20 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBearerCapabilityWrapper;
 
+
+/**
+ * The Class TxBearerCapabilityWrapperTest.
+ */
 public class TxBearerCapabilityWrapperTest extends WrapperBaseTest {
 
+    /** The tx bearer capability wrapper. */
     TxBearerCapabilityWrapper txBearerCapabilityWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -52,6 +62,9 @@ public class TxBearerCapabilityWrapperTest extends WrapperBaseTest {
         txBearerCapabilityWrapper = new TxBearerCapabilityWrapper(bearerCapability);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     public void testSerialization() throws ClassNotFoundException, IOException, CAPException, Ss7WrapperException {
 

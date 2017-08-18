@@ -26,20 +26,31 @@ import org.mobicents.slee.resource.map.events.DialogAccept;
 
 import pl.ovoo.jslee.ss7.wrapper.map.event.DialogOpenAcceptEventWrapper;
 
+
 /**
- * TxDialogOpenAcceptEventWrapper
+ * TxDialogOpenAcceptEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogOpenAcceptEventWrapper extends TxMapEventWrapper implements DialogOpenAcceptEventWrapper {
 
+    /** The dialog accept. */
     private final DialogAccept dialogAccept;
 
+    /**
+     * Instantiates a new tx dialog open accept event wrapper.
+     *
+     * @param dialogAccept the dialog accept
+     * @param aci the aci
+     */
     public TxDialogOpenAcceptEventWrapper(final DialogAccept dialogAccept, final ActivityContextInterface aci) {
         super(aci);
         this.dialogAccept = dialogAccept;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return dialogAccept.getWrappedEvent().getInvokeId();

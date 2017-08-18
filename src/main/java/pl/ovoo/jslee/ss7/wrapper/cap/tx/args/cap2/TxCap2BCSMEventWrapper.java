@@ -25,22 +25,34 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2BCSMEventWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2DPSpecificCriteriaWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxBCSMEventWrapper;
 
+
 /**
- * OcCap2BCSTxCap2BCSMEventWrapperMEventWrapper
+ * OcCap2BCSTxCap2BCSMEventWrapperMEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2BCSMEventWrapper extends TxBCSMEventWrapper implements Cap2BCSMEventWrapper {
 
+    /**
+     * Instantiates a new tx cap2 bcsm event wrapper.
+     *
+     * @param bcsmEvent the bcsm event
+     */
     public TxCap2BCSMEventWrapper(final BCSMEvent bcsmEvent) {
         super(bcsmEvent);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2BCSMEventWrapper#hasDPSpecificCriteria()
+     */
     @Override
     public boolean hasDPSpecificCriteria() {
         return bcsmEvent.getDpSpecificCriteria()!= null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2BCSMEventWrapper#getDPSpecificCriteria()
+     */
     @Override
     public Cap2DPSpecificCriteriaWrapper getDPSpecificCriteria() {
         if (bcsmEvent.getDpSpecificCriteria()!= null) {

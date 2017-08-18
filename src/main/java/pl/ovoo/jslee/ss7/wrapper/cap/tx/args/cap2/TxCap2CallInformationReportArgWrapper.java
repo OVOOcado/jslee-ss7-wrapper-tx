@@ -26,18 +26,24 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxReceivingSideIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationReportArgWrapper;
 
+
 /**
- * TxCap2CallInformationReportArgWrapper
+ * TxCap2CallInformationReportArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2CallInformationReportArgWrapper extends TxCallInformationReportArgWrapper
         implements Cap2CallInformationReportArgWrapper {
 
+    /** The leg id. */
     private transient ReceivingSideIDWrapper legID = null;
 
+    /** The tx leg id. */
     private ReceivingSideID txLegID;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2CallInformationReportArgWrapper#setLegID(pl.ovoo.jslee.ss7.wrapper.cap.args.ReceivingSideIDWrapper)
+     */
     @Override
     public void setLegID(final ReceivingSideIDWrapper legID) {
         if (legID == null) {
@@ -50,6 +56,11 @@ public class TxCap2CallInformationReportArgWrapper extends TxCallInformationRepo
         }
     }
 
+    /**
+     * Gets the leg id.
+     *
+     * @return the leg id
+     */
     public ReceivingSideIDWrapper getLegID() {
         if (this.legID == null && this.txLegID != null) {
             this.legID = new TxReceivingSideIDWrapper(txLegID);
@@ -57,15 +68,28 @@ public class TxCap2CallInformationReportArgWrapper extends TxCallInformationRepo
         return this.legID;
     }
 
+    /**
+     * Gets the tx leg id.
+     *
+     * @return the tx leg id
+     */
     public ReceivingSideID getTxLegID() {
         return txLegID;
     }
 
+    /**
+     * Sets the tx leg id.
+     *
+     * @param txLegID the new tx leg id
+     */
     public void setTxLegID(final ReceivingSideID txLegID) {
         this.txLegID = txLegID;
         this.legID = null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallInformationReportArgWrapper#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2CallInformationReportArgWrapper [txLegID=" + txLegID + "]";

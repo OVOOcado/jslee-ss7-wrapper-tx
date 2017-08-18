@@ -27,26 +27,40 @@ import pl.ovoo.jslee.ss7.wrapper.map.event.AnyTimeInterrogationRequestEventWrapp
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxAnyTimeInterrogationResultEventWrapper
+ * TxAnyTimeInterrogationResultEventWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxAnyTimeInterrogationRequestEventWrapper extends TxMapEventWrapper implements AnyTimeInterrogationRequestEventWrapper{
 
+    /** The any time interrogation request. */
     private final AnyTimeInterrogationRequest anyTimeInterrogationRequest;
 
+    /**
+     * Instantiates a new tx any time interrogation request event wrapper.
+     *
+     * @param anyTimeInterrogationRequest the any time interrogation request
+     * @param aci the aci
+     */
     public TxAnyTimeInterrogationRequestEventWrapper(final AnyTimeInterrogationRequest anyTimeInterrogationRequest, final ActivityContextInterface aci) {
         super(aci);
         this.anyTimeInterrogationRequest = anyTimeInterrogationRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.AnyTimeInterrogationRequestEventWrapper#getArgument()
+     */
     @Override
     public AnyTimeInterrogationArgWrapper getArgument() {
     	AnyTimeInterrogationArgWrapper ati = new TxAnyTimeInterrogationArgWrapper(anyTimeInterrogationRequest);
     	return ati;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return anyTimeInterrogationRequest.getInvokeId();

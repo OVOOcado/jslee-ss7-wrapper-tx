@@ -29,20 +29,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap3.TxCap3InitialDPArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxInitialDPRequestEventWrapper
+ * TxInitialDPRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxInitialDPRequestEventWrapper extends TxEventWrapper implements InitialDPRequestEventWrapper {
 
+    /** The initial dp request. */
     private final InitialDPRequest initialDPRequest;
 
+    /**
+     * Instantiates a new tx initial dp request event wrapper.
+     *
+     * @param initialDPRequest the initial dp request
+     * @param aci the aci
+     */
     public TxInitialDPRequestEventWrapper(final InitialDPRequest initialDPRequest, final ActivityContextInterface aci) {
         super(aci, initialDPRequest);
         this.initialDPRequest = initialDPRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.InitialDPRequestEventWrapper#getArgument()
+     */
     @Override
     public InitialDPArgWrapper getArgument() {
         final TxCap1InitialDPArgWrapper txCap1InitialDPArgWrapper;

@@ -28,20 +28,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.event.ReleaseSMSRequestEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxReleaseSMSRequestEventWrapper
+ * TxReleaseSMSRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxReleaseSMSRequestEventWrapper extends TxEventWrapper implements ReleaseSMSRequestEventWrapper {
 
+    /** The release sms request. */
     private final ReleaseSMSRequest releaseSMSRequest;
 
+    /**
+     * Instantiates a new tx release sms request event wrapper.
+     *
+     * @param releaseSMSRequest the release sms request
+     * @param aci the aci
+     */
     public TxReleaseSMSRequestEventWrapper(final ReleaseSMSRequest releaseSMSRequest, final ActivityContextInterface aci) {
         super(aci, releaseSMSRequest);
         this.releaseSMSRequest = releaseSMSRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public ReleaseSMSArgWrapper getArgument() throws Ss7WrapperException {
         return new TxReleaseSMSArgWrapper(releaseSMSRequest.getRPCause());

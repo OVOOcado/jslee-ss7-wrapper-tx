@@ -39,29 +39,49 @@ import pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper;
 
+
 /**
- * TxMapDialogWrapperImpl
+ * TxMapDialogWrapperImpl.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxMapDialogWrapperImpl implements MapDialogWrapper {
 
+    /** The activity context interface. */
     private ActivityContextInterface activityContextInterface;
+    
+    /** The dialog. */
     private MAPDialog dialog;
 
+    /**
+     * Instantiates a new tx map dialog wrapper impl.
+     *
+     * @param dialog the dialog
+     */
     public TxMapDialogWrapperImpl(final MAPDialog dialog) {
         this.dialog = dialog;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#getActivityContextInterface()
+     */
     @Override
     public ActivityContextInterface getActivityContextInterface() {
         return activityContextInterface;
     }
 
+    /**
+     * Sets the activity context interface.
+     *
+     * @param activityContextInterface the new activity context interface
+     */
     public void setActivityContextInterface(final ActivityContextInterface activityContextInterface) {
         this.activityContextInterface = activityContextInterface;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#getDialogState()
+     */
     @Override
     public DialogState getDialogState() {
         final MAPDialogState state = dialog.getState();
@@ -84,6 +104,9 @@ public class TxMapDialogWrapperImpl implements MapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#refuseDialog()
+     */
     @Override
     public void refuseDialog() throws Ss7WrapperException {
         try {
@@ -93,6 +116,9 @@ public class TxMapDialogWrapperImpl implements MapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#sendClose(boolean)
+     */
     @Override
     public void sendClose(final boolean b) throws Ss7WrapperException {
         try {
@@ -102,6 +128,9 @@ public class TxMapDialogWrapperImpl implements MapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#sendUserAbort(pl.ovoo.jslee.ss7.wrapper.map.args.MAPUserAbortChoiceWrapper)
+     */
     @Override
     public void sendUserAbort(MAPUserAbortChoiceWrapper mAPUserAbortChoiceWrapper) throws Ss7WrapperException {
         try {
@@ -111,6 +140,9 @@ public class TxMapDialogWrapperImpl implements MapDialogWrapper {
         }
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#sendDelimiter()
+     */
     @Override
     public void sendDelimiter() throws Ss7WrapperException {
         try {
@@ -120,16 +152,25 @@ public class TxMapDialogWrapperImpl implements MapDialogWrapper {
         }
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#getDialogID()
+     */
     @Override
     public String getDialogID(){
     	return dialog.getLocalDialogId().toString();
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#acceptDialog()
+     */
     @Override
     public void acceptDialog() throws Ss7WrapperException {
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#getApplicationContext()
+     */
     @Override
     public MapApplicationContextWrapper getApplicationContext() {
     	final MAPApplicationContext ac = dialog.getApplicationContext();
@@ -151,6 +192,9 @@ public class TxMapDialogWrapperImpl implements MapDialogWrapper {
         return null;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.MapDialogWrapper#sendError(long, pl.ovoo.jslee.ss7.wrapper.map.args.MAPErrorWrapper)
+     */
     @Override
     public void sendError(long invoke, MAPErrorWrapper mAPErrorWrapper) throws Ss7WrapperException {
     	try {

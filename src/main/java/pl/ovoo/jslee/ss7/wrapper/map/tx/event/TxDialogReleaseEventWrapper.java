@@ -25,20 +25,31 @@ import pl.ovoo.jslee.ss7.wrapper.map.event.DialogReleaseEventWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxDialogCloseEventWrapper
+ * TxDialogCloseEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxDialogReleaseEventWrapper extends TxMapEventWrapper implements DialogReleaseEventWrapper {
 
+    /** The dialog release. */
     private final DialogRelease dialogRelease;
 
+    /**
+     * Instantiates a new tx dialog release event wrapper.
+     *
+     * @param dialogRelease the dialog release
+     * @param aci the aci
+     */
     public TxDialogReleaseEventWrapper(final DialogRelease dialogRelease, final ActivityContextInterface aci) {
         super(aci);
         this.dialogRelease = dialogRelease;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return dialogRelease.getWrappedEvent().getInvokeId();

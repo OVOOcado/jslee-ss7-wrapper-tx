@@ -24,16 +24,21 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3AChBillingChargingCharacteris
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap3.Cap3ApplyChargingArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingArgWrapper;
 
+
 /**
- * TxCap3ApplyChargingArgWrapper
+ * TxCap3ApplyChargingArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap3ApplyChargingArgWrapper extends TxCap2ApplyChargingArgWrapper
         implements Cap3ApplyChargingArgWrapper {
 
+    /** The a ch billing charging characteristics. */
     private transient Cap3AChBillingChargingCharacteristicsWrapper aChBillingChargingCharacteristics = null;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ApplyChargingArgWrapper#getAChBillingChargingCharacteristics()
+     */
     public Cap3AChBillingChargingCharacteristicsWrapper getAChBillingChargingCharacteristics() {
         if (this.aChBillingChargingCharacteristics == null && getTxAchBillingChargingCharacteristics() != null) {
             this.aChBillingChargingCharacteristics = new TxCap3AChBillingChargingCharacteristicsWrapper(

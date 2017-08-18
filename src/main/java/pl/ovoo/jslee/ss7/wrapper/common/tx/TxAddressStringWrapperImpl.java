@@ -26,46 +26,79 @@ import org.mobicents.protocols.ss7.map.api.primitives.AddressString;
 
 import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
 
+
+/**
+ * The Class TxAddressStringWrapperImpl.
+ */
 // TODO to remove
 public class TxAddressStringWrapperImpl implements AddressStringWrapper{
 
+    /** The address. */
     private final AddressString address;
 
+    /**
+     * Instantiates a new tx address string wrapper impl.
+     *
+     * @param address the address
+     */
     public TxAddressStringWrapperImpl(final AddressString address) {
         super();
         this.address = address;
     }
     
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#getAddress()
+	 */
 	@Override
 	public String getAddress() {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#getNature()
+	 */
 	@Override
 	public Nature getNature() {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#getNumberingPlan()
+	 */
 	@Override
 	public NumberingPlan getNumberingPlan() {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#hasAddress()
+	 */
 	@Override
 	public boolean hasAddress() {
 		return false;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#hasNature()
+	 */
 	@Override
 	public boolean hasNature() {
 		return false;
 	}
 
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper#hasNumberingPlan()
+	 */
 	@Override
 	public boolean hasNumberingPlan() {
 		return false;
 	}
 
+    /**
+     * Gets the tx address.
+     *
+     * @return the tx address
+     */
     public AddressString getTxAddress() {
         return address;
     }

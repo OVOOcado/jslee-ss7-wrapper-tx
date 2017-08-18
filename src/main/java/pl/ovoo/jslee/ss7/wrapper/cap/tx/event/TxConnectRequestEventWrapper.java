@@ -30,20 +30,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2ConnectArgWrapper;
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxConnectRequestEventWrapper
+ * TxConnectRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxConnectRequestEventWrapper extends TxEventWrapper implements ConnectRequestEventWrapper {
 
+    /** The connect request. */
     private final ConnectRequest connectRequest;
 
+    /**
+     * Instantiates a new tx connect request event wrapper.
+     *
+     * @param connectRequest the connect request
+     * @param aci the aci
+     */
     public TxConnectRequestEventWrapper(final ConnectRequest connectRequest, final ActivityContextInterface aci) {
         super(aci, connectRequest);
         this.connectRequest = connectRequest;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.ArgumentEventWrapper#getArgument()
+     */
     @Override
     public ConnectArgWrapper getArgument() throws Ss7WrapperException {
         final TxCap1ConnectArgWrapper connectArgWrapper;

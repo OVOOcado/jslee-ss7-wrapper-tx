@@ -23,23 +23,38 @@ package pl.ovoo.jslee.ss7.wrapper.map.tx.args;
 import org.mobicents.protocols.ss7.map.api.primitives.SubscriberIdentity;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
 
+
 /**
- * TxMAPSubscriberIdentityWrapper
+ * TxMAPSubscriberIdentityWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPSubscriberIdentityWrapper implements MAPSubscriberIdentityWrapper{
 	
+    /** The subscriber identity. */
     private final SubscriberIdentity subscriberIdentity;
 
+    /**
+     * Instantiates a new tx map subscriber identity wrapper.
+     *
+     * @param subscriberIdentity the subscriber identity
+     */
     public TxMAPSubscriberIdentityWrapper(final SubscriberIdentity subscriberIdentity) {
         this.subscriberIdentity = subscriberIdentity;
     }
     
+    /**
+     * Gets the tx map subscriber identity.
+     *
+     * @return the tx map subscriber identity
+     */
     public SubscriberIdentity getTxMAPSubscriberIdentity(){
     	return subscriberIdentity;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPSubscriberIdentityWrapper [subscriberIdentity=" + subscriberIdentity + "]";

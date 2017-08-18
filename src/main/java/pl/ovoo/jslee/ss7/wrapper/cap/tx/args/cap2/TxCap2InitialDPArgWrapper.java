@@ -26,17 +26,23 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.TimeAndTimezoneWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2InitialDPArgWrapper;
 
+
 /**
- * TxCap2InitialDPArgWrapper
+ * TxCap2InitialDPArgWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCap2InitialDPArgWrapper extends TxCap1InitialDPArgWrapper implements Cap2InitialDPArgWrapper {
 
+    /** The time and timezone wrapper. */
     private transient TimeAndTimezoneWrapper timeAndTimezoneWrapper = null;
 
+    /** The time and timezone. */
     private TimeAndTimezone timeAndTimezone;
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2InitialDPArgWrapper#getTimeAndTimezone()
+     */
     @Override
     public TimeAndTimezoneWrapper getTimeAndTimezone() {
         if (this.timeAndTimezoneWrapper == null && this.timeAndTimezone != null) {
@@ -45,6 +51,9 @@ public class TxCap2InitialDPArgWrapper extends TxCap1InitialDPArgWrapper impleme
         return this.timeAndTimezoneWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.cap2.Cap2InitialDPArgWrapper#setTimeAndTimezone(pl.ovoo.jslee.ss7.wrapper.cap.args.TimeAndTimezoneWrapper)
+     */
     @Override
     public void setTimeAndTimezone(final TimeAndTimezoneWrapper timeAndTimezone) {
         if (timeAndTimezone == null) {
@@ -57,15 +66,28 @@ public class TxCap2InitialDPArgWrapper extends TxCap1InitialDPArgWrapper impleme
         }
     }
 
+    /**
+     * Gets the tx time and timezone.
+     *
+     * @return the tx time and timezone
+     */
     public TimeAndTimezone getTxTimeAndTimezone() {
         return timeAndTimezone;
     }
 
+    /**
+     * Sets the tx time and timezone.
+     *
+     * @param timeAndTimezone the new tx time and timezone
+     */
     public void setTxTimeAndTimezone(final TimeAndTimezone timeAndTimezone) {
         this.timeAndTimezone = timeAndTimezone;
         this.timeAndTimezoneWrapper = null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxInitialDPArgWrapper#toString()
+     */
     @Override
     public String toString() {
         return "TxCap2InitialDPArgWrapper [timeAndTimezone=" + timeAndTimezone + "]";

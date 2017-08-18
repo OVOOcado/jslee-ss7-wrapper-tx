@@ -27,26 +27,40 @@ import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxInsertSubscriberDataResponseWrapp
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxInsertSubscriberDataResultEventWrapper
+ * TxInsertSubscriberDataResultEventWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxInsertSubscriberDataResultEventWrapper extends TxMapEventWrapper implements InsertSubscriberDataResultEventWrapper {
 
+	/** The insert subscriber data response. */
 	private final InsertSubscriberDataResponse insertSubscriberDataResponse;
 
+    /**
+     * Instantiates a new tx insert subscriber data result event wrapper.
+     *
+     * @param insertSubscriberDataResponse the insert subscriber data response
+     * @param aci the aci
+     */
     public TxInsertSubscriberDataResultEventWrapper(final InsertSubscriberDataResponse insertSubscriberDataResponse, final ActivityContextInterface aci) {
         super(aci);
         this.insertSubscriberDataResponse = insertSubscriberDataResponse;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.InsertSubscriberDataResultEventWrapper#getArgument()
+     */
     @Override
     public InsertSubscriberDataResponseWrapper getArgument() {
     	InsertSubscriberDataResponseWrapper isd = new TxInsertSubscriberDataResponseWrapper(insertSubscriberDataResponse);
     	return isd;
     }
     
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.event.MapEventWrapper#getInvokeId()
+     */
     @Override
     public long getInvokeId(){
     	return insertSubscriberDataResponse.getInvokeId();

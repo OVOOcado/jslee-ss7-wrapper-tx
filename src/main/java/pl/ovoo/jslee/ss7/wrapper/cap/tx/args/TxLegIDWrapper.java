@@ -24,19 +24,29 @@ import org.mobicents.protocols.ss7.inap.api.primitives.LegID;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.LegType;
 
+
 /**
- * OcLegIDWrapper
+ * OcLegIDWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxLegIDWrapper implements LegIDWrapper {
 
+    /** The leg id. */
     private final LegID legID;
 
+    /**
+     * Instantiates a new tx leg id wrapper.
+     *
+     * @param legID the leg id
+     */
     public TxLegIDWrapper(final LegID legID) {
         this.legID = legID;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper#getReceivingSideID()
+     */
     @Override
     public LegType getReceivingSideID() {
         if (legID.getReceivingSideID() != null) {
@@ -45,6 +55,9 @@ public class TxLegIDWrapper implements LegIDWrapper {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper#getSendingSideID()
+     */
     @Override
     public LegType getSendingSideID() {
         if (legID.getSendingSideID() != null) {
@@ -53,10 +66,18 @@ public class TxLegIDWrapper implements LegIDWrapper {
         return null;
     }
 
+    /**
+     * Gets the tx leg id.
+     *
+     * @return the tx leg id
+     */
     public LegID getTxLegID() {
         return legID;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
     @Override
     public boolean equals(final Object o) {
         if (this == o)
@@ -69,31 +90,55 @@ public class TxLegIDWrapper implements LegIDWrapper {
         return legID != null ? (isSendingEqual(that) && isReceivingEqual(that)) : that.legID == null;
     }
 
+    /**
+     * Checks if is sending equal.
+     *
+     * @param that the that
+     * @return true, if is sending equal
+     */
     private boolean isSendingEqual(final TxLegIDWrapper that) {
         return legID.getSendingSideID() != null ? legID.getSendingSideID().equals(that.legID.getSendingSideID())
                 : that.legID.getSendingSideID() == null;
     }
 
+    /**
+     * Checks if is receiving equal.
+     *
+     * @param that the that
+     * @return true, if is receiving equal
+     */
     private boolean isReceivingEqual(final TxLegIDWrapper that) {
         return legID.getReceivingSideID() != null ? legID.getReceivingSideID().equals(that.legID.getReceivingSideID())
                 : that.legID.getReceivingSideID() == null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
     @Override
     public int hashCode() {
         return legID != null ? legID.hashCode() : 0;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper#isReceivingSideIDChosen()
+     */
     @Override
     public boolean isReceivingSideIDChosen() {
         return legID.getReceivingSideID() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper#isSendingSideIDChosen()
+     */
     @Override
     public boolean isSendingSideIDChosen() {
         return legID.getSendingSideID() != null;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxLegIDWrapper [legID=" + legID + "]";

@@ -40,10 +40,20 @@ import pl.ovoo.jslee.ss7.wrapper.common.tx.TxISDNAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPSubscriberIdentityWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPSubscriberIdentityWrapper;
 
+
+/**
+ * The Class TxAnyTimeSubscriptionInterrogationArgWrapperTest.
+ */
 public class TxAnyTimeSubscriptionInterrogationArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx any time subscription interrogation arg wrapper. */
     TxAnyTimeSubscriptionInterrogationArgWrapper txAnyTimeSubscriptionInterrogationArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -62,6 +72,9 @@ public class TxAnyTimeSubscriptionInterrogationArgWrapperTest extends WrapperBas
 
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

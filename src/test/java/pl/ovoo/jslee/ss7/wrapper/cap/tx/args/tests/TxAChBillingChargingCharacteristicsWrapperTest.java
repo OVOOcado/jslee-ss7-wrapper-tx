@@ -31,10 +31,20 @@ import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.primitive
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxAChBillingChargingCharacteristicsWrapper;
 
+
+/**
+ * The Class TxAChBillingChargingCharacteristicsWrapperTest.
+ */
 public class TxAChBillingChargingCharacteristicsWrapperTest extends WrapperBaseTest {
 
+    /** The tx a ch billing charging characteristics wrapper. */
     TxAChBillingChargingCharacteristicsWrapper txAChBillingChargingCharacteristicsWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -44,6 +54,9 @@ public class TxAChBillingChargingCharacteristicsWrapperTest extends WrapperBaseT
                 cAMELAChBillingChargingCharacteristics);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Test
     @Override
     public void testSerialization() throws IOException, ClassNotFoundException {

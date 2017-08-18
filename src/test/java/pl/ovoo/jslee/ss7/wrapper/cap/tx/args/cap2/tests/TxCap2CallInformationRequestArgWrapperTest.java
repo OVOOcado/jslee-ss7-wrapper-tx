@@ -36,10 +36,20 @@ import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxSendingSideIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationRequestArgWrapper;
 
+
+/**
+ * The Class TxCap2CallInformationRequestArgWrapperTest.
+ */
 public class TxCap2CallInformationRequestArgWrapperTest extends WrapperBaseTest {
 
+    /** The tx cap2 call information request arg wrapper. */
     TxCap2CallInformationRequestArgWrapper txCap2CallInformationRequestArgWrapper;
 
+    /**
+     * Sets the up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
 
@@ -50,6 +60,9 @@ public class TxCap2CallInformationRequestArgWrapperTest extends WrapperBaseTest 
         txCap2CallInformationRequestArgWrapper.setLegID(sendingideIDWrapper);
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest#testSerialization()
+     */
     @Override
     public void testSerialization()
             throws IOException, ClassNotFoundException, CAPException, Ss7WrapperException, INAPException {

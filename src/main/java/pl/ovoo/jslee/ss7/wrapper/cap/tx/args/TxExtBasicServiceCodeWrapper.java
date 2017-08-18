@@ -25,32 +25,51 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBearerServiceCodeWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.ExtTeleserviceCodeWrapper;
 
+
 /**
- * TxExtBasicServiceCodeWrapper
+ * TxExtBasicServiceCodeWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxExtBasicServiceCodeWrapper implements ExtBasicServiceCodeWrapper {
 
+    /** The ext bearer service code wrapper. */
     private transient ExtBearerServiceCodeWrapper extBearerServiceCodeWrapper = null;
+    
+    /** The ext teleservice code wrapper. */
     private transient ExtTeleserviceCodeWrapper extTeleserviceCodeWrapper = null;
 
+    /** The ext basic service code. */
     private final ExtBasicServiceCode extBasicServiceCode;
 
+    /**
+     * Instantiates a new tx ext basic service code wrapper.
+     *
+     * @param extBasicServiceCode the ext basic service code
+     */
     public TxExtBasicServiceCodeWrapper(final ExtBasicServiceCode extBasicServiceCode) {
         this.extBasicServiceCode = extBasicServiceCode;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper#isExtBearerServiceChosen()
+     */
     @Override
     public boolean isExtBearerServiceChosen() {
         return extBasicServiceCode.getExtBearerService() != null && extBasicServiceCode.getExtTeleservice() == null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper#isExtTeleserviceChosen()
+     */
     @Override
     public boolean isExtTeleserviceChosen() {
         return extBasicServiceCode.getExtBearerService() == null && extBasicServiceCode.getExtTeleservice() != null;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper#getExtBearerServiceCode()
+     */
     @Override
     public ExtBearerServiceCodeWrapper getExtBearerServiceCode() {
         if (this.extBearerServiceCodeWrapper == null && extBasicServiceCode.getExtBearerService() != null) {
@@ -60,6 +79,9 @@ public class TxExtBasicServiceCodeWrapper implements ExtBasicServiceCodeWrapper 
         return this.extBearerServiceCodeWrapper;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.args.ExtBasicServiceCodeWrapper#getExtTeleserviceCode()
+     */
     @Override
     public ExtTeleserviceCodeWrapper getExtTeleserviceCode() {
         if (this.extTeleserviceCodeWrapper == null && extBasicServiceCode.getExtTeleservice() != null) {
@@ -68,10 +90,18 @@ public class TxExtBasicServiceCodeWrapper implements ExtBasicServiceCodeWrapper 
         return this.extTeleserviceCodeWrapper;
     }
 
+    /**
+     * Gets the ext basic service code.
+     *
+     * @return the ext basic service code
+     */
     public ExtBasicServiceCode getExtBasicServiceCode() {
         return this.extBasicServiceCode;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxExtBasicServiceCodeWrapper [extBasicServiceCode=" + extBasicServiceCode + "]";

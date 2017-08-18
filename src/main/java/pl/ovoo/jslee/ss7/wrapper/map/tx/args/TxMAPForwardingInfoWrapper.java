@@ -24,21 +24,32 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingFeatureWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingInfoWrapper;
 
+
 /**
- * TxMAPForwardingInfoWrapper
+ * TxMAPForwardingInfoWrapper.
  *
  * @author kacper.mosienski@ovoo.pl
  */
 public class TxMAPForwardingInfoWrapper implements MAPForwardingInfoWrapper {
 
+    /** The map forwarding feature wrappers. */
     private transient MAPForwardingFeatureWrapper[] mapForwardingFeatureWrappers = null;
 
+    /** The ext forw info. */
     private final ExtForwInfo extForwInfo;
 
+    /**
+     * Instantiates a new tx map forwarding info wrapper.
+     *
+     * @param extForwInfo the ext forw info
+     */
     public TxMAPForwardingInfoWrapper(final ExtForwInfo extForwInfo) {
         this.extForwInfo = extForwInfo;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.args.MAPForwardingInfoWrapper#getForwardingFeatureList()
+     */
     @Override
     public MAPForwardingFeatureWrapper[] getForwardingFeatureList() {
         if (this.mapForwardingFeatureWrappers == null && extForwInfo.getForwardingFeatureList() != null
@@ -55,10 +66,18 @@ public class TxMAPForwardingInfoWrapper implements MAPForwardingInfoWrapper {
         return this.mapForwardingFeatureWrappers;
     }
 
+    /**
+     * Gets the tx ext forw info.
+     *
+     * @return the tx ext forw info
+     */
     public ExtForwInfo getTxExtForwInfo() {
         return extForwInfo;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         return "TxMAPForwardingInfoWrapper [extForwInfo=" + extForwInfo + "]";

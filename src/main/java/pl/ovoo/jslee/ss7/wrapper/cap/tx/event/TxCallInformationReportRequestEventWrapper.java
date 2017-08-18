@@ -28,20 +28,31 @@ import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap2.TxCap2CallInformationReportArg
 
 import javax.slee.ActivityContextInterface;
 
+
 /**
- * TxCallInformationReportRequestEventWrapper
+ * TxCallInformationReportRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
 public class TxCallInformationReportRequestEventWrapper extends TxEventWrapper implements CallInformationReportRequestEventWrapper {
 
+    /** The call information report request event. */
     private final CallInformationReportRequest callInformationReportRequestEvent;
 
+    /**
+     * Instantiates a new tx call information report request event wrapper.
+     *
+     * @param callInformationReportRequestEvent the call information report request event
+     * @param aci the aci
+     */
     public TxCallInformationReportRequestEventWrapper(final CallInformationReportRequest callInformationReportRequestEvent, final ActivityContextInterface aci) {
         super(aci, callInformationReportRequestEvent);
         this.callInformationReportRequestEvent = callInformationReportRequestEvent;
     }
 
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.event.CallInformationReportRequestEventWrapper#getArgument()
+     */
     @Override
     public CallInformationReportArgWrapper getArgument() {
         final TxCallInformationReportArgWrapper txCallInformationReportArgWrapper;
