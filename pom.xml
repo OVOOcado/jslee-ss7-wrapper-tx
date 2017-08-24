@@ -9,12 +9,22 @@
 	<groupId>pl.ovoo.jslee.ss7.wrapper</groupId>
     <artifactId>jslee-ss7-wrapper-tx</artifactId>
     <version>1.0.0.0-SNAPSHOT</version>
+	
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+        </plugins>
+    </build>
 
 	<dependencies>
 		<dependency>
 			<groupId>pl.ovoo.jslee.ss7.wrapper</groupId>
 			<artifactId>jslee-ss7-wrapper-api</artifactId>
-			<version>1.0.0.0-SNAPSHOT</version>
+			<version>1.0.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.slee</groupId>
@@ -124,4 +134,10 @@
 			<version>1.7.8</version>
 		</dependency>
 	</dependencies>
+
+	<scm>
+        <developerConnection>scm:git:http://10.0.1.2/gitlab/ss7-cap-wrapper/ss7-cap-wrapper-telestax-impl.git</developerConnection>
+        <connection>scm:git:http://10.0.1.2/gitlab/ss7-cap-wrapper/ss7-cap-wrapper-telestax-impl.git</connection>
+	</scm>
+  
 </project>
