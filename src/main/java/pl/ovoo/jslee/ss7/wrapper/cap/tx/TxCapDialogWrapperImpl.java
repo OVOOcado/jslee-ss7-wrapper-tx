@@ -20,18 +20,20 @@
 
 package pl.ovoo.jslee.ss7.wrapper.cap.tx;
 
+import javax.slee.ActivityContextInterface;
+
 import org.mobicents.protocols.ss7.cap.api.CAPApplicationContext;
 import org.mobicents.protocols.ss7.cap.api.CAPDialog;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.dialog.CAPDialogState;
 import org.mobicents.protocols.ss7.cap.api.dialog.CAPUserAbortReason;
+
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.ApplicationContextWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.DialogState;
-
-import javax.slee.ActivityContextInterface;
-
+import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
 
 /**
  * TxCapDialogWrapperImpl.
@@ -42,21 +44,25 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
 
     /** The activity context interface. */
     private ActivityContextInterface activityContextInterface;
-    
+
     /** The dialog. */
     private CAPDialog dialog;
 
     /**
      * Instantiates a new tx cap dialog wrapper impl.
      *
-     * @param dialog the dialog
+     * @param dialog
+     *            the dialog
      */
     public TxCapDialogWrapperImpl(final CAPDialog dialog) {
         this.dialog = dialog;
     }
 
-    /* (non-Javadoc)
-     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getActivityContextInterface()
+    /*
+     * (non-Javadoc)
+     * 
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#
+     * getActivityContextInterface()
      */
     @Override
     public ActivityContextInterface getActivityContextInterface() {
@@ -66,13 +72,16 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
     /**
      * Sets the activity context interface.
      *
-     * @param activityContextInterface the new activity context interface
+     * @param activityContextInterface
+     *            the new activity context interface
      */
     public void setActivityContextInterface(final ActivityContextInterface activityContextInterface) {
         this.activityContextInterface = activityContextInterface;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getDialogState()
      */
     @Override
@@ -82,22 +91,24 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
             return null;
         }
         switch (state) {
-            case Idle:
-                return DialogState.IDLE;
-            case Active:
-                return DialogState.ACTIVE;
-            case Expunged:
-                return null;
-            case InitialSent:
-                return DialogState.INIT_SENT;
-            case InitialReceived:
-                return DialogState.INIT_RECEIVED;
-            default:
-                return null;
+        case Idle:
+            return DialogState.IDLE;
+        case Active:
+            return DialogState.ACTIVE;
+        case Expunged:
+            return null;
+        case InitialSent:
+            return DialogState.INIT_SENT;
+        case InitialReceived:
+            return DialogState.INIT_RECEIVED;
+        default:
+            return null;
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#refuseDialog()
      */
     @Override
@@ -109,7 +120,9 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#sendClose(boolean)
      */
     @Override
@@ -121,19 +134,24 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#sendUserAbort()
      */
     @Override
     public void sendUserAbort() throws Ss7WrapperException {
         try {
-            dialog.abort(CAPUserAbortReason.no_reason_given);;
+            dialog.abort(CAPUserAbortReason.no_reason_given);
+            ;
         } catch (CAPException e) {
             throw new Ss7WrapperException(e);
         }
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#sendDelimiter()
      */
     @Override
@@ -144,16 +162,20 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
             throw new Ss7WrapperException(e);
         }
     }
-    
-    /* (non-Javadoc)
+
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getDialogID()
      */
     @Override
-    public String getDialogID(){
-    	return dialog.getLocalDialogId().toString();
+    public String getDialogID() {
+        return dialog.getLocalDialogId().toString();
     }
-    
-    /* (non-Javadoc)
+
+    /*
+     * (non-Javadoc)
+     * 
      * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#acceptDialog()
      */
     @Override
@@ -161,33 +183,58 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
 
     }
 
-    /* (non-Javadoc)
-     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getApplicationContext()
+    /*
+     * (non-Javadoc)
+     * 
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#release()
+     */
+    @Override
+    public void release() throws Ss7WrapperException {
+        dialog.release();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getApplicationContext()
      */
     @Override
     public ApplicationContextWrapper getApplicationContext() {
-    	final CAPApplicationContext ac = dialog.getApplicationContext();
+        final CAPApplicationContext ac = dialog.getApplicationContext();
         if (ac == null) {
             return null;
         }
         if (ac.equals(CAPApplicationContext.CapV1_gsmSSF_to_gsmSCF)) {
-        	return ApplicationContextWrapper.cap_v1_gsmSSF_to_gsmSCF_AC;
-        }
-        else if (ac.equals(CAPApplicationContext.CapV2_gsmSSF_to_gsmSCF)) {
-        	return ApplicationContextWrapper.cap_v2_gsmSSF_to_gsmSCF_AC;
-        }
-        else if (ac.equals(CAPApplicationContext.CapV2_gsmSRF_to_gsmSCF)) {
-        	return ApplicationContextWrapper.cap_v2_gsmSRF_to_gsmSCF_AC;
-        }
-        else if (ac.equals(CAPApplicationContext.CapV3_gsmSSF_scfGeneric)) {
-        	return ApplicationContextWrapper.cap_v3_capssf_scfGenericAC;
-        }
-        else if (ac.equals(CAPApplicationContext.CapV3_cap3_sms)) {
-        	return ApplicationContextWrapper.cap_v3_cap3_sms_AC;
-        }
-        else if (ac.equals(CAPApplicationContext.CapV3_gsmSRF_gsmSCF)) {
-        	return ApplicationContextWrapper.gsmSRF_gsmSCF_ac;
+            return ApplicationContextWrapper.cap_v1_gsmSSF_to_gsmSCF_AC;
+        } else if (ac.equals(CAPApplicationContext.CapV2_gsmSSF_to_gsmSCF)) {
+            return ApplicationContextWrapper.cap_v2_gsmSSF_to_gsmSCF_AC;
+        } else if (ac.equals(CAPApplicationContext.CapV2_gsmSRF_to_gsmSCF)) {
+            return ApplicationContextWrapper.cap_v2_gsmSRF_to_gsmSCF_AC;
+        } else if (ac.equals(CAPApplicationContext.CapV3_gsmSSF_scfGeneric)) {
+            return ApplicationContextWrapper.cap_v3_capssf_scfGenericAC;
+        } else if (ac.equals(CAPApplicationContext.CapV3_cap3_sms)) {
+            return ApplicationContextWrapper.cap_v3_cap3_sms_AC;
+        } else if (ac.equals(CAPApplicationContext.CapV3_gsmSRF_gsmSCF)) {
+            return ApplicationContextWrapper.gsmSRF_gsmSCF_ac;
         }
         return null;
     }
+
+    @Override
+    public SccpAddressWrapper getRemoteSccpAddress() {
+        if (dialog != null && dialog.getRemoteAddress() != null) {
+            return new TxSccpAddressWrapperImpl(dialog.getRemoteAddress());
+        }
+        return null;
+    }
+
+    @Override
+    public SccpAddressWrapper getLocalSccpAddress() {
+        if (dialog != null && dialog.getLocalAddress() != null) {
+            return new TxSccpAddressWrapperImpl(dialog.getLocalAddress());
+        }
+        return null;
+    }
+
 }

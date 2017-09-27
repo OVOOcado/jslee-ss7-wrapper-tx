@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>pl.ovoo.jslee.ss7.wrapper</groupId>
 			<artifactId>jslee-ss7-wrapper-api</artifactId>
-			<version>1.0.0.0</version>
+			<version>1.0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.slee</groupId>
@@ -54,7 +54,7 @@
 		<dependency>
 			<groupId>org.mobicents.protocols.ss7.cap</groupId>
 			<artifactId>cap-api</artifactId>
-			<version>7.0.1383</version>
+			<version>7.4.1399</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mobicents.resources</groupId>
