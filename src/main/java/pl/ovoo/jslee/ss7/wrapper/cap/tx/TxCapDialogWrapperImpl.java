@@ -172,6 +172,16 @@ public class TxCapDialogWrapperImpl implements CapDialogWrapper {
     public String getDialogID() {
         return dialog.getLocalDialogId().toString();
     }
+    
+    /*
+     * (non-Javadoc)
+     * 
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper#getRemoteDialogID()
+     */
+    @Override
+    public Long getRemoteDialogID() {
+        return dialog.getRemoteDialogId();
+    }
 
     /*
      * (non-Javadoc)

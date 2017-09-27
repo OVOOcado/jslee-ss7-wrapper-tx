@@ -335,7 +335,7 @@ public class TxArgsFactory implements ArgsFactory {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * pl.ovoo.jslee.ss7.wrapper.cap.args.ArgsFactory#createRelayedDialog(pl.
      * ovoo.jslee.ss7.wrapper.cap.CapDialogWrapper,
@@ -345,38 +345,52 @@ public class TxArgsFactory implements ArgsFactory {
     public CapDialogWrapper createRelayedDialog(CapDialogWrapper dialog, SccpAddressWrapper destAddress)
             throws Ss7WrapperException {
 
-        CAPDialog capDialog = (CAPDialog) dialog.getActivityContextInterface().getActivity();
-        CAPApplicationContext applicationContext = capDialog.getApplicationContext();
+        CapDialogWrapper capDialogWrapper;
+        CAPDialogCircuitSwitchedCall relayedDialog;
 
-        TxCapDialogWrapperImpl txDialog = (TxCapDialogWrapperImpl) dialog;
-        TxSccpAddressWrapperImpl srcTxAddress = (TxSccpAddressWrapperImpl) txDialog.getRemoteSccpAddress();
+        TxSccpAddressWrapperImpl srcTxAddress = (TxSccpAddressWrapperImpl) dialog.getRemoteSccpAddress();
         TxSccpAddressWrapperImpl destTxAddress = (TxSccpAddressWrapperImpl) destAddress;
-        Long dialogID = Long.parseLong(dialog.getDialogID());
-
-        final TxCapDialogWrapperImpl txCapDialogWrapper;
+        Long dialogID = dialog.getRemoteDialogID();
+        ApplicationContextWrapper applicationContext = dialog.getApplicationContext();
         try {
-            CAPDialogCircuitSwitchedCall relayedDialog = capProvider.getCAPServiceCircuitSwitchedCall()
-                    .createNewRelayedDialog(applicationContext, srcTxAddress.getTxSccpAddress(),
-                            destTxAddress.getTxSccpAddress(), dialogID);
-
-            final CAPApplicationContext appCtx = relayedDialog.getApplicationContext();
-            switch (appCtx) {
-            case CapV1_gsmSSF_to_gsmSCF:
-                txCapDialogWrapper = new TxCap1CallCapDialogWrapper(relayedDialog, capProvider);
+            switch (applicationContext) {
+            case cap_v1_gsmSSF_to_gsmSCF_AC:
+                relayedDialog = capProvider.getCAPServiceCircuitSwitchedCall().createNewRelayedDialog(
+                        CAPApplicationContext.CapV1_gsmSSF_to_gsmSCF, srcTxAddress.getTxSccpAddress(),
+                        destTxAddress.getTxSccpAddress(), dialogID);
+                capDialogWrapper = new TxCap1CallCapDialogWrapper(relayedDialog, capProvider);
                 break;
-            case CapV2_assistGsmSSF_to_gsmSCF:
-            case CapV2_gsmSRF_to_gsmSCF:
-            case CapV2_gsmSSF_to_gsmSCF:
-                txCapDialogWrapper = new TxCap2CallCapDialogWrapper(relayedDialog, capProvider);
+            case cap_v2_gsmSRF_to_gsmSCF_AC:
+                relayedDialog = capProvider.getCAPServiceCircuitSwitchedCall().createNewRelayedDialog(
+                        CAPApplicationContext.CapV2_gsmSRF_to_gsmSCF, srcTxAddress.getTxSccpAddress(),
+                        destTxAddress.getTxSccpAddress(), dialogID);
+                capDialogWrapper = new TxCap2CallCapDialogWrapper(relayedDialog, capProvider);
+                break;
+            case cap_v2_gsmSSF_to_gsmSCF_AC:
+                relayedDialog = capProvider.getCAPServiceCircuitSwitchedCall().createNewRelayedDialog(
+                        CAPApplicationContext.CapV2_gsmSSF_to_gsmSCF, srcTxAddress.getTxSccpAddress(),
+                        destTxAddress.getTxSccpAddress(), dialogID);
+                capDialogWrapper = new TxCap2CallCapDialogWrapper(relayedDialog, capProvider);
+                break;
+            case cap_v3_cap3_sms_AC:
+                relayedDialog = capProvider.getCAPServiceCircuitSwitchedCall().createNewRelayedDialog(
+                        CAPApplicationContext.CapV3_cap3_sms, srcTxAddress.getTxSccpAddress(),
+                        destTxAddress.getTxSccpAddress(), dialogID);
+                capDialogWrapper = new TxCap3CallCapDialogWrapper(relayedDialog, capProvider);
+                break;
+            case cap_v3_capssf_scfGenericAC:
+                relayedDialog = capProvider.getCAPServiceCircuitSwitchedCall().createNewRelayedDialog(
+                        CAPApplicationContext.CapV3_gsmSSF_scfGeneric, srcTxAddress.getTxSccpAddress(),
+                        destTxAddress.getTxSccpAddress(), dialogID);
+                capDialogWrapper = new TxCap3CallCapDialogWrapper(relayedDialog, capProvider);
                 break;
             default:
-                txCapDialogWrapper = new TxCap3CallCapDialogWrapper(relayedDialog, capProvider);
-                break;
+                throw new Ss7WrapperException("Unknown Application Context: " + applicationContext);
             }
         } catch (CAPException e) {
             throw new Ss7WrapperException(e);
         }
-        return txCapDialogWrapper;
+        return capDialogWrapper;
     }
 
     /*
