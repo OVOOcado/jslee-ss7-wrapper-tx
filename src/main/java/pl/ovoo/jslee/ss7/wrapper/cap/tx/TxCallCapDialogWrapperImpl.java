@@ -327,12 +327,25 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
             throw new Ss7WrapperException(e);
         }
     }
-
+    
     /* (non-Javadoc)
-     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendActivityTest(long)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendActivityRequestTest()
      */
     @Override
-    public int sendActivityTest(final long invoke) throws Ss7WrapperException {
+    public int sendActivityRequestTest() throws Ss7WrapperException {
+        try {
+            Long activityTestRequest = dialogCircuitSwitchedCall.addActivityTestRequest();
+            return activityTestRequest.intValue();
+        } catch (CAPException e) {
+            throw new Ss7WrapperException(e);
+        }
+    }
+
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper#sendActivityResponseTest(long)
+     */
+    @Override
+    public int sendActivityResponseTest(long invoke) throws Ss7WrapperException {
         try {
             dialogCircuitSwitchedCall.addActivityTestResponse(invoke);
             return (int) invoke;
@@ -415,4 +428,5 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
             throw new Ss7WrapperException(e);
         }
     }
+  
 }

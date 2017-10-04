@@ -118,7 +118,7 @@ public abstract class WrapperBaseTest {
      * @throws IOException Signals that an I/O exception has occurred.
      * @throws ClassNotFoundException the class not found exception
      * @throws CAPException the CAP exception
-     * @throws Ss7WrapperException the ss7 wrapper exception
+     * @throws Ss7WrapperException the SS7 Wrapper exception
      * @throws INAPException the INAP exception
      * @throws MAPException the MAP exception
      */
