@@ -24,14 +24,14 @@ import javax.slee.ActivityContextInterface;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ActivityTestResponse;
 
-import pl.ovoo.jslee.ss7.wrapper.cap.event.ActivitiyTestResponseEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.ActivityTestResponseEventWrapper;
 
 /**
  * TxActivityTestResponseEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
-public class TxActivityTestResponseEventWrapper extends TxEventWrapper implements ActivitiyTestResponseEventWrapper {
+public class TxActivityTestResponseEventWrapper extends TxEventWrapper implements ActivityTestResponseEventWrapper {
 
     /** The activity test response event. */
     private final ActivityTestResponse activity;

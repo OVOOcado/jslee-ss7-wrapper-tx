@@ -24,14 +24,14 @@ import javax.slee.ActivityContextInterface;
 
 import org.mobicents.protocols.ss7.cap.api.service.circuitSwitchedCall.ActivityTestRequest;
 
-import pl.ovoo.jslee.ss7.wrapper.cap.event.ActivitiyTestRequestEventWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.event.ActivityTestRequestEventWrapper;
 
 /**
  * TxActivityTestRequestEventWrapper.
  *
  * @author pawel.borecki@ovoo.pl
  */
-public class TxActivityTestRequestEventWrapper extends TxEventWrapper implements ActivitiyTestRequestEventWrapper {
+public class TxActivityTestRequestEventWrapper extends TxEventWrapper implements ActivityTestRequestEventWrapper {
 
     /** The activity test request event. */
     private final ActivityTestRequest activity;
@@ -50,6 +50,7 @@ public class TxActivityTestRequestEventWrapper extends TxEventWrapper implements
     /* (non-Javadoc)
      * @see pl.ovoo.jslee.ss7.wrapper.cap.tx.event.TxActivityTestRequestEventWrapper#getInvokeId()
      */
+    @Override
     public Long getInvokeId() {
         if (activity != null) {
             return activity.getInvokeId();
