@@ -116,6 +116,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.mobicents.protocols.ss7.cap</groupId>
 			<artifactId>cap-impl</artifactId>
 			<version>7.0.1383</version>
