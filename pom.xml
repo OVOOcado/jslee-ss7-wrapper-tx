@@ -7,7 +7,7 @@
 
 	<groupId>pl.ovoo.jslee.ss7.wrapper</groupId>
     <artifactId>jslee-ss7-wrapper-tx</artifactId>
-    <version>1.0.0.2-SNAPSHOT</version>
+    <version>1.0.0.3-SNAPSHOT</version>
 	
 	<build>
         <plugins>
