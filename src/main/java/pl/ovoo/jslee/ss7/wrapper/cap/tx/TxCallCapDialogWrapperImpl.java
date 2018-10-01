@@ -23,6 +23,7 @@ package pl.ovoo.jslee.ss7.wrapper.cap.tx;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
 import org.mobicents.protocols.ss7.cap.api.CAPProvider;
 import org.mobicents.protocols.ss7.cap.api.isup.CauseCap;
+import org.mobicents.protocols.ss7.cap.api.isup.LocationNumberCap;
 import org.mobicents.protocols.ss7.cap.api.primitives.CalledPartyBCDNumber;
 import org.mobicents.protocols.ss7.cap.api.primitives.ReceivingSideID;
 import org.mobicents.protocols.ss7.cap.api.primitives.SendingSideID;
@@ -35,6 +36,7 @@ import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.CallReferenceNumber;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationInformation;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberState;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.ExtBasicServiceCode;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.CallCapDialogWrapper;
@@ -287,6 +289,8 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
             IMSI imsi = null;
             LocationInformation locationInformation = null;
             ISDNAddressString mscAddress = null;
+            LocationNumberCap locationNumber = null;
+            SubscriberState subscriberState = null;
             if (txInitialDPArgWrapper instanceof TxCap1InitialDPArgWrapper) {
                 final TxCap1InitialDPArgWrapper txCap1InitialDPArgWrapper = (TxCap1InitialDPArgWrapper) txInitialDPArgWrapper;
                 calledPartyBCDNumber = txCap1InitialDPArgWrapper.getTxCalledPartyBCDNumber();
@@ -295,16 +299,18 @@ public class TxCallCapDialogWrapperImpl extends TxCapDialogWrapperImpl implement
                 imsi = txCap1InitialDPArgWrapper.getTxImsi();
                 locationInformation = txCap1InitialDPArgWrapper.getTxLocationInformation();
                 mscAddress = txCap1InitialDPArgWrapper.getTxMscAddress();
+                locationNumber = txCap1InitialDPArgWrapper.getTxLocationNumber();
+                subscriberState = txCap1InitialDPArgWrapper.getTxSubscriberState();
             }
 
             return dialogCircuitSwitchedCall.addInitialDPRequest(txInitialDPArgWrapper.getServiceKey(), txInitialDPArgWrapper.getTxCalledPartyNumber(),
                     txInitialDPArgWrapper.getTxCallingPartyNumber(),
                     txInitialDPArgWrapper.getTxCallingPartysCategoryInap(), null, null,
-                    null, txInitialDPArgWrapper.getTxOriginalCalledPartyID(), null,
+                    locationNumber, txInitialDPArgWrapper.getTxOriginalCalledPartyID(), null,
                     txInitialDPArgWrapper.getTxHighLayerCompatibility(), null, txInitialDPArgWrapper.getTxBearerCapability(),
                     txInitialDPArgWrapper.getTxEventTypeBCSM(), txInitialDPArgWrapper.getTxRedirectingPartyID(), txInitialDPArgWrapper.getTxRedirectionInformationInap(),
                     null, null, null, null,
-                    null, false, imsi, null, locationInformation,
+                    null, false, imsi, subscriberState, locationInformation,
                     extBasicServiceCode, callReferenceNumber, mscAddress,
                     calledPartyBCDNumber, timeAndTimezone, false, null).intValue();
 

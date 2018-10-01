@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.mobicents.protocols.asn.BitSetStrictLength;
 import org.mobicents.protocols.ss7.cap.api.CAPException;
+import org.mobicents.protocols.ss7.cap.api.isup.LocationNumberCap;
 import org.mobicents.protocols.ss7.cap.api.primitives.CalledPartyBCDNumber;
 import org.mobicents.protocols.ss7.inap.api.INAPException;
 import org.mobicents.protocols.ss7.isup.message.parameter.LocationNumber;
@@ -46,6 +47,9 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformatio
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationInformation;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationInformationEPS;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.LocationNumberMap;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.NotReachableReason;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberState;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberStateChoice;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.TAId;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.UserCSGInformation;
 import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement.BearerServiceCode;
@@ -58,12 +62,16 @@ import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberManagement
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CallReferenceNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.CalledPartyBCDNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LocationNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCallReferenceNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxCalledPartyBCDNumberWrapper;
+import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.TxLocationNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.tx.args.cap1.TxCap1InitialDPArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MAPLocationInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SubscriberStateWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxMAPLocationInformationWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSubscriberStateWrapper;
 
 
 /**
@@ -138,6 +146,22 @@ public class TxCap1InitialDPArgWrapperTest extends WrapperBaseTest {
         MAPLocationInformationWrapper mapLocationInformationWrapper = new TxMAPLocationInformationWrapper(
                 locationInformation);
         txCap1InitialDPArgWrapper.setLocationInformation(mapLocationInformationWrapper);
+        
+        LocationNumber locationNumber2 = isupFactory.createLocationNumber();
+        locationNumber2.setAddress("0048555555555");
+        locationNumber2.setAddressRepresentationRestrictedIndicator(1);
+        locationNumber2.setInternalNetworkNumberIndicator(2);
+        locationNumber2.setNatureOfAddresIndicator(3);
+        locationNumber2.setNumberingPlanIndicator(4);
+        locationNumber2.setScreeningIndicator(5);
+        final LocationNumberCap locationNumberCap =  capFactory.createLocationNumberCap(locationNumber2);
+        LocationNumberWrapper locationNumberWrapper = new TxLocationNumberWrapper(locationNumberCap);
+        txCap1InitialDPArgWrapper.setLocationNumber(locationNumberWrapper);
+        
+        final SubscriberState subscriberState = mapParameterFactory.createSubscriberState(SubscriberStateChoice.camelBusy,
+        		NotReachableReason.msPurged);
+        SubscriberStateWrapper subscriberStateWrapper = new TxSubscriberStateWrapper(subscriberState);
+        txCap1InitialDPArgWrapper.setSubscriberState(subscriberStateWrapper);
 
     }
 
@@ -164,6 +188,12 @@ public class TxCap1InitialDPArgWrapperTest extends WrapperBaseTest {
 
         assertTrue(txCap1InitialDPArgWrapper.getLocationInformation().getVlrNumber().getAddress()
                 .equals(tx.getLocationInformation().getVlrNumber().getAddress()));
+
+        assertTrue(txCap1InitialDPArgWrapper.getLocationNumber().getAddress()
+                .equals(tx.getLocationNumber().getAddress()));
+
+        assertTrue(txCap1InitialDPArgWrapper.getSubscriberState().getSubscriberStateChoice() ==
+                (tx.getSubscriberState().getSubscriberStateChoice()));
 
     }
 

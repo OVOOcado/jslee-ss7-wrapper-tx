@@ -32,6 +32,7 @@ import org.mobicents.protocols.ss7.cap.api.EsiSms.OSmsSubmissionSpecificInfo;
 import org.mobicents.protocols.ss7.cap.api.isup.BearerCap;
 import org.mobicents.protocols.ss7.cap.api.isup.CalledPartyNumberCap;
 import org.mobicents.protocols.ss7.cap.api.isup.CauseCap;
+import org.mobicents.protocols.ss7.cap.api.isup.LocationNumberCap;
 import org.mobicents.protocols.ss7.cap.api.isup.OriginalCalledNumberCap;
 import org.mobicents.protocols.ss7.cap.api.isup.RedirectingPartyIDCap;
 import org.mobicents.protocols.ss7.cap.api.primitives.BCSMEvent;
@@ -71,6 +72,7 @@ import org.mobicents.protocols.ss7.isup.message.parameter.CallingPartyNumber;
 import org.mobicents.protocols.ss7.isup.message.parameter.CauseIndicators;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericDigits;
 import org.mobicents.protocols.ss7.isup.message.parameter.GenericNumber;
+import org.mobicents.protocols.ss7.isup.message.parameter.LocationNumber;
 import org.mobicents.protocols.ss7.isup.message.parameter.OriginalCalledNumber;
 import org.mobicents.protocols.ss7.isup.message.parameter.RedirectingNumber;
 import org.mobicents.protocols.ss7.isup.message.parameter.RedirectionInformation;
@@ -79,6 +81,9 @@ import org.mobicents.protocols.ss7.isup.message.parameter.UserTeleserviceInforma
 import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.CallReferenceNumber;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.NotReachableReason;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberState;
+import org.mobicents.protocols.ss7.map.api.service.mobility.subscriberInformation.SubscriberStateChoice;
 import org.mobicents.slee.resource.cap.CAPContextInterfaceFactory;
 
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
@@ -113,6 +118,7 @@ import pl.ovoo.jslee.ss7.wrapper.cap.args.InbandInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.InformationToSendWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.LegIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.LegType;
+import pl.ovoo.jslee.ss7.wrapper.cap.args.LocationNumberWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MessageIDWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MiscCallInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.cap.args.MonitorMode;
@@ -201,6 +207,8 @@ import pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.SccpAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSMSAddressStringWrapperImpl;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxSccpAddressWrapperImpl;
+import pl.ovoo.jslee.ss7.wrapper.map.args.SubscriberStateWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSubscriberStateWrapper;
 
 /**
  * TxArgsFactory.
@@ -1742,6 +1750,51 @@ public class TxArgsFactory implements ArgsFactory {
         final FreeFormatData txFreeFormatData = capProvider.getCAPParameterFactory()
                 .createFreeFormatData(freeFormatData);
         return new TxFreeFormatDataWrapper(txFreeFormatData);
+    }
+    
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * pl.ovoo.jslee.ss7.wrapper.cap.args.ArgsFactory#createLocationNumber()
+     */
+    @Override
+    public LocationNumberWrapper createLocationNumber(LocationNumberWrapper.Nature nature,
+    		LocationNumberWrapper.RoutingToInternalNetworkNumber routingToInternalNetworkNumber,
+    		LocationNumberWrapper.NumberingPlan numberingPlan,
+    		int addressRepresentationRestrictedIndicator,
+    		int internalNetworkNumberIndicator,
+    		int screeningIndicator,
+            String address) throws Ss7WrapperException{
+    	final LocationNumber locationNumber = capProvider.getISUPParameterFactory().createLocationNumber();
+    	
+    	locationNumber.setNatureOfAddresIndicator(nature.getValue());
+    	locationNumber.setInternalNetworkNumberIndicator(routingToInternalNetworkNumber.getValue());
+    	locationNumber.setAddressRepresentationRestrictedIndicator(addressRepresentationRestrictedIndicator);
+    	locationNumber.setScreeningIndicator(screeningIndicator);
+    	locationNumber.setNumberingPlanIndicator(numberingPlan.getValue());
+    	locationNumber.setAddress(address);
+        try {
+        	final LocationNumberCap locationNumberCap = capProvider.getCAPParameterFactory()
+                    .createLocationNumberCap(locationNumber);
+            return new TxLocationNumberWrapper(locationNumberCap);
+        } catch (CAPException e) {
+            throw new Ss7WrapperException(e);
+        }
+    }
+    
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * pl.ovoo.jslee.ss7.wrapper.cap.args.ArgsFactory#createSubscriberState()
+     */
+    @Override
+    public SubscriberStateWrapper createSubscriberState(int notReachableReason, String subscriberStateChoice){    	
+		final SubscriberState subscriberState = capProvider.getMAPParameterFactory().createSubscriberState(
+    			SubscriberStateChoice.valueOf(subscriberStateChoice), NotReachableReason.getInstance(notReachableReason));
+
+        return new TxSubscriberStateWrapper(subscriberState);        
     }
 
     /**

@@ -94,6 +94,8 @@ public class TxInitialDPRequestEventWrapper extends TxEventWrapper implements In
         txCap1InitialDPArgWrapper.setTxImsi(initialDPRequest.getIMSI());
         txCap1InitialDPArgWrapper.setTxLocationInformation(initialDPRequest.getLocationInformation());
         txCap1InitialDPArgWrapper.setTxMscAddress(initialDPRequest.getMscAddress());
+        txCap1InitialDPArgWrapper.setTxLocationNumber(initialDPRequest.getLocationNumber());
+        txCap1InitialDPArgWrapper.setTxSubscriberState(initialDPRequest.getSubscriberState());
 
         if (txCap1InitialDPArgWrapper instanceof TxCap2InitialDPArgWrapper) {
             ((TxCap2InitialDPArgWrapper) txCap1InitialDPArgWrapper).setTxTimeAndTimezone(initialDPRequest.getTimeAndTimezone());
