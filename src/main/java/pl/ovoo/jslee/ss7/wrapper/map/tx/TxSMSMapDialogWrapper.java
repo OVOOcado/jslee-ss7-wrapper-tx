@@ -65,6 +65,7 @@ import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.SMSMapDialogWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.DataCodingWrapper;
+import pl.ovoo.jslee.ss7.wrapper.map.args.ForwardShortMessageRequestWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.MtForwardShortMessageRequestWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoForSMResponseWrapper;
@@ -177,6 +178,60 @@ public class TxSMSMapDialogWrapper  extends TxMapDialogWrapperImpl implements SM
             SmsSignalInfo si = new SmsSignalInfoImpl(tpdu, null);
 
             return dialog.addMtForwardShortMessageRequest((int)timeout,sm_rp_da,sm_rp_oa,si,false,null).intValue();
+        }catch(MAPException e){
+            throw new Ss7WrapperException(e);
+        }
+    }
+
+    /* (non-Javadoc)
+     * @see pl.ovoo.jslee.ss7.wrapper.map.SMSMapDialogWrapper#sendForwardSMRequest(long, pl.ovoo.jslee.ss7.wrapper.map.args.ForwardShortMessageRequestWrapper)
+     */
+    @Override
+    public int sendForwardSMRequest(long timeout, ForwardShortMessageRequestWrapper arg) throws Ss7WrapperException{
+        try{
+        	ForwardShortMessageRequestWrapper txArg = (ForwardShortMessageRequestWrapper) arg;
+
+            IMSI imsi = new IMSIImpl(txArg.getSm_Rp_Da().getIMSI().getAddress());
+            SM_RP_DA sm_rp_da = new SM_RP_DAImpl(imsi);
+
+            SM_RP_OAImpl sm_rp_oa = new SM_RP_OAImpl();
+            AddressString aNumber = new AddressStringImpl(AddressNature.international_number, NumberingPlan.ISDN,txArg.getSm_Rp_Oa().getServiceCentreAddressOA().getAddress());
+            sm_rp_oa.setServiceCentreAddressOA(aNumber);           
+            
+            SmRpUiWrapper smRpUi = txArg.getSm_Rp_Ui();
+            
+            AddressField originatingAddress = new AddressFieldImpl(
+            		TypeOfNumber.InternationalNumber, NumberingPlanIdentification.ISDNTelephoneNumberingPlan, smRpUi.getOriginatingAddress());
+            Calendar cld = new GregorianCalendar();
+            int year = cld.get(Calendar.YEAR);
+            int mon = cld.get(Calendar.MONTH);
+            int day = cld.get(Calendar.DAY_OF_MONTH);
+            int h = cld.get(Calendar.HOUR);
+            int m = cld.get(Calendar.MINUTE);
+            int s = cld.get(Calendar.SECOND);
+            int tz = cld.get(Calendar.ZONE_OFFSET);
+            AbsoluteTimeStamp serviceCentreTimeStamp = new AbsoluteTimeStampImpl(year - 2000, mon, day, h, m, s, tz / 1000 / 60 / 15);
+
+            DataCodingScheme dcs = new DataCodingSchemeImpl(smRpUi.getCharset().getValue());
+            
+            boolean is16bit = smRpUi.getCharset() == DataCodingWrapper.UCS2 ? true : false;
+            UserDataHeader udh = new UserDataHeaderImpl();
+            if(smRpUi.getIsConcatened()){
+            	udh.addInformationElement(new ConcatenatedShortMessagesIdentifierImpl(is16bit, smRpUi.getMessageRef(),
+            			smRpUi.getSegmCnt(), smRpUi.getSegmNum()));
+            }
+            
+            UserData userData;
+            if(smRpUi.getCharset() == DataCodingWrapper.UCS2) {
+                userData = new UserDataImpl(smRpUi.getText(), dcs, udh, StandardCharsets.UTF_16BE);
+            }else{
+                userData = new UserDataImpl(smRpUi.getText(), dcs, udh, StandardCharsets.UTF_8);
+            }
+            ProtocolIdentifier pi = new ProtocolIdentifierImpl(0);
+            SmsDeliverTpdu tpdu = new SmsDeliverTpduImpl(smRpUi.getMoreMessagesToSend(), false, false, false, originatingAddress, pi, serviceCentreTimeStamp, userData);
+            SmsSignalInfo si = new SmsSignalInfoImpl(tpdu, null);
+
+            return dialog.addForwardShortMessageRequest((int)timeout,sm_rp_da,sm_rp_oa,si,false).intValue();
         }catch(MAPException e){
             throw new Ss7WrapperException(e);
         }

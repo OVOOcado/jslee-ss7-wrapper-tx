@@ -654,6 +654,35 @@ public class TxMapArgsFactory implements MapArgsFactory {
 		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
 		return txMtArg;
 	}
+
+	/* (non-Javadoc)
+	 * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createForwardShortMessageRequestWrapper(java.lang.String, java.nio.charset.Charset, pl.ovoo.jslee.ss7.wrapper.common.args.AddressStringWrapper, pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper, java.lang.String, boolean, boolean, int, int, int)
+	 */
+	@Override
+	public ForwardShortMessageRequestWrapper createForwardShortMessageRequestWrapper(String text, Charset charset, AddressStringWrapper scOA, IMSIAddressWrapper imsi, String origAddress, boolean moreMessagesToSend,
+			boolean isConcatened, int msgRef, int segmCnt, int segmNum){
+		TxForwardShortMessageRequestArgWrapper txMtArg = new TxForwardShortMessageRequestArgWrapper();
+
+		TxSmRpDaWrapper smRpDaWrapper = new TxSmRpDaWrapper();
+		smRpDaWrapper.setIMSI(imsi);
+		txMtArg.setSm_Rp_Da(smRpDaWrapper);
+
+		TxSmRpOaWrapper smRpOaWrapper = new TxSmRpOaWrapper();
+		smRpOaWrapper.setServiceCentreAddressOa(createIsdnAddressString(scOA.getNature(),scOA.getNumberingPlan(),scOA.getAddress()));
+		txMtArg.setSm_Rp_Oa(smRpOaWrapper);
+
+		TxSmRpUiWrapper smRpUiWrapper = new TxSmRpUiWrapper();
+		smRpUiWrapper.setCharset(DataCodingWrapper.lookup(charset.name()));
+		smRpUiWrapper.setText(text);
+		smRpUiWrapper.setOriginatingAddress(origAddress);
+		smRpUiWrapper.setMoreMessagesToSend(moreMessagesToSend);
+		smRpUiWrapper.setIsConcatened(isConcatened);
+		smRpUiWrapper.setMessageRef(msgRef);
+		smRpUiWrapper.setSegmCnt(segmCnt);
+		smRpUiWrapper.setSegmNum(segmNum);
+		txMtArg.setSm_Rp_Ui(smRpUiWrapper);
+		return txMtArg;
+	}
     
     /* (non-Javadoc)
      * @see pl.ovoo.jslee.ss7.wrapper.map.args.MapArgsFactory#createMAPRequestedInfoWrapper(boolean, boolean, boolean)
