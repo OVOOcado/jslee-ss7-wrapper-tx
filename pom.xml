@@ -7,7 +7,7 @@
 
 	<groupId>pl.ovoo.jslee.ss7.wrapper</groupId>
     <artifactId>jslee-ss7-wrapper-tx</artifactId>
-    <version>1.0.0.5</version>
+    <version>1.0.0.6-SNAPSHOT</version>
 	
 	<build>
         <plugins>
@@ -143,7 +143,7 @@
 	<scm>
         <developerConnection>scm:git:http://10.0.1.2/gitlab/ss7-cap-wrapper/ss7-cap-wrapper-telestax-impl.git</developerConnection>
         <connection>scm:git:http://10.0.1.2/gitlab/ss7-cap-wrapper/ss7-cap-wrapper-telestax-impl.git</connection>
-	  <tag>jslee-ss7-wrapper-tx-1.0.0.5</tag>
+	  <tag>HEAD</tag>
   </scm>
   
 </project>
