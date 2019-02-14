@@ -26,10 +26,13 @@ import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
 import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
+import org.mobicents.protocols.ss7.map.api.service.callhandling.ExtendedRoutingInfo;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.RoutingInfo;
 
+import pl.ovoo.jslee.ss7.wrapper.common.args.ExtendedRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.IMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.args.RoutingInfoWrapper;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxExtendedRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
@@ -44,13 +47,13 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
     private transient IMSIAddressWrapper imsiAddressWrapper = null;
     
     /** The roaming addres wrapper. */
-    private transient RoutingInfoWrapper roamingAddresWrapper = null;
+    private transient ExtendedRoutingInfoWrapper extendedRoutingInfoWrapper = null;
 
     /** The imsi. */
     private IMSI imsi;
 
     /** The roaming address. */
-    private RoutingInfo roamingAddress;
+    private ExtendedRoutingInfo extendedRoutingInfo;
 
     /**
      * Instantiates a new tx send routing info response wrapper.
@@ -90,11 +93,11 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
      * @see pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper#getRoutingInfo()
      */
     @Override
-    public RoutingInfoWrapper getRoutingInfo() {
-        if (this.roamingAddresWrapper == null && this.roamingAddress != null) {
-            this.roamingAddresWrapper = new TxRoutingInfoWrapper(roamingAddress);
+    public ExtendedRoutingInfoWrapper getExtendedRoutingInfo() {
+        if (this.extendedRoutingInfoWrapper == null && this.extendedRoutingInfo != null) {
+            this.extendedRoutingInfoWrapper = new TxExtendedRoutingInfoWrapper(extendedRoutingInfo);
         }
-        return this.roamingAddresWrapper;
+        return this.extendedRoutingInfoWrapper;
     }
 
     /**
@@ -102,20 +105,19 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
      *
      * @param routingInfo the new routing info
      */
-    public void setRoutingInfo(RoutingInfoWrapper routingInfo) {
-        if (routingInfo == null) {
-            this.roamingAddress = null;
-            this.roamingAddresWrapper = null;
+    public void setExtendedRoutingInfo(ExtendedRoutingInfoWrapper extendedRoutingInfo) {
+        if (extendedRoutingInfo == null) {
+            this.extendedRoutingInfo = null;
+            this.extendedRoutingInfoWrapper = null;
         } else {
-            TxRoutingInfoWrapper txRoutingInfo = (TxRoutingInfoWrapper) routingInfo;
+            TxExtendedRoutingInfoWrapper txExtendedRoutingInfo = (TxExtendedRoutingInfoWrapper) extendedRoutingInfo;
             MAPParameterFactory factory = new MAPParameterFactoryImpl();
 
-            ISDNAddressString roamingNumber = factory.createISDNAddressString(
-                    AddressNature.getInstance(txRoutingInfo.getNatureOfAddress().getValue()),
-                    NumberingPlan.getInstance(txRoutingInfo.getNumberingPlan().getValue()),
-                    txRoutingInfo.getRoamingNumber());
-            this.roamingAddresWrapper = txRoutingInfo;
-            this.roamingAddress = factory.createRoutingInfo(roamingNumber);
+            if(extendedRoutingInfo.getRoutingInfo()!= null){
+            	TxRoutingInfoWrapper txRoutingInfo = (TxRoutingInfoWrapper)txExtendedRoutingInfo.getRoutingInfo();
+                this.extendedRoutingInfo =  factory.createExtendedRoutingInfo(txRoutingInfo.getTxRoutingInfo());
+            }
+            this.extendedRoutingInfoWrapper = extendedRoutingInfo;
         }
     }
 
@@ -124,8 +126,8 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
      *
      * @return the tx roaming address
      */
-    public RoutingInfo getTxRoamingAddress() {
-        return roamingAddress;
+    public ExtendedRoutingInfo getTxExtendedRoutingInfo() {
+        return extendedRoutingInfo;
 
     }
 
@@ -134,9 +136,9 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
      *
      * @param roamingAddress the new tx roaming address
      */
-    public void setTxRoamingAddress(RoutingInfo  roamingAddress) {
-        this.roamingAddress = roamingAddress;
-        this.roamingAddresWrapper = null;
+    public void setTxExtendedRoutingInfo(ExtendedRoutingInfo  extendedRoutingInfo) {
+        this.extendedRoutingInfo = extendedRoutingInfo;
+        this.extendedRoutingInfoWrapper = null;
     }
 
     /**
@@ -163,7 +165,7 @@ public class TxSendRoutingInfoResponseWrapper implements SendRoutingInfoResponse
      */
     @Override
     public String toString() {
-        return "TxSendRoutingInfoResponseWrapper [imsi=" + imsi + ", roamingAddress=" + roamingAddress + "]";
+        return "TxSendRoutingInfoResponseWrapper [imsi=" + imsi + ", extendedRoutingInfo=" + extendedRoutingInfo + "]";
     }
 
 }

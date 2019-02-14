@@ -21,6 +21,8 @@
 package pl.ovoo.jslee.ss7.wrapper.map.tx.event;
 
 import org.mobicents.protocols.ss7.map.api.service.callhandling.SendRoutingInformationResponse;
+
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxExtendedRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.args.SendRoutingInfoResponseWrapper;
@@ -56,7 +58,7 @@ public class TxSendRoutingInfoResponseEventWrapper extends TxMapEventWrapper imp
     public SendRoutingInfoResponseWrapper getArgument() {
         TxSendRoutingInfoResponseWrapper sri = new TxSendRoutingInfoResponseWrapper();
         sri.setImsi(new TxIMSIAddressWrapper(sendRoutingInformationResponse.getIMSI()));
-        sri.setRoutingInfo(new TxRoutingInfoWrapper(sendRoutingInformationResponse.getRoutingInfo2()));
+        sri.setExtendedRoutingInfo(new TxExtendedRoutingInfoWrapper(sendRoutingInformationResponse.getExtendedRoutingInfo()));
         return sri;
     }
 

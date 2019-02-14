@@ -32,10 +32,12 @@ import org.mobicents.protocols.ss7.map.api.primitives.AddressNature;
 import org.mobicents.protocols.ss7.map.api.primitives.IMSI;
 import org.mobicents.protocols.ss7.map.api.primitives.ISDNAddressString;
 import org.mobicents.protocols.ss7.map.api.primitives.NumberingPlan;
+import org.mobicents.protocols.ss7.map.api.service.callhandling.ExtendedRoutingInfo;
 import org.mobicents.protocols.ss7.map.api.service.callhandling.RoutingInfo;
 
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
 import pl.ovoo.jslee.ss7.wrapper.cap.test.WrapperBaseTest;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxExtendedRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
@@ -63,8 +65,9 @@ public class TxSendRoutingInfoResponseWrapperTest extends WrapperBaseTest {
         ISDNAddressString addressString = mapParameterFactory.createISDNAddressString(
                 AddressNature.international_number, NumberingPlan.land_mobile, "0048678987345");
         RoutingInfo routingInfo = mapParameterFactory.createRoutingInfo(addressString);
-        TxRoutingInfoWrapper txRoutingInfoWrapper = new TxRoutingInfoWrapper(routingInfo);
-        txSendRoutingInfoResponseWrapper.setRoutingInfo(txRoutingInfoWrapper);
+        ExtendedRoutingInfo extendedroutingInfo = mapParameterFactory.createExtendedRoutingInfo(routingInfo);
+        TxExtendedRoutingInfoWrapper txExtendedRoutingInfoWrapper = new TxExtendedRoutingInfoWrapper(extendedroutingInfo);
+        txSendRoutingInfoResponseWrapper.setExtendedRoutingInfo(txExtendedRoutingInfoWrapper);
     }
 
     /* (non-Javadoc)
@@ -78,14 +81,14 @@ public class TxSendRoutingInfoResponseWrapperTest extends WrapperBaseTest {
 
         assertTrue(txSendRoutingInfoResponseWrapper.getImsi().getAddress().equals(tx.getImsi().getAddress()));
         assertTrue(txSendRoutingInfoResponseWrapper.getTxImsi().getData().equals(tx.getTxImsi().getData()));
-        assertTrue(txSendRoutingInfoResponseWrapper.getRoutingInfo().getNatureOfAddress().getValue() == tx
-                .getRoutingInfo().getNatureOfAddress().getValue());
-        assertTrue(txSendRoutingInfoResponseWrapper.getRoutingInfo().getNumberingPlan().getValue() == tx
-                .getRoutingInfo().getNumberingPlan().getValue());
-        assertTrue(txSendRoutingInfoResponseWrapper.getRoutingInfo().getRoamingNumber()
-                .equals(tx.getRoutingInfo().getRoamingNumber()));
-        assertTrue(txSendRoutingInfoResponseWrapper.getTxRoamingAddress().getRoamingNumber().getAddress()
-                .equals(tx.getTxRoamingAddress().getRoamingNumber().getAddress()));
+        assertTrue(txSendRoutingInfoResponseWrapper.getExtendedRoutingInfo().getRoutingInfo().getNatureOfAddress().getValue() == tx
+                .getExtendedRoutingInfo().getRoutingInfo().getNatureOfAddress().getValue());
+        assertTrue(txSendRoutingInfoResponseWrapper.getExtendedRoutingInfo().getRoutingInfo().getNumberingPlan().getValue() == tx
+                .getExtendedRoutingInfo().getRoutingInfo().getNumberingPlan().getValue());
+        assertTrue(txSendRoutingInfoResponseWrapper.getExtendedRoutingInfo().getRoutingInfo().getRoamingNumber()
+                .equals(tx.getExtendedRoutingInfo().getRoutingInfo().getRoamingNumber()));
+        assertTrue(((TxRoutingInfoWrapper)txSendRoutingInfoResponseWrapper.getExtendedRoutingInfo().getRoutingInfo()).getTxRoutingInfo().getRoamingNumber().getAddress()
+                .equals(((TxRoutingInfoWrapper)tx.getExtendedRoutingInfo().getRoutingInfo()).getTxRoutingInfo().getRoamingNumber().getAddress()));
 
     }
 

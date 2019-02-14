@@ -27,6 +27,7 @@ import org.mobicents.slee.resource.map.service.callhandling.wrappers.MAPDialogCa
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoRequestArgWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.tx.args.TxSendRoutingInfoResponseWrapper;
 import pl.ovoo.jslee.ss7.wrapper.Ss7WrapperException;
+import pl.ovoo.jslee.ss7.wrapper.common.tx.TxExtendedRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxIMSIAddressWrapper;
 import pl.ovoo.jslee.ss7.wrapper.common.tx.TxRoutingInfoWrapper;
 import pl.ovoo.jslee.ss7.wrapper.map.CallHandlingMapDialogWrapper;
@@ -85,15 +86,19 @@ public class TxCallHandlingMapDialogWrapper extends TxMapDialogWrapperImpl imple
             if (txArg.getImsi() != null){
                 txImsi = (TxIMSIAddressWrapper)txArg.getImsi();
             }
+            TxExtendedRoutingInfoWrapper txExtendedRoutingInfo = null;
             TxRoutingInfoWrapper txRoutingInfo = null;
-            if (txArg.getRoutingInfo() != null){
-                txRoutingInfo = (TxRoutingInfoWrapper)txArg.getRoutingInfo();
+            if (txArg.getExtendedRoutingInfo() != null){
+                txExtendedRoutingInfo = (TxExtendedRoutingInfoWrapper)txArg.getExtendedRoutingInfo();
+                if (txExtendedRoutingInfo.getRoutingInfo() != null){
+                    txRoutingInfo = (TxRoutingInfoWrapper)txExtendedRoutingInfo.getRoutingInfo();
+                }
             }
             if(txImsi != null && txRoutingInfo != null) {
-                ((MAPDialogCallHandlingWrapper) dialog).addSendRoutingInformationResponse(invoke,
-                        txImsi.getTxImsi(),
-                        null,
-                        txRoutingInfo.getTxRoutingInfo());
+                ((MAPDialogCallHandlingWrapper) dialog).addSendRoutingInformationResponse(invoke, txImsi.getTxImsi(), txExtendedRoutingInfo.getTxExtendedRoutingInfo(),
+                		null, false, null, null, null, false, null, null, 
+                		null, null, null, null, null, null, null, null, 
+                		null, null, null, null, false, null);
             }
         } catch (MAPException e) {
             throw new Ss7WrapperException(e);
